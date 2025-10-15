@@ -1,0 +1,3 @@
+Username: damianmills
+Email: dmills10@qub.ac.uk
+Password: $2y$10$P5qUAgpmkE5BIgb6ixLfAuxiVS262pyHxcIIyDUyDnSMosQDj6mSG

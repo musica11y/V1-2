@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SoundFont Manager</title>
+    <style>
+        #SoundFontList, #SoundFontFolderList {
+            height: 200px;
+            overflow-y: scroll;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .session-item, .folder-item {
+            cursor: pointer;
+            padding: 5px;
+        }
+        .session-item.selected, .folder-item.selected {
+            background-color: #d3d3d3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        // Force a reload if the page is accessed via the back or forward button
+		window.addEventListener("pageshow", function (event) {
+		if (event.persisted) {
+			//console.log("reLOADED");
+			// This means the page was loaded from the bfcache (back/forward button)
+			window.location.reload(); // Force a reload to ensure the user is logged out
+		}
+	});
+		//console.log("LOADED");
+		//console.log(window.performance.getEntriesByType("navigation"));
+    </script>
+
+    <h1>SoundFont Manager</h1>
+    <h2 id="currentUser"></h2>
+    <h2 id="SoundFontEditingPermission"></h2>
+
+    <div id="soundfontControls" style="display: none;">
+
+
+    <h3>Existing SoundFonts</h3>
+    <div id="SoundFontList"></div>
+    
+    <button onclick="confirmdeleteSoundFont()">Delete</button>
+  
+
+    <h3>SoundFont Folders</h3>
+    <div id="SoundFontFolderList"></div>
+
+    <button onclick="confirmdeleteSoundFontFolder()">Delete Folder & Contents</button>
+    <button onclick="createNewFolder()">Create New Folder</button>
+   <br><br>
+
+	<form id="uploadForm" enctype="multipart/form-data" method="post">
+		<input type="file" id="fileInput" name="file" accept=".sf2" />
+		<button type="submit">Upload SoundFont</button>
+	</form>
+
+    <p id="updateMessage"></p>
+	
+
+	</div>
+
+
+    <script>
+	
+	
+        // Fetch current user info
+        fetch('get_user_info.php')
+			.then(response => {//response.json(){
+				if (!response.ok) {
+					// Redirect to the login page if the user info cannot be fetched
+					window.location.href = 'login.html';
+					return;
+				}
+			return response.json();
+			})
+            .then(data => {
+                document.getElementById('currentUser').innerText = "Username: " + data.username;
+                document.getElementById('SoundFontEditingPermission').innerText = "SoundFont Editing Permission: " + data.soundfontpermission;
+				
+				const controls = document.getElementById('soundfontControls');
+				if (data.soundfontpermission === "Yes") {
+					controls.style.display = 'block';
+				} else {
+					controls.style.display = 'none';
+				}
+
+
+            })
+            .catch(error => {
+				console.error('Error fetching user info:', error);
+				window.location.href = 'login.html'; // Redirect on error
+			});
+
+       function updateFolderList(){
+	     fetch('list_soundfontfolders.php')
+        .then(response => response.json())
+        .then(data => {
+            const sessionList = document.getElementById('SoundFontFolderList');
+            sessionList.innerHTML = '';
+
+            if (Array.isArray(data.sessions)) {
+                data.sessions.forEach(session => {
+                    const folderItem = document.createElement('div');
+                    folderItem.classList.add('folder-item');
+                    folderItem.innerText = session;
+                    folderItem.onclick = function () {
+                        const selected = document.querySelector('.folder-item.selected');
+                        if (selected) {
+                            selected.classList.remove('selected');
+                        }
+                        folderItem.classList.add('selected');
+                    };
+                    sessionList.appendChild(folderItem);
+                });
+            } else {
+                const errorItem = document.createElement('div');
+                errorItem.classList.add('error-item');
+                errorItem.innerText = data.error ?? 'Folder list unavailable.';
+                sessionList.appendChild(errorItem);
+				
+				console.log(  data.soundfontpermission );
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+            const sessionList = document.getElementById('SoundFontList');
+            sessionList.innerHTML = '<div class="error-item">Failed to fetch soundfonts.</div>';
+        });
+	}
+
+	function createNewFolder(){
+    const folderName = prompt("Enter a name for the new folder:");
+
+    if (folderName && folderName.trim() !== "") {
+        fetch('create_folder.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ folder: folderName.trim() })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+				 document.getElementById('updateMessage').innerText = "Folder created successfully";
+                updateFolderList();
+            } else {
+				document.getElementById('updateMessage').innerText = "Error: "+data.error;
+            }
+        })
+        .catch(error => {
+            console.error('Folder creation error:', error);
+        //    alert('An error occurred while creating the folder.');
+		   document.getElementById('updateMessage').innerText = "Error: Cannot create folder";
+        });
+    } else {
+//        alert("Folder name cannot be empty.");
+		   document.getElementById('updateMessage').innerText = "Cancelled or blank folder name used";
+    }
+}
+	   
+      function updateSoundfontList() {
+    fetch('list_soundfonts.php')
+        .then(response => response.json())
+        .then(data => {
+            const sessionList = document.getElementById('SoundFontList');
+            sessionList.innerHTML = '';
+
+            if (Array.isArray(data.sessions)) {
+                data.sessions.forEach(session => {
+                    const sessionItem = document.createElement('div');
+                    sessionItem.classList.add('session-item');
+                    sessionItem.innerText = session;
+                    sessionItem.onclick = function () {
+                        const selected = document.querySelector('.session-item.selected');
+                        if (selected) {
+                            selected.classList.remove('selected');
+                        }
+                        sessionItem.classList.add('selected');
+                    };
+                    sessionList.appendChild(sessionItem);
+                });
+            } else {
+                const errorItem = document.createElement('div');
+                errorItem.classList.add('error-item');
+                errorItem.innerText = data.error ?? 'Session list unavailable.';
+                sessionList.appendChild(errorItem);
+				
+				console.log(  data.soundfontpermission );
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+            const sessionList = document.getElementById('SoundFontList');
+            sessionList.innerHTML = '<div class="error-item">Failed to fetch soundfonts.</div>';
+        });
+	}
+
+document.getElementById('uploadForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];
+
+    if (!file) {
+        alert('Please select a file before uploading.');
+        return;
+    }
+
+     const selected = document.querySelector('.folder-item.selected');
+     if (!selected) {
+	    alert('Please select a destination folder before uploading.');
+        return;
+			}
+
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('folder', selected.innerText);
+ 
+  //  console.log('Folder:'+selected.innerText);
+   // console.log('File:'+file);
+   
+    fetch('upload_soundfont.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+		updateSoundfontList() ;
+		 document.getElementById('updateMessage').innerText = data.success 
+            ? `File uploaded: ${data.filename}` 
+            : `Error: ${data.error}`;
+    })
+    .catch(error => {
+        console.error('Upload failed:', error);
+         document.getElementById('updateMessage').innerText == 'Error: Upload error occurred.';
+    });
+});
+
+        function AddSoundFont() {
+            const selected = document.querySelector('.session-item.selected');
+            if (selected) {
+                const session = selected.innerText;
+                //window.open('players/' + document.getElementById('currentUser').innerText.split(": ")[1] + '/sessions/' + session, '_blank');
+				
+			//	const userpath = 'players/' + document.getElementById('currentUser').innerText.split(": ")[1] + '/sessions/' + session;
+			//	const username = document.getElementById('currentUser').innerText.split(": ")[1];
+		//		localStorage.setItem('username', username);
+			//	localStorage.setItem('userpath', userpath);
+			//	localStorage.setItem('sessionid', session);
+			//	localStorage.setItem('sessiontype', "private");
+
+				// Redirect to Wonderland application page
+				//window.location.href = '../webapp/index.html'
+				updateSoundfontList() ;
+            } else {
+                document.getElementById('updateMessage').innerText = "Error: No soundfont file selected.";
+            }
+        }
+
+        function confirmdeleteSoundFont() {
+            const selected = document.querySelector('.session-item.selected');
+            if (selected) {
+			const session = selected.innerText;
+			const confirmAction = confirm(`Are you sure you want to delete "${session}"?`);
+		   if (confirmAction) {
+                fetch('delete_soundfont.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ filename: session })
+                })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('updateMessage').innerText = data;
+                    updateSoundfontList();
+                })
+                .catch(error => console.error('Error:', error));
+				}
+				else{
+				 document.getElementById('updateMessage').innerText = "Error: Delete Cancelled.";
+				}
+            } else {
+                document.getElementById('updateMessage').innerText = "Error: No soundfont file selected.";
+            }
+        }
+		
+	function confirmdeleteSoundFontFolder() {
+            const selected = document.querySelector('.folder-item.selected');
+            if (selected) {
+			const session = selected.innerText;
+			const confirmAction = confirm(`Are you sure you want to delete folder and contents "${session}"?`);
+		   if (confirmAction) {
+                fetch('delete_soundfontfolder.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ filename: session })
+                })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('updateMessage').innerText = data;
+                    updateSoundfontList();
+					updateFolderList();
+                })
+                .catch(error => console.error('Error:', error));
+				}
+				else{
+				 document.getElementById('updateMessage').innerText = "Error: Delete Folder Cancelled.";
+				}
+            } else {
+                document.getElementById('updateMessage').innerText = "Error: No soundfont folder selected.";
+            }
+        }
+
+        // Initial calls to populate the session lists
+        updateSoundfontList();
+	    updateFolderList();
+    </script>
+</body>
+</html>

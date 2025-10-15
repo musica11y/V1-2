@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <style>
+        #sessionList, #publicSessionList {
+            height: 200px;
+            overflow-y: scroll;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .session-item, .public-session-item {
+            cursor: pointer;
+            padding: 5px;
+        }
+        .session-item.selected, .public-session-item.selected {
+            background-color: #d3d3d3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        // Force a reload if the page is accessed via the back or forward button
+		window.addEventListener("pageshow", function (event) {
+		if (event.persisted) {
+			//console.log("reLOADED");
+			// This means the page was loaded from the bfcache (back/forward button)
+			window.location.reload(); // Force a reload to ensure the user is logged out
+		}
+	});
+		//console.log("LOADED");
+		//console.log(window.performance.getEntriesByType("navigation"));
+    </script>
+
+    <h1>Dashboard</h1>
+    <h2 id="currentUser"></h2>
+    <h2 id="currentEmail"></h2>
+
+    
+    <form id="updatePasswordForm" method="post" action="update.php">
+        <h3>Update Password</h3>
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" name="newPassword"><br><br>
+        <input type="submit" value="Update Password">
+    </form>
+    
+    <form id="updateEmailForm" method="post" action="update.php">
+        <h3>Update Email</h3>
+        <label for="newEmail">New Email:</label>
+        <input type="email" id="newEmail" name="newEmail"><br><br>
+        <input type="submit" value="Update Email">
+    </form>
+    
+    <h3>Create Session File</h3>
+    <form id="createSessionForm" method="post" action="create_session.php">
+        <label for="sessionFilename">Filename:</label>
+        <input type="text" id="sessionFilename" name="sessionFilename" required><br><br>
+        <input type="submit" value="Create Session">
+    </form>
+
+    <h3>Sessions</h3>
+    <div id="sessionList"></div>
+    <button onclick="openSession('../webapp1/index.html')">Open 2D</button>
+	<button onclick="openSession('../webappVR1/index.html')">Open AR/VR</button>
+    <button onclick="deleteSession()">Delete</button>
+
+    <h3>Public Sessions</h3>
+    <div id="publicSessionList"></div>
+    <button onclick="openPublicSession('../webapp1/index.html')">Open 2D</button>
+	<button onclick="openPublicSession('../webappVR1/index.html')">Open AR/VR</button>
+	
+    <p id="updateMessage"></p>
+
+    <form id="logoutForm" method="post" action="logout.php">
+        <input type="submit" value="Logout">
+    </form>
+
+    <script>
+	
+	
+        // Fetch current user info
+        fetch('get_user_info.php')
+			.then(response => {//response.json(){
+				if (!response.ok) {
+					// Redirect to the login page if the user info cannot be fetched
+					window.location.href = 'login.html';
+					return;
+				}
+			return response.json();
+			})
+            .then(data => {
+                document.getElementById('currentUser').innerText = "Username: " + data.username;
+                document.getElementById('currentEmail').innerText = "Email: " + data.email;
+				
+				//setUserName();
+				localStorage.clear();
+				//const userpath = 'players/' + data.username + '/sessions/' ;//+ session;
+				const username = data.username;
+				localStorage.setItem('username', username);
+				//localStorage.setItem('userpath', userpath);
+			//	localStorage.removeItem('userpath',);
+			//	localStorage.removeItem('sessionid');
+			//	localStorage.returnItem('sessiontype');
+            })
+            .catch(error => {
+				console.error('Error fetching user info:', error);
+				window.location.href = 'login.html'; // Redirect on error
+			});
+
+        document.getElementById('updatePasswordForm').onsubmit = function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch('update.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('updateMessage').innerText = data;
+            })
+            .catch(error => console.error('Error:', error));
+        };
+
+        document.getElementById('updateEmailForm').onsubmit = function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch('update.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('updateMessage').innerText = data;
+                if (data.includes('Success')) {
+                    fetch('get_user_info.php')
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('currentEmail').innerText = "Email: " + data.email;
+                        })
+                        .catch(error => console.error('Error:', error));
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        };
+
+        document.getElementById('createSessionForm').onsubmit = function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch('create_session.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('updateMessage').innerText = data;
+                updateSessionList();
+            })
+            .catch(error => console.error('Error:', error));
+        };
+
+        document.getElementById('logoutForm').onsubmit = function(event) {
+            event.preventDefault();
+            fetch('logout.php', {
+                method: 'POST'
+            })
+            .then(() => {
+                window.location.href = 'login.html';
+            })
+            .catch(error => console.error('Error:', error));
+        };
+
+        function updateSessionList() {
+            fetch('list_sessions.php')
+                .then(response => response.json())
+                .then(data => {
+                    const sessionList = document.getElementById('sessionList');
+                    sessionList.innerHTML = '';
+                    data.sessions.forEach(session => {
+                        const sessionItem = document.createElement('div');
+                        sessionItem.classList.add('session-item');
+                        sessionItem.innerText = session;
+                        sessionItem.onclick = function() {
+                            const selected = document.querySelector('.session-item.selected');
+                            if (selected) {
+                                selected.classList.remove('selected');
+                            }
+                            sessionItem.classList.add('selected');
+                        };
+                        sessionList.appendChild(sessionItem);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function updatePublicSessionList() {
+            fetch('list_public_sessions.php')
+                .then(response => response.json())
+                .then(data => {
+                    const publicSessionList = document.getElementById('publicSessionList');
+                    publicSessionList.innerHTML = '';
+                    data.sessions.forEach(session => {
+                        const sessionItem = document.createElement('div');
+                        sessionItem.classList.add('public-session-item');
+                        sessionItem.innerText = session;
+                        sessionItem.onclick = function() {
+                            const selected = document.querySelector('.public-session-item.selected');
+                            if (selected) {
+                                selected.classList.remove('selected');
+                            }
+                            sessionItem.classList.add('selected');
+                        };
+                        publicSessionList.appendChild(sessionItem);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+		
+        function openSession(pth) {
+            const selected = document.querySelector('.session-item.selected');
+            if (selected) {
+                const session = selected.innerText;
+                //window.open('players/' + document.getElementById('currentUser').innerText.split(": ")[1] + '/sessions/' + session, '_blank');
+				
+				const userpath = 'players/' + document.getElementById('currentUser').innerText.split(": ")[1] + '/sessions/' + session;
+				const username = document.getElementById('currentUser').innerText.split(": ")[1];
+				localStorage.setItem('username', username);
+				localStorage.setItem('userpath', userpath);
+				localStorage.setItem('sessionid', session);
+				localStorage.setItem('sessiontype', "private");
+
+				// Redirect to Wonderland application page
+				window.location.href = pth;// '../webapp/index.html'
+				
+            } else {
+                document.getElementById('updateMessage').innerText = "Error: No session file selected.";
+            }
+        }
+
+        function openPublicSession(pth) {
+            const selected = document.querySelector('.public-session-item.selected');
+            if (selected) {
+                const session = selected.innerText;
+               // window.open('public_sessions/' + session, '_blank');
+				
+				const userpath = 'public_sessions/' + session;
+				const username = document.getElementById('currentUser').innerText.split(": ")[1];
+				localStorage.setItem('username', username);
+				localStorage.setItem('userpath', userpath);
+				localStorage.setItem('sessionid', session);
+				localStorage.setItem('sessiontype', "public");
+				window.location.href = pth;//'../webapp/index.html'
+							
+            } else {
+                document.getElementById('updateMessage').innerText = "Error: No public session file selected.";
+            }
+        }
+
+        function deleteSession() {
+            const selected = document.querySelector('.session-item.selected');
+            if (selected) {
+                const session = selected.innerText;
+                fetch('delete_session.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ filename: session })
+                })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('updateMessage').innerText = data;
+                    updateSessionList();
+                })
+                .catch(error => console.error('Error:', error));
+            } else {
+                document.getElementById('updateMessage').innerText = "Error: No session file selected.";
+            }
+        }
+
+        // Initial calls to populate the session lists
+        updateSessionList();
+        updatePublicSessionList();
+    </script>
+</body>
+</html>

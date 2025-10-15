@@ -1,0 +1,25 @@
+{
+    "name": "HandTrackingMesh",
+    "version": "1.0.0",
+    "description": "My Wonderland project",
+    "main": "js/index.js",
+    "type": "module",
+    "module": "js/index.js",
+    "scripts": {
+        "build": "esbuild ./js/index.js --bundle --outfile=\"deploy/HandTrackingMesh-bundle.js\""
+    },
+    "keywords": [
+        "wonderland-engine"
+    ],
+    "dependencies": {
+        "@wonderlandengine/api": ">=1.2.0 <1.3.0",
+        "@wonderlandengine/components": "^1.1.5",
+        "gl-matrix": "^3.4.3",
+        "smplr": "^0.15.1",
+        "soundfont2": "^0.5.0",
+        "standardized-audio-context": "^25.3.77"
+    },
+    "overrides": {
+        "@wonderlandengine/api": "$@wonderlandengine/api"
+    }
+}

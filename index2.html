@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Musica11y</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="https://musica11y.net">
+        <img src="images/logo.jpg" alt="Musica11y Logo" />
+      </a>
+    </div>
+    <!-- Secondary navigation remains in the header with default styling -->
+    <nav class="navbar2">
+	  <div id="authButtonContainer"  style="display: inline-block;"></div>
+	  <button  style="display: inline-block;" onclick="location.href='https://musica11y.net/credits.html'">
+        CREDITS
+      </button>
+      <button  style="display: inline-block;" onclick="location.href='https://musica11y.net/donate.html'">
+        DONATE
+      </button>
+
+
+    </nav>
+  </header>
+
+  <main>
+    <!-- controlContainer spans the full width below the header -->
+    <div class="controlContainer">
+      <div class="column1Controls">
+        <button class="content-button" data-file="access">Access</button>
+        <button class="content-button" data-file="scales">Scales</button>
+        <button class="content-button" data-file="scenes">Scenes</button>
+        <button class="content-button" data-file="sounds">Sounds</button>
+      </div>
+    </div>
+
+    <!-- Revised Column3 -->
+    <div class="column1">
+      <!-- Accessibility Customization Section -->
+
+      <section class="landing-info">
+
+        <div id=infoBox>
+          <h2>Welcome to holding page for Musica11y</h2>
+          <p> This is the holding web page for the accessible musical WebXR application Musica11y.net. Musica11y is
+            being developed as a portal for creating a customisable, accessible virtual reality musical instrument that
+            can be accessed on 2D platforms (desktop and tablet
+            formats) and in
+            virtual reality (VR) and mixed reality (MR) or a mixture of the two (XR). </p>
+          <p> Musica11y.net seeks to employ diverse interaction methods to facilitate diverse access needs. It will be a
+            programmable playground with an open-source approach to facilitating "a11y allies" who can contribute to the
+            development of back-end features alongside a platform for sharing virtual reality musical instruments with
+            peers. </p>
+          <p> This prototype WebXR application is supported by Future Screen's Northern Ireland's Proof of Concept
+            Award.</p>
+
+          </p>
+        </div>
+
+
+        <div class="play-buttons">
+          <p> This is work in progress </p>
+          <p> For tablets and desktop browsers select 2D Play. </p>
+          <p> To launch Musica11y in VR select 3D Play.</p>
+          <button onclick="location.href='https://musica11y.net/webapp1/'">
+            2D PLAY
+          </button>
+          <button onclick="location.href='https://musica11y.net/webappVR1/'">
+            3D PLAY
+          </button>
+        </div>
+        <section class="accessibility">
+          <div class="access-header">
+
+          </div>
+          <div class="access-buttons-container">
+            <div class="access-buttons">
+              <button id="increase-visibility">
+                <img src="images/Textplus.png" alt="Increase Text Size" />
+              </button>
+              <button id="decrease-visibility">
+                <img src="images/Text-.png" alt="Decrease Text Size" />
+              </button>
+              <button id="reset-visibility">
+                <img src="images/Textreset.png" alt="Reset Text Size" />
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- Landing Information Area -->
+
+      </section>
+
+
+
+
+
+      <!-- Additional Content Area -->
+      <section id="contentBox">
+        <h2>More Information</h2>
+        <p>
+          The release date of the prototype is planned for the start of third quarter 2025.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer style="text-align:center; font-size: 0.9em; padding: 10px; background-color: #f9f9f9;">
+
+    <p>&copy; Musica11y.net 2025</p>
+    <p> Supported by Future Screens Northern Ireland Proof of Concept Award</p>
+
+    <p>
+      &copy; 2025 <strong>musica11y.net</strong>.
+      Licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener noreferrer">
+        GNU General Public License v3.0</a>.
+    </p>
+
+    <p>
+      You are free to use, modify, and share this software under the terms of the GPLv3.
+      See the <a href="https://github.com/yourusername/musica11y/blob/main/LICENSE" target="_blank"
+        rel="noopener noreferrer">
+        LICENSE</a> file for details.
+    </p>
+
+
+
+
+  </footer>
+
+
+<script>
+  fetch('playerman/get_user_info.php')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Not logged in');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // If user is logged in, show LOGOUT
+      document.getElementById('authButtonContainer').innerHTML =
+        "<button onclick=\"localStorage.clear(); location.href='playerman/logoutWebsiteVersion.php'\">LOGOUT</button>";
+    })
+    .catch(error => {
+      // If not logged in, show LOGIN
+      document.getElementById('authButtonContainer').innerHTML =
+        "<button onclick=\"localStorage.clear(); location.href='https://musica11y.net/playerman/login.html'\">LOGIN</button>";
+    });
+</script>
+</body>
+
+</html>
