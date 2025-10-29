@@ -12,9 +12,9 @@
                 }
             ],
             "translation": [
-                -0.0,
-                1.2504945,
-                1.7999999
+                0.0,
+                1.1499999,
+                0.0
             ],
             "rotation": [
                 6.926676832108569e-8,
@@ -140,9 +140,9 @@
                 }
             ],
             "translation": [
-                0.0,
-                0.0,
-                0.0
+                -0.0,
+                0.000023,
+                0.1460323
             ],
             "rotation": [
                 0.0,
@@ -171,13 +171,14 @@
                     "type": "input",
                     "input": {
                         "type": "eye left"
-                    }
+                    },
+                    "active": true
                 }
             ],
             "translation": [
-                -0.0,
-                0.0005719,
-                0.3797433
+                0.0,
+                0.0005718,
+                0.0
             ],
             "rotation": [
                 0.0,
@@ -209,9 +210,9 @@
                 }
             ],
             "translation": [
-                -0.0,
-                -0.0,
-                0.3785373
+                0.0,
+                0.0,
+                0.0
             ],
             "rotation": [
                 0.0,
@@ -282,20 +283,20 @@
             "parent": "825"
         },
         "27": {
-            "name": "Sphere",
+            "name": "icon-access",
             "components": [
                 {
                     "type": "mesh",
                     "mesh": {
-                        "mesh": "9",
-                        "material": "26"
+                        "mesh": "7",
+                        "material": "2614"
                     }
                 }
             ],
             "translation": [
-                -9.4346323,
-                -1.0474674,
-                -1.3318117
+                -1.1564527,
+                0.0,
+                0.0
             ],
             "rotation": [
                 0.0,
@@ -304,11 +305,11 @@
                 1.0
             ],
             "scaling": [
-                0.75,
-                0.75,
-                0.75
+                0.0799999,
+                0.0799999,
+                0.0799999
             ],
-            "parent": "825"
+            "parent": "2659"
         },
         "35": {
             "name": "HandLeftArmature",
@@ -8647,7 +8648,7 @@
                 -0.0,
                 1.0,
                 0.0,
-                -7.549793679118011e-8
+                -7.549793679118012e-8
             ],
             "scaling": [
                 0.5608391,
@@ -14414,10 +14415,6 @@
                 0.0785457
             ]
         },
-        "2093": {
-            "name": "Empty.000",
-            "parent": "825"
-        },
         "2091": {
             "name": "GIVME",
             "parent": "825"
@@ -14616,7 +14613,7 @@
                 -0.0,
                 1.0,
                 0.0,
-                -7.549793679118011e-8
+                -7.549793679118012e-8
             ],
             "scaling": [
                 0.5608391,
@@ -24183,7 +24180,7 @@
                     "type": "mesh",
                     "mesh": {
                         "mesh": "1983",
-                        "material": "1965"
+                        "material": "2614"
                     }
                 }
             ],
@@ -26798,7 +26795,7 @@
             ],
             "translation": [
                 0.0,
-                -2.1050277609901968e-7,
+                -2.105027760990197e-7,
                 0.069374
             ],
             "rotation": [
@@ -27148,7 +27145,7 @@
             ],
             "translation": [
                 0.0,
-                3.868498765768891e-8,
+                3.8684987657688914e-8,
                 0.0812166
             ],
             "rotation": [
@@ -27180,6 +27177,1418 @@
                     "type": "SpringMovement"
                 }
             ]
+        },
+        "2658": {
+            "name": "UI_GuideFull",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2617"
+                    }
+                }
+            ],
+            "translation": [
+                8.965506026470393e-7,
+                0.0,
+                -0.5
+            ],
+            "rotation": [
+                -6.926677542651305e-8,
+                -0.0,
+                1.2092869816626717e-8,
+                1.0
+            ],
+            "scaling": [
+                0.6399999,
+                0.3318516,
+                0.3160493
+            ]
+        },
+        "2659": {
+            "name": "IconStore",
+            "parent": "825",
+            "translation": [
+                0.0,
+                -2.1922934,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "2093": {
+            "name": "icon-account",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2615"
+                    }
+                }
+            ],
+            "translation": [
+                -0.9760567,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2661": {
+            "name": "icon-account",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2616"
+                    }
+                }
+            ],
+            "translation": [
+                -0.7851034,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2662": {
+            "name": "icon-menu",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2620"
+                    }
+                }
+            ],
+            "translation": [
+                -0.6004227,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2663": {
+            "name": "icon-menu",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2621"
+                    }
+                }
+            ],
+            "translation": [
+                -0.4179607,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2664": {
+            "name": "icon-menu",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2622"
+                    }
+                }
+            ],
+            "translation": [
+                -0.2408477,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2665": {
+            "name": "icon-settings",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2623"
+                    }
+                }
+            ],
+            "translation": [
+                -0.057435,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2666": {
+            "name": "icon-sounds",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2624"
+                    }
+                }
+            ],
+            "translation": [
+                0.125959,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2667": {
+            "name": "icon-play",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2625"
+                    }
+                }
+            ],
+            "translation": [
+                0.3039811,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2668": {
+            "name": "interaction-head-ray",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2626"
+                    }
+                }
+            ],
+            "translation": [
+                -1.1564527,
+                -0.2016973,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2669": {
+            "name": "interaction-hand",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2627"
+                    }
+                }
+            ],
+            "translation": [
+                -0.9683023,
+                -0.2016973,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2670": {
+            "name": "interaction-eye",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2628"
+                    }
+                }
+            ],
+            "translation": [
+                -0.7807474,
+                -0.2016973,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2671": {
+            "name": "hex-key",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2656"
+                    }
+                }
+            ],
+            "translation": [
+                -1.1636517,
+                -0.4045855,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2672": {
+            "name": "hex-scales",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2630"
+                    }
+                }
+            ],
+            "translation": [
+                -0.9783509,
+                -0.4045855,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2673": {
+            "name": "hex-fill",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2631"
+                    }
+                }
+            ],
+            "translation": [
+                -0.7924172,
+                -0.4045855,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2674": {
+            "name": "hex-fill",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2631"
+                    }
+                }
+            ],
+            "translation": [
+                -0.7924172,
+                -0.4045855,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2675": {
+            "name": "hex-oct-down",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2632"
+                    }
+                }
+            ],
+            "translation": [
+                -1.162859,
+                -0.5819351,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2676": {
+            "name": "hex-scale-maj",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2633"
+                    }
+                }
+            ],
+            "translation": [
+                -0.6015879,
+                -0.4045855,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2677": {
+            "name": "hex-scale-min",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2634"
+                    }
+                }
+            ],
+            "translation": [
+                -0.420261,
+                -0.4045855,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2678": {
+            "name": "hex-oct-up",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2639"
+                    }
+                }
+            ],
+            "translation": [
+                -0.9748631,
+                -0.5819351,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2679": {
+            "name": "grid-delete",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2640"
+                    }
+                }
+            ],
+            "translation": [
+                -1.1599394,
+                -0.7638261,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2680": {
+            "name": "hex-green",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2638"
+                    }
+                }
+            ],
+            "translation": [
+                -0.7915573,
+                -0.5819351,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2681": {
+            "name": "grid-delete",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2641"
+                    }
+                }
+            ],
+            "translation": [
+                -0.9701085,
+                -0.7638261,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2683": {
+            "name": "grid-delete",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2641"
+                    }
+                }
+            ],
+            "translation": [
+                -0.9701085,
+                -0.7638261,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2684": {
+            "name": "play icon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2646"
+                    }
+                }
+            ],
+            "translation": [
+                -1.1579078,
+                -0.9611346,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2685": {
+            "name": "play icon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2647"
+                    }
+                }
+            ],
+            "translation": [
+                -0.976589,
+                -0.9611346,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2686": {
+            "name": "play icon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2648"
+                    }
+                }
+            ],
+            "translation": [
+                -0.7933638,
+                -0.9611346,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2687": {
+            "name": "cameraupicon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2649"
+                    }
+                }
+            ],
+            "translation": [
+                -0.9677729,
+                -1.1841447,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2688": {
+            "name": "cameradownicon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2650"
+                    }
+                }
+            ],
+            "translation": [
+                -0.7681362,
+                -1.1841447,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2689": {
+            "name": "cameralefticon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2651"
+                    }
+                }
+            ],
+            "translation": [
+                -0.5675594,
+                -1.1841447,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2690": {
+            "name": "camerarighticon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2652"
+                    }
+                }
+            ],
+            "translation": [
+                -0.3681099,
+                -1.1841447,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2691": {
+            "name": "cameramoveicon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2653"
+                    }
+                }
+            ],
+            "translation": [
+                -1.1582731,
+                -1.1841447,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2692": {
+            "name": "cameratowardsicon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2654"
+                    }
+                }
+            ],
+            "translation": [
+                -0.1642105,
+                -1.1841447,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2693": {
+            "name": "cameratowardsicon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2655"
+                    }
+                }
+            ],
+            "translation": [
+                0.0516479,
+                -1.1841447,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2694": {
+            "name": "hex-scale-penta",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2635"
+                    }
+                }
+            ],
+            "translation": [
+                -0.2336755,
+                -0.4045855,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2695": {
+            "name": "hex-scale-chro",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2636"
+                    }
+                }
+            ],
+            "translation": [
+                -0.0467181,
+                -0.4045855,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2696": {
+            "name": "hexOff",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2659"
+                    }
+                }
+            ],
+            "translation": [
+                -1.1582731,
+                -1.3990724,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2697": {
+            "name": "hexOn",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2660"
+                    }
+                }
+            ],
+            "translation": [
+                -0.9777272,
+                -1.3990724,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2698": {
+            "name": "CloseIcon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2661"
+                    }
+                }
+            ],
+            "translation": [
+                -1.1582731,
+                -1.5890252,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2699": {
+            "name": "hexQuery",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2662"
+                    }
+                }
+            ],
+            "translation": [
+                -0.9649441,
+                -1.5890252,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2700": {
+            "name": "hex-green",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2663"
+                    }
+                }
+            ],
+            "translation": [
+                -0.5962179,
+                -0.5819351,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2701": {
+            "name": "hexQuery",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "1940"
+                    }
+                }
+            ],
+            "translation": [
+                -1.1490495,
+                -1.8098199,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2703": {
+            "name": "hexQuery",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "1941"
+                    }
+                }
+            ],
+            "translation": [
+                -0.9469606,
+                -1.8098199,
+                -0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2704": {
+            "name": "minusRow",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "1943"
+                    }
+                }
+            ],
+            "translation": [
+                -0.7610113,
+                -1.8098199,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2705": {
+            "name": "minuscolumn",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "1946"
+                    }
+                }
+            ],
+            "translation": [
+                -0.5707151,
+                -1.8098199,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "2659"
+        },
+        "2706": {
+            "name": "spanchorBackpanel",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2668"
+                    }
+                }
+            ],
+            "translation": [
+                0.0646163,
+                -2.6096627,
+                -0.4981523
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.4852565,
+                0.289165,
+                0.2749629
+            ],
+            "parent": "2659"
+        },
+        "2708": {
+            "name": "menuBackpanel",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2669"
+                    }
+                }
+            ],
+            "translation": [
+                -0.2118706,
+                -2.6103379,
+                -0.4970391
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1282556,
+                0.2868529,
+                0.0555212
+            ],
+            "parent": "2659"
+        },
+        "2707": {
+            "name": "spanchorBackpanel",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2670"
+                    }
+                }
+            ],
+            "translation": [
+                -0.0812184,
+                -2.5970189,
+                -0.4993507
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.6364287,
+                0.33,
+                0.3142857
+            ],
+            "parent": "2659"
         }
     },
     "meshes": {
@@ -28399,6 +29808,382 @@
                 "name": "37 Rimshot_po2.png",
                 "file": "images\\37 Rimshot_po2.png"
             }
+        },
+        "2615": {
+            "link": {
+                "name": "UI-Guide4096x2048mm.png",
+                "file": "images\\V1-2\\UI-Guide4096x2048mm.png"
+            }
+        },
+        "2616": {
+            "name": "icon-access",
+            "image": "f0"
+        },
+        "2617": {
+            "link": {
+                "name": "icon-access.png",
+                "file": "images\\V1-2\\icon-access.png"
+            }
+        },
+        "2618": {
+            "link": {
+                "name": "icon-account.png",
+                "file": "images\\V1-2\\icon-account.png"
+            }
+        },
+        "2619": {
+            "link": {
+                "name": "icon-grid.png",
+                "file": "images\\V1-2\\icon-grid.png"
+            }
+        },
+        "2620": {
+            "link": {
+                "name": "icon-menu.png",
+                "file": "images\\V1-2\\icon-menu.png"
+            }
+        },
+        "2621": {
+            "link": {
+                "name": "icon-multi.png",
+                "file": "images\\V1-2\\icon-multi.png"
+            }
+        },
+        "2622": {
+            "link": {
+                "name": "icon-query.png",
+                "file": "images\\V1-2\\icon-query.png"
+            }
+        },
+        "2623": {
+            "link": {
+                "name": "icon-settings.png",
+                "file": "images\\V1-2\\icon-settings.png"
+            }
+        },
+        "2624": {
+            "link": {
+                "name": "icon-sounds.png",
+                "file": "images\\V1-2\\icon-sounds.png"
+            }
+        },
+        "2625": {
+            "link": {
+                "name": "icon-play.png",
+                "file": "images\\V1-2\\icon-play.png"
+            }
+        },
+        "2626": {
+            "link": {
+                "name": "RayCastRed.png",
+                "file": "images\\V1-2\\RayCastRed.png"
+            }
+        },
+        "2627": {
+            "link": {
+                "name": "handSignal.png",
+                "file": "images\\V1-2\\handSignal.png"
+            }
+        },
+        "2628": {
+            "link": {
+                "name": "EyeSignal.png",
+                "file": "images\\V1-2\\EyeSignal.png"
+            }
+        },
+        "2629": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220233.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220233.png"
+            }
+        },
+        "2630": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220259.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220259.png"
+            }
+        },
+        "2631": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220333.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220333.png"
+            }
+        },
+        "2632": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220651.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220651.png"
+            }
+        },
+        "2633": {
+            "link": {
+                "name": "Screenshot 2025-10-08 221545.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 221545.png"
+            }
+        },
+        "2634": {
+            "link": {
+                "name": "Screenshot 2025-10-08 221523.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 221523.png"
+            }
+        },
+        "2635": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220732.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220732.png"
+            }
+        },
+        "2636": {
+            "link": {
+                "name": "Octave-12.png",
+                "file": "images\\V1-2\\Octave-12.png"
+            }
+        },
+        "2637": {
+            "link": {
+                "name": "Octave+12.png",
+                "file": "images\\V1-2\\Octave+12.png"
+            }
+        },
+        "2638": {
+            "link": {
+                "name": "greenhex.png",
+                "file": "images\\V1-2\\greenhex.png"
+            }
+        },
+        "2639": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220055.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220055.png"
+            }
+        },
+        "2640": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220133.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220133.png"
+            }
+        },
+        "2641": {
+            "link": {
+                "name": "Play.png",
+                "file": "images\\V1-2\\Play.png"
+            }
+        },
+        "2642": {
+            "link": {
+                "name": "Pause.png",
+                "file": "images\\V1-2\\Pause.png"
+            }
+        },
+        "2643": {
+            "link": {
+                "name": "Stop.png",
+                "file": "images\\V1-2\\Stop.png"
+            }
+        },
+        "2644": {
+            "link": {
+                "name": "CloseWindowPNG.png",
+                "file": "images\\V1-2\\CloseWindowPNG.png"
+            }
+        },
+        "2645": {
+            "link": {
+                "name": "Screenshot 2025-10-08 221919.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 221919.png"
+            }
+        },
+        "2646": {
+            "link": {
+                "name": "roundyellowdown.png",
+                "file": "images\\V1-2\\roundyellowdown.png"
+            }
+        },
+        "2647": {
+            "link": {
+                "name": "roundyellowleft.png",
+                "file": "images\\V1-2\\roundyellowleft.png"
+            }
+        },
+        "2648": {
+            "link": {
+                "name": "roundyellowright",
+                "file": "images\\V1-2\\roundyellowright"
+            }
+        },
+        "2649": {
+            "link": {
+                "name": "CameraMove.png",
+                "file": "images\\V1-2\\CameraMove.png"
+            }
+        },
+        "2650": {
+            "link": {
+                "name": "Screenshot 2025-10-08 221753.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 221753.png"
+            }
+        },
+        "2651": {
+            "link": {
+                "name": "roundyellowtome.png",
+                "file": "images\\V1-2\\roundyellowtome.png"
+            }
+        },
+        "2652": {
+            "link": {
+                "name": "roundyellowup",
+                "file": "images\\V1-2\\roundyellowup"
+            }
+        },
+        "2653": {
+            "link": {
+                "name": "circleyellowaway.png",
+                "file": "images\\V1-2\\circleyellowaway.png"
+            }
+        },
+        "2654": {
+            "link": {
+                "name": "Screenshot 2025-10-08 224049.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 224049.png"
+            }
+        },
+        "2655": {
+            "link": {
+                "name": "hex-key-scales-yellow.png",
+                "file": "images\\V1-2\\hex-key-scales-yellow.png"
+            }
+        },
+        "2656": {
+            "link": {
+                "name": "Screenshot 2025-10-08 224255.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 224255.png"
+            }
+        },
+        "2657": {
+            "link": {
+                "name": "Screenshot 2025-10-08 224233.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 224233.png"
+            }
+        },
+        "2658": {
+            "link": {
+                "name": "hex-fill2.png",
+                "file": "images\\V1-2\\hex-fill2.png"
+            }
+        },
+        "2659": {
+            "link": {
+                "name": "Screenshot 2025-10-08 222452.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 222452.png"
+            }
+        },
+        "2660": {
+            "link": {
+                "name": "Screenshot 2025-10-08 222541.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 222541.png"
+            }
+        },
+        "2661": {
+            "link": {
+                "name": "Screenshot 2025-10-08 222231.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 222231.png"
+            }
+        },
+        "2662": {
+            "link": {
+                "name": "Screenshot 2025-10-08 223305.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 223305.png"
+            }
+        },
+        "2663": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220528.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220528.png"
+            }
+        },
+        "2664": {
+            "link": {
+                "name": "Screenshot 2025-10-08 221613.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 221613.png"
+            }
+        },
+        "2665": {
+            "link": {
+                "name": "Screenshot 2025-10-08 221659.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 221659.png"
+            }
+        },
+        "2666": {
+            "link": {
+                "name": "PanelRowPlus.png",
+                "file": "images\\V1-2\\PanelRowPlus.png"
+            }
+        },
+        "2667": {
+            "link": {
+                "name": "PanelColumnPlus.png",
+                "file": "images\\V1-2\\PanelColumnPlus.png"
+            }
+        },
+        "2668": {
+            "link": {
+                "name": "iconRemoveRow.png",
+                "file": "images\\V1-2\\iconRemoveRow.png"
+            }
+        },
+        "2669": {
+            "link": {
+                "name": "iconRemoveColumn.png",
+                "file": "images\\V1-2\\iconRemoveColumn.png"
+            }
+        },
+        "2670": {
+            "link": {
+                "name": "Screenshot 2025-10-08 222901.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 222901.png"
+            }
+        },
+        "2671": {
+            "link": {
+                "name": "Screenshot 2025-10-08 222824.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 222824.png"
+            }
+        },
+        "2672": {
+            "link": {
+                "name": "SpanchorPanel1024x512.png",
+                "file": "images\\V1-2\\SpanchorPanel1024x512.png"
+            }
+        },
+        "2673": {
+            "link": {
+                "name": "MainPanelTemplate512x1024.png",
+                "file": "images\\V1-2\\MainPanelTemplate512x1024.png"
+            }
+        },
+        "2674": {
+            "link": {
+                "name": "UI-Guide4096x2048mm2.png",
+                "file": "images\\V1-2\\UI-Guide4096x2048mm2.png"
+            }
+        },
+        "2675": {
+            "link": {
+                "name": "UI-SpanchorPanel2056x2056.png",
+                "file": "images\\V1-2\\UI-SpanchorPanel2056x2056.png"
+            }
+        },
+        "2676": {
+            "link": {
+                "name": "UI-Guide4096x2048mm3.png",
+                "file": "images\\V1-2\\UI-Guide4096x2048mm3.png"
+            }
+        },
+        "2677": {
+            "link": {
+                "name": "menu 256x2048.png",
+                "file": "images\\V1-2\\menu 256x2048.png"
+            }
         }
     },
     "images": {
@@ -28698,6 +30483,378 @@
             "link": {
                 "name": "37 Rimshot_po2.png",
                 "file": "images\\37 Rimshot_po2.png"
+            }
+        },
+        "2614": {
+            "link": {
+                "name": "UI-Guide4096x2048mm.png",
+                "file": "images\\V1-2\\UI-Guide4096x2048mm.png"
+            }
+        },
+        "2615": {
+            "link": {
+                "name": "icon-access.png",
+                "file": "images\\V1-2\\icon-access.png"
+            }
+        },
+        "2616": {
+            "link": {
+                "name": "icon-account.png",
+                "file": "images\\V1-2\\icon-account.png"
+            }
+        },
+        "2617": {
+            "link": {
+                "name": "icon-grid.png",
+                "file": "images\\V1-2\\icon-grid.png"
+            }
+        },
+        "2618": {
+            "link": {
+                "name": "icon-menu.png",
+                "file": "images\\V1-2\\icon-menu.png"
+            }
+        },
+        "2619": {
+            "link": {
+                "name": "icon-multi.png",
+                "file": "images\\V1-2\\icon-multi.png"
+            }
+        },
+        "2620": {
+            "link": {
+                "name": "icon-query.png",
+                "file": "images\\V1-2\\icon-query.png"
+            }
+        },
+        "2621": {
+            "link": {
+                "name": "icon-settings.png",
+                "file": "images\\V1-2\\icon-settings.png"
+            }
+        },
+        "2622": {
+            "link": {
+                "name": "icon-sounds.png",
+                "file": "images\\V1-2\\icon-sounds.png"
+            }
+        },
+        "2623": {
+            "link": {
+                "name": "icon-play.png",
+                "file": "images\\V1-2\\icon-play.png"
+            }
+        },
+        "2624": {
+            "link": {
+                "name": "RayCastRed.png",
+                "file": "images\\V1-2\\RayCastRed.png"
+            }
+        },
+        "2625": {
+            "link": {
+                "name": "handSignal.png",
+                "file": "images\\V1-2\\handSignal.png"
+            }
+        },
+        "2626": {
+            "link": {
+                "name": "EyeSignal.png",
+                "file": "images\\V1-2\\EyeSignal.png"
+            }
+        },
+        "2627": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220233.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220233.png"
+            }
+        },
+        "2628": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220259.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220259.png"
+            }
+        },
+        "2629": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220333.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220333.png"
+            }
+        },
+        "2630": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220651.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220651.png"
+            }
+        },
+        "2631": {
+            "link": {
+                "name": "Screenshot 2025-10-08 221545.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 221545.png"
+            }
+        },
+        "2632": {
+            "link": {
+                "name": "Screenshot 2025-10-08 221523.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 221523.png"
+            }
+        },
+        "2633": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220732.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220732.png"
+            }
+        },
+        "2634": {
+            "link": {
+                "name": "Octave-12.png",
+                "file": "images\\V1-2\\Octave-12.png"
+            }
+        },
+        "2635": {
+            "link": {
+                "name": "Octave+12.png",
+                "file": "images\\V1-2\\Octave+12.png"
+            }
+        },
+        "2636": {
+            "link": {
+                "name": "greenhex.png",
+                "file": "images\\V1-2\\greenhex.png"
+            }
+        },
+        "2637": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220055.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220055.png"
+            }
+        },
+        "2638": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220133.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220133.png"
+            }
+        },
+        "2639": {
+            "link": {
+                "name": "Play.png",
+                "file": "images\\V1-2\\Play.png"
+            }
+        },
+        "2640": {
+            "link": {
+                "name": "Pause.png",
+                "file": "images\\V1-2\\Pause.png"
+            }
+        },
+        "2641": {
+            "link": {
+                "name": "Stop.png",
+                "file": "images\\V1-2\\Stop.png"
+            }
+        },
+        "2642": {
+            "link": {
+                "name": "CloseWindowPNG.png",
+                "file": "images\\V1-2\\CloseWindowPNG.png"
+            }
+        },
+        "2643": {
+            "link": {
+                "name": "Screenshot 2025-10-08 221919.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 221919.png"
+            }
+        },
+        "2644": {
+            "link": {
+                "name": "roundyellowdown.png",
+                "file": "images\\V1-2\\roundyellowdown.png"
+            }
+        },
+        "2645": {
+            "link": {
+                "name": "roundyellowleft.png",
+                "file": "images\\V1-2\\roundyellowleft.png"
+            }
+        },
+        "2646": {
+            "link": {
+                "name": "roundyellowright",
+                "file": "images\\V1-2\\roundyellowright"
+            }
+        },
+        "2647": {
+            "link": {
+                "name": "CameraMove.png",
+                "file": "images\\V1-2\\CameraMove.png"
+            }
+        },
+        "2648": {
+            "link": {
+                "name": "Screenshot 2025-10-08 221753.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 221753.png"
+            }
+        },
+        "2649": {
+            "link": {
+                "name": "roundyellowtome.png",
+                "file": "images\\V1-2\\roundyellowtome.png"
+            }
+        },
+        "2650": {
+            "link": {
+                "name": "roundyellowup",
+                "file": "images\\V1-2\\roundyellowup"
+            }
+        },
+        "2651": {
+            "link": {
+                "name": "circleyellowaway.png",
+                "file": "images\\V1-2\\circleyellowaway.png"
+            }
+        },
+        "2652": {
+            "link": {
+                "name": "Screenshot 2025-10-08 224049.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 224049.png"
+            }
+        },
+        "2653": {
+            "link": {
+                "name": "hex-key-scales-yellow.png",
+                "file": "images\\V1-2\\hex-key-scales-yellow.png"
+            }
+        },
+        "2654": {
+            "link": {
+                "name": "Screenshot 2025-10-08 224255.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 224255.png"
+            }
+        },
+        "2655": {
+            "link": {
+                "name": "Screenshot 2025-10-08 224233.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 224233.png"
+            }
+        },
+        "2656": {
+            "link": {
+                "name": "hex-fill2.png",
+                "file": "images\\V1-2\\hex-fill2.png"
+            }
+        },
+        "2657": {
+            "link": {
+                "name": "Screenshot 2025-10-08 222452.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 222452.png"
+            }
+        },
+        "2658": {
+            "link": {
+                "name": "Screenshot 2025-10-08 222541.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 222541.png"
+            }
+        },
+        "2659": {
+            "link": {
+                "name": "Screenshot 2025-10-08 222231.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 222231.png"
+            }
+        },
+        "2660": {
+            "link": {
+                "name": "Screenshot 2025-10-08 223305.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 223305.png"
+            }
+        },
+        "2661": {
+            "link": {
+                "name": "Screenshot 2025-10-08 220528.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 220528.png"
+            }
+        },
+        "2662": {
+            "link": {
+                "name": "Screenshot 2025-10-08 221613.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 221613.png"
+            }
+        },
+        "2663": {
+            "link": {
+                "name": "Screenshot 2025-10-08 221659.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 221659.png"
+            }
+        },
+        "2664": {
+            "link": {
+                "name": "PanelRowPlus.png",
+                "file": "images\\V1-2\\PanelRowPlus.png"
+            }
+        },
+        "2665": {
+            "link": {
+                "name": "PanelColumnPlus.png",
+                "file": "images\\V1-2\\PanelColumnPlus.png"
+            }
+        },
+        "2666": {
+            "link": {
+                "name": "iconRemoveRow.png",
+                "file": "images\\V1-2\\iconRemoveRow.png"
+            }
+        },
+        "2667": {
+            "link": {
+                "name": "iconRemoveColumn.png",
+                "file": "images\\V1-2\\iconRemoveColumn.png"
+            }
+        },
+        "2668": {
+            "link": {
+                "name": "Screenshot 2025-10-08 222901.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 222901.png"
+            }
+        },
+        "2669": {
+            "link": {
+                "name": "Screenshot 2025-10-08 222824.png",
+                "file": "images\\V1-2\\Screenshot 2025-10-08 222824.png"
+            }
+        },
+        "2670": {
+            "link": {
+                "name": "SpanchorPanel1024x512.png",
+                "file": "images\\V1-2\\SpanchorPanel1024x512.png"
+            }
+        },
+        "2671": {
+            "link": {
+                "name": "MainPanelTemplate512x1024.png",
+                "file": "images\\V1-2\\MainPanelTemplate512x1024.png"
+            }
+        },
+        "2672": {
+            "link": {
+                "name": "UI-Guide4096x2048mm2.png",
+                "file": "images\\V1-2\\UI-Guide4096x2048mm2.png"
+            }
+        },
+        "2673": {
+            "link": {
+                "name": "UI-SpanchorPanel2056x2056.png",
+                "file": "images\\V1-2\\UI-SpanchorPanel2056x2056.png"
+            }
+        },
+        "2674": {
+            "link": {
+                "name": "UI-Guide4096x2048mm3.png",
+                "file": "images\\V1-2\\UI-Guide4096x2048mm3.png"
+            }
+        },
+        "2675": {
+            "link": {
+                "name": "menu 256x2048.png",
+                "file": "images\\V1-2\\menu 256x2048.png"
             }
         }
     },
@@ -30211,47 +32368,8 @@
                 "flatTexture": "1829"
             }
         },
-        "1940": {
-            "name": "hexagonmat02",
-            "pipeline": "258",
-            "Flat": {
-                "flatTexture": "1902",
-                "color": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            }
-        },
-        "1941": {
-            "name": "hexagonmat03",
-            "pipeline": "258",
-            "Flat": {
-                "flatTexture": "1920",
-                "color": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            }
-        },
         "1942": {
             "name": "Squaremat01",
-            "pipeline": "258",
-            "Flat": {
-                "flatTexture": "1929",
-                "color": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            }
-        },
-        "1943": {
-            "name": "Squaremat02",
             "pipeline": "258",
             "Flat": {
                 "flatTexture": "1929",
@@ -30281,19 +32399,6 @@
             "pipeline": "258",
             "Flat": {
                 "flatTexture": "1929",
-                "color": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            }
-        },
-        "1946": {
-            "name": "Squaremat05",
-            "pipeline": "258",
-            "Flat": {
-                "flatTexture": "1958",
                 "color": [
                     1.0,
                     1.0,
@@ -30737,6 +32842,405 @@
             "pipeline": "258",
             "Flat": {
                 "flatTexture": "2598"
+            }
+        },
+        "2613": {
+            "name": "UI-PlaceholderFull",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2615"
+            }
+        },
+        "2614": {
+            "name": "icon-access",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2617"
+            }
+        },
+        "2617": {
+            "name": "UI-PlaceholderFull 2",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2676"
+            }
+        },
+        "2616": {
+            "name": "icon-grid",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2619"
+            }
+        },
+        "2615": {
+            "name": "icon-account",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2618"
+            }
+        },
+        "2620": {
+            "name": "icon-menu",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2620"
+            }
+        },
+        "2621": {
+            "name": "icon-multi",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2621"
+            }
+        },
+        "2622": {
+            "name": "icon-query",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2622"
+            }
+        },
+        "2623": {
+            "name": "icon-settings",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2623"
+            }
+        },
+        "2624": {
+            "name": "icon-sounds",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2624"
+            }
+        },
+        "2625": {
+            "name": "icon-play",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2625"
+            }
+        },
+        "2626": {
+            "name": "eye-interaction",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2349"
+            }
+        },
+        "2627": {
+            "name": "hand-interaction",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2348"
+            }
+        },
+        "2628": {
+            "name": "ray-interaction",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2341"
+            }
+        },
+        "2629": {
+            "name": "hex-key",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2629"
+            }
+        },
+        "2630": {
+            "name": "hex-scales",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2655"
+            }
+        },
+        "2631": {
+            "name": "hex-fill",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2658"
+            }
+        },
+        "2632": {
+            "name": "hex-oct-down",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2636"
+            }
+        },
+        "2633": {
+            "name": "hex-scale-maj",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2633"
+            }
+        },
+        "2634": {
+            "name": "hex-scale-min",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2634"
+            }
+        },
+        "2635": {
+            "name": "hex-scale-pent",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2664"
+            }
+        },
+        "2636": {
+            "name": "hex-scale-chro",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2665"
+            }
+        },
+        "2637": {
+            "name": "hex-scale-12",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2632"
+            }
+        },
+        "2638": {
+            "name": "green-hex",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2638"
+            }
+        },
+        "2639": {
+            "name": "hex-scale+12",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2637"
+            }
+        },
+        "2640": {
+            "name": "grid-delete",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2639"
+            }
+        },
+        "2641": {
+            "name": "grid-delete-all",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2640"
+            }
+        },
+        "2642": {
+            "name": "grid_Column+",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2640"
+            }
+        },
+        "2643": {
+            "name": "grid_Column-",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2640"
+            }
+        },
+        "2644": {
+            "name": "grid_Row+",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2640"
+            }
+        },
+        "2645": {
+            "name": "grid_Row-",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2640"
+            }
+        },
+        "2646": {
+            "name": "play-icon",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2641"
+            }
+        },
+        "2647": {
+            "name": "stop-icon",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2354"
+            }
+        },
+        "2648": {
+            "name": "pause-icon",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2642"
+            }
+        },
+        "2649": {
+            "name": "cameraup1",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2645"
+            }
+        },
+        "2650": {
+            "name": "cameradown1",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2646"
+            }
+        },
+        "2651": {
+            "name": "cameraleft1",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2647"
+            }
+        },
+        "2652": {
+            "name": "cameraright1",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2650"
+            }
+        },
+        "2653": {
+            "name": "cameramoveicon",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2649"
+            }
+        },
+        "2654": {
+            "name": "cameratowardsicon",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2651"
+            }
+        },
+        "2655": {
+            "name": "cameraawayicon",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2653"
+            }
+        },
+        "2656": {
+            "name": "hexKey2",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2654"
+            }
+        },
+        "2657": {
+            "name": "hexScales2",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2653"
+            }
+        },
+        "2658": {
+            "name": "hexKey2",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2654"
+            }
+        },
+        "2659": {
+            "name": "hexOff",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2659"
+            }
+        },
+        "2660": {
+            "name": "hexOn",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2660"
+            }
+        },
+        "2661": {
+            "name": "iconClose",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2661"
+            }
+        },
+        "2662": {
+            "name": "hexQuery",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2662"
+            }
+        },
+        "2663": {
+            "name": "HexEmptyBue",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2663"
+            }
+        },
+        "1940": {
+            "name": "IconAddRow",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2670"
+            }
+        },
+        "1941": {
+            "name": "IconAddColumn",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2671"
+            }
+        },
+        "1943": {
+            "name": "IconMinusRow",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2668"
+            }
+        },
+        "1946": {
+            "name": "IconMinusColumn",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2669"
+            }
+        },
+        "2668": {
+            "name": "spanchorPanelBack",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2672"
+            }
+        },
+        "2669": {
+            "name": "menuPanel",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2673"
+            }
+        },
+        "2670": {
+            "name": "UI-PlaceholderFull 2 Copy",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2676"
+            }
+        },
+        "2671": {
+            "name": "UI-IconsTemplate",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2677"
             }
         }
     },
@@ -31494,61 +33998,109 @@
         },
         "2550": {
             "link": {
-                "name": "lib\\Compatibility.frag",
+                "name": "lib\\Compatibility.glsl",
                 "file": "default"
             }
         },
         "2551": {
             "link": {
-                "name": "lib\\GI.frag",
+                "name": "lib\\GI.glsl",
                 "file": "default"
             }
         },
         "2552": {
             "link": {
-                "name": "lib\\Inputs.frag",
+                "name": "lib\\Inputs.glsl",
                 "file": "default"
             }
         },
         "2553": {
             "link": {
-                "name": "lib\\Lights.frag",
+                "name": "lib\\Lights.glsl",
                 "file": "default"
             }
         },
         "2554": {
             "link": {
-                "name": "lib\\Materials.frag",
+                "name": "lib\\Materials.glsl",
                 "file": "default"
             }
         },
         "2555": {
             "link": {
-                "name": "lib\\Packing.frag",
+                "name": "lib\\Packing.glsl",
                 "file": "default"
             }
         },
         "2556": {
             "link": {
-                "name": "lib\\Surface.frag",
+                "name": "lib\\Surface.glsl",
                 "file": "default"
             }
         },
         "2557": {
             "link": {
-                "name": "lib\\Textures.frag",
+                "name": "lib\\Textures.glsl",
                 "file": "default"
             }
         },
         "2574": {
             "link": {
-                "name": "lib\\Slug.frag",
+                "name": "lib\\Slug.frag.glsl",
                 "file": "default"
             }
         },
         "2575": {
             "link": {
-                "name": "lib\\Slug.vert",
+                "name": "lib\\Slug.vert.glsl",
+                "file": "default"
+            }
+        },
+        "2576": {
+            "link": {
+                "name": "lib\\Compatibility.frag",
+                "file": "default"
+            }
+        },
+        "2577": {
+            "link": {
+                "name": "lib\\GI.frag",
+                "file": "default"
+            }
+        },
+        "2578": {
+            "link": {
+                "name": "lib\\Inputs.frag",
+                "file": "default"
+            }
+        },
+        "2579": {
+            "link": {
+                "name": "lib\\Lights.frag",
+                "file": "default"
+            }
+        },
+        "2580": {
+            "link": {
+                "name": "lib\\Materials.frag",
+                "file": "default"
+            }
+        },
+        "2581": {
+            "link": {
+                "name": "lib\\Packing.frag",
+                "file": "default"
+            }
+        },
+        "2582": {
+            "link": {
+                "name": "lib\\Surface.frag",
+                "file": "default"
+            }
+        },
+        "2583": {
+            "link": {
+                "name": "lib\\Textures.frag",
                 "file": "default"
             }
         }
@@ -31558,8 +34110,8 @@
             "name": "Musica11y",
             "version": [
                 1,
-                2,
-                4
+                4,
+                2
             ],
             "description": "Accessible XR Music Experience \nDesign lead: Damian Mills.\nProgramming lead: Rodney McConnnell."
         },
@@ -31578,9 +34130,6 @@
                 "requiredFeatures": {
                     "anchors": false
                 }
-            },
-            "vr": {
-                "enable": true
             }
         },
         "scripting": {
@@ -31617,13 +34166,6 @@
         },
         "runtime": {
             "visualizeColliders": false
-        },
-        "ar": {
-            "enable": true
-        },
-        "vr": {
-            "leftEyeObject": "18",
-            "rightEyeObject": "19"
         }
     },
     "animations": {
@@ -32330,6 +34872,254 @@
         },
         "2615": {
             "fileName": "images/37 Rimshot_po2.png",
+            "importerName": ""
+        },
+        "2616": {
+            "fileName": "images/V1-2/UI-Guide4096x2048mm.png",
+            "importerName": ""
+        },
+        "2617": {
+            "fileName": "images/V1-2/icon-access.png",
+            "importerName": ""
+        },
+        "2618": {
+            "fileName": "images/V1-2/icon-account.png",
+            "importerName": ""
+        },
+        "2619": {
+            "fileName": "images/V1-2/icon-grid.png",
+            "importerName": ""
+        },
+        "2620": {
+            "fileName": "images/V1-2/icon-menu.png",
+            "importerName": ""
+        },
+        "2621": {
+            "fileName": "images/V1-2/icon-multi.png",
+            "importerName": ""
+        },
+        "2622": {
+            "fileName": "images/V1-2/icon-query.png",
+            "importerName": ""
+        },
+        "2623": {
+            "fileName": "images/V1-2/icon-settings.png",
+            "importerName": ""
+        },
+        "2624": {
+            "fileName": "images/V1-2/icon-sounds.png",
+            "importerName": ""
+        },
+        "2625": {
+            "fileName": "images/V1-2/icon-play.png",
+            "importerName": ""
+        },
+        "2626": {
+            "fileName": "images/V1-2/RayCastRed.png",
+            "importerName": ""
+        },
+        "2627": {
+            "fileName": "images/V1-2/handSignal.png",
+            "importerName": ""
+        },
+        "2628": {
+            "fileName": "images/V1-2/EyeSignal.png",
+            "importerName": ""
+        },
+        "2629": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 220233.png",
+            "importerName": ""
+        },
+        "2630": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 220259.png",
+            "importerName": ""
+        },
+        "2631": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 220333.png",
+            "importerName": ""
+        },
+        "2632": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 220651.png",
+            "importerName": ""
+        },
+        "2633": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 221545.png",
+            "importerName": ""
+        },
+        "2634": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 221523.png",
+            "importerName": ""
+        },
+        "2635": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 220732.png",
+            "importerName": ""
+        },
+        "2636": {
+            "fileName": "images/V1-2/Octave-12.png",
+            "importerName": ""
+        },
+        "2637": {
+            "fileName": "images/V1-2/Octave+12.png",
+            "importerName": ""
+        },
+        "2638": {
+            "fileName": "images/V1-2/greenhex.png",
+            "importerName": ""
+        },
+        "2639": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 220055.png",
+            "importerName": ""
+        },
+        "2640": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 220133.png",
+            "importerName": ""
+        },
+        "2641": {
+            "fileName": "images/V1-2/Play.png",
+            "importerName": ""
+        },
+        "2642": {
+            "fileName": "images/V1-2/Pause.png",
+            "importerName": ""
+        },
+        "2643": {
+            "fileName": "images/V1-2/Stop.png",
+            "importerName": ""
+        },
+        "2644": {
+            "fileName": "images/V1-2/CloseWindowPNG.png",
+            "importerName": ""
+        },
+        "2645": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 221919.png",
+            "importerName": ""
+        },
+        "2646": {
+            "fileName": "images/V1-2/roundyellowdown.png",
+            "importerName": ""
+        },
+        "2647": {
+            "fileName": "images/V1-2/roundyellowleft.png",
+            "importerName": ""
+        },
+        "2648": {
+            "fileName": "images/V1-2/roundyellowright",
+            "importerName": ""
+        },
+        "2649": {
+            "fileName": "images/V1-2/CameraMove.png",
+            "importerName": ""
+        },
+        "2650": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 221753.png",
+            "importerName": ""
+        },
+        "2651": {
+            "fileName": "images/V1-2/roundyellowtome.png",
+            "importerName": ""
+        },
+        "2652": {
+            "fileName": "images/V1-2/roundyellowup",
+            "importerName": ""
+        },
+        "2653": {
+            "fileName": "images/V1-2/circleyellowaway.png",
+            "importerName": ""
+        },
+        "2654": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 224049.png",
+            "importerName": ""
+        },
+        "2655": {
+            "fileName": "images/V1-2/hex-key-scales-yellow.png",
+            "importerName": ""
+        },
+        "2656": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 224255.png",
+            "importerName": ""
+        },
+        "2657": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 224233.png",
+            "importerName": ""
+        },
+        "2658": {
+            "fileName": "images/V1-2/hex-fill2.png",
+            "importerName": ""
+        },
+        "2659": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 222452.png",
+            "importerName": ""
+        },
+        "2660": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 222541.png",
+            "importerName": ""
+        },
+        "2661": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 222231.png",
+            "importerName": ""
+        },
+        "2662": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 223305.png",
+            "importerName": ""
+        },
+        "2663": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 220528.png",
+            "importerName": ""
+        },
+        "2664": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 221613.png",
+            "importerName": ""
+        },
+        "2665": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 221659.png",
+            "importerName": ""
+        },
+        "2666": {
+            "fileName": "images/V1-2/PanelRowPlus.png",
+            "importerName": ""
+        },
+        "2667": {
+            "fileName": "images/V1-2/PanelColumnPlus.png",
+            "importerName": ""
+        },
+        "2668": {
+            "fileName": "images/V1-2/iconRemoveRow.png",
+            "importerName": ""
+        },
+        "2669": {
+            "fileName": "images/V1-2/iconRemoveColumn.png",
+            "importerName": ""
+        },
+        "2670": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 222901.png",
+            "importerName": ""
+        },
+        "2671": {
+            "fileName": "images/V1-2/Screenshot 2025-10-08 222824.png",
+            "importerName": ""
+        },
+        "2672": {
+            "fileName": "images/V1-2/SpanchorPanel1024x512.png",
+            "importerName": ""
+        },
+        "2673": {
+            "fileName": "images/V1-2/MainPanelTemplate512x1024.png",
+            "importerName": ""
+        },
+        "2674": {
+            "fileName": "images/V1-2/UI-Guide4096x2048mm2.png",
+            "importerName": ""
+        },
+        "2675": {
+            "fileName": "images/V1-2/UI-SpanchorPanel2056x2056.png",
+            "importerName": ""
+        },
+        "2676": {
+            "fileName": "images/V1-2/UI-Guide4096x2048mm3.png",
+            "importerName": ""
+        },
+        "2677": {
+            "fileName": "images/V1-2/menu 256x2048.png",
             "importerName": ""
         }
     },

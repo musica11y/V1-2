@@ -1826,8 +1826,8 @@ var require_howler = __commonJS({
         }
         var iOS = /iP(hone|od|ad)/.test(Howler2._navigator && Howler2._navigator.platform);
         var appVersion = Howler2._navigator && Howler2._navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/);
-        var version = appVersion ? parseInt(appVersion[1], 10) : null;
-        if (iOS && version && version < 9) {
+        var version2 = appVersion ? parseInt(appVersion[1], 10) : null;
+        if (iOS && version2 && version2 < 9) {
           var safari = /safari/.test(Howler2._navigator && Howler2._navigator.userAgent.toLowerCase());
           if (Howler2._navigator && !safari) {
             Howler2.usingWebAudio = false;
@@ -4001,12 +4001,14 @@ __export(dist_exports, {
   Alignment: () => Alignment,
   Animation: () => Animation,
   AnimationComponent: () => AnimationComponent,
+  AnimationGraph: () => AnimationGraph,
   AnimationState: () => AnimationState,
   ArrayBufferSink: () => ArrayBufferSink,
   ArrayBufferSource: () => ArrayBufferSource,
   BitSet: () => BitSet,
   BrokenComponent: () => BrokenComponent,
-  CBOR: () => CBOR,
+  CBORReader: () => CBORReader,
+  CBORType: () => CBORType,
   ChunkedSceneLoadSink: () => ChunkedSceneLoadSink,
   Collider: () => Collider,
   CollisionComponent: () => CollisionComponent,
@@ -4042,8 +4044,10 @@ __export(dist_exports, {
   MeshManager: () => MeshManager,
   MeshSkinningType: () => MeshSkinningType,
   MorphTargets: () => MorphTargets,
-  Object: () => Object3D,
-  Object3D: () => Object3D,
+  Object: () => Object3D2,
+  Object3D: () => Object3D2,
+  ParticleEffect: () => ParticleEffect,
+  ParticleEffectComponent: () => ParticleEffectComponent,
   PhysXComponent: () => PhysXComponent,
   Physics: () => Physics,
   Prefab: () => Prefab,
@@ -4068,23 +4072,27 @@ __export(dist_exports, {
   Type: () => Type,
   VerticalAlignment: () => VerticalAlignment,
   ViewComponent: () => ViewComponent,
-  WASM: () => WASM2,
+  WASM: () => WASM,
+  WebXR: () => WebXR,
   WonderlandEngine: () => WonderlandEngine,
-  XR: () => XR,
+  XRSessionState: () => XRSessionState,
   capitalizeFirstUTF8: () => capitalizeFirstUTF8,
   checkRuntimeCompatibility: () => checkRuntimeCompatibility,
   clamp: () => clamp,
   createDestroyedProxy: () => createDestroyedProxy2,
+  decode: () => decode,
   defaultPropertyCloner: () => defaultPropertyCloner,
   enumerable: () => enumerable,
   fetchStreamWithProgress: () => fetchStreamWithProgress,
   fetchWithProgress: () => fetchWithProgress,
   getBaseUrl: () => getBaseUrl,
   getFilename: () => getFilename,
+  getType: () => getType,
   inheritProperties: () => inheritProperties,
   isImageLike: () => isImageLike,
   isNumber: () => isNumber,
   isString: () => isString,
+  isUndefined: () => isUndefined,
   loadRuntime: () => loadRuntime,
   math: () => math,
   nativeProperty: () => nativeProperty,
@@ -4099,7 +4107,6 @@ var __decorateClass = (decorators, target, key, kind) => {
     (decorator = decorators[i]) && (result = (kind ? decorator(target, key, result) : decorator(result)) || result);
   return kind && result && __defProp2(target, key, result), result;
 };
-var simd = async () => WebAssembly.validate(new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0, 1, 5, 1, 96, 0, 1, 123, 3, 2, 1, 0, 10, 10, 1, 8, 0, 65, 0, 253, 15, 253, 98, 11]));
 var threads = () => (async (e) => {
   try {
     return typeof MessageChannel < "u" && new MessageChannel().port1.postMessage(new SharedArrayBuffer(1)), WebAssembly.validate(e);
@@ -4107,7 +4114,7 @@ var threads = () => (async (e) => {
     return false;
   }
 })(new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0, 1, 4, 1, 96, 0, 0, 3, 2, 1, 0, 5, 4, 1, 3, 1, 1, 10, 11, 1, 9, 0, 65, 0, 254, 16, 2, 0, 26, 11]));
-var Type = ((Type2) => (Type2[Type2.Native = 0] = "Native", Type2[Type2.Bool = 1] = "Bool", Type2[Type2.Int = 2] = "Int", Type2[Type2.Float = 3] = "Float", Type2[Type2.String = 4] = "String", Type2[Type2.Enum = 5] = "Enum", Type2[Type2.Object = 6] = "Object", Type2[Type2.Mesh = 7] = "Mesh", Type2[Type2.Texture = 8] = "Texture", Type2[Type2.Material = 9] = "Material", Type2[Type2.Animation = 10] = "Animation", Type2[Type2.Skin = 11] = "Skin", Type2[Type2.Color = 12] = "Color", Type2[Type2.Vector2 = 13] = "Vector2", Type2[Type2.Vector3 = 14] = "Vector3", Type2[Type2.Vector4 = 15] = "Vector4", Type2))(Type || {});
+var Type = ((Type2) => (Type2[Type2.Native = 0] = "Native", Type2[Type2.Bool = 1] = "Bool", Type2[Type2.Int = 2] = "Int", Type2[Type2.Float = 3] = "Float", Type2[Type2.String = 4] = "String", Type2[Type2.Enum = 5] = "Enum", Type2[Type2.Object = 6] = "Object", Type2[Type2.Mesh = 7] = "Mesh", Type2[Type2.Texture = 8] = "Texture", Type2[Type2.Material = 9] = "Material", Type2[Type2.Animation = 10] = "Animation", Type2[Type2.Skin = 11] = "Skin", Type2[Type2.Color = 12] = "Color", Type2[Type2.Vector2 = 13] = "Vector2", Type2[Type2.Vector3 = 14] = "Vector3", Type2[Type2.Vector4 = 15] = "Vector4", Type2[Type2.Array = 16] = "Array", Type2[Type2.Record = 17] = "Record", Type2[Type2.ParticleEffect = 18] = "ParticleEffect", Type2[Type2.Count = 19] = "Count", Type2))(Type || {});
 var DefaultPropertyCloner = class {
   clone(type, value) {
     switch (type) {
@@ -4115,7 +4122,18 @@ var DefaultPropertyCloner = class {
       case 13:
       case 14:
       case 15:
+      case 16:
         return value.slice();
+      case 17: {
+        if (!value || !value.constructor)
+          return value;
+        let RecordClass = value.constructor, result = new RecordClass();
+        for (let key in RecordClass.Properties) {
+          let prop = RecordClass.Properties[key];
+          result[key] = this.clone(prop.type, value[key]);
+        }
+        return result;
+      }
       default:
         return value;
     }
@@ -4144,6 +4162,8 @@ var Property = { bool(defaultValue = false) {
   return { type: 10, default: null, required: opts?.required ?? false };
 }, skin(opts) {
   return { type: 11, default: null, required: opts?.required ?? false };
+}, particleEffect(opts) {
+  return { type: 18, default: null, required: opts?.required ?? false };
 }, color(r = 0, g = 0, b = 0, a = 1) {
   return { type: 12, default: [r, g, b, a] };
 }, vector2(x = 0, y = 0) {
@@ -4152,6 +4172,10 @@ var Property = { bool(defaultValue = false) {
   return { type: 14, default: [x, y, z] };
 }, vector4(x = 0, y = 0, z = 0, w = 0) {
   return { type: 15, default: [x, y, z, w] };
+}, record(definition) {
+  return { type: 17, record: definition, default: new definition() };
+}, array(element) {
+  return { type: 16, element, default: void 0 };
 } };
 function propertyDecorator(data) {
   return function(target, propertyKey) {
@@ -4384,6 +4408,241 @@ var ResourceManager = class {
     }
   }
 };
+function decode(data, tagger = (_, value) => value, options = {}) {
+  let reader = new CBORReader(data);
+  reader.tagger = tagger, options.dictionary && (reader.dictionary = options.dictionary);
+  let ret = reader.decodeItem();
+  if (reader.offset !== data.byteLength)
+    throw new Error("CBORError: Remaining bytes");
+  return ret;
+}
+var CBORType = ((CBORType2) => (CBORType2[CBORType2.Array = 0] = "Array", CBORType2[CBORType2.Record = 1] = "Record", CBORType2[CBORType2.Constant = 2] = "Constant", CBORType2[CBORType2.Native = 3] = "Native", CBORType2))(CBORType || {});
+function getType(typeInfo) {
+  let majorType = typeInfo >> 5, additionalInformation = typeInfo & 31;
+  switch (majorType) {
+    case 4:
+      return 0;
+    case 5:
+      return 1;
+    case 7:
+      return 2;
+  }
+  return 3;
+}
+function isUndefined(type, length5) {
+  return type === 2 && length5 === 23;
+}
+var CBORReader = class {
+  dataView;
+  data;
+  offset;
+  tagger = (_, value) => value;
+  dictionary = "object";
+  constructor(data) {
+    this.dataView = new DataView(data.buffer, data.byteOffset, data.byteLength), this.data = data, this.offset = 0;
+  }
+  readTypeInfo() {
+    return this.readUint8();
+  }
+  readArrayLength(typeInfo) {
+    let majorType = typeInfo >> 5, additionalInformation = typeInfo & 31, length5 = this.readLength(additionalInformation);
+    if (length5 < 0 && (majorType < 2 || 6 < majorType))
+      throw new Error("CBORError: Invalid length");
+    return length5;
+  }
+  readItem(typeInfo, inputLen = null) {
+    let majorType = typeInfo >> 5, additionalInformation = typeInfo & 31, i;
+    if (majorType === 7)
+      switch (additionalInformation) {
+        case 25:
+          return this.readFloat16();
+        case 26:
+          return this.readFloat32();
+        case 27:
+          return this.readFloat64();
+      }
+    let length5 = inputLen === null ? this.readLength(additionalInformation) : inputLen;
+    if (length5 < 0 && (majorType < 2 || 6 < majorType))
+      throw new Error("CBORError: Invalid length");
+    switch (majorType) {
+      case 0:
+        return length5;
+      case 1:
+        return typeof length5 == "number" ? -1 - length5 : -1n - length5;
+      case 2: {
+        if (length5 < 0) {
+          let elements = [], fullArrayLength = 0;
+          for (; (length5 = this.readIndefiniteStringLength(majorType)) >= 0; )
+            fullArrayLength += length5, elements.push(this.readArrayBuffer(length5));
+          let fullArray = new Uint8Array(fullArrayLength), fullArrayOffset = 0;
+          for (i = 0; i < elements.length; ++i)
+            fullArray.set(elements[i], fullArrayOffset), fullArrayOffset += elements[i].length;
+          return fullArray;
+        }
+        return this.readArrayBuffer(length5).slice();
+      }
+      case 3: {
+        let utf16data = [];
+        if (length5 < 0)
+          for (; (length5 = this.readIndefiniteStringLength(majorType)) >= 0; )
+            this.appendUtf16Data(utf16data, length5);
+        else
+          this.appendUtf16Data(utf16data, length5);
+        let string = "", DECODE_CHUNK_SIZE = 8192;
+        for (i = 0; i < utf16data.length; i += DECODE_CHUNK_SIZE)
+          string += String.fromCharCode.apply(null, utf16data.slice(i, i + DECODE_CHUNK_SIZE));
+        return string;
+      }
+      case 4: {
+        let retArray;
+        if (length5 < 0)
+          for (retArray = []; !this.readBreak(); )
+            retArray.push(this.decodeItem());
+        else
+          for (retArray = new Array(length5), i = 0; i < length5; ++i)
+            retArray[i] = this.decodeItem();
+        return retArray;
+      }
+      case 5: {
+        if (this.dictionary === "map") {
+          let retMap = /* @__PURE__ */ new Map();
+          for (i = 0; i < length5 || length5 < 0 && !this.readBreak(); ++i) {
+            let key = this.decodeItem();
+            if (retMap.has(key))
+              throw new Error("CBORError: Duplicate key encountered");
+            retMap.set(key, this.decodeItem());
+          }
+          return retMap;
+        }
+        let retObject = {};
+        for (i = 0; i < length5 || length5 < 0 && !this.readBreak(); ++i) {
+          let key = this.decodeItem();
+          if (Object.prototype.hasOwnProperty.call(retObject, key))
+            throw new Error("CBORError: Duplicate key encountered");
+          retObject[key] = this.decodeItem();
+        }
+        return retObject;
+      }
+      case 6: {
+        let value = this.decodeItem(), tag = length5;
+        if (value instanceof Uint8Array)
+          switch (tag) {
+            case 2:
+            case 3:
+              let num = value.reduce((acc, n) => (acc << 8n) + BigInt(n), 0n);
+              return tag == 3 && (num = -1n - num), num;
+            case 64:
+              return value;
+            case 72:
+              return new Int8Array(value.buffer);
+            case 69:
+              return new Uint16Array(value.buffer);
+            case 77:
+              return new Int16Array(value.buffer);
+            case 70:
+              return new Uint32Array(value.buffer);
+            case 78:
+              return new Int32Array(value.buffer);
+            case 71:
+              return new BigUint64Array(value.buffer);
+            case 79:
+              return new BigInt64Array(value.buffer);
+            case 85:
+              return new Float32Array(value.buffer);
+            case 86:
+              return new Float64Array(value.buffer);
+          }
+        return this.tagger(tag, value);
+      }
+      case 7:
+        switch (length5) {
+          case 20:
+            return false;
+          case 21:
+            return true;
+          case 22:
+            return null;
+          case 23:
+            return;
+          default:
+            return length5;
+        }
+    }
+  }
+  decodeItem() {
+    let initialByte = this.readUint8();
+    return this.readItem(initialByte);
+  }
+  readArrayBuffer(length5) {
+    return this.commitRead(length5, this.data.subarray(this.offset, this.offset + length5));
+  }
+  readFloat16() {
+    let POW_2_24 = 5960464477539063e-23, tempArrayBuffer = new ArrayBuffer(4), tempDataView = new DataView(tempArrayBuffer), value = this.readUint16(), sign = value & 32768, exponent = value & 31744, fraction = value & 1023;
+    if (exponent === 31744)
+      exponent = 261120;
+    else if (exponent !== 0)
+      exponent += 114688;
+    else if (fraction !== 0)
+      return (sign ? -1 : 1) * fraction * POW_2_24;
+    return tempDataView.setUint32(0, sign << 16 | exponent << 13 | fraction << 13), tempDataView.getFloat32(0);
+  }
+  readFloat32() {
+    return this.commitRead(4, this.dataView.getFloat32(this.offset));
+  }
+  readFloat64() {
+    return this.commitRead(8, this.dataView.getFloat64(this.offset));
+  }
+  readUint8() {
+    return this.commitRead(1, this.data[this.offset]);
+  }
+  readUint16() {
+    return this.commitRead(2, this.dataView.getUint16(this.offset));
+  }
+  readUint32() {
+    return this.commitRead(4, this.dataView.getUint32(this.offset));
+  }
+  readUint64() {
+    return this.commitRead(8, this.dataView.getBigUint64(this.offset));
+  }
+  readBreak() {
+    return this.data[this.offset] !== 255 ? false : (this.offset += 1, true);
+  }
+  readLength(additionalInformation) {
+    if (additionalInformation < 24)
+      return additionalInformation;
+    if (additionalInformation === 24)
+      return this.readUint8();
+    if (additionalInformation === 25)
+      return this.readUint16();
+    if (additionalInformation === 26)
+      return this.readUint32();
+    if (additionalInformation === 27) {
+      let integer = this.readUint64();
+      return integer <= Number.MAX_SAFE_INTEGER ? Number(integer) : integer;
+    }
+    if (additionalInformation === 31)
+      return -1;
+    throw new Error("CBORError: Invalid length encoding");
+  }
+  readIndefiniteStringLength(majorType) {
+    let initialByte = this.readUint8();
+    if (initialByte === 255)
+      return -1;
+    let length5 = this.readLength(initialByte & 31);
+    if (length5 < 0 || initialByte >> 5 !== majorType)
+      throw new Error("CBORError: Invalid indefinite length element");
+    return Number(length5);
+  }
+  appendUtf16Data(utf16data, length5) {
+    for (let i = 0; i < length5; ++i) {
+      let value = this.readUint8();
+      value & 128 && (value < 224 ? (value = (value & 31) << 6 | this.readUint8() & 63, length5 -= 1) : value < 240 ? (value = (value & 15) << 12 | (this.readUint8() & 63) << 6 | this.readUint8() & 63, length5 -= 2) : (value = (value & 7) << 18 | (this.readUint8() & 63) << 12 | (this.readUint8() & 63) << 6 | this.readUint8() & 63, length5 -= 3)), value < 65536 ? utf16data.push(value) : (value -= 65536, utf16data.push(55296 | value >> 10), utf16data.push(56320 | value & 1023));
+    }
+  }
+  commitRead(length5, value) {
+    return this.offset += length5, value;
+  }
+};
 var ComponentManagers = class {
   animation = -1;
   collision = -1;
@@ -4396,11 +4655,11 @@ var ComponentManagers = class {
   _scene;
   constructor(scene) {
     this._scene = scene;
-    let wasm = this._scene.engine.wasm, native = [AnimationComponent, CollisionComponent, InputComponent, LightComponent, MeshComponent, PhysXComponent, TextComponent, ViewComponent];
+    let wasm = this._scene.engine.wasm, native = [AnimationComponent, CollisionComponent, InputComponent, LightComponent, MeshComponent, PhysXComponent, TextComponent, ViewComponent, ParticleEffectComponent];
     this._cache = new Array(native.length), this._constructors = new Array(native.length);
     for (let Class of native) {
       let ptr2 = wasm.tempUTF8(Class.TypeName), manager = wasm._wl_scene_get_component_manager_index(scene._index, ptr2);
-      this._constructors, this._constructors[manager] = Class, this._cache[manager] = [], this._nativeManagers.set(Class.TypeName, manager);
+      this._constructors[manager] = Class, this._cache[manager] = [], this._nativeManagers.set(Class.TypeName, manager);
     }
     this.animation = this._nativeManagers.get(AnimationComponent.TypeName), this.collision = this._nativeManagers.get(CollisionComponent.TypeName), this.physx = this._nativeManagers.get(PhysXComponent.TypeName), this.view = this._nativeManagers.get(ViewComponent.TypeName);
     let ptr = wasm.tempUTF8("js");
@@ -4423,6 +4682,24 @@ var ComponentManagers = class {
       log.error(2, `Exception during ${component.type} resetProperties() on object ${component.object.name}`), log.error(2, e);
     }
     return this._scene._jsComponents[index] = component, this._cache[this.js][id] = component, component;
+  }
+  components(type, active) {
+    return this.componentsFromTypename(type.TypeName, active);
+  }
+  componentsFromTypename(typename, active) {
+    let wasm = this._scene.engine.wasm, manager = this.getNativeManager(typename) ?? this.js, subTypeIndex = manager === this.js ? wasm._componentTypeIndices[typename] ?? 0 : 0, maxRead = wasm._tempMemSize / 4, components = [], read = 0, offset2 = 0;
+    for (; read = wasm._wl_scene_get_components(this._scene._index, manager, subTypeIndex, active, offset2, maxRead, wasm._tempMem); ) {
+      for (let i = 0; i < read; ++i) {
+        let id = wasm._tempMemUint32[i];
+        components.push(this.wrapAny(manager, id));
+      }
+      offset2 += maxRead;
+    }
+    return components;
+  }
+  componentAt(type, index) {
+    let wasm = this._scene.engine.wasm, manager = this.getNativeManager(type.TypeName), id = wasm._wl_scene_get_component(this._scene._index, manager, index);
+    return this.wrapAny(manager, id);
   }
   get(manager, id) {
     return this._cache[manager][id] ?? null;
@@ -4468,9 +4745,161 @@ var ComponentManagers = class {
     instance._id = -1, instance._localId = -1, instance._manager = -1, this._scene.engine.erasePrototypeOnDestroy && instance && Object.setPrototypeOf(instance, DestroyedComponentInstance), this._cache[manager][localId] = null;
   }
   get managersCount() {
-    return this._nativeManagers.size + 1;
+    return this._scene.engine.wasm._wl_scene_get_component_manager_count(this._scene._index);
   }
 };
+function resetComponentProperties(record) {
+  let properties = record.constructor.Properties;
+  if (properties)
+    for (let name in properties) {
+      let property2 = properties[name], cloner = property2.cloner ?? defaultPropertyCloner;
+      record[name] = cloner.clone(property2.type, property2.default);
+    }
+}
+function setupComponentClass(ctor) {
+  inheritProperties(ctor);
+  for (let name in ctor.Properties) {
+    let prop = ctor.Properties[name], record = null;
+    switch (prop.type) {
+      case 17:
+        record = prop.record;
+        break;
+      case 16:
+        record = prop.element?.record;
+        break;
+      default:
+        break;
+    }
+    record && !record._propertyOrder && setupComponentClass(record);
+  }
+  _setupDefaults(ctor), _setPropertyOrder(ctor);
+}
+var ComponentPropertyDecoder = class {
+  scene;
+  offsets;
+  constructor(scene, offsets) {
+    this.scene = scene, this.offsets = offsets;
+  }
+  decode(cbor, component) {
+    let ctor = component.constructor;
+    ctor._propertyOrder || setupComponentClass(ctor);
+    let typeInfo = cbor.readTypeInfo();
+    if (ctor === BrokenComponent)
+      return cbor.readItem(typeInfo);
+    if (getType(typeInfo) !== 0)
+      return this._error(`${component} parameters not encoded as an array.`), cbor.readItem(typeInfo);
+    let paramNames = ctor._propertyOrder, count = cbor.readArrayLength(typeInfo);
+    if (count !== paramNames.length)
+      return this._error(`${component} has ${count} parameters encoded, but expected ${paramNames.length}`), cbor.readItem(typeInfo, count);
+    for (let j2 = 0; j2 < count; ++j2) {
+      let name = paramNames[j2], property2 = ctor.Properties[name];
+      component[name] = this.decodeProperty(cbor, name, property2);
+    }
+  }
+  decodeProperty(cbor, name, property2) {
+    let typeInfo = cbor.readTypeInfo();
+    if (property2.type === 17)
+      return this.decodeRecordProperty(cbor, name, property2, typeInfo);
+    if (property2.type === 16)
+      return this.decodeArrayProperty(cbor, name, property2, typeInfo);
+    let value = cbor.readItem(typeInfo);
+    if (value === void 0)
+      return value = (property2.cloner ?? defaultPropertyCloner).clone(property2.type, property2.default), value;
+    typeof value == "number" && (value += this.offsets[property2.type]);
+    let engine2 = this.scene.engine;
+    switch (property2.type) {
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 13:
+      case 14:
+      case 15:
+        return value;
+      case 6: {
+        let wasm = engine2.wasm;
+        return value ? this.scene.wrap(wasm._wl_object_id(this.scene._index, value)) : null;
+      }
+      case 7:
+        return engine2.meshes.wrap(value);
+      case 8:
+        return engine2.textures.wrap(value);
+      case 9:
+        return engine2.materials.wrap(value);
+      case 18:
+        return engine2.particleEffects.wrap(value);
+      case 10:
+        return this.scene.animations.wrap(value);
+      case 11:
+        return this.scene.skins.wrap(value);
+      case 12: {
+        let max3 = (1 << value.BYTES_PER_ELEMENT * 8) - 1;
+        return Float32Array.from(value, (f, _) => f / max3);
+      }
+    }
+  }
+  decodeRecordProperty(cbor, name, property2, typeInfo) {
+    let cborType = getType(typeInfo);
+    if (cborType !== 0 && cborType !== 2)
+      return this._error(`Record parameter '${name}' not serialized as an array`), cbor.readItem(typeInfo), null;
+    let record = property2.record;
+    if (!record)
+      return this._error(`Record parameter '${name}' .record is undefined`), cbor.readItem(typeInfo), null;
+    record._propertyOrder || setupComponentClass(record);
+    let propertyOrder = record._propertyOrder, count = cbor.readArrayLength(typeInfo);
+    if (isUndefined(cborType, count))
+      return (property2.cloner ?? defaultPropertyCloner).clone(property2.type, property2.default);
+    let result = new record();
+    if (count !== propertyOrder.length) {
+      let propsCount = propertyOrder.length;
+      return this._error(`Record parameter ${name} has ${count} sub-parameters encoded, but expected ${propsCount}`), cbor.readItem(typeInfo, count), result;
+    }
+    let order = record._propertyOrder;
+    for (let i = 0; i < order.length; ++i) {
+      let key = order[i], prop = record.Properties[key];
+      result[key] = this.decodeProperty(cbor, key, prop);
+    }
+    return result;
+  }
+  decodeArrayProperty(cbor, name, property2, typeInfo) {
+    let log = this.scene.engine.log, cborType = getType(typeInfo);
+    if (cborType !== 0 && cborType !== 2)
+      return this._error(`Array parameter '${name}' not serialized as an array`), cbor.readItem(typeInfo), [];
+    if (!property2.element)
+      return this._error(`Array parameter '${name}' .element property is undefined`), cbor.readItem(typeInfo), [];
+    let count = cbor.readArrayLength(typeInfo);
+    if (isUndefined(cborType, count))
+      return [];
+    let result = new Array(count);
+    for (let i = 0; i < count; ++i)
+      result[i] = this.decodeProperty(cbor, name, property2.element);
+    return result;
+  }
+  _error(msg) {
+    this.scene.engine.log.error(0, msg);
+  }
+};
+var _componentDefaults = /* @__PURE__ */ new Map([[1, false], [2, 0], [3, 0], [4, ""], [5, void 0], [6, null], [7, null], [8, null], [9, null], [10, null], [11, null], [18, null], [12, Float32Array.from([0, 0, 0, 1])], [13, Float32Array.from([0, 0])], [14, Float32Array.from([0, 0, 0])], [15, Float32Array.from([0, 0, 0, 0])], [17, void 0], [16, []]]);
+function _setupDefaults(ctor) {
+  for (let name in ctor.Properties) {
+    let p = ctor.Properties[name];
+    if (p.type === 5)
+      p.values?.length ? (typeof p.default != "number" && (p.default = p.values.indexOf(p.default)), (p.default < 0 || p.default >= p.values.length) && (p.default = 0)) : p.default = void 0;
+    else if ((p.type === 12 || p.type === 13 || p.type === 14 || p.type === 15) && Array.isArray(p.default))
+      p.default = Float32Array.from(p.default);
+    else if (p.type === 17 && p.record)
+      p.default = new p.record(), resetComponentProperties(p.default);
+    else if (p.default === void 0) {
+      let cloner = p.cloner ?? defaultPropertyCloner;
+      p.default = cloner.clone(p.type, _componentDefaults.get(p.type));
+    }
+    ctor.prototype[name] = p.default;
+  }
+}
+function _setPropertyOrder(ctor) {
+  ctor._propertyOrder = ctor.hasOwnProperty("Properties") ? Object.keys(ctor.Properties).sort() : [];
+}
 var FetchProgressTransformer = class {
   #progress = 0;
   #callback;
@@ -4541,9 +4970,7 @@ function getFilename(url) {
 }
 function onImageReady(image) {
   return new Promise((res, rej) => {
-    if (image instanceof HTMLCanvasElement)
-      res(image);
-    else if (image instanceof HTMLVideoElement) {
+    if (image instanceof HTMLVideoElement) {
       if (image.readyState >= 2) {
         res(image);
         return;
@@ -4552,7 +4979,7 @@ function onImageReady(image) {
         image.readyState >= 2 && res(image);
       }, { once: true });
       return;
-    } else if (image.complete) {
+    } else if (!(image instanceof HTMLImageElement) || image.complete) {
       res(image);
       return;
     }
@@ -4595,11 +5022,12 @@ var Prefab = class _Prefab {
   _jsComponents = [];
   _pxCallbacks = /* @__PURE__ */ new Map();
   _animations;
+  _animationGraphs;
   _skins;
   _objectCache = [];
   _pendingDestroy = 0;
   constructor(engine2, index) {
-    this._engine = engine2, this._index = index, this._components = new ComponentManagers(this), this._animations = new ResourceManager(this, Animation), this._skins = new ResourceManager(this, Skin);
+    this._engine = engine2, this._index = index, this._components = new ComponentManagers(this), this._animations = new ResourceManager(this, Animation), this._animationGraphs = new ResourceManager(this, AnimationGraph), this._skins = new ResourceManager(this, Skin);
   }
   addChild() {
     return this.wrap(0).addChild();
@@ -4617,10 +5045,12 @@ var Prefab = class _Prefab {
   }
   reserveObjects(objectCount, componentCountPerType) {
     let wasm = this.engine.wasm;
-    componentCountPerType = componentCountPerType || {};
-    let names = Object.keys(componentCountPerType), countsPerTypeIndex = wasm._tempMemInt;
-    for (let i = 0; i < this._components.managersCount; ++i)
+    if (!componentCountPerType)
+      return;
+    let countsPerTypeIndex = wasm._tempMemInt, managerCount = this._components.managersCount;
+    for (let i = 0; i < managerCount; ++i)
       countsPerTypeIndex[i] = 0;
+    let names = Object.keys(componentCountPerType);
     for (let name of names) {
       let count = componentCountPerType[name], nativeIndex = this._components.getNativeManager(name);
       countsPerTypeIndex[nativeIndex !== null ? nativeIndex : this._components.js] += count;
@@ -4629,6 +5059,14 @@ var Prefab = class _Prefab {
   }
   getChildren(out = new Array(this.childrenCount)) {
     return this.wrap(0).getChildren(out);
+  }
+  getComponents(typeOrClass) {
+    let typename = isString(typeOrClass) ? typeOrClass : typeOrClass.TypeName;
+    return this._components.componentsFromTypename(typename, false);
+  }
+  getActiveComponents(typeOrClass) {
+    let typename = isString(typeOrClass) ? typeOrClass : typeOrClass.TypeName;
+    return this._components.componentsFromTypename(typename, true);
   }
   get children() {
     return this.wrap(0).children;
@@ -4648,7 +5086,7 @@ var Prefab = class _Prefab {
   }
   wrap(objectId) {
     let cache = this._objectCache;
-    return cache[objectId] || (cache[objectId] = new Object3D(this, objectId));
+    return cache[objectId] || (cache[objectId] = new Object3D2(this, objectId));
   }
   destroy() {
     if (this._pendingDestroy > 0)
@@ -4668,6 +5106,9 @@ var Prefab = class _Prefab {
   }
   get animations() {
     return this._animations;
+  }
+  get animationsGraphs() {
+    return this._animationGraphs;
   }
   get skins() {
     return this._skins;
@@ -4720,9 +5161,9 @@ var Collider = ((Collider2) => (Collider2[Collider2.Sphere = 0] = "Sphere", Coll
 var Alignment = ((Alignment2) => (Alignment2[Alignment2.Left = 0] = "Left", Alignment2[Alignment2.Center = 1] = "Center", Alignment2[Alignment2.Right = 2] = "Right", Alignment2))(Alignment || {});
 var VerticalAlignment = ((VerticalAlignment2) => (VerticalAlignment2[VerticalAlignment2.Line = 0] = "Line", VerticalAlignment2[VerticalAlignment2.Middle = 1] = "Middle", VerticalAlignment2[VerticalAlignment2.Top = 2] = "Top", VerticalAlignment2[VerticalAlignment2.Bottom = 3] = "Bottom", VerticalAlignment2))(VerticalAlignment || {});
 var Justification = VerticalAlignment;
-var TextEffect = ((TextEffect2) => (TextEffect2[TextEffect2.None = 0] = "None", TextEffect2[TextEffect2.Outline = 1] = "Outline", TextEffect2))(TextEffect || {});
+var TextEffect = ((TextEffect2) => (TextEffect2[TextEffect2.None = 0] = "None", TextEffect2[TextEffect2.Outline = 1] = "Outline", TextEffect2[TextEffect2.Shadow = 2] = "Shadow", TextEffect2))(TextEffect || {});
 var TextWrapMode = ((TextWrapMode2) => (TextWrapMode2[TextWrapMode2.None = 0] = "None", TextWrapMode2[TextWrapMode2.Soft = 1] = "Soft", TextWrapMode2[TextWrapMode2.Hard = 2] = "Hard", TextWrapMode2[TextWrapMode2.Clip = 3] = "Clip", TextWrapMode2))(TextWrapMode || {});
-var InputType = ((InputType2) => (InputType2[InputType2.Head = 0] = "Head", InputType2[InputType2.EyeLeft = 1] = "EyeLeft", InputType2[InputType2.EyeRight = 2] = "EyeRight", InputType2[InputType2.ControllerLeft = 3] = "ControllerLeft", InputType2[InputType2.ControllerRight = 4] = "ControllerRight", InputType2[InputType2.RayLeft = 5] = "RayLeft", InputType2[InputType2.RayRight = 6] = "RayRight", InputType2))(InputType || {});
+var InputType = ((InputType3) => (InputType3[InputType3.Head = 0] = "Head", InputType3[InputType3.EyeLeft = 1] = "EyeLeft", InputType3[InputType3.EyeRight = 2] = "EyeRight", InputType3[InputType3.ControllerLeft = 3] = "ControllerLeft", InputType3[InputType3.ControllerRight = 4] = "ControllerRight", InputType3[InputType3.RayLeft = 5] = "RayLeft", InputType3[InputType3.RayRight = 6] = "RayRight", InputType3))(InputType || {});
 var ProjectionType = ((ProjectionType2) => (ProjectionType2[ProjectionType2.Perspective = 0] = "Perspective", ProjectionType2[ProjectionType2.Orthographic = 1] = "Orthographic", ProjectionType2))(ProjectionType || {});
 var LightType = ((LightType2) => (LightType2[LightType2.Point = 0] = "Point", LightType2[LightType2.Spot = 1] = "Spot", LightType2[LightType2.Sun = 2] = "Sun", LightType2))(LightType || {});
 var AnimationState = ((AnimationState2) => (AnimationState2[AnimationState2.Playing = 0] = "Playing", AnimationState2[AnimationState2.Paused = 1] = "Paused", AnimationState2[AnimationState2.Stopped = 2] = "Stopped", AnimationState2))(AnimationState || {});
@@ -4730,7 +5171,7 @@ var RootMotionMode = ((RootMotionMode2) => (RootMotionMode2[RootMotionMode2.None
 var ForceMode = ((ForceMode2) => (ForceMode2[ForceMode2.Force = 0] = "Force", ForceMode2[ForceMode2.Impulse = 1] = "Impulse", ForceMode2[ForceMode2.VelocityChange = 2] = "VelocityChange", ForceMode2[ForceMode2.Acceleration = 3] = "Acceleration", ForceMode2))(ForceMode || {});
 var CollisionEventType = ((CollisionEventType2) => (CollisionEventType2[CollisionEventType2.Touch = 0] = "Touch", CollisionEventType2[CollisionEventType2.TouchLost = 1] = "TouchLost", CollisionEventType2[CollisionEventType2.TriggerTouch = 2] = "TriggerTouch", CollisionEventType2[CollisionEventType2.TriggerTouchLost = 3] = "TriggerTouchLost", CollisionEventType2))(CollisionEventType || {});
 var Shape = ((Shape2) => (Shape2[Shape2.None = 0] = "None", Shape2[Shape2.Sphere = 1] = "Sphere", Shape2[Shape2.Capsule = 2] = "Capsule", Shape2[Shape2.Box = 3] = "Box", Shape2[Shape2.Plane = 4] = "Plane", Shape2[Shape2.ConvexMesh = 5] = "ConvexMesh", Shape2[Shape2.TriangleMesh = 6] = "TriangleMesh", Shape2))(Shape || {});
-var MeshAttribute = ((MeshAttribute2) => (MeshAttribute2[MeshAttribute2.Position = 0] = "Position", MeshAttribute2[MeshAttribute2.Tangent = 1] = "Tangent", MeshAttribute2[MeshAttribute2.Normal = 2] = "Normal", MeshAttribute2[MeshAttribute2.TextureCoordinate = 3] = "TextureCoordinate", MeshAttribute2[MeshAttribute2.Color = 4] = "Color", MeshAttribute2[MeshAttribute2.JointId = 5] = "JointId", MeshAttribute2[MeshAttribute2.JointWeight = 6] = "JointWeight", MeshAttribute2))(MeshAttribute || {});
+var MeshAttribute = ((MeshAttribute2) => (MeshAttribute2[MeshAttribute2.Position = 0] = "Position", MeshAttribute2[MeshAttribute2.Tangent = 1] = "Tangent", MeshAttribute2[MeshAttribute2.Normal = 2] = "Normal", MeshAttribute2[MeshAttribute2.TextureCoordinate = 3] = "TextureCoordinate", MeshAttribute2[MeshAttribute2.Color = 4] = "Color", MeshAttribute2[MeshAttribute2.JointId = 5] = "JointId", MeshAttribute2[MeshAttribute2.JointWeight = 6] = "JointWeight", MeshAttribute2[MeshAttribute2.SecondaryTextureCoordinate = 7] = "SecondaryTextureCoordinate", MeshAttribute2))(MeshAttribute || {});
 var DestroyedObjectInstance = createDestroyedProxy2("object");
 var DestroyedComponentInstance = createDestroyedProxy2("component");
 var DestroyedPrefabInstance = createDestroyedProxy2("prefab/scene");
@@ -4804,14 +5245,7 @@ var Component3 = (_a = class {
     return otherComponent ? this._manager === otherComponent._manager && this._id === otherComponent._id : false;
   }
   resetProperties() {
-    let properties = this.constructor.Properties;
-    if (!properties)
-      return this;
-    for (let name in properties) {
-      let property2 = properties[name], cloner = property2.cloner ?? defaultPropertyCloner;
-      this[name] = cloner.clone(property2.type, property2.default);
-    }
-    return this;
+    return resetComponentProperties(this), this;
   }
   reset() {
     return this.resetProperties();
@@ -4830,18 +5264,20 @@ var Component3 = (_a = class {
   get isDestroyed() {
     return this._id < 0;
   }
-  _copy(src, offsetsPtr) {
-    let wasm = this.engine.wasm, offsets = wasm.HEAPU32, offsetsStart = offsetsPtr >>> 2, destScene = this._scene, ctor = this.constructor;
+  _copy(src, offsetsPtr, copyInfoPtr) {
+    let wasm = this.engine.wasm, offsets = wasm.HEAPU32, offsetsStart = offsetsPtr >>> 2, copyInfoStart = copyInfoPtr >>> 1, srcRootIndex = wasm.HEAPU16[copyInfoStart], srcRootSize = wasm.HEAPU16[copyInfoStart + 1], dstRootIndex = wasm.HEAPU16[copyInfoStart + 2], destScene = this._scene, ctor = this.constructor;
     for (let name in ctor.Properties) {
       let value = src[name];
       if (value === null) {
         this[name] = null;
         continue;
       }
-      let prop = ctor.Properties[name], offset2 = offsets[offsetsStart + prop.type], retargeted;
+      let prop = ctor.Properties[name], offset2 = offsets[offsetsStart + prop.type], retargeted = null;
       switch (prop.type) {
         case 6: {
-          let index = wasm._wl_object_index(value._id), id = wasm._wl_object_id(destScene._index, index + offset2);
+          let index = wasm._wl_object_index(value._id) + offset2, dist3 = index - srcRootIndex;
+          dist3 >= 0 && dist3 <= srcRootSize && (index = dstRootIndex + dist3);
+          let id = wasm._wl_object_id(destScene._index, index);
           retargeted = destScene.wrap(id);
           break;
         }
@@ -4929,8 +5365,6 @@ var _a2;
 var BrokenComponent = (_a2 = class extends Component3 {
 }, __publicField(_a2, "TypeName", "__broken-component__"), _a2);
 function inheritProperties(target) {
-  if (!target.TypeName)
-    return;
   let chain = [], curr = target;
   for (; curr && !isBaseComponentClass(curr); ) {
     let comp = curr;
@@ -5012,6 +5446,12 @@ var TextComponent = (_a4 = class extends Component3 {
   set justification(justification) {
     this.verticalAlignment = justification;
   }
+  get justified() {
+    return !!this.engine.wasm._wl_text_component_get_justified(this._id);
+  }
+  set justified(justified) {
+    this.engine.wasm._wl_text_component_set_justified(this._id, justified);
+  }
   get characterSpacing() {
     return this.engine.wasm._wl_text_component_get_character_spacing(this._id);
   }
@@ -5029,6 +5469,20 @@ var TextComponent = (_a4 = class extends Component3 {
   }
   set effect(effect) {
     this.engine.wasm._wl_text_component_set_effect(this._id, effect);
+  }
+  get effectOffset() {
+    return this.getEffectOffset();
+  }
+  set effectOffset(offset2) {
+    this.setEffectOffset(offset2);
+  }
+  getEffectOffset(out = new Float32Array(2)) {
+    let wasm = this.engine.wasm;
+    return wasm._wl_text_component_get_effectOffset(this._id, wasm._tempMem), out[0] = wasm._tempMemFloat[0], out[1] = wasm._tempMemFloat[1], out;
+  }
+  setEffectOffset(offset2) {
+    let wasm = this.engine.wasm;
+    wasm._tempMemFloat.set(offset2), wasm._wl_text_component_set_effectOffset(this._id, wasm._tempMem);
   }
   get wrapMode() {
     return this.engine.wasm._wl_text_component_get_wrapMode(this._id);
@@ -5067,7 +5521,7 @@ var TextComponent = (_a4 = class extends Component3 {
     return this.engine.wasm._wl_text_component_get_boundingBox(this._id, 0, wasm._tempMem), out[0] = wasm._tempMemFloat[0], out[1] = wasm._tempMemFloat[1], out[2] = wasm._tempMemFloat[2], out[3] = wasm._tempMemFloat[3], out;
   }
 }, __publicField(_a4, "TypeName", "text"), _a4);
-__decorateClass([nativeProperty()], TextComponent.prototype, "alignment", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "verticalAlignment", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "justification", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "characterSpacing", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "lineSpacing", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "effect", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "wrapMode", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "wrapWidth", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "text", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "material", 1);
+__decorateClass([nativeProperty()], TextComponent.prototype, "alignment", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "verticalAlignment", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "justification", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "justified", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "characterSpacing", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "lineSpacing", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "effect", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "effectOffset", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "wrapMode", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "wrapWidth", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "text", 1), __decorateClass([nativeProperty()], TextComponent.prototype, "material", 1);
 var _a5;
 var ViewComponent = (_a5 = class extends Component3 {
   get projectionType() {
@@ -5077,32 +5531,51 @@ var ViewComponent = (_a5 = class extends Component3 {
     this.engine.wasm._wl_view_component_set_projectionType(this._id, type);
   }
   getProjectionMatrix(out = new Float32Array(16)) {
-    let wasm = this.engine.wasm, ptr = wasm._wl_view_component_get_projection_matrix(this._id) / 4;
+    let wasm = this.engine.wasm;
+    wasm.requireTempMem(16 * 4), wasm._wl_view_component_get_projectionMatrix(this._id, wasm._tempMem);
     for (let i = 0; i < 16; ++i)
-      out[i] = wasm.HEAPF32[ptr + i];
+      out[i] = wasm._tempMemFloat[i];
     return out;
   }
   get projectionMatrix() {
-    let wasm = this.engine.wasm;
-    return new Float32Array(wasm.HEAPF32.buffer, wasm._wl_view_component_get_projection_matrix(this._id), 16);
+    return this.getProjectionMatrix();
+  }
+  _setProjectionMatrix(v) {
+    let wasm = this._scene.engine.wasm;
+    wasm.requireTempMem(16 * 4), wasm._tempMemFloat.set(v), wasm._wl_view_component_set_projectionMatrix(this._id, wasm._tempMem);
+  }
+  _generateProjectionMatrix() {
+    this._scene.engine.wasm._wl_view_component_generate_projectionMatrix(this._id);
   }
   get near() {
     return this.engine.wasm._wl_view_component_get_near(this._id);
   }
   set near(near) {
-    this.engine.wasm._wl_view_component_set_near(this._id, near);
+    this.engine.wasm._wl_view_component_set_near(this._id, near), this.engine.xr && this.scene.isActive && this.active && this.engine.webxr.updateProjectionParams(near, this.far);
   }
   get far() {
     return this.engine.wasm._wl_view_component_get_far(this._id);
   }
   set far(far) {
-    this.engine.wasm._wl_view_component_set_far(this._id, far);
+    this.engine.wasm._wl_view_component_set_far(this._id, far), this.engine.xr && this.scene.isActive && this.active && this.engine.webxr.updateProjectionParams(this.near, far);
   }
   get fov() {
     return this.engine.wasm._wl_view_component_get_fov(this._id);
   }
   set fov(fov) {
     this.engine.wasm._wl_view_component_set_fov(this._id, fov);
+  }
+  getViewport(out = new Int32Array(4)) {
+    let wasm = this.engine.wasm, ptr = wasm._wl_view_component_get_viewport(this._id);
+    for (let i = 0; i < 4; ++i)
+      out[i] = wasm.HEAPF32[ptr + i];
+    return out;
+  }
+  get viewport() {
+    return this.getViewport();
+  }
+  _setViewport(x, y, width, height) {
+    this._scene.engine.wasm._wl_view_component_set_viewport(this._id, x, y, width, height);
   }
   get extent() {
     return this.engine.wasm._wl_view_component_get_extent(this._id);
@@ -5111,7 +5584,7 @@ var ViewComponent = (_a5 = class extends Component3 {
     this.engine.wasm._wl_view_component_set_extent(this._id, extent);
   }
 }, __publicField(_a5, "TypeName", "view"), _a5);
-__decorateClass([nativeProperty()], ViewComponent.prototype, "projectionType", 1), __decorateClass([enumerable()], ViewComponent.prototype, "projectionMatrix", 1), __decorateClass([nativeProperty()], ViewComponent.prototype, "near", 1), __decorateClass([nativeProperty()], ViewComponent.prototype, "far", 1), __decorateClass([nativeProperty()], ViewComponent.prototype, "fov", 1), __decorateClass([nativeProperty()], ViewComponent.prototype, "extent", 1);
+__decorateClass([nativeProperty()], ViewComponent.prototype, "projectionType", 1), __decorateClass([enumerable()], ViewComponent.prototype, "projectionMatrix", 1), __decorateClass([nativeProperty()], ViewComponent.prototype, "near", 1), __decorateClass([nativeProperty()], ViewComponent.prototype, "far", 1), __decorateClass([nativeProperty()], ViewComponent.prototype, "fov", 1), __decorateClass([enumerable()], ViewComponent.prototype, "viewport", 1), __decorateClass([nativeProperty()], ViewComponent.prototype, "extent", 1);
 var _a6;
 var InputComponent = (_a6 = class extends Component3 {
   get inputType() {
@@ -5218,11 +5691,22 @@ var _a8;
 var AnimationComponent = (_a8 = class extends Component3 {
   onEvent = new Emitter();
   set animation(anim) {
-    this.scene.assertOrigin(anim), this.engine.wasm._wl_animation_component_set_animation(this._id, anim ? anim._id : 0);
+    if (this.scene.assertOrigin(anim), anim instanceof AnimationGraph) {
+      this.animationGraph = anim;
+      return;
+    }
+    this.engine.wasm._wl_animation_component_set_animation(this._id, anim ? anim._id : 0);
   }
   get animation() {
     let index = this.engine.wasm._wl_animation_component_get_animation(this._id);
     return this._scene.animations.wrap(index);
+  }
+  get animationGraph() {
+    let index = this.engine.wasm._wl_animation_component_get_animationGraph(this._id);
+    return this.scene.animationsGraphs.wrap(index);
+  }
+  set animationGraph(graph) {
+    this.engine.wasm._wl_animation_component_set_animationGraph(this._id, graph ? graph._id : 0);
   }
   set playCount(playCount) {
     this.engine.wasm._wl_animation_component_set_playCount(this._id, playCount);
@@ -5284,7 +5768,7 @@ var AnimationComponent = (_a8 = class extends Component3 {
     return wasm._wl_animation_component_get_rootMotion_rotation(this._id, wasm._tempMem), out[0] = wasm._tempMemFloat[0], out[1] = wasm._tempMemFloat[1], out[2] = wasm._tempMemFloat[2], out;
   }
 }, __publicField(_a8, "TypeName", "animation"), _a8);
-__decorateClass([nativeProperty()], AnimationComponent.prototype, "animation", 1), __decorateClass([nativeProperty()], AnimationComponent.prototype, "playCount", 1), __decorateClass([nativeProperty()], AnimationComponent.prototype, "speed", 1), __decorateClass([enumerable()], AnimationComponent.prototype, "state", 1), __decorateClass([nativeProperty(), enumerable()], AnimationComponent.prototype, "rootMotionMode", 1);
+__decorateClass([nativeProperty()], AnimationComponent.prototype, "animation", 1), __decorateClass([nativeProperty()], AnimationComponent.prototype, "animationGraph", 1), __decorateClass([nativeProperty()], AnimationComponent.prototype, "playCount", 1), __decorateClass([nativeProperty()], AnimationComponent.prototype, "speed", 1), __decorateClass([enumerable()], AnimationComponent.prototype, "state", 1), __decorateClass([nativeProperty()], AnimationComponent.prototype, "rootMotionMode", 1);
 var _a9;
 var MeshComponent = (_a9 = class extends Component3 {
   set material(material) {
@@ -5349,9 +5833,20 @@ var MeshComponent = (_a9 = class extends Component3 {
   }
 }, __publicField(_a9, "TypeName", "mesh"), _a9);
 __decorateClass([nativeProperty()], MeshComponent.prototype, "material", 1), __decorateClass([nativeProperty()], MeshComponent.prototype, "mesh", 1), __decorateClass([nativeProperty()], MeshComponent.prototype, "skin", 1), __decorateClass([nativeProperty()], MeshComponent.prototype, "morphTargets", 1), __decorateClass([nativeProperty()], MeshComponent.prototype, "morphTargetWeights", 1);
-var LockAxis = ((LockAxis2) => (LockAxis2[LockAxis2.None = 0] = "None", LockAxis2[LockAxis2.X = 1] = "X", LockAxis2[LockAxis2.Y = 2] = "Y", LockAxis2[LockAxis2.Z = 4] = "Z", LockAxis2))(LockAxis || {});
 var _a10;
-var PhysXComponent = (_a10 = class extends Component3 {
+var ParticleEffectComponent = (_a10 = class extends Component3 {
+  get particleEffect() {
+    let index = this.engine.wasm._wl_particleEffect_component_get_particleEffect(this._id);
+    return this.engine.particleEffects.wrap(index);
+  }
+  set particleEffect(particleEffect) {
+    this.engine.wasm._wl_particleEffect_component_set_particleEffect(this._id, particleEffect?._id ?? 0);
+  }
+}, __publicField(_a10, "TypeName", "particle-effect"), _a10);
+__decorateClass([nativeProperty()], ParticleEffectComponent.prototype, "particleEffect", 1);
+var LockAxis = ((LockAxis2) => (LockAxis2[LockAxis2.None = 0] = "None", LockAxis2[LockAxis2.X = 1] = "X", LockAxis2[LockAxis2.Y = 2] = "Y", LockAxis2[LockAxis2.Z = 4] = "Z", LockAxis2))(LockAxis || {});
+var _a11;
+var PhysXComponent = (_a11 = class extends Component3 {
   getTranslationOffset(out = new Float32Array(3)) {
     let wasm = this.engine.wasm;
     return wasm._wl_physx_component_get_offsetTranslation(this._id, wasm._tempMem), out[0] = wasm._tempMemFloat[0], out[1] = wasm._tempMemFloat[1], out[2] = wasm._tempMemFloat[2], out;
@@ -5550,14 +6045,19 @@ var PhysXComponent = (_a10 = class extends Component3 {
     let r = this.engine.wasm._wl_physx_component_removeCallback(this._id, callbackId), callbacks = this.scene._pxCallbacks;
     r && callbacks.get(this._id).splice(-r);
   }
-}, __publicField(_a10, "TypeName", "physx"), _a10);
+}, __publicField(_a11, "TypeName", "physx"), _a11);
 __decorateClass([nativeProperty()], PhysXComponent.prototype, "static", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "translationOffset", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "rotationOffset", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "kinematic", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "gravity", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "simulate", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "allowSimulation", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "allowQuery", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "trigger", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "shape", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "shapeData", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "extents", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "staticFriction", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "dynamicFriction", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "bounciness", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "linearDamping", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "angularDamping", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "linearVelocity", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "angularVelocity", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "groupsMask", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "blocksMask", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "linearLockAxis", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "angularLockAxis", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "mass", 1), __decorateClass([nativeProperty()], PhysXComponent.prototype, "sleepOnActivate", 1);
 var Physics = class {
   _hit;
   _engine;
   _rayHit;
   constructor(engine2) {
-    this._engine = engine2, this._rayHit = engine2.wasm._malloc(4 * (3 * 4 + 3 * 4 + 4 + 2) + 4), this._hit = new RayHit(engine2.scene, this._rayHit);
+    this._engine = engine2;
+    let wasm = engine2.wasm;
+    this._rayHit = wasm._malloc(4 * (3 * 4 + 3 * 4 + 4 + 2) + 4), this._hit = new RayHit(engine2.scene, this._rayHit), wasm._wl_physx_set_collision_callback(wasm.addFunction((a, index, type, b) => {
+      let physxA = this._engine.scene._components.wrapPhysx(a), physxB = this._engine.scene._components.wrapPhysx(b), callback = this._engine.scene._pxCallbacks.get(physxA._id)[index];
+      callback(type, physxB);
+    }, "viiii"));
   }
   rayCast(o, d, groupMask, maxDistance = 100) {
     let scene = this._engine.scene._index;
@@ -5630,9 +6130,9 @@ var MeshAttributeAccessor = class {
   _bufferType;
   _tempBufferGetter;
   constructor(engine2, options) {
-    this._engine = engine2;
+    this._engine = engine2, this._attribute = options.attribute, this._offset = options.offset, this._stride = options.stride, this._formatSize = options.formatSize, this._componentCount = options.componentCount, this._arraySize = options.arraySize, this._bufferType = options.bufferType, this.length = options.length;
     let wasm = this._engine.wasm;
-    this._attribute = options.attribute, this._offset = options.offset, this._stride = options.stride, this._formatSize = options.formatSize, this._componentCount = options.componentCount, this._arraySize = options.arraySize, this._bufferType = options.bufferType, this.length = options.length, this._tempBufferGetter = this._bufferType === Float32Array ? wasm.getTempBufferF32.bind(wasm) : wasm.getTempBufferU16.bind(wasm);
+    this._tempBufferGetter = this._bufferType === Float32Array ? wasm.getTempBufferF32.bind(wasm) : wasm.getTempBufferU16.bind(wasm);
   }
   createArray(count = 1) {
     return count = count > this.length ? this.length : count, new this._bufferType(count * this._componentCount * this._arraySize);
@@ -5640,18 +6140,18 @@ var MeshAttributeAccessor = class {
   get(index, out = this.createArray()) {
     if (out.length % this._componentCount !== 0)
       throw new Error(`out.length, ${out.length} is not a multiple of the attribute vector components, ${this._componentCount}`);
-    let dest = this._tempBufferGetter(out.length), elementSize = this._bufferType.BYTES_PER_ELEMENT, destSize = elementSize * out.length, srcFormatSize = this._formatSize * this._arraySize, destFormatSize = this._componentCount * elementSize * this._arraySize;
-    this._engine.wasm._wl_mesh_get_attribute_values(this._attribute, srcFormatSize, this._offset + index * this._stride, this._stride, destFormatSize, dest.byteOffset, destSize);
-    for (let i = 0; i < out.length; ++i)
+    let componentCount = this._componentCount * this._arraySize, len5 = Math.min(out.length, componentCount * this.length), dest = this._tempBufferGetter(len5), elementSize = this._bufferType.BYTES_PER_ELEMENT, destSize = elementSize * len5, srcFormatSize = this._formatSize * this._arraySize, destFormatSize = this._componentCount * elementSize * this._arraySize;
+    this.engine.wasm._wl_mesh_get_attribute_values(this._attribute, srcFormatSize, this._offset + index * this._stride, this._stride, destFormatSize, dest.byteOffset, destSize);
+    for (let i = 0; i < len5; ++i)
       out[i] = dest[i];
     return out;
   }
   set(i, v) {
     if (v.length % this._componentCount !== 0)
       throw new Error(`out.length, ${v.length} is not a multiple of the attribute vector components, ${this._componentCount}`);
-    let elementSize = this._bufferType.BYTES_PER_ELEMENT, srcSize = elementSize * v.length, srcFormatSize = this._componentCount * elementSize * this._arraySize, destFormatSize = this._formatSize * this._arraySize, wasm = this._engine.wasm;
+    let componentCount = this._componentCount * this._arraySize, len5 = Math.min(v.length, componentCount * this.length), elementSize = this._bufferType.BYTES_PER_ELEMENT, srcSize = elementSize * len5, srcFormatSize = componentCount * elementSize, destFormatSize = this._formatSize * this._arraySize, wasm = this.engine.wasm;
     if (v.buffer != wasm.HEAPU8.buffer) {
-      let dest = this._tempBufferGetter(v.length);
+      let dest = this._tempBufferGetter(len5);
       dest.set(v), v = dest;
     }
     return wasm._wl_mesh_set_attribute_values(this._attribute, srcFormatSize, v.byteOffset, srcSize, destFormatSize, this._offset + i * this._stride, this._stride), this;
@@ -5674,6 +6174,12 @@ var Font = class extends Resource {
     return this.engine.wasm._wl_font_get_outlineSize(this._id);
   }
 };
+var ParticleEffect = class extends Resource {
+  clone() {
+    let index = this.engine.wasm._wl_particleEffect_clone(this._id);
+    return this.engine.particleEffects.wrap(index);
+  }
+};
 var temp2d = null;
 var Texture = class extends Resource {
   constructor(engine2, param) {
@@ -5684,26 +6190,26 @@ var Texture = class extends Resource {
     super(engine2, param);
   }
   get valid() {
-    return !this.isDestroyed;
+    return !this.isDestroyed && this.width !== 0 && this.height !== 0;
   }
   get id() {
     return this.index;
   }
   update() {
     let image = this._imageIndex;
-    !this.valid || !image || this.engine.wasm._wl_renderer_updateImage(image);
+    !this.valid || !image || this.engine.wasm._wl_image_markDirty(image);
   }
   get width() {
     let element = this.htmlElement;
     if (element)
-      return element.width;
+      return element.videoWidth ?? element.width;
     let wasm = this.engine.wasm;
     return wasm._wl_image_size(this._imageIndex, wasm._tempMem), wasm._tempMemUint32[0];
   }
   get height() {
     let element = this.htmlElement;
     if (element)
-      return element.height;
+      return element.videoHeight ?? element.height;
     let wasm = this.engine.wasm;
     return wasm._wl_image_size(this._imageIndex, wasm._tempMem), wasm._tempMemUint32[1];
   }
@@ -5714,28 +6220,33 @@ var Texture = class extends Resource {
     let wasm = this.engine.wasm, jsImageIndex = wasm._wl_image_get_jsImage_index(image);
     return wasm._images[jsImageIndex];
   }
-  updateSubImage(x, y, w, h) {
+  updateSubImage(srcX, srcY, srcWidth, srcHeight, dstX = srcX, dstY = srcY, content) {
     if (this.isDestroyed)
-      return;
+      return false;
     let image = this._imageIndex;
     if (!image)
-      return;
-    let wasm = this.engine.wasm, jsImageIndex = wasm._wl_image_get_jsImage_index(image);
-    if (!temp2d) {
-      let canvas2 = document.createElement("canvas"), ctx = canvas2.getContext("2d");
-      if (!ctx)
-        throw new Error("Texture.updateSubImage(): Failed to obtain CanvasRenderingContext2D.");
-      temp2d = { canvas: canvas2, ctx };
-    }
-    let img = wasm._images[jsImageIndex];
+      return false;
+    let img = content ?? this.htmlElement;
     if (!img)
-      return;
-    temp2d.canvas.width = w, temp2d.canvas.height = h, temp2d.ctx.drawImage(img, x, y, w, h, 0, 0, w, h);
-    let yOffset = (img.videoHeight ?? img.height) - y - h;
-    wasm._images[jsImageIndex] = temp2d.canvas, wasm._wl_renderer_updateImage(image, x, yOffset), wasm._images[jsImageIndex] = img;
+      return false;
+    let isImageBitmap = img instanceof ImageBitmap, flipY = !isImageBitmap;
+    if (srcX || srcY) {
+      if (!temp2d) {
+        let canvas2 = document.createElement("canvas"), ctx = canvas2.getContext("2d");
+        if (!ctx)
+          throw new Error("Texture.updateSubImage(): Failed to obtain CanvasRenderingContext2D.");
+        temp2d = { canvas: canvas2, ctx };
+      }
+      temp2d.canvas.width = srcWidth, temp2d.canvas.height = srcHeight, temp2d.ctx.drawImage(img, srcX, isImageBitmap ? img.height - srcY - srcHeight : srcY, srcWidth, srcHeight, 0, 0, srcWidth, srcHeight), img = temp2d.canvas;
+    }
+    let wasm = this.engine.wasm;
+    wasm._images[0] = img;
+    let width = srcWidth - Math.max(srcWidth + dstX - this.width, 0), height = srcHeight - Math.max(srcHeight + dstY - this.height, 0), dstReversedY = this.height - dstY - height, ret = wasm._wl_renderer_updateImage(image, 0, width, height, dstX, dstReversedY, flipY);
+    return wasm._images[0] = null, !!ret;
   }
   destroy() {
-    this.engine.wasm._wl_texture_destroy(this._id), this.engine.textures._destroy(this);
+    let wasm = this.engine.wasm, img = wasm._images[this._imageIndex];
+    img instanceof ImageBitmap && img.close(), wasm._wl_texture_destroy(this._id), this.engine.textures._destroy(this);
   }
   toString() {
     return this.isDestroyed ? "Texture(destroyed)" : `Texture(${this._index})`;
@@ -5775,7 +6286,12 @@ var Animation = class extends SceneResource {
     return this.isDestroyed ? "Animation(destroyed)" : `Animation(${this._index})`;
   }
 };
-var Object3D = class {
+var AnimationGraph = class extends SceneResource {
+  toString() {
+    return this.isDestroyed ? "AnimationGraph(destroyed)" : `AnimationGraph(${this._index})`;
+  }
+};
+var Object3D2 = class {
   _id = -1;
   _localId = -1;
   _scene;
@@ -6166,8 +6682,7 @@ var Object3D = class {
     return this._id < 0;
   }
   get markedDestroyed() {
-    let wasm = this.engine.wasm;
-    return wasm._wl_object_markedDestroyed ? !!wasm._wl_object_markedDestroyed(this._id) : false;
+    return !!this.engine.wasm._wl_object_markedDestroyed(this._id);
   }
   equals(otherObject) {
     return otherObject ? this._id == otherObject._id : false;
@@ -6329,42 +6844,6 @@ var I18N = class {
     return this._engine;
   }
 };
-var XR = class {
-  #wasm;
-  #mode;
-  constructor(wasm, mode) {
-    this.#wasm = wasm, this.#mode = mode;
-  }
-  get sessionMode() {
-    return this.#mode;
-  }
-  get session() {
-    return this.#wasm.webxr_session;
-  }
-  get frame() {
-    return this.#wasm.webxr_frame;
-  }
-  referenceSpaceForType(type) {
-    return this.#wasm.webxr_refSpaces[type] ?? null;
-  }
-  set currentReferenceSpace(refSpace) {
-    this.#wasm.webxr_refSpace = refSpace, this.#wasm.webxr_refSpaceType = null;
-    for (let type of Object.keys(this.#wasm.webxr_refSpaces))
-      this.#wasm.webxr_refSpaces[type] === refSpace && (this.#wasm.webxr_refSpaceType = type);
-  }
-  get currentReferenceSpace() {
-    return this.#wasm.webxr_refSpace;
-  }
-  get currentReferenceSpaceType() {
-    return this.#wasm.webxr_refSpaceType;
-  }
-  get baseLayer() {
-    return this.#wasm.webxr_baseLayer;
-  }
-  get framebuffers() {
-    return Array.isArray(this.#wasm.webxr_fbo) ? this.#wasm.webxr_fbo.map((id) => this.#wasm.GL.framebuffers[id]) : [this.#wasm.GL.framebuffers[this.#wasm.webxr_fbo]];
-  }
-};
 var Environment = class {
   _scene;
   constructor(scene) {
@@ -6409,9 +6888,12 @@ var Environment = class {
     this.setCoefficients(v);
   }
 };
+var version = "1.4.7";
+var matches = version.match(/([0-9]+).([0-9]+).([0-9]+)(?:-rc.([0-9]+))?/);
+(!matches || matches.length < 4) && console.error(`Invalid version '${version}'. Expected: major.minor.patch[-rc.x]`);
+var APIVersion = { major: Number.parseInt(matches[1]), minor: Number.parseInt(matches[2]), patch: Number.parseInt(matches[3]), rc: matches[4] !== void 0 ? Number.parseInt(matches[4]) : 0 };
 var MaterialParamType = ((MaterialParamType2) => (MaterialParamType2[MaterialParamType2.UnsignedInt = 0] = "UnsignedInt", MaterialParamType2[MaterialParamType2.Int = 1] = "Int", MaterialParamType2[MaterialParamType2.HalfFloat = 2] = "HalfFloat", MaterialParamType2[MaterialParamType2.Float = 3] = "Float", MaterialParamType2[MaterialParamType2.Sampler = 4] = "Sampler", MaterialParamType2[MaterialParamType2.Font = 5] = "Font", MaterialParamType2))(MaterialParamType || {});
-var _a11;
-var Material = (_a11 = class extends Resource {
+var Material = class extends Resource {
   constructor(engine2, params) {
     if (typeof params != "number") {
       if (!params?.pipeline)
@@ -6442,7 +6924,7 @@ var Material = (_a11 = class extends Resource {
   static wrap(engine2, index) {
     return engine2.materials.wrap(index);
   }
-}, __publicField(_a11, "_destroyedPrototype", createDestroyedProxy2("material")), _a11);
+};
 var MaterialManager = class extends ResourceManager {
   _materialTemplates = [];
   constructor(engine2) {
@@ -6481,7 +6963,7 @@ var MaterialManager = class extends ResourceManager {
   }
   _cacheDefinitions() {
     let count = this.engine.wasm._wl_get_material_definition_count();
-    for (let i = 0; i < count; ++i)
+    for (let i = 1; i < count; ++i)
       this._materialTemplates[i] = this._createMaterialTemplate(i);
   }
   _createMaterialTemplate(definitionIndex) {
@@ -6504,7 +6986,7 @@ var MaterialManager = class extends ResourceManager {
           break;
         case 2:
         case 3:
-          templateProto[getterId] = float32Getter(index, componentCount), templateProto[setterId] = float32Setter(index);
+          templateProto[getterId] = float32Getter(index, componentCount), templateProto[setterId] = float32Setter(index, componentCount);
           break;
         case 4:
           templateProto[getterId] = samplerGetter(index), templateProto[setterId] = samplerSetter(index);
@@ -6558,16 +7040,18 @@ function float32Getter(index, count) {
     return out;
   };
 }
-function float32Setter(index) {
+function float32Setter(index, count) {
   return function(value) {
-    let wasm = this.engine.wasm, count = 1;
+    let wasm = this.engine.wasm, actualCount = 1;
     if (typeof value == "number")
       wasm._tempMemFloat[0] = value;
     else {
-      count = value.length;
-      for (let i = 0; i < count; ++i)
+      actualCount = value.length;
+      for (let i = 0; i < actualCount; ++i)
         wasm._tempMemFloat[i] = value[i];
     }
+    if (actualCount < count)
+      throw new Error(`Expected an array ${count} values, got ${actualCount}`);
     wasm._wl_material_set_param_value_float(this._id, index, wasm._tempMem, count);
   };
 }
@@ -6612,6 +7096,9 @@ var MeshManager = class extends ResourceManager {
     return this._cache[instance.index] = instance, instance;
   }
 };
+function needsFlipY(image) {
+  return image instanceof ImageBitmap ? 0 : 1;
+}
 var TextureManager = class extends ResourceManager {
   constructor(engine2) {
     super(engine2, Texture);
@@ -6620,7 +7107,9 @@ var TextureManager = class extends ResourceManager {
     let wasm = this.engine.wasm, jsImageIndex = wasm._images.length;
     if (wasm._images.push(image), image instanceof HTMLImageElement && !image.complete)
       throw new Error("image must be ready to create a texture");
-    let width = image.videoWidth ?? image.width, height = image.videoHeight ?? image.height, imageIndex = wasm._wl_image_create(jsImageIndex, width, height), index = wasm._wl_texture_create(imageIndex), instance = new Texture(this.engine, index);
+    let width = image.videoWidth ?? image.width, height = image.videoHeight ?? image.height, imageIndex = wasm._wl_image_create(jsImageIndex);
+    wasm._wl_image_markReady(imageIndex, width, height, needsFlipY(image));
+    let index = wasm._wl_texture_create(imageIndex), instance = new Texture(this.engine, index);
     return this._cache[instance.index] = instance, instance;
   }
   load(filename, crossOrigin) {
@@ -6632,6 +7121,259 @@ var TextureManager = class extends ResourceManager {
         reject("Failed to load image. Not found or no read access");
       };
     });
+  }
+};
+var XRSessionState = class {
+  #webxr;
+  sessionMode;
+  session;
+  frame = null;
+  constructor(webxr, mode, session) {
+    this.#webxr = webxr, this.sessionMode = mode, this.session = session;
+  }
+  referenceSpaceForType(type) {
+    return this.#webxr.referenceSpaceForType(type);
+  }
+  set currentReferenceSpace(refSpace) {
+    this.#webxr.currentReferenceSpace = refSpace;
+  }
+  get currentReferenceSpace() {
+    return this.#webxr.currentReferenceSpace;
+  }
+  get currentReferenceSpaceType() {
+    return this.#webxr.currentReferenceSpaceType;
+  }
+  get baseLayer() {
+    return this.#webxr.baseLayer;
+  }
+  get framebuffers() {
+    return this.#webxr.framebuffers;
+  }
+};
+var WebXR = class {
+  #wasm;
+  engine;
+  sessionState = null;
+  colorFormat = 32856;
+  depthFormat = 35056;
+  textureType = "texture";
+  onSessionEnd = new Emitter();
+  onSessionStart = new RetainEmitter();
+  onSessionFirstFrame = new Emitter();
+  arSupported = false;
+  vrSupported = false;
+  baseLayer = null;
+  framebufferScaleFactor = 1;
+  _webglBinding = null;
+  _initXR = false;
+  _inXR = false;
+  _refSpaces = { viewer: void 0, local: void 0, "local-floor": void 0, "bounded-floor": void 0, unbounded: void 0 };
+  _refSpace = null;
+  _refSpaceType = null;
+  _fbo = 0;
+  _allowLayers = false;
+  _requestAnimationFrameId = null;
+  _initialReferenceSpaceType = null;
+  _tempPosition = new Float32Array(3);
+  _tempRotation = new Float32Array(4);
+  _tempPose(transform) {
+    let p = transform.position;
+    this._tempPosition[0] = p.x, this._tempPosition[1] = p.y, this._tempPosition[2] = p.z;
+    let o = transform.orientation;
+    this._tempRotation[0] = o.x, this._tempRotation[1] = o.y, this._tempRotation[2] = o.z, this._tempRotation[3] = o.w;
+  }
+  constructor(engine2) {
+    this.engine = engine2, this.#wasm = engine2.wasm;
+  }
+  checkXRSupport() {
+    if (typeof navigator > "u")
+      return Promise.resolve(false);
+    if (!navigator.xr) {
+      let isLocalhost = location.hostname === "localhost" || location.hostname === "127.0.0.1", missingHTTPS = location.protocol !== "https:" && !isLocalhost;
+      return console.warn(missingHTTPS ? "WebXR is only supported with HTTPS or on localhost!" : "WebXR unsupported in this browser."), Promise.resolve(false);
+    }
+    let vrPromise = navigator.xr.isSessionSupported("immersive-vr").then((supported) => this.vrSupported = supported).catch(() => this.vrSupported = false), arPromise = navigator.xr.isSessionSupported("immersive-ar").then((supported) => this.arSupported = supported).catch(() => this.arSupported = false);
+    return Promise.all([vrPromise, arPromise]).then(() => this.vrSupported || this.arSupported);
+  }
+  async init(framebufferScaleFactor, offerSessionOptions) {
+    if (!await this.checkXRSupport())
+      return;
+    this.framebufferScaleFactor = framebufferScaleFactor;
+    let onXRStart = () => {
+      this._initialReferenceSpaceType = this.currentReferenceSpaceType;
+      let newSpace = this._refSpaces.local ?? this._refSpaces.viewer;
+      this.currentReferenceSpace = newSpace;
+    };
+    if (this.onSessionStart.add(onXRStart), this.engine.onLoadingScreenEnd.once(() => {
+      this.onSessionStart.remove(onXRStart), this._initialReferenceSpaceType && (this.currentReferenceSpace = this._refSpaces[this._initialReferenceSpaceType] ?? this._refSpaces.viewer, this._initialReferenceSpaceType = null);
+    }), offerSessionOptions !== null) {
+      let mode = offerSessionOptions.mode;
+      mode == "auto" && (this.vrSupported ? mode = "immersive-vr" : this.arSupported ? mode = "immersive-ar" : mode = "inline");
+      let offerSession = () => {
+        this.offerSession(mode, offerSessionOptions.features, offerSessionOptions.optionalFeatures).then((s) => s.addEventListener("end", offerSession)).catch(console.warn);
+      };
+      offerSession();
+    }
+  }
+  referenceSpaceForType(type) {
+    return this._refSpaces[type] ?? null;
+  }
+  set currentReferenceSpace(refSpace) {
+    this._refSpace = refSpace, this._refSpaceType = null;
+    for (let type of Object.keys(this._refSpaces))
+      this._refSpaces[type] === refSpace && (this._refSpaceType = type);
+  }
+  get currentReferenceSpace() {
+    return this._refSpace;
+  }
+  get currentReferenceSpaceType() {
+    return this._refSpaceType;
+  }
+  get framebuffers() {
+    return Array.isArray(this._fbo) ? this._fbo.map((id) => this.#wasm.GL.framebuffers[id]) : [this.#wasm.GL.framebuffers[this._fbo]];
+  }
+  updateViewState(inXR) {
+    let scene = this.engine.scene;
+    inXR = inXR ?? this._inXR, scene.mainView && (scene.mainView.active = !inXR), scene.leftEyeView && scene.rightEyeView && (scene.leftEyeView.active = inXR, scene.rightEyeView.active = inXR);
+  }
+  updateProjectionParams(near, far) {
+    if (!this.sessionState)
+      return;
+    let scene = this.engine.scene;
+    near ??= scene.leftEyeView.near, far ??= scene.leftEyeView.far;
+    let reverseZ = !!this.engine.isReverseZEnabled;
+    this.sessionState.session.updateRenderState({ depthNear: reverseZ ? far : near, depthFar: reverseZ ? near : far });
+  }
+  requestSession(mode, features, optionalFeatures = []) {
+    let options = this.sessionOptions(features, optionalFeatures);
+    return navigator.xr.requestSession(mode, options).then(async (s) => (await this.engine.canvas.getContext("webgl2").makeXRCompatible(), this.startSession(s, mode), s));
+  }
+  offerSession(mode, features, optionalFeatures = []) {
+    if (!navigator.xr.offerSession)
+      return Promise.reject("WebXR offerSession() unsupported in this browser.");
+    let options = this.sessionOptions(features, optionalFeatures);
+    return navigator.xr.offerSession(mode, options).then(async (s) => (await this.engine.canvas.getContext("webgl2").makeXRCompatible(), this.startSession(s, mode), s));
+  }
+  async startSession(session, mode) {
+    if (session == this.sessionState?.session)
+      return;
+    this.sessionState = new XRSessionState(this, mode, session), session.addEventListener("end", () => {
+      this.endSession();
+    });
+    let gl = this.engine.canvas.getContext("webgl2"), binding = null;
+    !("CustomWebXRPolyfill" in window) && "XRWebGLBinding" in window && (binding = this._webglBinding = new XRWebGLBinding(session, gl));
+    let useLayers = this._allowLayers && binding;
+    if (useLayers) {
+      let layer = this.baseLayer = binding.createProjectionLayer({ scaleFactor: this.framebufferScaleFactor, colorFormat: this.colorFormat, depthFormat: this.depthFormat, textureType: this.textureType ? this.textureType : "texture-array" });
+      session.updateRenderState({ layers: [layer] });
+    } else {
+      let layer = this.baseLayer = new XRWebGLLayer(session, gl, { framebufferScaleFactor: this.framebufferScaleFactor });
+      session.updateRenderState({ baseLayer: layer });
+    }
+    let promises = [];
+    for (let type of Object.keys(this._refSpaces))
+      promises.push(session.requestReferenceSpace(type).then((refSpace) => (this._refSpaces[type] = refSpace, refSpace)));
+    await Promise.allSettled(promises).then((results) => {
+      for (let i = results.length - 1; i >= 0; --i) {
+        let result = results[i];
+        if (result.status !== "rejected") {
+          this._refSpaceType = Object.keys(this._refSpaces)[i], this._refSpace = result.value;
+          break;
+        }
+      }
+    });
+    let isVR = mode == "immersive-vr", scene = this.engine.scene;
+    if (isVR && (!scene.leftEyeView || !scene.rightEyeView)) {
+      console.error("sessionStart(): VR sessions require 1 classic view, a left and a right view");
+      return;
+    }
+    this.updateViewState(true), this.updateProjectionParams(void 0, void 0), this.onSessionStart.notify(session, this.sessionState.sessionMode), this.#wasm._wl_reset_context(), console.log(`WebXR ${isVR ? "VR" : "AR"} session started`), this.sessionState.session.addEventListener("visibilitychange", (event) => {
+      switch (event.session.visibilityState) {
+        case "visible":
+          this.#wasm._wl_xr_focus();
+        case "visible-blurred":
+          this.#wasm._wl_xr_blur();
+        case "hidden":
+          this.#wasm._wl_xr_hide();
+      }
+    }), this._initXR = true, this._requestAnimationFrameId = session.requestAnimationFrame(useLayers ? this.nextFrameLayers.bind(this) : this.nextFrameSingle.bind(this));
+  }
+  sessionOptions(requiredFeatures, optionalFeatures = []) {
+    this._allowLayers && !optionalFeatures.includes("layers") && optionalFeatures.push("layers");
+    let params = { requiredFeatures, optionalFeatures };
+    return (requiredFeatures.includes("depth-sensing") || optionalFeatures.includes("depth-sensing")) && (params.depthSensing = { usagePreference: ["gpu-optimized", "cpu-optimized"], dataFormatPreference: ["float32", "luminance-alpha"] }), params;
+  }
+  endSession() {
+    this.sessionState.session.cancelAnimationFrame(this._requestAnimationFrameId), this._requestAnimationFrameId = null, this.sessionState = null, this.#wasm._wl_reset_context(), this.onSessionStart instanceof RetainEmitter && this.onSessionStart.reset(), this.onSessionEnd.notify(), console.log("WebXR session ended"), this._inXR = false, this.updateViewState(false);
+    let scene = this.engine.scene;
+    this.#wasm._wl_xr_exit(), scene.leftEyeView._generateProjectionMatrix(), scene.rightEyeView._generateProjectionMatrix(), this.#wasm._wl_application_redraw();
+  }
+  nextFrame(time, frame) {
+    this.sessionState.frame = frame;
+    let session = frame.session, pose = frame.getViewerPose(this._refSpace);
+    if (!pose)
+      return;
+    let scene = this.engine.scene;
+    this._initXR && (scene.rightEyeView.active = pose.views.length > 1, this.#wasm._wl_xr_init(pose.views.length, !this.baseLayer), this._initXR = false, this._inXR = true, this.onSessionFirstFrame.notify(session, this.sessionState.sessionMode)), this._tempPose(pose.transform), scene._setInputTransformation(0, this._tempPosition, this._tempRotation);
+    for (let i = 0; i < pose.views.length && i < 2; ++i) {
+      let view = pose.views[i], viewIndex = view.eye == "right" ? 1 : 0;
+      this._tempPose(view.transform), scene._setInputTransformation(1 + viewIndex, this._tempPosition, this._tempRotation);
+    }
+    for (let inputSource of session.inputSources) {
+      let handedness = -1;
+      inputSource.handedness == "left" ? handedness = 0 : inputSource.handedness == "right" && (handedness = 1), this._updateInputComponent(frame, inputSource.gripSpace, 3 + handedness), this._updateInputComponent(frame, inputSource.targetRaySpace, 5 + handedness);
+    }
+    this.#wasm._wl_nextFrame(0);
+  }
+  nextFrameSingle(time, frame) {
+    let session = frame.session;
+    this.sessionState != null && (this._requestAnimationFrameId = session.requestAnimationFrame(this.nextFrameSingle.bind(this)));
+    let pose = frame.getViewerPose(this._refSpace);
+    if (!pose)
+      return;
+    let gl = this.engine.canvas.getContext("webgl2"), GL = this.#wasm.GL, glLayer = session.renderState.baseLayer;
+    if (glLayer.framebuffer) {
+      let id = this._fbo || GL.getNewId(GL.framebuffers);
+      glLayer.framebuffer.name = id, GL.framebuffers[id] = glLayer.framebuffer, this._fbo = id, gl.bindFramebuffer(gl.FRAMEBUFFER, GL.framebuffers[id]);
+    }
+    for (let i = 0; i < pose.views.length; ++i) {
+      let view = pose.views[i], viewport = glLayer.getViewport(view), destView;
+      view.eye == "left" ? destView = this.engine.scene.leftEyeView : view.eye == "right" ? destView = this.engine.scene.rightEyeView : destView = this.engine.scene._components.componentAt(ViewComponent, i), destView._setViewport(viewport.x, viewport.y, viewport.width, viewport.height), destView._setProjectionMatrix(view.projectionMatrix), this.#wasm._wl_view_component_remapProjectionMatrix(destView._id, this.engine.isReverseZEnabled, false), this.#wasm._wl_view_component_set_externalFramebuffer(destView._id, this._fbo);
+    }
+    this.nextFrame(time, frame);
+  }
+  nextFrameLayers(time, frame) {
+    let session = frame.session;
+    this.sessionState != null && (this._requestAnimationFrameId = session.requestAnimationFrame(this.nextFrameLayers.bind(this)));
+    let scene = this.engine.scene, pose = frame.getViewerPose(this._refSpace), layer = this.baseLayer, binding = this._webglBinding, gl = this.engine.canvas.getContext("webgl2"), GL = this.#wasm.GL, createFramebuffer = !this._fbo, textureArray = layer.textureArrayLength == 2;
+    if (createFramebuffer) {
+      if (textureArray)
+        this._fbo = [GL.getNewId(GL.framebuffers), GL.getNewId(GL.framebuffers)];
+      else {
+        let id = GL.getNewId(GL.framebuffers);
+        this._fbo = [id, id];
+      }
+      this._fbo.forEach((id) => {
+        let framebuffer = gl.createFramebuffer();
+        GL.framebuffers[id] = framebuffer, framebuffer.name = id;
+      });
+    }
+    let ids = this._fbo;
+    pose.views.forEach((view) => {
+      let viewIndex = view.eye == "right" ? 1 : 0, subImage = binding.getViewSubImage(layer, view), viewport = subImage.viewport, destView;
+      if (view.eye == "right" ? destView = this.engine.scene.rightEyeView : destView = this.engine.scene.leftEyeView, destView._setViewport(viewport.x, viewport.y, viewport.width, viewport.height), destView._setProjectionMatrix(view.projectionMatrix), this.#wasm._wl_view_component_remapProjectionMatrix(destView._id, this.engine.isReverseZEnabled, false), this.#wasm._wl_view_component_set_externalFramebuffer(destView._id, ids[viewIndex]), !createFramebuffer || !textureArray && viewIndex != 0)
+        return;
+      let colorTexture = subImage.colorTexture, colorImageId = colorTexture.name = colorTexture.name || GL.getNewId(GL.textures);
+      GL.textures[colorImageId] = colorTexture;
+      let depthStencilTexture = subImage.depthStencilTexture, depthStencilImageId = depthStencilTexture.name = depthStencilTexture.name || GL.getNewId(GL.textures);
+      GL.textures[depthStencilImageId] = depthStencilTexture, gl.bindFramebuffer(gl.FRAMEBUFFER, GL.framebuffers[ids[viewIndex]]), textureArray ? (gl.framebufferTextureLayer(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, subImage.colorTexture, 0, subImage.imageIndex), gl.framebufferTextureLayer(gl.FRAMEBUFFER, gl.DEPTH_STENCIL_ATTACHMENT, subImage.depthStencilTexture, 0, subImage.imageIndex)) : (gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, subImage.colorTexture, 0), gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.DEPTH_STENCIL_ATTACHMENT, gl.TEXTURE_2D, subImage.depthStencilTexture, 0)), gl.checkFramebufferStatus(gl.FRAMEBUFFER) || console.error("Target framebuffer for", view.eye, "eye is incomplete.");
+    }), this.nextFrame(time, frame);
+  }
+  _updateInputComponent(frame, space, inputType) {
+    if (!space)
+      return;
+    let pose = frame.getPose(space, this._refSpace);
+    !pose || Number.isNaN(pose.transform.matrix[0]) || (this._tempPose(pose.transform), this.engine.scene._setInputTransformation(inputType, this._tempPosition, this._tempRotation));
   }
 };
 var GLTFExtensions = class {
@@ -6763,6 +7505,8 @@ var Scene = class _Scene extends Prefab {
     super(engine2, index), this._rayHit = this.engine?.wasm._malloc(4 * (3 * 4 + 3 * 4 + 4 + 2) + 4), this._hit = new RayHit(this, this._rayHit), this._environment = new Environment(this);
   }
   instantiate(prefab) {
+    if (prefab._index === this._index)
+      throw new Error("Can't instantiate scene into itself");
     let id = this.engine.wasm._wl_scene_instantiate(prefab._index, this._index), result = { root: this.wrap(id) };
     if (prefab instanceof PrefabGLTF) {
       let obj = this.wrap(id);
@@ -6776,13 +7520,30 @@ var Scene = class _Scene extends Prefab {
     let wasm = this.engine.wasm, rayPtr = this._rayHit;
     super.destroy(), wasm._free(rayPtr);
   }
+  get views() {
+    return this._components.components(ViewComponent, false);
+  }
   get activeViews() {
-    let wasm = this.engine.wasm, count = wasm._wl_scene_get_active_views(this._index, wasm._tempMem, 16), views = [];
-    for (let i = 0; i < count; ++i) {
-      let id = wasm._tempMemInt[i];
-      views.push(this._components.wrapView(id));
-    }
-    return views;
+    return this._components.components(ViewComponent, true);
+  }
+  get mainView() {
+    let id = this.engine.wasm._wl_scene_get_mainView(this._index);
+    return this._components.wrapView(id);
+  }
+  set mainView(view) {
+    view && (this.assertOrigin(view), this.engine.wasm._wl_scene_set_mainView(view._id));
+  }
+  get leftEyeView() {
+    let id = this.engine.wasm._wl_scene_get_leftView(this._index);
+    return this._components.wrapView(id);
+  }
+  get rightEyeView() {
+    let id = this.engine.wasm._wl_scene_get_rightView(this._index);
+    return this._components.wrapView(id);
+  }
+  _setInputTransformation(type, position, orientation) {
+    let wasm = this.engine.wasm;
+    wasm.requireTempMem(4 * 2 * 4), wasm._tempMemFloat.set(position), wasm._tempMemFloat.set(orientation, 4), wasm._wl_input_set_transformation(this._index, type, wasm._tempMem);
   }
   rayCast(o, d, groupMask, maxDistance = 100) {
     return this.engine.wasm._wl_scene_ray_cast(this._index, o[0], o[1], o[2], d[0], d[1], d[2], groupMask, this._rayHit, maxDistance), this._hit;
@@ -6821,20 +7582,15 @@ var Scene = class _Scene extends Prefab {
   get environment() {
     return this._environment;
   }
+  get componentsBundle() {
+    let wasm = this.engine.wasm, ptr = wasm._wl_scene_get_componentsBundle(this._index);
+    return ptr ? wasm.UTF8ToString(ptr) : null;
+  }
   reset() {
   }
   async _downloadDependency(url) {
-    if (this.engine._canUseChunkLoading()) {
-      let sink = new ChunkedSceneLoadSink(this.engine, 2, url, this._index);
-      await (await fetchStreamWithProgress(url)).pipeTo(new WritableStream(sink));
-    } else {
-      let wasm = this.engine.wasm, buffer = await fetchWithProgress(url), ptr = wasm.copyBufferToHeap(buffer);
-      try {
-        wasm._wl_scene_load_queued_bin(this._index, ptr, buffer.byteLength);
-      } finally {
-        wasm._free(ptr);
-      }
-    }
+    let sink = new ChunkedSceneLoadSink(this.engine, 2, url, this._index);
+    return (await fetchStreamWithProgress(url)).pipeTo(new WritableStream(sink));
   }
   async _downloadDependencies() {
     let wasm = this.engine.wasm, count = wasm._wl_scene_queued_bin_count(this._index);
@@ -6847,48 +7603,91 @@ var Scene = class _Scene extends Prefab {
     return wasm._wl_scene_clear_queued_bin_list(this._index), Promise.all(urls.map((url) => this._downloadDependency(url)));
   }
 };
-function checkXRSupport() {
-  if (!navigator.xr) {
-    let isLocalhost = location.hostname === "localhost" || location.hostname === "127.0.0.1", missingHTTPS = location.protocol !== "https:" && !isLocalhost;
-    return Promise.reject(missingHTTPS ? "WebXR is only supported with HTTPS or on localhost!" : "WebXR unsupported in this browser.");
+function checkRuntimeCompatibility(version2) {
+  let { major, minor } = version2, majorDiff = major - APIVersion.major, minorDiff = minor - APIVersion.minor;
+  if (!majorDiff && !minorDiff)
+    return;
+  let error = `checkRuntimeCompatibility(): Version compatibility mismatch:
+	\u2192 API and runtime compatibility is enforced on a patch level (versions x.y.*)
+`;
+  throw majorDiff < 0 || !majorDiff && minorDiff < 0 ? new Error(`${error}	\u2192 Please use a Wonderland Engine editor version >= ${APIVersion.major}.${APIVersion.minor}.*`) : new Error(`${error}	\u2192 Please use a new API version >= ${version2.major}.${version2.minor}.*`);
+}
+function reloadPage(engine2) {
+  let session = engine2.xr?.session ?? null;
+  if (!session) {
+    location.reload();
+    return;
   }
-  return Promise.resolve();
+  session.end().then(() => location.reload());
 }
 var WonderlandEngine = class {
-  onXRSessionEnd = new Emitter();
-  onXRSessionStart = new RetainEmitter();
+  get onXRSessionEnd() {
+    return this.#webxr.onSessionEnd;
+  }
+  get onXRSessionStart() {
+    return this.#webxr.onSessionStart;
+  }
   onResize = new Emitter();
-  arSupported = false;
-  vrSupported = false;
+  get arSupported() {
+    return this.#webxr.arSupported;
+  }
+  get vrSupported() {
+    return this.#webxr.vrSupported;
+  }
   onLoadingScreenEnd = new RetainEmitter();
   onSceneLoaded = new Emitter();
   onSceneActivated = new Emitter();
   onHotReloadRequest = new Emitter();
   i18n = new I18N(this);
-  xr = null;
+  get xr() {
+    return this.#webxr.sessionState;
+  }
   erasePrototypeOnDestroy = false;
   legacyMaterialSupport = true;
-  _useChunkLoading = true;
+  autoHotReload = true;
+  loadUncompressedImagesAsBitmap = false;
   _scenes = [];
-  _scene = null;
-  _textures = null;
-  _materials = null;
-  _meshes = null;
-  _morphTargets = null;
-  _fonts = null;
+  _scene;
+  _mainSceneVersion = 0;
+  _textures;
+  _materials;
+  _meshes;
+  _morphTargets;
+  _fonts;
+  _particleEffects;
+  _uncompressedPromises = [];
   #wasm;
   #physics = null;
+  #webxr;
   #resizeObserver = null;
-  #initialReferenceSpaceType = null;
-  constructor(wasm, loadingScreen) {
-    this.#wasm = wasm, this.#wasm._setEngine(this), this.#wasm._loadingScreen = loadingScreen, this.canvas.addEventListener("webglcontextlost", (e) => this.log.error(0, "Context lost:", e), false);
+  #bundleCache = /* @__PURE__ */ new Set();
+  constructor(wasm, loadingScreen, withRenderer) {
+    this.#wasm = wasm, this.#wasm._setEngine(this), this.#wasm._loadingScreen = loadingScreen;
+    let version2 = this.runtimeVersion, versionString = `${version2.major}.${version2.minor}.${version2.patch}`;
+    version2.rc > 0 && (versionString += `-rc${version2.rc}`), this.log.info(0, "Wonderland Engine runtime version:", versionString), this.#webxr = new WebXR(this), checkRuntimeCompatibility(this.#wasm.runtimeVersion), this.#wasm._wl_set_error_callback(this.#wasm.addFunction((messagePtr) => {
+      throw new Error(this.#wasm.UTF8ToString(messagePtr));
+    }, "vi")), this.#wasm._wl_application_create(), this.#physics = null, this.#wasm.withPhysX && (this.#physics = new Physics(this)), this._init(withRenderer), this._scene = this._reload(0), this.canvas.addEventListener("webglcontextlost", (e) => this.log.error(0, "Context lost:", e), false);
   }
   start() {
     this.wasm._wl_application_start();
   }
+  destroy() {
+    this.wasm._wl_application_exit(), requestAnimationFrame(() => {
+      this.wasm._wl_application_destroy();
+    });
+  }
   registerComponent(...classes) {
     for (let arg of classes)
       this.wasm._registerComponent(arg);
+  }
+  async registerBundle(url, nocache = false) {
+    if (!nocache && this.#bundleCache.has(url))
+      return;
+    this.#bundleCache.add(url), nocache && (url += `?t=${Date.now()}`);
+    let register = (await import(url)).default;
+    if (typeof register != "function")
+      throw new Error(`The bundle '${url}' doesn't have a default exported registration function`);
+    register(this);
   }
   setLoadingProgress(percentage) {
     this.wasm._wl_set_loading_screen_progress(clamp(percentage, 0, 1));
@@ -6896,7 +7695,7 @@ var WonderlandEngine = class {
   async switchTo(scene, opts = {}) {
     this.wasm._wl_deactivate_activeScene();
     let previous = this.scene;
-    this._preactivate(scene), this.wasm._wl_scene_activate(scene._index), this.onLoadingScreenEnd.isDataRetained || this.onLoadingScreenEnd.notify();
+    this._preactivate(scene), this.wasm._wl_scene_activate(scene._index), this.#webxr.updateViewState(void 0), this.#webxr.updateProjectionParams(void 0, void 0), this.onLoadingScreenEnd.isDataRetained || this.onLoadingScreenEnd.notify();
     let promise = scene._downloadDependencies();
     await this.i18n.setLanguage(this.i18n.languageCode(0));
     let { dispatchReadyEvent = false, waitForDependencies = false } = opts;
@@ -6906,22 +7705,22 @@ var WonderlandEngine = class {
     progress ??= (bytes, size) => {
       this.log.info(1, `Scene downloading: ${bytes} / ${size}`), this.setLoadingProgress(bytes / size);
     };
-    let opts = Prefab.makeUrlLoadOptions(options), { streamed = true } = opts;
-    if (this._canUseChunkLoading() && streamed) {
+    let opts = Prefab.makeUrlLoadOptions(options), { streamed = true, nocache = false } = opts;
+    if (streamed) {
       let options2 = await Scene.loadStream(opts, progress), { stream, url } = Prefab.validateStreamOptions(options2);
-      return this._loadMainScene(stream, url, options2);
+      return this._loadMainScene(stream, url, nocache, options2);
     } else {
       let options2 = await Scene.loadBuffer(opts, progress);
       return this.loadMainSceneFromBuffer(options2);
     }
   }
   async loadMainSceneFromBuffer(options) {
-    let { buffer, url } = Prefab.validateBufferOptions(options);
-    return this._loadMainScene(buffer, url, options);
+    let { nocache = false } = options, { buffer, url } = Prefab.validateBufferOptions(options);
+    return this._loadMainScene(buffer, url, nocache, options);
   }
   async loadPrefab(options, progress) {
     let opts = Prefab.makeUrlLoadOptions(options), { streamed = true } = opts;
-    if (this._canUseChunkLoading() && streamed) {
+    if (streamed) {
       let options2 = await Scene.loadStream(opts, progress), scene = await this._loadSceneFromStream(Prefab, options2);
       return this._validateLoadedPrefab(scene), scene._initialize(), scene;
     } else {
@@ -6935,7 +7734,7 @@ var WonderlandEngine = class {
   }
   async loadScene(options, progress) {
     let opts = Prefab.makeUrlLoadOptions(options), { streamed = true } = opts;
-    if (this._canUseChunkLoading() && streamed) {
+    if (streamed) {
       let options2 = await Scene.loadStream(opts, progress), scene = await this._loadSceneFromStream(Scene, options2);
       return this._validateLoadedScene(scene), scene._initialize(), scene;
     } else {
@@ -6959,13 +7758,17 @@ var WonderlandEngine = class {
     let ptr = wasm.copyBufferToHeap(buffer);
     try {
       let index = wasm._wl_glTF_scene_create(extensions, ptr, buffer.byteLength), scene = new PrefabGLTF(this, index);
-      return this._scenes[scene._index] = scene, scene;
+      return this._scenes[scene._index] = scene, this.runtimeVersion.patch && this._loadUncompressedImages(scene._index), scene;
     } finally {
       wasm._free(ptr);
     }
   }
   isRegistered(typeOrClass) {
     return this.#wasm.isRegistered(isString(typeOrClass) ? typeOrClass : typeOrClass.TypeName);
+  }
+  getComponentClass(typename) {
+    let index = this.wasm._componentTypeIndices[typename];
+    return index === void 0 ? null : this.wasm._componentTypes[index];
   }
   resize(width, height, devicePixelRatio = window.devicePixelRatio) {
     width = width * devicePixelRatio, height = height * devicePixelRatio, this.canvas.width = width, this.canvas.height = height, this.wasm._wl_application_resize(width, height), this.onResize.notify();
@@ -6974,10 +7777,10 @@ var WonderlandEngine = class {
     this.#wasm._wl_nextFrame(fixedDelta);
   }
   requestXRSession(mode, features, optionalFeatures = []) {
-    return checkXRSupport().then(() => this.#wasm.webxr_requestSession(mode, features, optionalFeatures));
+    return this.#webxr.requestSession(mode, features, optionalFeatures);
   }
   offerXRSession(mode, features, optionalFeatures = []) {
-    return checkXRSupport().then(() => this.#wasm.webxr_offerSession(mode, features, optionalFeatures));
+    return this.#webxr.offerSession(mode, features, optionalFeatures);
   }
   wrapObject(objectId) {
     return this.scene.wrap(objectId);
@@ -6990,6 +7793,9 @@ var WonderlandEngine = class {
   }
   get wasm() {
     return this.#wasm;
+  }
+  get webxr() {
+    return this.#webxr;
   }
   get canvas() {
     return this.#wasm.canvas;
@@ -7007,10 +7813,10 @@ var WonderlandEngine = class {
     return this.xr?.framebuffers[0] ?? null;
   }
   get xrFramebufferScaleFactor() {
-    return this.#wasm.webxr_framebufferScaleFactor;
+    return this.#webxr.framebufferScaleFactor;
   }
   set xrFramebufferScaleFactor(value) {
-    this.#wasm.webxr_framebufferScaleFactor = value;
+    this.#webxr.framebufferScaleFactor = value;
   }
   get physics() {
     return this.#physics;
@@ -7030,6 +7836,9 @@ var WonderlandEngine = class {
   get fonts() {
     return this._fonts;
   }
+  get particleEffects() {
+    return this._particleEffects;
+  }
   get images() {
     let wasm = this.wasm, max3 = wasm._tempMemSize >> 1, count = wasm._wl_get_images(wasm._tempMem, max3), result = new Array(count);
     for (let i = 0; i < count; ++i) {
@@ -7039,11 +7848,18 @@ var WonderlandEngine = class {
     return result;
   }
   get imagesPromise() {
-    let promises = this.images.map((i) => onImageReady(i));
-    return Promise.all(promises);
+    let wasm = this.wasm, max3 = wasm._tempMemSize >> 1, count = wasm._wl_get_images(wasm._tempMem, max3), result = new Array(count);
+    for (let i = 0; i < count; ++i) {
+      let index = wasm._tempMemUint16[i], loading = this._uncompressedPromises[index];
+      result[i] = (loading ?? Promise.resolve()).then(() => wasm._images[index]);
+    }
+    return Promise.all(result);
   }
   get isTextureStreamingIdle() {
     return !!this.wasm._wl_renderer_streaming_idle();
+  }
+  get isReverseZEnabled() {
+    return !!this.wasm._wl_renderer_isReverseZEnabled();
   }
   set autoResizeCanvas(flag) {
     if (!!this.#resizeObserver !== flag) {
@@ -7061,33 +7877,31 @@ var WonderlandEngine = class {
     return this.#resizeObserver !== null;
   }
   get runtimeVersion() {
-    let wasm = this.#wasm;
-    return wasm._wl_application_version(wasm._tempMem), { major: wasm._tempMemUint16[0], minor: wasm._tempMemUint16[1], patch: wasm._tempMemUint16[2], rc: wasm._tempMemUint16[3] };
+    return this.#wasm.runtimeVersion;
   }
   get log() {
     return this.#wasm._log;
   }
-  _init() {
-    let onXRStart = () => {
-      this.#initialReferenceSpaceType = this.xr.currentReferenceSpaceType;
-      let newSpace = this.xr.referenceSpaceForType("local") ?? this.xr.referenceSpaceForType("viewer");
-      this.xr.currentReferenceSpace = newSpace;
-    };
-    if (this.onXRSessionStart.add(onXRStart), this.onLoadingScreenEnd.once(() => {
-      this.onXRSessionStart.remove(onXRStart), !(!this.xr || !this.#initialReferenceSpaceType) && (this.xr.currentReferenceSpace = this.xr.referenceSpaceForType(this.#initialReferenceSpaceType) ?? this.xr.referenceSpaceForType("viewer"), this.#initialReferenceSpaceType = null);
-    }), this.#wasm._wl_set_error_callback(this.#wasm.addFunction((messagePtr) => {
-      throw new Error(this.#wasm.UTF8ToString(messagePtr));
-    }, "vi")), this.#physics = null, this.#wasm.withPhysX) {
-      let physics = new Physics(this);
-      this.#wasm._wl_physx_set_collision_callback(this.#wasm.addFunction((a, index, type, b) => {
-        let physxA = this.scene._components.wrapPhysx(a), physxB = this.scene._components.wrapPhysx(b), callback = this.scene._pxCallbacks.get(physxA._id)[index];
-        callback(type, physxB);
-      }, "viiii")), this.#physics = physics;
-    }
-    this.resize(this.canvas.clientWidth, this.canvas.clientHeight), this._scene = this._reload(0);
+  _init(withRenderer) {
+    if (!this.#wasm._wl_application_init(withRenderer))
+      throw new Error("Failed to initializing Wonderland runtime");
+    return this.resize(this.canvas.clientWidth, this.canvas.clientHeight), true;
   }
   _reset() {
-    return this.wasm.reset(), this._scenes.length = 0, this._scene = this._reload(0), this.switchTo(this._scene);
+    return this.wasm.reset(), this._scenes.length = 0, this._scene = this._reload(0), this.#bundleCache.clear(), this.switchTo(this._scene);
+  }
+  async _reloadRequest(filename) {
+    if (filename === null) {
+      reloadPage(this);
+      return;
+    }
+    try {
+      this.autoHotReload && await this.loadMainScene({ url: filename, nocache: true });
+    } catch (e) {
+      console.error("Hot reload request failed to load main scene, reason:", e), setTimeout(() => reloadPage(this), 1e3);
+      return;
+    }
+    this.onHotReloadRequest.notify(filename);
   }
   _createEmpty() {
     let index = this.wasm._wl_scene_create_empty(), scene = new Scene(this, index);
@@ -7100,76 +7914,43 @@ var WonderlandEngine = class {
   }
   _reload(index) {
     let scene = new Scene(this, index);
-    return this._scenes[index] = scene, this._textures = new TextureManager(this), this._materials = new MaterialManager(this), this._meshes = new MeshManager(this), this._morphTargets = new ResourceManager(this, MorphTargets), this._fonts = new ResourceManager(this, Font), scene;
+    return this._scenes[index] = scene, this._textures = new TextureManager(this), this._materials = new MaterialManager(this), this._meshes = new MeshManager(this), this._morphTargets = new ResourceManager(this, MorphTargets), this._fonts = new ResourceManager(this, Font), this._particleEffects = new ResourceManager(this, ParticleEffect), this._uncompressedPromises.length = 0, scene;
   }
-  async _loadMainScene(data, url, options) {
-    let wasm = this.#wasm;
-    wasm._wl_deactivate_activeScene();
-    for (let i = this._scenes.length - 1; i >= 0; --i) {
-      let scene = this._scenes[i];
-      scene && scene.destroy();
-    }
-    this._textures._clear(), this._materials._clear(), this._meshes._clear(), this._morphTargets._clear();
-    let index = -1;
-    if (this._canUseChunkLoading()) {
-      let stream = data instanceof ReadableStream ? data : new ReadableStream(new ArrayBufferSource(data)), sink = new ChunkedSceneLoadSink(this, 1, url);
-      await stream.pipeTo(new WritableStream(sink)), index = sink.sceneIndex;
-    } else {
-      let buffer;
-      if (data instanceof ReadableStream) {
-        let sink = new ArrayBufferSink();
-        await data.pipeTo(new WritableStream(sink)), buffer = sink.arrayBuffer;
-      } else
-        buffer = data;
-      let ptr = wasm.copyBufferToHeap(buffer);
-      try {
-        index = wasm._wl_load_main_scene(ptr, buffer.byteLength, wasm.tempUTF8(url));
-      } finally {
-        wasm._free(ptr);
+  async _loadMainScene(data, url, nocache, options) {
+    nocache && (url += `?t=${Date.now()}`);
+    let wasm = this.#wasm, isLoadingScreen = this._mainSceneVersion === 0;
+    ++this._mainSceneVersion;
+    let version2 = this.runtimeVersion;
+    if (version2.minor === 4 && version2.patch < 6 || !isLoadingScreen) {
+      wasm._wl_deactivate_activeScene();
+      for (let i = this._scenes.length - 1; i >= 0; --i) {
+        let scene = this._scenes[i];
+        scene && scene.destroy();
       }
-      if (index === -1)
-        throw new Error("Failed to load main scene");
     }
-    let mainScene = this._reload(index);
-    return this._preactivate(mainScene), mainScene._initialize(), await this.switchTo(mainScene, options), mainScene;
+    this._textures._clear(), this._materials._clear(), this._meshes._clear(), this._morphTargets._clear(), this._uncompressedPromises.length = 0;
+    let stream = data instanceof ReadableStream ? data : new ReadableStream(new ArrayBufferSource(data)), sink = new ChunkedSceneLoadSink(this, 1, url);
+    await stream.pipeTo(new WritableStream(sink));
+    let mainScene = this._reload(sink.sceneIndex);
+    this._loadUncompressedImages(mainScene._index), this._preactivate(mainScene);
+    let componentsBundle = mainScene.componentsBundle;
+    if (componentsBundle) {
+      let bundleURL = new URL(componentsBundle, document.baseURI), url2 = nocache ? bundleURL.href.split("?")[0] : bundleURL.href;
+      await this.registerBundle(url2, nocache);
+    }
+    return mainScene._initialize(), await this.switchTo(mainScene, options), mainScene;
   }
   _loadSceneFromBuffer(PrefabClass, options) {
-    let { buffer, url } = Scene.validateBufferOptions(options), index = -1;
-    if (this._canUseChunkLoading()) {
-      let sink = new ChunkedSceneLoadSink(this, 0, url);
-      sink.write(new Uint8Array(buffer)), sink.close(), index = sink.sceneIndex;
-    } else {
-      let wasm = this.wasm, ptr = wasm.copyBufferToHeap(buffer);
-      try {
-        index = wasm._wl_scene_create(ptr, buffer.byteLength, wasm.tempUTF8(url));
-      } finally {
-        wasm._free(ptr);
-      }
-      if (!index)
-        throw new Error("Failed to parse scene");
-    }
-    let scene = new PrefabClass(this, index);
-    return this._scenes[index] = scene, scene;
+    let { buffer, url } = Scene.validateBufferOptions(options), sink = new ChunkedSceneLoadSink(this, 0, url);
+    sink.write(new Uint8Array(buffer)), sink.close();
+    let index = sink.sceneIndex, scene = new PrefabClass(this, index);
+    return this._scenes[index] = scene, this._loadUncompressedImages(scene._index), scene;
   }
   async _loadSceneFromStream(PrefabClass, options) {
-    let { stream, url } = Scene.validateStreamOptions(options), index = -1;
-    if (this._canUseChunkLoading()) {
-      let sink = new ChunkedSceneLoadSink(this, 0, url);
-      await stream.pipeTo(new WritableStream(sink)), index = sink.sceneIndex;
-    } else {
-      let sink = new ArrayBufferSink();
-      await stream.pipeTo(new WritableStream(sink));
-      let buffer = sink.arrayBuffer, wasm = this.wasm, ptr = wasm.copyBufferToHeap(buffer);
-      try {
-        index = wasm._wl_scene_create(ptr, buffer.byteLength, wasm.tempUTF8(url));
-      } finally {
-        wasm._free(ptr);
-      }
-      if (!index)
-        throw new Error("Failed to parse scene");
-    }
-    let scene = new PrefabClass(this, index);
-    return this._scenes[index] = scene, scene;
+    let { stream, url } = Scene.validateStreamOptions(options), sink = new ChunkedSceneLoadSink(this, 0, url);
+    await stream.pipeTo(new WritableStream(sink));
+    let index = sink.sceneIndex, scene = new PrefabClass(this, index);
+    return this._scenes[index] = scene, this._loadUncompressedImages(scene._index), scene;
   }
   _validateLoadedPrefab(scene) {
     if (this.wasm._wl_scene_activatable(scene._index))
@@ -7179,11 +7960,24 @@ var WonderlandEngine = class {
     if (!this.wasm._wl_scene_activatable(scene._index))
       throw this.wasm._wl_scene_destroy(scene._index), new Error("File is not a scene. To load a prefab, use loadPrefab() instead");
   }
-  _canUseChunkLoading() {
-    return this._useChunkLoading && (this.runtimeVersion.minor > 2 || this.runtimeVersion.patch >= 1);
-  }
   _preactivate(scene) {
     this._scene = scene, this.physics && (this.physics._hit._scene = scene);
+  }
+  _loadUncompressedImages(sceneIndex) {
+    let mainSceneVersion = this._mainSceneVersion, wasm = this.wasm, bitmapOptions = { colorSpaceConversion: "none" }, imageCount = wasm._wl_image_count();
+    for (let i = 0; i < imageCount; ++i) {
+      if (wasm._wl_image_originalScene(i) !== sceneIndex)
+        continue;
+      let jsImageIndex = wasm._wl_image_get_jsImage_index(i), image = wasm._images[jsImageIndex];
+      if (!image)
+        continue;
+      let promise = onImageReady(image);
+      this.loadUncompressedImagesAsBitmap && (promise = promise.then((img) => createImageBitmap(img, bitmapOptions))), this._uncompressedPromises[jsImageIndex] = promise.then((img) => {
+        this._mainSceneVersion === mainSceneVersion && wasm._wl_image_markReady(i, img.width, img.height, needsFlipY(img));
+      }).catch((e) => {
+        this._mainSceneVersion === mainSceneVersion && this.log.error(1, "Failed to load uncompressed image", e);
+      });
+    }
   }
 };
 function assert(bit) {
@@ -7216,249 +8010,24 @@ var LogLevel = ((LogLevel2) => (LogLevel2[LogLevel2.Info = 0] = "Info", LogLevel
 var Logger = class {
   levels = new BitSet();
   tags = new BitSet().enableAll();
+  onLog = new Emitter();
   constructor(...levels) {
     this.levels.enable(...levels);
   }
   info(tag, ...msg) {
-    return this.levels.enabled(0) && this.tags.enabled(tag) && console.log(...msg), this;
+    return this.levels.enabled(0) && this.tags.enabled(tag) && console.log(...msg), this.onLog.notify(0, msg, tag), this;
   }
   warn(tag, ...msg) {
-    return this.levels.enabled(1) && this.tags.enabled(tag) && console.warn(...msg), this;
+    return this.levels.enabled(1) && this.tags.enabled(tag) && console.warn(...msg), this.onLog.notify(1, msg, tag), this;
   }
   error(tag, ...msg) {
-    return this.levels.enabled(2) && this.tags.enabled(tag) && console.error(...msg), this;
+    return this.levels.enabled(2) && this.tags.enabled(tag) && console.error(...msg), this.onLog.notify(2, msg, tag), this;
   }
 };
-function decode(data, tagger = (_, value) => value, options = {}) {
-  let { dictionary = "object" } = options, dataView = new DataView(data.buffer, data.byteOffset, data.byteLength), offset2 = 0;
-  function commitRead(length5, value) {
-    return offset2 += length5, value;
-  }
-  function readArrayBuffer(length5) {
-    return commitRead(length5, data.subarray(offset2, offset2 + length5));
-  }
-  function readFloat16() {
-    let POW_2_24 = 5960464477539063e-23, tempArrayBuffer = new ArrayBuffer(4), tempDataView = new DataView(tempArrayBuffer), value = readUint16(), sign = value & 32768, exponent = value & 31744, fraction = value & 1023;
-    if (exponent === 31744)
-      exponent = 261120;
-    else if (exponent !== 0)
-      exponent += 114688;
-    else if (fraction !== 0)
-      return (sign ? -1 : 1) * fraction * POW_2_24;
-    return tempDataView.setUint32(0, sign << 16 | exponent << 13 | fraction << 13), tempDataView.getFloat32(0);
-  }
-  function readFloat32() {
-    return commitRead(4, dataView.getFloat32(offset2));
-  }
-  function readFloat64() {
-    return commitRead(8, dataView.getFloat64(offset2));
-  }
-  function readUint8() {
-    return commitRead(1, data[offset2]);
-  }
-  function readUint16() {
-    return commitRead(2, dataView.getUint16(offset2));
-  }
-  function readUint32() {
-    return commitRead(4, dataView.getUint32(offset2));
-  }
-  function readUint64() {
-    return commitRead(8, dataView.getBigUint64(offset2));
-  }
-  function readBreak() {
-    return data[offset2] !== 255 ? false : (offset2 += 1, true);
-  }
-  function readLength(additionalInformation) {
-    if (additionalInformation < 24)
-      return additionalInformation;
-    if (additionalInformation === 24)
-      return readUint8();
-    if (additionalInformation === 25)
-      return readUint16();
-    if (additionalInformation === 26)
-      return readUint32();
-    if (additionalInformation === 27) {
-      let integer = readUint64();
-      return integer <= Number.MAX_SAFE_INTEGER ? Number(integer) : integer;
-    }
-    if (additionalInformation === 31)
-      return -1;
-    throw new Error("CBORError: Invalid length encoding");
-  }
-  function readIndefiniteStringLength(majorType) {
-    let initialByte = readUint8();
-    if (initialByte === 255)
-      return -1;
-    let length5 = readLength(initialByte & 31);
-    if (length5 < 0 || initialByte >> 5 !== majorType)
-      throw new Error("CBORError: Invalid indefinite length element");
-    return Number(length5);
-  }
-  function appendUtf16Data(utf16data, length5) {
-    for (let i = 0; i < length5; ++i) {
-      let value = readUint8();
-      value & 128 && (value < 224 ? (value = (value & 31) << 6 | readUint8() & 63, length5 -= 1) : value < 240 ? (value = (value & 15) << 12 | (readUint8() & 63) << 6 | readUint8() & 63, length5 -= 2) : (value = (value & 7) << 18 | (readUint8() & 63) << 12 | (readUint8() & 63) << 6 | readUint8() & 63, length5 -= 3)), value < 65536 ? utf16data.push(value) : (value -= 65536, utf16data.push(55296 | value >> 10), utf16data.push(56320 | value & 1023));
-    }
-  }
-  function decodeItem() {
-    let initialByte = readUint8(), majorType = initialByte >> 5, additionalInformation = initialByte & 31, i, length5;
-    if (majorType === 7)
-      switch (additionalInformation) {
-        case 25:
-          return readFloat16();
-        case 26:
-          return readFloat32();
-        case 27:
-          return readFloat64();
-      }
-    if (length5 = readLength(additionalInformation), length5 < 0 && (majorType < 2 || 6 < majorType))
-      throw new Error("CBORError: Invalid length");
-    switch (majorType) {
-      case 0:
-        return length5;
-      case 1:
-        return typeof length5 == "number" ? -1 - length5 : -1n - length5;
-      case 2: {
-        if (length5 < 0) {
-          let elements = [], fullArrayLength = 0;
-          for (; (length5 = readIndefiniteStringLength(majorType)) >= 0; )
-            fullArrayLength += length5, elements.push(readArrayBuffer(length5));
-          let fullArray = new Uint8Array(fullArrayLength), fullArrayOffset = 0;
-          for (i = 0; i < elements.length; ++i)
-            fullArray.set(elements[i], fullArrayOffset), fullArrayOffset += elements[i].length;
-          return fullArray;
-        }
-        return readArrayBuffer(length5).slice();
-      }
-      case 3: {
-        let utf16data = [];
-        if (length5 < 0)
-          for (; (length5 = readIndefiniteStringLength(majorType)) >= 0; )
-            appendUtf16Data(utf16data, length5);
-        else
-          appendUtf16Data(utf16data, length5);
-        let string = "", DECODE_CHUNK_SIZE = 8192;
-        for (i = 0; i < utf16data.length; i += DECODE_CHUNK_SIZE)
-          string += String.fromCharCode.apply(null, utf16data.slice(i, i + DECODE_CHUNK_SIZE));
-        return string;
-      }
-      case 4: {
-        let retArray;
-        if (length5 < 0) {
-          retArray = [];
-          let index = 0;
-          for (; !readBreak(); )
-            retArray.push(decodeItem());
-        } else
-          for (retArray = new Array(length5), i = 0; i < length5; ++i)
-            retArray[i] = decodeItem();
-        return retArray;
-      }
-      case 5: {
-        if (dictionary === "map") {
-          let retMap = /* @__PURE__ */ new Map();
-          for (i = 0; i < length5 || length5 < 0 && !readBreak(); ++i) {
-            let key = decodeItem();
-            if (retMap.has(key))
-              throw new Error("CBORError: Duplicate key encountered");
-            retMap.set(key, decodeItem());
-          }
-          return retMap;
-        }
-        let retObject = {};
-        for (i = 0; i < length5 || length5 < 0 && !readBreak(); ++i) {
-          let key = decodeItem();
-          if (Object.prototype.hasOwnProperty.call(retObject, key))
-            throw new Error("CBORError: Duplicate key encountered");
-          retObject[key] = decodeItem();
-        }
-        return retObject;
-      }
-      case 6: {
-        let value = decodeItem(), tag = length5;
-        if (value instanceof Uint8Array)
-          switch (tag) {
-            case 2:
-            case 3:
-              let num = value.reduce((acc, n) => (acc << 8n) + BigInt(n), 0n);
-              return tag == 3 && (num = -1n - num), num;
-            case 64:
-              return value;
-            case 72:
-              return new Int8Array(value.buffer);
-            case 69:
-              return new Uint16Array(value.buffer);
-            case 77:
-              return new Int16Array(value.buffer);
-            case 70:
-              return new Uint32Array(value.buffer);
-            case 78:
-              return new Int32Array(value.buffer);
-            case 71:
-              return new BigUint64Array(value.buffer);
-            case 79:
-              return new BigInt64Array(value.buffer);
-            case 85:
-              return new Float32Array(value.buffer);
-            case 86:
-              return new Float64Array(value.buffer);
-          }
-        return tagger(tag, value);
-      }
-      case 7:
-        switch (length5) {
-          case 20:
-            return false;
-          case 21:
-            return true;
-          case 22:
-            return null;
-          case 23:
-            return;
-          default:
-            return length5;
-        }
-    }
-  }
-  let ret = decodeItem();
-  if (offset2 !== data.byteLength)
-    throw new Error("CBORError: Remaining bytes");
-  return ret;
-}
-var CBOR = { decode };
-var _componentDefaults = /* @__PURE__ */ new Map([[1, false], [2, 0], [3, 0], [4, ""], [5, void 0], [6, null], [7, null], [8, null], [9, null], [10, null], [11, null], [12, Float32Array.from([0, 0, 0, 1])], [13, Float32Array.from([0, 0])], [14, Float32Array.from([0, 0, 0])], [15, Float32Array.from([0, 0, 0, 0])]]);
-function _setupDefaults(ctor) {
-  for (let name in ctor.Properties) {
-    let p = ctor.Properties[name];
-    if (p.type === 5)
-      p.values?.length ? (typeof p.default != "number" && (p.default = p.values.indexOf(p.default)), (p.default < 0 || p.default >= p.values.length) && (p.default = 0)) : p.default = void 0;
-    else if ((p.type === 12 || p.type === 13 || p.type === 14 || p.type === 15) && Array.isArray(p.default))
-      p.default = Float32Array.from(p.default);
-    else if (p.default === void 0) {
-      let cloner = p.cloner ?? defaultPropertyCloner;
-      p.default = cloner.clone(p.type, _componentDefaults.get(p.type));
-    }
-    ctor.prototype[name] = p.default;
-  }
-}
-function _setPropertyOrder(ctor) {
-  ctor._propertyOrder = ctor.hasOwnProperty("Properties") ? Object.keys(ctor.Properties).sort() : [];
-}
-var WASM2 = class {
-  worker = "";
+var WASM = class {
   wasm = null;
   canvas = null;
   preinitializedWebGPUDevice = null;
-  webxr_session = null;
-  webxr_requestSession = null;
-  webxr_offerSession = null;
-  webxr_frame = null;
-  webxr_refSpace = null;
-  webxr_refSpaces = null;
-  webxr_refSpaceType = null;
-  webxr_baseLayer = null;
-  webxr_framebufferScaleFactor = 1;
-  webxr_fbo = 0;
   UTF8ViewToString;
   _log = new Logger();
   _deactivate_component_on_error = false;
@@ -7482,6 +8051,12 @@ var WASM2 = class {
   constructor(threads2) {
     threads2 ? this.UTF8ViewToString = (s, e) => s ? this._utf8Decoder.decode(this.HEAPU8.slice(s, e)) : "" : this.UTF8ViewToString = (s, e) => s ? this._utf8Decoder.decode(this.HEAPU8.subarray(s, e)) : "", this._brokenComponentIndex = this._registerComponent(BrokenComponent);
   }
+  get runtimeVersion() {
+    let tempBuf = this._malloc(8), tempVersion = new Uint16Array(this.HEAP8.buffer, tempBuf, 4);
+    this._wl_runtime_version(tempBuf);
+    let version2 = { major: tempVersion[0], minor: tempVersion[1], patch: tempVersion[2], rc: tempVersion[3] };
+    return this._free(tempBuf), version2;
+  }
   reset() {
     this._wl_reset(), this._components = null, this._images.length = 1, this.allocateTempMemory(1024), this._componentTypes = [], this._componentTypeIndices = {}, this._brokenComponentIndex = this._registerComponent(BrokenComponent);
   }
@@ -7498,7 +8073,7 @@ var WASM2 = class {
       throw new Error("no name provided for component.");
     if (!ctor.prototype._triggerInit)
       throw new Error(`registerComponent(): Component ${ctor.TypeName} must extend Component`);
-    inheritProperties(ctor), _setupDefaults(ctor), _setPropertyOrder(ctor);
+    setupComponentClass(ctor);
     let typeIndex = ctor.TypeName in this._componentTypeIndices ? this._componentTypeIndices[ctor.TypeName] : this._componentTypes.length;
     return this._componentTypes[typeIndex] = ctor, this._componentTypeIndices[ctor.TypeName] = typeIndex, ctor === BrokenComponent || (this._log.info(0, "Registered component", ctor.TypeName, `(class ${ctor.name})`, "with index", typeIndex), ctor.onRegister && ctor.onRegister(this._engine)), typeIndex;
   }
@@ -7542,15 +8117,9 @@ var WASM2 = class {
   _setEngine(engine2) {
     this._engine = engine2;
   }
-  _wljs_xr_session_start(mode) {
-    this._engine.xr === null && (this._engine.xr = new XR(this, mode), this._engine.onXRSessionStart.notify(this.webxr_session, mode));
-  }
-  _wljs_xr_session_end() {
-    let startEmitter = this._engine.onXRSessionStart;
-    startEmitter instanceof RetainEmitter && startEmitter.reset(), this._engine.onXRSessionEnd.notify(), this._engine.xr = null;
-  }
-  _wljs_xr_disable() {
-    this._engine.arSupported = false, this._engine.vrSupported = false;
+  _wljs_reload(filenamePtr) {
+    let filename = filenamePtr ? this.UTF8ToString(filenamePtr) : null;
+    this._engine._reloadRequest(filename);
   }
   _wljs_init(withPhysX) {
     this._withPhysX = withPhysX, this.allocateTempMemory(1024);
@@ -7571,75 +8140,23 @@ var WASM2 = class {
     }
   }
   _wljs_scene_initialize(sceneIndex, idsPtr, idsEnd, paramDataPtr, paramDataEndPtr, offsetsPtr, offsetsEndPtr) {
-    let cbor = this.HEAPU8.subarray(paramDataPtr, paramDataEndPtr), offsets = this.HEAPU32.subarray(offsetsPtr >>> 2, offsetsEndPtr >>> 2), ids = this.HEAPU16.subarray(idsPtr >>> 1, idsEnd >>> 1), engine2 = this._engine, scene = engine2._scenes[sceneIndex], components = scene._jsComponents, decoded;
-    try {
-      decoded = CBOR.decode(cbor);
-    } catch (e) {
-      this._log.error(0, "Exception during component parameter decoding"), this._log.error(2, e);
+    let cborEncoded = this.HEAPU8.subarray(paramDataPtr, paramDataEndPtr), offsets = this.HEAPU32.subarray(offsetsPtr >>> 2, offsetsEndPtr >>> 2), ids = this.HEAPU16.subarray(idsPtr >>> 1, idsEnd >>> 1), scene = this._engine._scenes[sceneIndex], components = scene._jsComponents, cbor = new CBORReader(cborEncoded), componentsCount = 0;
+    {
+      let typeInfo = cbor.readTypeInfo();
+      if (getType(typeInfo) !== 0) {
+        this._log.error(0, "Parameters data must be an array");
+        return;
+      }
+      componentsCount = cbor.readArrayLength(typeInfo);
+    }
+    if (componentsCount !== ids.length) {
+      this._log.error(0, `Parameters set for ${componentsCount} components, but expected ${ids.length}`);
       return;
     }
-    if (!Array.isArray(decoded)) {
-      this._log.error(0, "Parameter data must be an array");
-      return;
-    }
-    if (decoded.length !== ids.length) {
-      this._log.error(0, `Parameter data has size ${decoded.length} but expected ${ids.length}`);
-      return;
-    }
-    for (let i = 0; i < decoded.length; ++i) {
-      let id = Component3._pack(sceneIndex, ids[i]), index = this._wl_get_js_component_index_for_id(id), component = components[index], ctor = component.constructor;
-      if (ctor == BrokenComponent)
-        continue;
-      let paramNames = ctor._propertyOrder, paramValues = decoded[i];
-      if (!Array.isArray(paramValues)) {
-        this._log.error(0, "Component parameter data must be an array");
-        continue;
-      }
-      if (paramValues.length !== paramNames.length) {
-        this._log.error(0, `Component parameter data has size ${paramValues.length} but expected ${paramNames.length}`);
-        continue;
-      }
-      for (let j2 = 0; j2 < paramValues.length; ++j2) {
-        let name = paramNames[j2], property2 = ctor.Properties[name], type = property2.type, value = paramValues[j2];
-        if (value === void 0) {
-          value = (property2.cloner ?? defaultPropertyCloner).clone(type, property2.default), component[name] = value;
-          continue;
-        }
-        switch (typeof value == "number" && (value += offsets[type]), type) {
-          case 1:
-          case 2:
-          case 3:
-          case 4:
-          case 5:
-          case 13:
-          case 14:
-          case 15:
-            break;
-          case 6:
-            value = value ? scene.wrap(this._wl_object_id(scene._index, value)) : null;
-            break;
-          case 7:
-            value = engine2.meshes.wrap(value);
-            break;
-          case 8:
-            value = engine2.textures.wrap(value);
-            break;
-          case 9:
-            value = engine2.materials.wrap(value);
-            break;
-          case 10:
-            value = scene.animations.wrap(value);
-            break;
-          case 11:
-            value = scene.skins.wrap(value);
-            break;
-          case 12:
-            let max3 = (1 << value.BYTES_PER_ELEMENT * 8) - 1;
-            value = Float32Array.from(value, (f, _) => f / max3);
-            break;
-        }
-        component[name] = value;
-      }
+    let decoder = new ComponentPropertyDecoder(scene, offsets);
+    for (let i = 0; i < componentsCount; ++i) {
+      let id = Component3._pack(sceneIndex, ids[i]), index = this._wl_get_js_component_index_for_id(id), component = components[index];
+      decoder.decode(cbor, component);
     }
   }
   _wljs_set_component_param_translation(scene, component, param, valuePtr, valueEndPtr) {
@@ -7672,93 +8189,46 @@ var WASM2 = class {
     let components = this._engine._scenes[scene]._jsComponents, componentA = components[a];
     components[a] = components[b], components[b] = componentA;
   }
-  _wljs_copy(srcSceneIndex, srcIndex, dstSceneIndex, dstIndex, offsetsPtr) {
+  _wljs_copy(srcSceneIndex, srcIndex, dstSceneIndex, dstIndex, offsetsPtr, copyInfoPtr) {
     let srcScene = this._engine._scenes[srcSceneIndex], destComp = this._engine._scenes[dstSceneIndex]._jsComponents[dstIndex], srcComp = srcScene._jsComponents[srcIndex];
-    try {
-      destComp._copy(srcComp, offsetsPtr);
-    } catch (e) {
-      this._log.error(2, `Exception during ${destComp.type} copy() on object ${destComp.object.name}`), this._log.error(2, e);
-    }
+    destComp._copy(srcComp, offsetsPtr, copyInfoPtr);
   }
   _wljs_trigger_animationEvent(componentId, namePtr, nameEndPtr) {
     let comp = this._engine.scene._components.wrapAnimation(componentId), nameStr = this.UTF8ViewToString(namePtr, nameEndPtr);
     comp.onEvent.notify(nameStr);
   }
 };
-function throwInvalidRuntime(version) {
+function throwInvalidRuntime(version2) {
   return function() {
-    throw new Error(`Feature added in version ${version}.
-	\u2192 Please use a Wonderland Engine editor version >= ${version}`);
+    throw new Error(`Feature added in version ${version2}.
+	\u2192 Please use a Wonderland Engine editor version >= ${version2}`);
   };
 }
-var requireRuntime1_2_1 = throwInvalidRuntime("1.2.1");
-WASM2.prototype._wl_text_component_get_wrapMode = requireRuntime1_2_1;
-WASM2.prototype._wl_text_component_set_wrapMode = requireRuntime1_2_1;
-WASM2.prototype._wl_text_component_get_wrapWidth = requireRuntime1_2_1;
-WASM2.prototype._wl_text_component_set_wrapWidth = requireRuntime1_2_1;
-WASM2.prototype._wl_font_get_outlineSize = requireRuntime1_2_1;
-WASM2.prototype._wl_scene_create_chunked_start = requireRuntime1_2_1;
-WASM2.prototype._wl_scene_create_chunked_buffer_size = requireRuntime1_2_1;
-WASM2.prototype._wl_scene_create_chunked_next = requireRuntime1_2_1;
-WASM2.prototype._wl_scene_create_chunked_abort = requireRuntime1_2_1;
-WASM2.prototype._wl_scene_create_chunked_end_prefab = requireRuntime1_2_1;
-WASM2.prototype._wl_scene_create_chunked_end_main = requireRuntime1_2_1;
-WASM2.prototype._wl_scene_create_chunked_end_queued = requireRuntime1_2_1;
-var requireRuntime1_2_2 = throwInvalidRuntime("1.2.2");
-WASM2.prototype._wl_view_component_get_projectionType = requireRuntime1_2_2;
-WASM2.prototype._wl_view_component_set_projectionType = requireRuntime1_2_2;
-WASM2.prototype._wl_view_component_get_extent = requireRuntime1_2_2;
-WASM2.prototype._wl_view_component_set_extent = requireRuntime1_2_2;
-WASM2.prototype._wl_animation_component_get_rootMotionMode = requireRuntime1_2_2;
-WASM2.prototype._wl_animation_component_set_rootMotionMode = requireRuntime1_2_2;
-WASM2.prototype._wl_animation_component_get_rootMotion_translation = requireRuntime1_2_2;
-WASM2.prototype._wl_animation_component_get_rootMotion_rotation = requireRuntime1_2_2;
-var requireRuntime1_2_3 = throwInvalidRuntime("1.2.3");
-WASM2.prototype._wl_scene_environment_set_intensity = requireRuntime1_2_3;
-WASM2.prototype._wl_scene_environment_get_intensity = requireRuntime1_2_3;
-WASM2.prototype._wl_scene_environment_set_tint = requireRuntime1_2_3;
-WASM2.prototype._wl_scene_environment_get_tint = requireRuntime1_2_3;
-WASM2.prototype._wl_scene_environment_set_coefficients = requireRuntime1_2_3;
-WASM2.prototype._wl_scene_environment_get_coefficients = requireRuntime1_2_3;
-WASM2.prototype._wl_animation_component_get_iteration = requireRuntime1_2_3;
-WASM2.prototype._wl_animation_component_get_position = requireRuntime1_2_3;
-WASM2.prototype._wl_animation_component_get_duration = requireRuntime1_2_3;
-WASM2.prototype._wl_renderer_streaming_idle = requireRuntime1_2_3;
-var APIVersion = { major: 1, minor: 2, patch: 4, rc: 0 };
+var requireRuntime1_4_3 = throwInvalidRuntime("1.4.3");
+WASM.prototype._wl_scene_set_mainView = requireRuntime1_4_3;
+var requireRuntime1_4_6 = throwInvalidRuntime("1.4.6");
+WASM.prototype._wl_animation_component_get_animationGraph = requireRuntime1_4_6;
+WASM.prototype._wl_animation_component_set_animationGraph = requireRuntime1_4_6;
+WASM.prototype._wl_application_exit = requireRuntime1_4_6;
+WASM.prototype._wl_application_destroy = requireRuntime1_4_6;
 var LOADING_SCREEN_PATH = "WonderlandRuntime-LoadingScreen.bin";
 function loadScript(scriptURL) {
-  return new Promise((res, rej) => {
+  return new Promise((resolve, reject) => {
     let s = document.createElement("script"), node = document.body.appendChild(s);
     s.onload = () => {
-      document.body.removeChild(node), res();
+      document.body.removeChild(node), resolve();
     }, s.onerror = (e) => {
-      document.body.removeChild(node), rej(e);
+      document.body.removeChild(node), reject(e);
     }, s.src = scriptURL;
   });
 }
 async function detectFeatures() {
-  let [simdSupported, threadsSupported] = await Promise.all([simd(), threads()]);
-  return simdSupported ? console.log("WASM SIMD is supported") : console.warn("WASM SIMD is not supported"), threadsSupported ? self.crossOriginIsolated ? console.log("WASM Threads is supported") : console.warn("WASM Threads is supported, but the page is not crossOriginIsolated, therefore thread support is disabled.") : console.warn("WASM Threads is not supported"), threadsSupported = threadsSupported && self.crossOriginIsolated, { simdSupported, threadsSupported };
-}
-var xrSupported = { ar: null, vr: null };
-function checkXRSupport2() {
-  if (typeof navigator > "u" || !navigator.xr)
-    return xrSupported.vr = false, xrSupported.ar = false, Promise.resolve(xrSupported);
-  let vrPromise = xrSupported.vr !== null ? Promise.resolve() : navigator.xr.isSessionSupported("immersive-vr").then((supported) => xrSupported.vr = supported).catch(() => xrSupported.vr = false), arPromise = xrSupported.ar !== null ? Promise.resolve() : navigator.xr.isSessionSupported("immersive-ar").then((supported) => xrSupported.ar = supported).catch(() => xrSupported.ar = false);
-  return Promise.all([vrPromise, arPromise]).then(() => xrSupported);
-}
-function checkRuntimeCompatibility(version) {
-  let { major, minor } = version, majorDiff = major - APIVersion.major, minorDiff = minor - APIVersion.minor;
-  if (!majorDiff && !minorDiff)
-    return;
-  let error = `checkRuntimeCompatibility(): Version compatibility mismatch:
-	\u2192 API and runtime compatibility is enforced on a patch level (versions x.y.*)
-`;
-  throw majorDiff < 0 || !majorDiff && minorDiff < 0 ? new Error(`${error}	\u2192 Please use a Wonderland Engine editor version >= ${APIVersion.major}.${APIVersion.minor}.*`) : new Error(`${error}	\u2192 Please use a new API version >= ${version.major}.${version.minor}.*`);
+  let threadsSupported = await threads();
+  return threadsSupported ? self.crossOriginIsolated ? console.log("WASM Threads is supported") : console.warn("WASM Threads is supported, but the page is not crossOriginIsolated, therefore thread support is disabled.") : console.warn("WASM Threads is not supported"), threadsSupported = threadsSupported && self.crossOriginIsolated, { threadsSupported };
 }
 async function loadRuntime(runtime, options = {}) {
-  let xrPromise = checkXRSupport2(), baseURL = getBaseUrl(runtime), { simdSupported, threadsSupported } = await detectFeatures(), { simd: simd2 = simdSupported, threads: threads2 = threadsSupported, webgpu = false, physx = false, loader = false, xrFramebufferScaleFactor = 1, xrOfferSession = null, loadingScreen = baseURL ? `${baseURL}/${LOADING_SCREEN_PATH}` : LOADING_SCREEN_PATH, canvas: canvas2 = "canvas", logs = [0, 1, 2] } = options, variant = [];
-  webgpu && variant.push("webgpu"), loader && variant.push("loader"), physx && variant.push("physx"), simd2 && variant.push("simd"), threads2 && variant.push("threads");
+  let baseURL = getBaseUrl(runtime), { threadsSupported } = await detectFeatures(), { threads: threads2 = threadsSupported, webgpu = false, physx = false, loader = false, renderer = true, xrFramebufferScaleFactor = 1, xrOfferSession = null, loadingScreen = baseURL ? `${baseURL}/${LOADING_SCREEN_PATH}` : LOADING_SCREEN_PATH, canvas: canvas2 = "canvas", logs = [0, 1, 2] } = options, variant = [];
+  loader && variant.push("loader"), physx && variant.push("physx"), threads2 && variant.push("threads"), webgpu && variant.push("webgpu");
   let variantStr = variant.join("-"), filename = runtime;
   variantStr && (filename = `${filename}-${variantStr}`);
   let download = function(filename2, errorMessage) {
@@ -7768,25 +8238,15 @@ async function loadRuntime(runtime, options = {}) {
     throw new Error(`loadRuntime(): Failed to find canvas with id '${canvas2}'`);
   if (!(canvasElement instanceof HTMLCanvasElement))
     throw new Error(`loadRuntime(): HTML element '${canvas2}' must be a canvas`);
-  let wasm = new WASM2(threads2);
-  if (wasm.worker = `${filename}.worker.js`, wasm.wasm = wasmData, wasm.canvas = canvasElement, wasm._log.levels.enable(...logs), webgpu) {
-    let adapter = await navigator.gpu.requestAdapter(), desc = { requiredFeatures: ["texture-compression-bc"] }, device = await adapter.requestDevice(desc);
-    wasm.preinitializedWebGPUDevice = device;
-  }
-  let engine2 = new WonderlandEngine(wasm, loadingScreenData);
-  window._WL || (window._WL = { runtimes: {} });
+  let wasm = new WASM(threads2);
+  wasm.wasm = wasmData, wasm.canvas = canvasElement, wasm._log.levels.enable(...logs), window._WL || (window._WL = { runtimes: {} });
   let runtimes = window._WL.runtimes, runtimeGlobalId = variantStr || "default";
-  runtimes[runtimeGlobalId] || (await loadScript(`${filename}.js`), runtimes[runtimeGlobalId] = window.instantiateWonderlandRuntime, window.instantiateWonderlandRuntime = void 0), await runtimes[runtimeGlobalId](wasm), engine2._init(), checkRuntimeCompatibility(engine2.runtimeVersion);
-  let xr = await xrPromise;
-  if (engine2.arSupported = xr.ar, engine2.vrSupported = xr.vr, engine2.xrFramebufferScaleFactor = xrFramebufferScaleFactor, engine2.autoResizeCanvas = true, engine2.start(), xrOfferSession !== null) {
-    let mode = xrOfferSession.mode;
-    mode == "auto" && (engine2.vrSupported ? mode = "immersive-vr" : engine2.arSupported ? mode = "immersive-ar" : mode = "inline");
-    let offerSession = function() {
-      engine2.offerXRSession(mode, xrOfferSession.features, xrOfferSession.optionalFeatures).then((s) => s.addEventListener("end", offerSession)).catch(console.warn);
-    };
-    offerSession();
+  if (runtimes[runtimeGlobalId] || (await loadScript(`${filename}.js`), runtimes[runtimeGlobalId] = window.instantiateWonderlandRuntime, window.instantiateWonderlandRuntime = void 0), await runtimes[runtimeGlobalId](wasm), webgpu) {
+    let WebGPU = wasm.WebGPU, adapter = await navigator.gpu.requestAdapter(), adapterId = WebGPU.mgrAdapter.create(adapter), desc = { requiredFeatures: ["texture-compression-bc", "depth32float-stencil8"] }, device = await adapter.requestDevice(desc), deviceId = WebGPU.mgrDevice.create(adapter);
+    wasm.preinitializedWebGPUDevice = device, canvasElement.getContext("webgpu").configure({ device, format: navigator.gpu.getPreferredCanvasFormat(), alphaMode: "premultiplied" });
   }
-  return engine2;
+  let engine2 = new WonderlandEngine(wasm, loadingScreenData, renderer);
+  return await engine2.webxr.init(xrFramebufferScaleFactor, xrOfferSession), engine2.autoResizeCanvas = true, engine2.start(), engine2;
 }
 
 // node_modules/@wonderlandengine/components/dist/8thwall-camera.js
@@ -21728,7 +22188,7 @@ var Constants = {
   ProjectName: "Musica11y",
   RuntimeBaseName: "WonderlandRuntime",
   WebXRRequiredFeatures: ["local"],
-  WebXROptionalFeatures: ["local", "hand-tracking", "hit-test"]
+  WebXROptionalFeatures: ["local", "local-floor", "hand-tracking", "hit-test", "plane-detection", "anchors"]
 };
 var RuntimeOptions = {
   physx: false,

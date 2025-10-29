@@ -58,7 +58,7 @@ const Constants = {
     ProjectName: 'Musica11y',
     RuntimeBaseName: 'WonderlandRuntime',
     WebXRRequiredFeatures: ['local',],
-    WebXROptionalFeatures: ['local','hand-tracking','hit-test',],
+    WebXROptionalFeatures: ['local','local-floor','hand-tracking','hit-test','plane-detection','anchors',],
 };
 const RuntimeOptions = {
     physx: false,

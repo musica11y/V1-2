@@ -8,23 +8,30 @@
         "sceneView": {
             "visualizeObjects": false,
             "visualizeLights": false,
+            "visualizeBones": true,
             "visualizeViews": true,
             "visualizeCollision": true,
             "visualizeOverdraw": false,
-            "visualizePhysics": true
+            "visualizePhysics": true,
+            "visualizeProbes": true,
+            "visualizeProbeVoxels": true,
+            "visualizeProbeBounds": true
         },
         "mainView": {
             "launchSSL": false
+        },
+        "projectSettings": {
+            "advancedScripting": false
         }
     },
     "openViews": {
         "Main Window": true,
         "Scene View": true,
         "Asset Browser": true,
-        "Console": true,
+        "Console": false,
         "Scene Outline": true,
         "Properties": true,
-        "Project Settings": true,
+        "Project Settings": false,
         "Resources": true,
         "Project Data": false,
         "Benchmark": false,
@@ -32,6 +39,7 @@
         "Preferences": true,
         "Localization": false,
         "Animation Editor": false,
-        "Plugins": true
+        "Resource Tree": false,
+        "Plugins": false
     }
 }

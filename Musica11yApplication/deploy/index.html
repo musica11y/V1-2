@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
+  <!-- Shared libraries between the application entry point and the components bundle -->
+  <script type="importmap">
+    {
+      "imports": {
+        "@wonderlandengine/api": "./node_modules/@wonderlandengine/api/index.js",
+        "@wonderlandengine/api/decorators.js": "./node_modules/@wonderlandengine/api/index.js"
+      }
+    }
+  </script>
+
   <head>
-    <link rel="modulepreload" href="Musica11y-bundle.js?t=2025-08-07T22:55:03.460" as="script">
+    
+    
+    <link rel="modulepreload" href="Musica11y-bundle.js?t=2025-10-29T15:49:54.278" as="script">
     <title>Musica11y</title>
     <meta charset="utf-8" />
 
@@ -10,12 +23,14 @@
     <meta property="og:description" content="Accessible XR Music Experience 
 Design lead: Damian Mills.
 Programming lead: Rodney McConnnell." />
+    
 
-    <meta property="twitter:description" content="Accessible XR Music Experience 
+    <meta name="twitter:description" content="Accessible XR Music Experience 
 Design lead: Damian Mills.
 Programming lead: Rodney McConnnell." />
-    <meta property="twitter:title" content="Musica11y" />
-    <meta property="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Musica11y" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="white">
@@ -97,9 +112,10 @@ Programming lead: Rodney McConnnell." />
     }
 
     </style>
+
     
 
-    <script type="module" src="Musica11y-bundle.js?t=2025-08-07T22:55:03.460"></script>
+    <script type="module" src="Musica11y-bundle.js?t=2025-10-29T15:49:54.278"></script>
 
     
     </script>
@@ -108,7 +124,7 @@ Programming lead: Rodney McConnnell." />
   <body>
     <canvas id="canvas" style="width: 100%; height: 100%; display: block;" tabindex="0"></canvas>
     <div id="version">
-        <a>Wonderland Engine 1.2.4</a>
+        <a>Wonderland Engine 1.4.2</a>
     </div>
     <div class="xr-button-container">
       <a id="vr-button" class="button">
