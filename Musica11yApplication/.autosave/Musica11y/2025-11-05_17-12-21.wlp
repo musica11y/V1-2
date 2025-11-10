@@ -177,7 +177,7 @@
             ],
             "translation": [
                 0.0,
-                0.0005718,
+                0.0,
                 0.0
             ],
             "rotation": [
@@ -6470,7 +6470,10 @@
                         "playerprefferedheightMarker": "2021",
                         "ActivePanelIndicatorL": "2591",
                         "ActivePanelIndicatorM": "2592",
-                        "ActivePanelIndicatorR": "2593"
+                        "ActivePanelIndicatorR": "2593",
+                        "mainparent": "2658",
+                        "playerreference": "2709",
+                        "Debugtext": "2712"
                     },
                     "active": true
                 }
@@ -10629,7 +10632,8 @@
                         "CopyHandrtThumbMid": "1787",
                         "CopyHandrtThumbTip": "1788",
                         "HandRenderer": "1784",
-                        "HideFingerCubes": true
+                        "HideFingerCubes": true,
+                        "Debugtxt": null
                     }
                 }
             ]
@@ -27186,24 +27190,25 @@
                     "type": "mesh",
                     "mesh": {
                         "mesh": "7",
-                        "material": "2617"
-                    }
+                        "material": "2670"
+                    },
+                    "active": true
                 }
             ],
             "translation": [
-                8.965506026470393e-7,
-                0.0,
+                -0.1,
+                0.05,
                 -0.5
             ],
             "rotation": [
                 -6.926677542651305e-8,
-                -0.0,
+                0.0,
                 1.2092869816626717e-8,
                 1.0
             ],
             "scaling": [
-                0.6399999,
-                0.3318516,
+                0.3199999,
+                0.17,
                 0.3160493
             ]
         },
@@ -28515,8 +28520,8 @@
                 }
             ],
             "translation": [
-                -0.0313968,
-                -2.5970189,
+                0.0646163,
+                -2.6096627,
                 -0.4981523
             ],
             "rotation": [
@@ -28526,8 +28531,8 @@
                 1.0
             ],
             "scaling": [
-                0.5568,
-                0.288711,
+                0.4852565,
+                0.289165,
                 0.2749629
             ],
             "parent": "2659"
@@ -28544,8 +28549,8 @@
                 }
             ],
             "translation": [
-                -0.3398055,
-                -2.5936291,
+                -0.2118706,
+                -2.6103379,
                 -0.4970391
             ],
             "rotation": [
@@ -28555,8 +28560,8 @@
                 1.0
             ],
             "scaling": [
-                0.1421344,
-                0.2842689,
+                0.1282556,
+                0.2868529,
                 0.0555212
             ],
             "parent": "2659"
@@ -28568,14 +28573,14 @@
                     "type": "mesh",
                     "mesh": {
                         "mesh": "7",
-                        "material": "1001"
+                        "material": "2670"
                     }
                 }
             ],
             "translation": [
                 -0.0812184,
                 -2.5970189,
-                -0.4985685
+                -0.4993507
             ],
             "rotation": [
                 0.0,
@@ -28584,11 +28589,120 @@
                 1.0
             ],
             "scaling": [
-                0.6399999,
-                0.3318517,
-                0.3160493
+                0.6364287,
+                0.33,
+                0.3142857
             ],
             "parent": "2659"
+        },
+        "2709": {
+            "name": "PlayerHeightTracker",
+            "parent": "18",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "2712": {
+            "name": "Textdebug",
+            "parent": "2658",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "ACCESSIBILITY SETTINGS"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.7429999,
+                1.4299999,
+                14.2187595
+            ],
+            "translation": [
+                0.3607921,
+                0.8878602,
+                0.0245441
+            ],
+            "rotation": [
+                0.0,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "2713": {
+            "name": "UI_GuideFull",
+            "parent": null,
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2617"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                8.965506026470393e-7,
+                1.1499999,
+                -0.9695345
+            ],
+            "rotation": [
+                -0.0,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                0.6399999,
+                0.3318516,
+                0.3160493
+            ]
+        },
+        "2714": {
+            "name": "UI_GuideFull",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2670"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                8.965506026470393e-7,
+                0.0,
+                -0.5
+            ],
+            "rotation": [
+                -6.926677542651305e-8,
+                -0.0,
+                1.2092869816626717e-8,
+                1.0
+            ],
+            "scaling": [
+                0.6399999,
+                0.3318516,
+                0.3160493
+            ]
         }
     },
     "meshes": {
@@ -30172,6 +30286,24 @@
                 "name": "UI-SpanchorPanel2056x2056.png",
                 "file": "images\\V1-2\\UI-SpanchorPanel2056x2056.png"
             }
+        },
+        "2676": {
+            "link": {
+                "name": "UI-Guide4096x2048mm3.png",
+                "file": "images\\V1-2\\UI-Guide4096x2048mm3.png"
+            }
+        },
+        "2677": {
+            "link": {
+                "name": "menu 256x2048.png",
+                "file": "images\\V1-2\\menu 256x2048.png"
+            }
+        },
+        "2678": {
+            "link": {
+                "name": "UI-Guidev2.jpg",
+                "file": "images\\V1-2\\UI-Guidev2.jpg"
+            }
         }
     },
     "images": {
@@ -30832,6 +30964,24 @@
                 "name": "UI-SpanchorPanel2056x2056.png",
                 "file": "images\\V1-2\\UI-SpanchorPanel2056x2056.png"
             }
+        },
+        "2674": {
+            "link": {
+                "name": "UI-Guide4096x2048mm3.png",
+                "file": "images\\V1-2\\UI-Guide4096x2048mm3.png"
+            }
+        },
+        "2675": {
+            "link": {
+                "name": "menu 256x2048.png",
+                "file": "images\\V1-2\\menu 256x2048.png"
+            }
+        },
+        "2676": {
+            "link": {
+                "name": "UI-Guidev2.jpg",
+                "file": "images\\V1-2\\UI-Guidev2.jpg"
+            }
         }
     },
     "materials": {
@@ -30843,9 +30993,9 @@
             "Text": {
                 "font": "285",
                 "color": [
-                    0.0352941,
-                    0.0226989,
-                    0.0226989,
+                    1.0,
+                    1.0,
+                    1.0,
                     1.0
                 ]
             }
@@ -32838,7 +32988,8 @@
             "name": "UI-PlaceholderFull 2",
             "pipeline": "258",
             "Flat": {
-                "flatTexture": "2615"
+                "flatTexture": "2615",
+                "alphaMaskThreshold": 0.0
             }
         },
         "2616": {
@@ -33203,6 +33354,20 @@
             "pipeline": "258",
             "Flat": {
                 "flatTexture": "2673"
+            }
+        },
+        "2670": {
+            "name": "UI-PlaceholderFull 2 Copy",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2678"
+            }
+        },
+        "2671": {
+            "name": "UI-IconsTemplate",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2677"
             }
         }
     },
@@ -34073,7 +34238,7 @@
             "version": [
                 1,
                 4,
-                2
+                7
             ],
             "description": "Accessible XR Music Experience \nDesign lead: Damian Mills.\nProgramming lead: Rodney McConnnell."
         },
@@ -35074,6 +35239,18 @@
         },
         "2675": {
             "fileName": "images/V1-2/UI-SpanchorPanel2056x2056.png",
+            "importerName": ""
+        },
+        "2676": {
+            "fileName": "images/V1-2/UI-Guide4096x2048mm3.png",
+            "importerName": ""
+        },
+        "2677": {
+            "fileName": "images/V1-2/menu 256x2048.png",
+            "importerName": ""
+        },
+        "2678": {
+            "fileName": "images/V1-2/UI-Guidev2.jpg",
             "importerName": ""
         }
     },

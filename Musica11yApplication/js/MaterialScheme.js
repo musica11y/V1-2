@@ -80,7 +80,7 @@ export class MaterialScheme extends Component {
     static LAYER_Active = [0, 1, 0.3, 1];
     static LAYER_Inactive = [1, 0.8, 0.0, 1];
 
-    static CS_softCream = [1.0, 0.98, 0.88];
+    static CS_softCream = [1.0, 0.98, 0.88,1.0];
 
     static GetNoteColour(key) {
         // console.log("set color to ",key);

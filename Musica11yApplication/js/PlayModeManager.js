@@ -36,12 +36,15 @@ export class PlayModeManager extends Component {
         ActivePanelIndicatorL: Property.object(),
         ActivePanelIndicatorM: Property.object(),
         ActivePanelIndicatorR: Property.object(),
+		mainparent: Property.object(),
+		playerreference: Property.object(),
+		Debugtext: Property.object(),
     };
 
 
     start() {
-
-
+this.frameCount=0;
+this.monitorY=false;
         this.ActivePanelIndicatorL.getComponent('mesh').material = this.ActivePanelIndicatorL.getComponent('mesh').material.clone();
         this.ActivePanelIndicatorM.getComponent('mesh').material = this.ActivePanelIndicatorM.getComponent('mesh').material.clone();
         this.ActivePanelIndicatorR.getComponent('mesh').material = this.ActivePanelIndicatorR.getComponent('mesh').material.clone();
@@ -75,6 +78,10 @@ export class PlayModeManager extends Component {
                     this.lefthand.getComponent("Althand-tracking").set_active(true);
                 if (this.righthand)
                     this.righthand.getComponent("Althand-tracking").set_active(true);
+				//			setTimeout(() => {
+			//	this.setsceneheight();
+				//}, 5000); // 2000 milliseconds = 2 seconds
+				this.monitorY=true;
             });
         } else {
             console.log("AR button not found. Check your implementation.");
@@ -94,6 +101,11 @@ export class PlayModeManager extends Component {
                     this.lefthand.getComponent("Althand-tracking").set_active(true);
                 if (this.righthand)
                     this.righthand.getComponent("Althand-tracking").set_active(true);
+				
+				//setTimeout(() => {
+				//this.setsceneheight();
+				//	}, 5000); // 2000 milliseconds = 2 seconds
+		this.monitorY=true;
             });
         } else {
             console.log("VR button not found. Check your implementation.");
@@ -124,11 +136,24 @@ export class PlayModeManager extends Component {
         this.PlayModeCameraPosition.setTranslationWorld(pmph);
     }
 
+	setsceneheight(){
+		let ph=this.mainparent.getTranslationWorld();
+		let pr=this.playerreference.getTranslationWorld();
+		
+	//	this.Debugtext.getComponent('text').text = ph[1]+" "+ pr[1];
+		
+		ph[1]= pr[1];
+		this.mainparent.setTranslationWorld(ph);
+		
+	/*	 if (this.lefthand)
+                    this.lefthand.getComponent("Althand-tracking").set_active(true);
+                if (this.righthand)
+                    this.righthand.getComponent("Althand-tracking").set_active(true);*/
+	}
+
     SetupforplayMode(row, col, mcol) {
         //store any recent edits
         this.layerManager.storeCurrentPanel();
-
-
 
         const soundfontlist = [];
         for (let i = 0; i < this.layerManager.LayerCount; i++) {
@@ -809,6 +834,21 @@ export class PlayModeManager extends Component {
 
 
     update(deltaTime) {
+		
+		if(this.monitorY)
+		{
+				let pr=this.playerreference.getTranslationWorld();
+			    if(pr[1]>0)
+				{
+						this.setsceneheight();
+						if(this.frameCount++ > 120*4)
+								this.monitorY=false;			
+				}
+			//	else 	
+				this.Debugtext.getComponent('text').text =   this.frameCount;
+	
+		}
+		
         if (this.isplaying) {
             this.elapsedTime += deltaTime * this.playmul;
             if (this.elapsedTime >= this.beatInterval) {

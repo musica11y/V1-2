@@ -14857,9 +14857,11 @@ var AltHandTracking = class extends Component3 {
   }
   start() {
     this.set_active(false);
+    this.setitup();
+  }
+  setitup() {
     if (!("XRHand" in window)) {
       console.warn("WebXR Hand Tracking not supported by this browser.");
-      this.active = false;
       return;
     }
     if (this.handSkin) {
@@ -14899,8 +14901,12 @@ var AltHandTracking = class extends Component3 {
     }
   }
   update(dt) {
-    if (!this.engine.xr || this.weareactive == false)
+    if (!this.engine.xr)
       return;
+    if (!this.weareactive) {
+      setitup();
+      set_active(true);
+    }
     this.hasPose = false;
     const correction = quat_exports.create();
     quat_exports.fromEuler(correction, -90, 0, 0);
@@ -15223,7 +15229,8 @@ __publicField(AltHandTracking, "Properties", {
   CopyHandrtThumbMid: Property.object(),
   CopyHandrtThumbTip: Property.object(),
   HideFingerCubes: Property.bool(false),
-  HandRenderer: Property.object()
+  HandRenderer: Property.object(),
+  Debugtxt: Property.object()
 });
 
 // js/MaterialScheme.js
@@ -15367,7 +15374,7 @@ __publicField(MaterialScheme, "SEQUENCER_InActiveNote", [0.3, 0.3, 0.3, 1]);
 __publicField(MaterialScheme, "SEQUENCER_ActiveNote", [0, 1, 0, 1]);
 __publicField(MaterialScheme, "LAYER_Active", [0, 1, 0.3, 1]);
 __publicField(MaterialScheme, "LAYER_Inactive", [1, 0.8, 0, 1]);
-__publicField(MaterialScheme, "CS_softCream", [1, 0.98, 0.88]);
+__publicField(MaterialScheme, "CS_softCream", [1, 0.98, 0.88, 1]);
 
 // js/BkColourSetter.js
 var BkColourSetter = class extends Component3 {
@@ -17283,6 +17290,8 @@ __publicField(OptionsWindow, "Properties", {
 // js/PlayModeManager.js
 var PlayModeManager = class extends Component3 {
   start() {
+    this.frameCount = 0;
+    this.monitorY = false;
     this.ActivePanelIndicatorL.getComponent("mesh").material = this.ActivePanelIndicatorL.getComponent("mesh").material.clone();
     this.ActivePanelIndicatorM.getComponent("mesh").material = this.ActivePanelIndicatorM.getComponent("mesh").material.clone();
     this.ActivePanelIndicatorR.getComponent("mesh").material = this.ActivePanelIndicatorR.getComponent("mesh").material.clone();
@@ -17302,6 +17311,7 @@ var PlayModeManager = class extends Component3 {
           this.lefthand.getComponent("Althand-tracking").set_active(true);
         if (this.righthand)
           this.righthand.getComponent("Althand-tracking").set_active(true);
+        this.monitorY = true;
       });
     } else {
       console.log("AR button not found. Check your implementation.");
@@ -17316,6 +17326,7 @@ var PlayModeManager = class extends Component3 {
           this.lefthand.getComponent("Althand-tracking").set_active(true);
         if (this.righthand)
           this.righthand.getComponent("Althand-tracking").set_active(true);
+        this.monitorY = true;
       });
     } else {
       console.log("VR button not found. Check your implementation.");
@@ -17326,6 +17337,12 @@ var PlayModeManager = class extends Component3 {
     let pmph = this.PlayModeCameraPosition.getTranslationWorld();
     pmph[1] = this.prefferedheight[1];
     this.PlayModeCameraPosition.setTranslationWorld(pmph);
+  }
+  setsceneheight() {
+    let ph = this.mainparent.getTranslationWorld();
+    let pr = this.playerreference.getTranslationWorld();
+    ph[1] = pr[1];
+    this.mainparent.setTranslationWorld(ph);
   }
   SetupforplayMode(row, col, mcol) {
     this.layerManager.storeCurrentPanel();
@@ -17853,6 +17870,15 @@ var PlayModeManager = class extends Component3 {
       this.musicmanref.SoundFontPlayer.stopsoundfontnote(who.soundfont);
   }
   update(deltaTime) {
+    if (this.monitorY) {
+      let pr = this.playerreference.getTranslationWorld();
+      if (pr[1] > 0) {
+        this.setsceneheight();
+        if (this.frameCount++ > 120 * 4)
+          this.monitorY = false;
+      }
+      this.Debugtext.getComponent("text").text = this.frameCount;
+    }
     if (this.isplaying) {
       this.elapsedTime += deltaTime * this.playmul;
       if (this.elapsedTime >= this.beatInterval) {
@@ -17940,7 +17966,10 @@ __publicField(PlayModeManager, "Properties", {
   playerprefferedheightMarker: Property.object(),
   ActivePanelIndicatorL: Property.object(),
   ActivePanelIndicatorM: Property.object(),
-  ActivePanelIndicatorR: Property.object()
+  ActivePanelIndicatorR: Property.object(),
+  mainparent: Property.object(),
+  playerreference: Property.object(),
+  Debugtext: Property.object()
 });
 
 // js/RotateIt.js

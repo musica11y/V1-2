@@ -124,7 +124,9 @@
                 {
                     "type": "view",
                     "view": {
-                        "far": 20.0
+                        "far": 20.0,
+                        "projectionType": "perspective",
+                        "extent": 0.8
                     }
                 },
                 {
@@ -140,9 +142,9 @@
                 }
             ],
             "translation": [
-                -0.0,
-                0.000023,
-                0.1460323
+                0.060386,
+                0.0493609,
+                -0.1463493
             ],
             "rotation": [
                 0.0,
@@ -177,7 +179,7 @@
             ],
             "translation": [
                 0.0,
-                0.0005718,
+                0.0,
                 0.0
             ],
             "rotation": [
@@ -6470,7 +6472,10 @@
                         "playerprefferedheightMarker": "2021",
                         "ActivePanelIndicatorL": "2591",
                         "ActivePanelIndicatorM": "2592",
-                        "ActivePanelIndicatorR": "2593"
+                        "ActivePanelIndicatorR": "2593",
+                        "mainparent": "2658",
+                        "playerreference": "2709",
+                        "Debugtext": "2712"
                     },
                     "active": true
                 }
@@ -10629,7 +10634,8 @@
                         "CopyHandrtThumbMid": "1787",
                         "CopyHandrtThumbTip": "1788",
                         "HandRenderer": "1784",
-                        "HideFingerCubes": true
+                        "HideFingerCubes": true,
+                        "Debugtxt": null
                     }
                 }
             ]
@@ -27186,24 +27192,25 @@
                     "type": "mesh",
                     "mesh": {
                         "mesh": "7",
-                        "material": "2617"
-                    }
+                        "material": "2670"
+                    },
+                    "active": true
                 }
             ],
             "translation": [
-                8.965506026470393e-7,
-                0.0,
+                -0.1,
+                0.05,
                 -0.5
             ],
             "rotation": [
                 -6.926677542651305e-8,
-                -0.0,
+                0.0,
                 1.2092869816626717e-8,
                 1.0
             ],
             "scaling": [
-                0.6399999,
-                0.3318516,
+                0.3199999,
+                0.17,
                 0.3160493
             ]
         },
@@ -28515,9 +28522,9 @@
                 }
             ],
             "translation": [
-                0.0025608,
-                -2.5970189,
-                -0.497387
+                0.0646163,
+                -2.6096627,
+                -0.4981523
             ],
             "rotation": [
                 0.0,
@@ -28526,9 +28533,9 @@
                 1.0
             ],
             "scaling": [
-                0.6653771,
-                0.3450103,
-                0.3285813
+                0.4852565,
+                0.289165,
+                0.2749629
             ],
             "parent": "2659"
         },
@@ -28544,9 +28551,9 @@
                 }
             ],
             "translation": [
-                -0.3443946,
-                -2.5222027,
-                -0.486354
+                -0.2118706,
+                -2.6103379,
+                -0.4970391
             ],
             "rotation": [
                 0.0,
@@ -28555,39 +28562,148 @@
                 1.0
             ],
             "scaling": [
-                0.1194406,
-                0.2388814,
-                0.0466565
+                0.1282556,
+                0.2868529,
+                0.0555212
             ],
             "parent": "2659"
         },
         "2707": {
+            "name": "spanchorBackpanel",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2670"
+                    }
+                }
+            ],
+            "translation": [
+                -0.0812184,
+                -2.5970189,
+                -0.4993507
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.6364287,
+                0.33,
+                0.3142857
+            ],
+            "parent": "2659"
+        },
+        "2709": {
+            "name": "PlayerHeightTracker",
+            "parent": "18",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "2712": {
+            "name": "Textdebug",
+            "parent": "2658",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "TestText"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.7429999,
+                1.4299999,
+                14.2187595
+            ],
+            "translation": [
+                0.3607921,
+                0.8878602,
+                0.0245441
+            ],
+            "rotation": [
+                0.0,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "2713": {
             "name": "UI_GuideFull",
-            "parent": "2659",
+            "parent": null,
             "components": [
                 {
                     "type": "mesh",
                     "mesh": {
                         "mesh": "7",
                         "material": "2617"
-                    }
+                    },
+                    "active": false
                 }
             ],
             "translation": [
-                0.0166672,
-                -2.5852439,
-                -0.4999998
+                8.965506026470393e-7,
+                1.1499999,
+                -0.9695345
             ],
             "rotation": [
-                -6.926680384822248e-8,
                 -0.0,
-                1.2092876033875655e-8,
+                0.0,
+                -0.0,
                 1.0
             ],
             "scaling": [
-                0.7474845,
-                0.3875844,
-                0.3691282
+                0.6399999,
+                0.3318516,
+                0.3160493
+            ]
+        },
+        "2714": {
+            "name": "UI_GuideFull",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2670"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                8.965506026470393e-7,
+                0.0,
+                -0.5
+            ],
+            "rotation": [
+                -6.926677542651305e-8,
+                -0.0,
+                1.2092869816626717e-8,
+                1.0
+            ],
+            "scaling": [
+                0.6399999,
+                0.3318516,
+                0.3160493
             ]
         }
     },
@@ -30166,6 +30282,30 @@
                 "name": "UI-Guide4096x2048mm2.png",
                 "file": "images\\V1-2\\UI-Guide4096x2048mm2.png"
             }
+        },
+        "2675": {
+            "link": {
+                "name": "UI-SpanchorPanel2056x2056.png",
+                "file": "images\\V1-2\\UI-SpanchorPanel2056x2056.png"
+            }
+        },
+        "2676": {
+            "link": {
+                "name": "UI-Guide4096x2048mm3.png",
+                "file": "images\\V1-2\\UI-Guide4096x2048mm3.png"
+            }
+        },
+        "2677": {
+            "link": {
+                "name": "menu 256x2048.png",
+                "file": "images\\V1-2\\menu 256x2048.png"
+            }
+        },
+        "2678": {
+            "link": {
+                "name": "UI-Guidev2.jpg",
+                "file": "images\\V1-2\\UI-Guidev2.jpg"
+            }
         }
     },
     "images": {
@@ -30820,6 +30960,30 @@
                 "name": "UI-Guide4096x2048mm2.png",
                 "file": "images\\V1-2\\UI-Guide4096x2048mm2.png"
             }
+        },
+        "2673": {
+            "link": {
+                "name": "UI-SpanchorPanel2056x2056.png",
+                "file": "images\\V1-2\\UI-SpanchorPanel2056x2056.png"
+            }
+        },
+        "2674": {
+            "link": {
+                "name": "UI-Guide4096x2048mm3.png",
+                "file": "images\\V1-2\\UI-Guide4096x2048mm3.png"
+            }
+        },
+        "2675": {
+            "link": {
+                "name": "menu 256x2048.png",
+                "file": "images\\V1-2\\menu 256x2048.png"
+            }
+        },
+        "2676": {
+            "link": {
+                "name": "UI-Guidev2.jpg",
+                "file": "images\\V1-2\\UI-Guidev2.jpg"
+            }
         }
     },
     "materials": {
@@ -30831,9 +30995,9 @@
             "Text": {
                 "font": "285",
                 "color": [
-                    0.0352941,
-                    0.0226989,
-                    0.0226989,
+                    1.0,
+                    1.0,
+                    1.0,
                     1.0
                 ]
             }
@@ -32826,7 +32990,8 @@
             "name": "UI-PlaceholderFull 2",
             "pipeline": "258",
             "Flat": {
-                "flatTexture": "2674"
+                "flatTexture": "2615",
+                "alphaMaskThreshold": 0.0
             }
         },
         "2616": {
@@ -33191,6 +33356,20 @@
             "pipeline": "258",
             "Flat": {
                 "flatTexture": "2673"
+            }
+        },
+        "2670": {
+            "name": "UI-PlaceholderFull 2 Copy",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2678"
+            }
+        },
+        "2671": {
+            "name": "UI-IconsTemplate",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2677"
             }
         }
     },
@@ -34061,7 +34240,7 @@
             "version": [
                 1,
                 4,
-                2
+                7
             ],
             "description": "Accessible XR Music Experience \nDesign lead: Damian Mills.\nProgramming lead: Rodney McConnnell."
         },
@@ -35058,6 +35237,22 @@
         },
         "2674": {
             "fileName": "images/V1-2/UI-Guide4096x2048mm2.png",
+            "importerName": ""
+        },
+        "2675": {
+            "fileName": "images/V1-2/UI-SpanchorPanel2056x2056.png",
+            "importerName": ""
+        },
+        "2676": {
+            "fileName": "images/V1-2/UI-Guide4096x2048mm3.png",
+            "importerName": ""
+        },
+        "2677": {
+            "fileName": "images/V1-2/menu 256x2048.png",
+            "importerName": ""
+        },
+        "2678": {
+            "fileName": "images/V1-2/UI-Guidev2.jpg",
             "importerName": ""
         }
     },

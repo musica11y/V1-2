@@ -118,6 +118,7 @@ export class AltHandTracking extends Component {
 
         HideFingerCubes: Property.bool(false),
         HandRenderer: Property.object(),
+		   Debugtxt: Property.object(),
     };
 
     /** Handedness determining whether to receive tracking input from right or left hand */
@@ -267,10 +268,16 @@ export class AltHandTracking extends Component {
 
         //this.roffset= this.RightHandrtWrist.getPositionWorld()- this.RightHandrtIndexBase.getPositionWorld();
 
-        this.set_active(false);
+		this.set_active(false);
+		  this.setitup();
+	}
+	
+	
+	setitup()
+	{
         if (!('XRHand' in window)) {
             console.warn('WebXR Hand Tracking not supported by this browser.');
-            this.active = false;
+          //this.active = false;
             return;
         }
         if (this.handSkin) {
@@ -323,8 +330,15 @@ export class AltHandTracking extends Component {
     }
 
     update(dt) {
-        if (!this.engine.xr || this.weareactive == false)
+        if (!this.engine.xr)// this.weareactive == false)
             return;
+		if(! this.weareactive){
+			setitup();
+			 set_active(true);//
+		}
+	//	if(this.Debugtxt)
+		//    this.Debugtxt.getComponent('text').text = this.getRotationWorld();
+		
         this.hasPose = false;
 
         const correction = quat.create();
