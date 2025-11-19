@@ -221,7 +221,7 @@ export class GenerateButtons extends Component {
 		let y = 0
 		let lastwassharp = false;
 		let firstletter = true;
-		this.NoteSelector.getComponent('NoteSelector').NoteSelector.forEach((element, index) => {
+		this.NoteSelector.getComponent('NoteSelector').NoteSelector.reverse().forEach((element, index) => {
 			// Position the button in a grid layout
 			let x = 1 * (this.buttonSize + this.spacing);
 			y -= (this.buttonSize + this.spacing); // Negative y to grow downwards
@@ -230,7 +230,7 @@ export class GenerateButtons extends Component {
 
 			if (t.length > 1)//we are sharp (left and offset)
 			{
-				x = x + 0.25;
+				x = x - 0.0825;
 				if (!lastwassharp && !firstletter) {
 					y += (this.buttonSize + this.spacing) / 2;
 				}

@@ -127,6 +127,7 @@ this.monitorY=false;
 
         //       this.prefferedheight=this.playerprefferedheightMarker.getTranslationWorld();
         //force the correct height
+        return;
         let ph = this.PlayCameraRef.getTranslationWorld();
         ph[1] = this.prefferedheight[1];
         this.PlayCameraRef.setTranslationWorld(ph);
@@ -137,6 +138,8 @@ this.monitorY=false;
     }
 
 	setsceneheight(){
+        return;
+
 		let ph=this.mainparent.getTranslationWorld();
 		let pr=this.playerreference.getTranslationWorld();
 		

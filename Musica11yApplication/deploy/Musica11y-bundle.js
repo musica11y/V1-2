@@ -17331,6 +17331,7 @@ var PlayModeManager = class extends Component3 {
     } else {
       console.log("VR button not found. Check your implementation.");
     }
+    return;
     let ph = this.PlayCameraRef.getTranslationWorld();
     ph[1] = this.prefferedheight[1];
     this.PlayCameraRef.setTranslationWorld(ph);
@@ -17339,6 +17340,7 @@ var PlayModeManager = class extends Component3 {
     this.PlayModeCameraPosition.setTranslationWorld(pmph);
   }
   setsceneheight() {
+    return;
     let ph = this.mainparent.getTranslationWorld();
     let pr = this.playerreference.getTranslationWorld();
     ph[1] = pr[1];
@@ -21594,12 +21596,12 @@ var GenerateButtons = class extends Component3 {
     let y = 0;
     let lastwassharp = false;
     let firstletter = true;
-    this.NoteSelector.getComponent("NoteSelector").NoteSelector.forEach((element, index) => {
+    this.NoteSelector.getComponent("NoteSelector").NoteSelector.reverse().forEach((element, index) => {
       let x = 1 * (this.buttonSize + this.spacing);
       y -= this.buttonSize + this.spacing;
       let t = element.getComponent("UI_Button").updateButtonText(false);
       if (t.length > 1) {
-        x = x + 0.25;
+        x = x - 0.0825;
         if (!lastwassharp && !firstletter) {
           y += (this.buttonSize + this.spacing) / 2;
         }
@@ -21854,7 +21856,6 @@ var Loadsave = class extends Component3 {
             console.log("camoffY ", camoffY, " from ", words[1]);
             let oldplayerpos = this.SettingsWin.PlayModeManager.PlayCameraRef.getTranslationWorld();
             oldplayerpos[1] = camoffY;
-            this.SettingsWin.PlayModeManager.PlayCameraRef.setTranslationWorld(oldplayerpos);
             break;
           case "[CAMVRDESOFFY]":
             let CAMVRDESOFFY = parseFloat(words[1]);
@@ -22217,7 +22218,7 @@ var Constants = {
   ProjectName: "Musica11y",
   RuntimeBaseName: "WonderlandRuntime",
   WebXRRequiredFeatures: ["local"],
-  WebXROptionalFeatures: ["local", "local-floor", "hand-tracking", "hit-test", "plane-detection", "anchors"]
+  WebXROptionalFeatures: ["local", "local-floor", "hand-tracking", "hit-test"]
 };
 var RuntimeOptions = {
   physx: false,
@@ -22267,7 +22268,8 @@ engine.registerComponent(CursorTarget);
 engine.registerComponent(HitTestLocation);
 engine.registerComponent(MouseLookComponent);
 engine.registerComponent(PlaneDetection);
-engine.registerComponent(WasdControlsComponent);
+engine.registerComponent(PlayerHeight);
+engine.registerComponent(VrModeActiveSwitch);
 engine.registerComponent(AddToScene);
 engine.registerComponent(AltHandTracking);
 engine.registerComponent(BkColourSetter);

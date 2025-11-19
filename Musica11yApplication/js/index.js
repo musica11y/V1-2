@@ -17,7 +17,8 @@ import {CursorTarget} from '@wonderlandengine/components';
 import {HitTestLocation} from '@wonderlandengine/components';
 import {MouseLookComponent} from '@wonderlandengine/components';
 import {PlaneDetection} from '@wonderlandengine/components';
-import {WasdControlsComponent} from '@wonderlandengine/components';
+import {PlayerHeight} from '@wonderlandengine/components';
+import {VrModeActiveSwitch} from '@wonderlandengine/components';
 import {AddToScene} from './AddToScene.js';
 import {AltHandTracking} from './Althandtracking.js';
 import {BkColourSetter} from './BkColourSetter.js';
@@ -58,7 +59,7 @@ const Constants = {
     ProjectName: 'Musica11y',
     RuntimeBaseName: 'WonderlandRuntime',
     WebXRRequiredFeatures: ['local',],
-    WebXROptionalFeatures: ['local','local-floor','hand-tracking','hit-test','plane-detection','anchors',],
+    WebXROptionalFeatures: ['local','local-floor','hand-tracking','hit-test',],
 };
 const RuntimeOptions = {
     physx: false,
@@ -120,7 +121,8 @@ engine.registerComponent(CursorTarget);
 engine.registerComponent(HitTestLocation);
 engine.registerComponent(MouseLookComponent);
 engine.registerComponent(PlaneDetection);
-engine.registerComponent(WasdControlsComponent);
+engine.registerComponent(PlayerHeight);
+engine.registerComponent(VrModeActiveSwitch);
 engine.registerComponent(AddToScene);
 engine.registerComponent(AltHandTracking);
 engine.registerComponent(BkColourSetter);

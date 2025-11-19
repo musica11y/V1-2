@@ -2,18 +2,10 @@
     "objects": {
         "14": {
             "name": "Player",
-            "components": [
-                {
-                    "type": "wasd-controls",
-                    "wasd-controls": {
-                        "headObject": "17"
-                    },
-                    "active": false
-                }
-            ],
+            "components": [],
             "translation": [
                 0.0,
-                1.1499999,
+                0.0,
                 0.0
             ],
             "rotation": [
@@ -119,12 +111,14 @@
         },
         "17": {
             "name": "NonVrCamera",
-            "parent": "14",
+            "parent": "2715",
             "components": [
                 {
                     "type": "view",
                     "view": {
-                        "far": 20.0
+                        "far": 20.0,
+                        "projectionType": "perspective",
+                        "extent": 0.8
                     }
                 },
                 {
@@ -137,28 +131,34 @@
                 {
                     "type": "input",
                     "active": false
+                },
+                {
+                    "type": "vr-mode-active-switch",
+                    "vr-mode-active-switch": {
+                        "activateComponents": "in non-VR"
+                    }
                 }
             ],
             "translation": [
-                -0.0,
-                0.000023,
-                0.1460323
+                0.0603859,
+                -0.0019201,
+                -0.0627065
             ],
             "rotation": [
                 0.0,
                 0.0,
-                0.0,
+                -0.0,
                 1.0
             ],
             "scaling": [
-                0.9999998,
                 1.0,
-                1.0
+                1.0,
+                4.3024759
             ]
         },
         "18": {
             "name": "EyeLeft",
-            "parent": "14",
+            "parent": "2715",
             "components": [
                 {
                     "type": "view",
@@ -173,11 +173,14 @@
                         "type": "eye left"
                     },
                     "active": true
+                },
+                {
+                    "type": "vr-mode-active-switch"
                 }
             ],
             "translation": [
-                0.0,
-                0.0,
+                -0.0,
+                1.1920928955078125e-7,
                 0.0
             ],
             "rotation": [
@@ -187,14 +190,14 @@
                 1.0
             ],
             "scaling": [
+                1.0000002,
                 1.0,
-                1.0,
-                1.0
+                1.0000002
             ]
         },
         "19": {
             "name": "EyeRight",
-            "parent": "14",
+            "parent": "2715",
             "components": [
                 {
                     "type": "view",
@@ -207,11 +210,14 @@
                     "input": {
                         "type": "eye right"
                     }
+                },
+                {
+                    "type": "vr-mode-active-switch"
                 }
             ],
             "translation": [
-                0.0,
-                0.0,
+                -0.0,
+                1.1920928955078125e-7,
                 0.0
             ],
             "rotation": [
@@ -221,9 +227,9 @@
                 1.0
             ],
             "scaling": [
+                1.0000002,
                 1.0,
-                1.0,
-                1.0
+                1.0000002
             ]
         },
         "21": {
@@ -1045,14 +1051,15 @@
                         "AnyButton": "685",
                         "background": "652",
                         "ScreenFader": "706",
-                        "ScreenBlocker": "705"
+                        "ScreenBlocker": "705",
+                        "noteColliderSize": 0.0099999
                     }
                 }
             ],
             "translation": [
-                -0.5166157,
-                1.1355679,
-                0.5847507
+                0.1501995,
+                0.9655956,
+                -0.8248626
             ],
             "rotation": [
                 3.540185389283579e-7,
@@ -1121,7 +1128,7 @@
                             ]
                         },
                         "sphere": {
-                            "radius": 0.0299999
+                            "radius": 0.013
                         }
                     },
                     "active": true
@@ -1139,9 +1146,9 @@
                 0.9659258
             ],
             "scaling": [
-                0.1204001,
-                0.127,
-                0.1089999
+                0.0399999,
+                0.0421926,
+                0.0362125
             ]
         },
         "643": {
@@ -1200,13 +1207,13 @@
                         "rows": 12,
                         "columns": 1,
                         "buttonPrefab": "642",
-                        "buttonSize": 0.1,
+                        "buttonSize": 0.0099999,
                         "InitalNote": 0,
                         "NoteSelectorObject": "641",
                         "MusicMan": "646",
                         "isNoteSelector": true,
                         "NoteSelector": "641",
-                        "spacing": 0.15
+                        "spacing": 0.092
                     },
                     "active": true
                 }
@@ -1979,7 +1986,7 @@
                             ]
                         },
                         "sphere": {
-                            "radius": 0.0399999
+                            "radius": 0.017
                         }
                     }
                 },
@@ -1993,20 +2000,20 @@
                 }
             ],
             "translation": [
-                -1.0377523,
-                0.500131,
-                0.0115943
+                -0.8526566,
+                1.2122572,
+                0.0387715
             ],
             "rotation": [
-                -4.246832077114959e-7,
+                -5.2160434194092886e-8,
                 0.0000037,
-                0.0,
+                -0.0,
                 1.0
             ],
             "scaling": [
-                7.4249892,
-                7.0540704,
-                0.2756606
+                3.4249999,
+                3.2539026,
+                0.1271567
             ]
         },
         "682": {
@@ -10574,10 +10581,10 @@
         },
         "1782": {
             "name": "RightArmature\\new",
-            "parent": "14",
+            "parent": "2715",
             "translation": [
-                0.0,
-                0.0,
+                -0.0,
+                1.1920928955078125e-7,
                 0.0
             ],
             "rotation": [
@@ -10587,9 +10594,9 @@
                 1.0
             ],
             "scaling": [
+                1.0000002,
                 1.0,
-                1.0,
-                1.0
+                1.0000002
             ],
             "components": [
                 {
@@ -11831,10 +11838,10 @@
         },
         "1840": {
             "name": "LeftArmature\\new",
-            "parent": "14",
+            "parent": "2715",
             "translation": [
                 -0.1302988,
-                -0.0,
+                1.1920928955078125e-7,
                 0.000164
             ],
             "rotation": [
@@ -11844,9 +11851,9 @@
                 1.0
             ],
             "scaling": [
+                1.0000002,
                 1.0,
-                1.0,
-                1.0
+                1.0000002
             ],
             "components": [
                 {
@@ -27184,7 +27191,7 @@
         },
         "2658": {
             "name": "UI_GuideFull",
-            "parent": "14",
+            "parent": "2715",
             "components": [
                 {
                     "type": "mesh",
@@ -27196,14 +27203,14 @@
                 }
             ],
             "translation": [
-                -0.1,
-                0.05,
-                -0.5
+                -0.1407271,
+                -0.0010587,
+                -0.3577755
             ],
             "rotation": [
-                -6.926677542651305e-8,
+                -6.926678253194041e-8,
                 0.0,
-                1.2092869816626717e-8,
+                1.2092866263913038e-8,
                 1.0
             ],
             "scaling": [
@@ -28622,7 +28629,7 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "ACCESSIBILITY SETTINGS"
+                        "text": "TestText2\n"
                     },
                     "active": true
                 }
@@ -28654,29 +28661,30 @@
                         "mesh": "7",
                         "material": "2617"
                     },
-                    "active": false
+                    "active": true
                 }
             ],
             "translation": [
                 8.965506026470393e-7,
-                1.1499999,
-                -0.9695345
+                1.1499998,
+                -1.6856127
             ],
             "rotation": [
-                -0.0,
                 0.0,
-                -0.0,
-                1.0
+                0.0,
+                0.7071068,
+                0.7071068
             ],
             "scaling": [
-                0.6399999,
-                0.3318516,
-                0.3160493
-            ]
+                13.8470001,
+                0.2319999,
+                0.2209524
+            ],
+            "hiddenForLightBaking": true
         },
         "2714": {
             "name": "UI_GuideFull",
-            "parent": "14",
+            "parent": null,
             "components": [
                 {
                     "type": "mesh",
@@ -28684,24 +28692,42 @@
                         "mesh": "7",
                         "material": "2670"
                     },
-                    "active": false
+                    "active": true
                 }
             ],
             "translation": [
-                8.965506026470393e-7,
-                0.0,
-                -0.5
+                9.243645990864024e-7,
+                0.8354662,
+                -0.5738788
             ],
             "rotation": [
-                -6.926677542651305e-8,
-                -0.0,
-                1.2092869816626717e-8,
+                0.0,
+                0.0,
+                0.0,
                 1.0
             ],
             "scaling": [
-                0.6399999,
-                0.3318516,
+                0.3199999,
+                0.17,
                 0.3160493
+            ]
+        },
+        "2715": {
+            "name": "TrackedSpace",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "player-height",
+                    "player-height": {
+                        "height": 0.8
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.0,
+                0.8,
+                0.0
             ]
         }
     },
@@ -34250,12 +34276,15 @@
             },
             "webxr": {
                 "optionalFeatures": {
-                    "plane-detection": true,
+                    "plane-detection": false,
                     "local-floor": true,
-                    "anchors": true
+                    "anchors": false,
+                    "bounded-floor": false
                 },
                 "requiredFeatures": {
-                    "anchors": false
+                    "anchors": false,
+                    "bounded-floor": false,
+                    "local-floor": false
                 }
             }
         },

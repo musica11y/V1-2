@@ -308,7 +308,7 @@ export class Loadsave extends Component {
 							console.log("camoffY ", camoffY, " from ", words[1]);
 							let oldplayerpos = this.SettingsWin.PlayModeManager.PlayCameraRef.getTranslationWorld();
 							oldplayerpos[1] = camoffY;
-							this.SettingsWin.PlayModeManager.PlayCameraRef.setTranslationWorld(oldplayerpos);
+						//	this.SettingsWin.PlayModeManager.PlayCameraRef.setTranslationWorld(oldplayerpos);
 							//						this.PlayCameraRef.setTranslationWorld(oldplayerpos);//failed
 							break;
 						case "[CAMVRDESOFFY]":
