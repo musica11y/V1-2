@@ -36,15 +36,19 @@ export class PlayModeManager extends Component {
         ActivePanelIndicatorL: Property.object(),
         ActivePanelIndicatorM: Property.object(),
         ActivePanelIndicatorR: Property.object(),
-		mainparent: Property.object(),
-		playerreference: Property.object(),
-		Debugtext: Property.object(),
+        mainparent: Property.object(),
+        playerreference: Property.object(),
+        Debugtext: Property.object(),
+        TheNewMainScenePtr: Property.object(),
+        TheProgressBar: Property.object(),
     };
 
 
     start() {
-this.frameCount=0;
-this.monitorY=false;
+        this.frameCount = 0;
+        this.canclosesplash = false;
+
+        //this.monitorY=true;//false;
         this.ActivePanelIndicatorL.getComponent('mesh').material = this.ActivePanelIndicatorL.getComponent('mesh').material.clone();
         this.ActivePanelIndicatorM.getComponent('mesh').material = this.ActivePanelIndicatorM.getComponent('mesh').material.clone();
         this.ActivePanelIndicatorR.getComponent('mesh').material = this.ActivePanelIndicatorR.getComponent('mesh').material.clone();
@@ -78,10 +82,11 @@ this.monitorY=false;
                     this.lefthand.getComponent("Althand-tracking").set_active(true);
                 if (this.righthand)
                     this.righthand.getComponent("Althand-tracking").set_active(true);
-				//			setTimeout(() => {
-			//	this.setsceneheight();
-				//}, 5000); // 2000 milliseconds = 2 seconds
-				this.monitorY=true;
+                //			setTimeout(() => {
+                //	this.setsceneheight();
+                //}, 5000); // 2000 milliseconds = 2 seconds
+                this.monitorY = true;
+                this.frameCount = 0;
             });
         } else {
             console.log("AR button not found. Check your implementation.");
@@ -101,11 +106,12 @@ this.monitorY=false;
                     this.lefthand.getComponent("Althand-tracking").set_active(true);
                 if (this.righthand)
                     this.righthand.getComponent("Althand-tracking").set_active(true);
-				
-				//setTimeout(() => {
-				//this.setsceneheight();
-				//	}, 5000); // 2000 milliseconds = 2 seconds
-		this.monitorY=true;
+
+                //setTimeout(() => {
+                //this.setsceneheight();
+                //	}, 5000); // 2000 milliseconds = 2 seconds
+                this.monitorY = true;
+                this.frameCount = 0;
             });
         } else {
             console.log("VR button not found. Check your implementation.");
@@ -137,22 +143,40 @@ this.monitorY=false;
         this.PlayModeCameraPosition.setTranslationWorld(pmph);
     }
 
-	setsceneheight(){
-        return;
+    Close_SPlashScreen() {
+        if (this.canclosesplash == false)
+            return;
 
-		let ph=this.mainparent.getTranslationWorld();
-		let pr=this.playerreference.getTranslationWorld();
-		
-	//	this.Debugtext.getComponent('text').text = ph[1]+" "+ pr[1];
-		
-		ph[1]= pr[1];
-		this.mainparent.setTranslationWorld(ph);
-		
-	/*	 if (this.lefthand)
-                    this.lefthand.getComponent("Althand-tracking").set_active(true);
-                if (this.righthand)
-                    this.righthand.getComponent("Althand-tracking").set_active(true);*/
-	}
+        this.monitorY = false;
+
+        let ph = this.TheNewMainScenePtr.getTranslationWorld();
+        let pr = this.playerreference.getTranslationWorld();
+        ph[1] = pr[1];
+
+
+        this.TheNewMainScenePtr.setTranslationWorld(ph);
+
+        ph[1] = -10000;//pr[1];//away with this
+        this.mainparent.setTranslationWorld(ph);
+
+        //   this.TheNewMainScenePtr.getComponent('mesh').active = true;
+    }
+    setsceneheight() {
+        //    return;
+
+        let ph = this.mainparent.getTranslationWorld();
+        let pr = this.playerreference.getTranslationWorld();
+
+        //	this.Debugtext.getComponent('text').text = ph[1]+" "+ pr[1];
+
+        ph[1] = pr[1];
+        this.mainparent.setTranslationWorld(pr);//ph);
+
+        /*	 if (this.lefthand)
+                        this.lefthand.getComponent("Althand-tracking").set_active(true);
+                    if (this.righthand)
+                        this.righthand.getComponent("Althand-tracking").set_active(true);*/
+    }
 
     SetupforplayMode(row, col, mcol) {
         //store any recent edits
@@ -659,11 +683,10 @@ this.monitorY=false;
 
                     but.soundfont = soundfontnum;
                     but.note = pan;
-                    
-                    if(this.musicmanref.SoundFontPlayer.getsoundfontisdrum(soundfontnum)) {
-                    //if (this.musicmanref.in_drum) {
-                        if (btn.DrumImage)
-                        {
+
+                    if (this.musicmanref.SoundFontPlayer.getsoundfontisdrum(soundfontnum)) {
+                        //if (this.musicmanref.in_drum) {
+                        if (btn.DrumImage) {
                             let o = this.drumImageMan.set2drum(true, pan, btn.DrumImage.getComponent('mesh'));
                             btn.DrumImage.getComponent('mesh').active = o;
                         }
@@ -837,21 +860,28 @@ this.monitorY=false;
 
 
     update(deltaTime) {
-		
-		if(this.monitorY)
-		{
-				let pr=this.playerreference.getTranslationWorld();
-			    if(pr[1]>0)
-				{
-						this.setsceneheight();
-						if(this.frameCount++ > 120*4)
-								this.monitorY=false;			
-				}
-			//	else 	
-				this.Debugtext.getComponent('text').text =   this.frameCount;
-	
-		}
-		
+
+        if (this.monitorY) {
+            let pr = this.playerreference.getTranslationWorld();
+            this.frameCount++;
+            if (pr[1] > 0) {
+               
+                this.setsceneheight();
+                //if(this.frameCount++ > 120*4)
+                //		this.monitorY=false;			
+            }
+            //	else 	
+        //    this.Debugtext.getComponent('text').text = this.frameCount;
+
+            let lscale = this.TheProgressBar.getScalingLocal();
+            lscale[0] = this.frameCount / 500;
+            if (lscale[0] > 0.5) {
+                lscale[0] = 0.5;
+                this.canclosesplash = true;
+            }
+            this.TheProgressBar.setScalingLocal(lscale);
+        }
+
         if (this.isplaying) {
             this.elapsedTime += deltaTime * this.playmul;
             if (this.elapsedTime >= this.beatInterval) {

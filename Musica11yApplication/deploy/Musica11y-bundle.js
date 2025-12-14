@@ -17291,7 +17291,7 @@ __publicField(OptionsWindow, "Properties", {
 var PlayModeManager = class extends Component3 {
   start() {
     this.frameCount = 0;
-    this.monitorY = false;
+    this.canclosesplash = false;
     this.ActivePanelIndicatorL.getComponent("mesh").material = this.ActivePanelIndicatorL.getComponent("mesh").material.clone();
     this.ActivePanelIndicatorM.getComponent("mesh").material = this.ActivePanelIndicatorM.getComponent("mesh").material.clone();
     this.ActivePanelIndicatorR.getComponent("mesh").material = this.ActivePanelIndicatorR.getComponent("mesh").material.clone();
@@ -17312,6 +17312,7 @@ var PlayModeManager = class extends Component3 {
         if (this.righthand)
           this.righthand.getComponent("Althand-tracking").set_active(true);
         this.monitorY = true;
+        this.frameCount = 0;
       });
     } else {
       console.log("AR button not found. Check your implementation.");
@@ -17327,6 +17328,7 @@ var PlayModeManager = class extends Component3 {
         if (this.righthand)
           this.righthand.getComponent("Althand-tracking").set_active(true);
         this.monitorY = true;
+        this.frameCount = 0;
       });
     } else {
       console.log("VR button not found. Check your implementation.");
@@ -17339,12 +17341,22 @@ var PlayModeManager = class extends Component3 {
     pmph[1] = this.prefferedheight[1];
     this.PlayModeCameraPosition.setTranslationWorld(pmph);
   }
+  Close_SPlashScreen() {
+    if (this.canclosesplash == false)
+      return;
+    this.monitorY = false;
+    let ph = this.TheNewMainScenePtr.getTranslationWorld();
+    let pr = this.playerreference.getTranslationWorld();
+    ph[1] = pr[1];
+    this.TheNewMainScenePtr.setTranslationWorld(ph);
+    ph[1] = -1e4;
+    this.mainparent.setTranslationWorld(ph);
+  }
   setsceneheight() {
-    return;
     let ph = this.mainparent.getTranslationWorld();
     let pr = this.playerreference.getTranslationWorld();
     ph[1] = pr[1];
-    this.mainparent.setTranslationWorld(ph);
+    this.mainparent.setTranslationWorld(pr);
   }
   SetupforplayMode(row, col, mcol) {
     this.layerManager.storeCurrentPanel();
@@ -17874,12 +17886,17 @@ var PlayModeManager = class extends Component3 {
   update(deltaTime) {
     if (this.monitorY) {
       let pr = this.playerreference.getTranslationWorld();
+      this.frameCount++;
       if (pr[1] > 0) {
         this.setsceneheight();
-        if (this.frameCount++ > 120 * 4)
-          this.monitorY = false;
       }
-      this.Debugtext.getComponent("text").text = this.frameCount;
+      let lscale = this.TheProgressBar.getScalingLocal();
+      lscale[0] = this.frameCount / 500;
+      if (lscale[0] > 0.5) {
+        lscale[0] = 0.5;
+        this.canclosesplash = true;
+      }
+      this.TheProgressBar.setScalingLocal(lscale);
     }
     if (this.isplaying) {
       this.elapsedTime += deltaTime * this.playmul;
@@ -17971,7 +17988,9 @@ __publicField(PlayModeManager, "Properties", {
   ActivePanelIndicatorR: Property.object(),
   mainparent: Property.object(),
   playerreference: Property.object(),
-  Debugtext: Property.object()
+  Debugtext: Property.object(),
+  TheNewMainScenePtr: Property.object(),
+  TheProgressBar: Property.object()
 });
 
 // js/RotateIt.js
