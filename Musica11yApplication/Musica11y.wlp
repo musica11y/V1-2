@@ -119,7 +119,7 @@
                         "far": 20.0,
                         "projectionType": "perspective",
                         "extent": 0.8,
-                        "fov": 80.0
+                        "fov": 90.0
                     },
                     "active": false
                 },
@@ -864,14 +864,14 @@
         "635": {
             "name": "UI_Canvas_SpanchorMainPanel",
             "translation": [
-                -0.1334598,
-                1.2299952,
-                0.5649999
+                0.1242198,
+                1.0882155,
+                0.5649998
             ],
             "rotation": [
                 7.551857947873941e-7,
                 -1.4901170075631853e-8,
-                -1.2091220469301334e-8,
+                -1.2091222245658173e-8,
                 1.0
             ],
             "scaling": [
@@ -965,7 +965,7 @@
                             ]
                         },
                         "sphere": {
-                            "radius": 0.0299999
+                            "radius": 0.014
                         }
                     }
                 }
@@ -982,9 +982,9 @@
                 1.0
             ],
             "scaling": [
-                0.1,
-                0.1,
-                0.1
+                0.045,
+                0.045,
+                0.045
             ]
         },
         "638": {
@@ -1013,14 +1013,15 @@
                     "generate-buttons": {
                         "targetObject": "637",
                         "buttonPrefab": "637",
-                        "buttonSize": 0.1,
-                        "rows": 6,
-                        "columns": 32,
+                        "buttonSize": 0.001,
+                        "rows": 8,
+                        "columns": 8,
                         "NoteSelectorObject": "641",
                         "MusicMan": "646",
                         "isSlotSelector": true,
                         "NoteSelector": "641",
-                        "backpanel": "660"
+                        "backpanel": "660",
+                        "spacing": 0.1199999
                     },
                     "active": true
                 }
@@ -1060,9 +1061,9 @@
                 }
             ],
             "translation": [
-                0.1033324,
-                0.4660996,
-                -0.7296936
+                -0.0868344,
+                0.9234681,
+                0.5814296
             ],
             "rotation": [
                 3.540185389283579e-7,
@@ -6359,11 +6360,11 @@
         },
         "1029": {
             "name": "StaticPanelsEditor",
-            "parent": null,
+            "parent": "2714",
             "translation": [
-                -0.0253913,
-                0.0733305,
-                0.312726
+                0.3057833,
+                -2.2078588,
+                -0.5904695
             ],
             "rotation": [
                 0.0,
@@ -6372,8 +6373,8 @@
                 1.0
             ],
             "scaling": [
-                1.0,
-                1.0,
+                0.9876543,
+                1.8591136,
                 1.0
             ]
         },
@@ -13112,7 +13113,8 @@
                         "OverAButtonMaterial": "26",
                         "ProgressTimerMarker": "2008",
                         "settings": "769",
-                        "background": "2009"
+                        "background": "2009",
+                        "Debugtext": "2866"
                     },
                     "active": true
                 }
@@ -13144,7 +13146,7 @@
                         "mesh": "9",
                         "material": "22"
                     },
-                    "active": true
+                    "active": false
                 }
             ],
             "translation": [
@@ -13173,7 +13175,8 @@
                     "mesh": {
                         "mesh": "12",
                         "material": "22"
-                    }
+                    },
+                    "active": false
                 }
             ],
             "scaling": [
@@ -13202,7 +13205,8 @@
                     "mesh": {
                         "mesh": "12",
                         "material": "25"
-                    }
+                    },
+                    "active": false
                 }
             ],
             "scaling": [
@@ -28697,12 +28701,12 @@
                         "mesh": "7",
                         "material": "2670"
                     },
-                    "active": true
+                    "active": false
                 }
             ],
             "translation": [
-                -0.1474139,
-                -0.0998121,
+                -0.1474138,
+                0.7876247,
                 -0.4084632
             ],
             "rotation": [
@@ -28712,9 +28716,9 @@
                 1.0
             ],
             "scaling": [
-                0.3199999,
-                0.17,
-                0.3160493
+                1.0124999,
+                0.5378907,
+                1.0
             ]
         },
         "2715": {
@@ -28736,7 +28740,12 @@
             ]
         },
         "2849": {
-            "name": "StartScreenSplashrea"
+            "name": "StartScreenSplashrea",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ]
         },
         "2854": {
             "link": {
@@ -29039,6 +29048,65 @@
             "scaling": [
                 0.001,
                 0.0099999,
+                1.0
+            ]
+        },
+        "2865": {
+            "name": "UI_GuideTestImage",
+            "scaling": [
+                0.3160493,
+                0.3160493,
+                0.3160493
+            ],
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2670"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.0,
+                1.4901161193847656e-8,
+                8.940696716308594e-8
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "parent": "2714"
+        },
+        "2866": {
+            "name": "Textdebug3",
+            "parent": "2658",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "TestText3\n\n"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.7429999,
+                1.4299999,
+                14.2187595
+            ],
+            "translation": [
+                0.3607921,
+                0.7048286,
+                -0.1595604
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
                 1.0
             ]
         }
@@ -35127,33 +35195,7 @@
                 "file": "models\\hand-left.glb"
             },
             "name": "HandLeftSkin",
-            "joints": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null
-            ]
+            "joints": []
         },
         "1895": {
             "link": {
@@ -35161,33 +35203,7 @@
                 "file": "models\\hand-right.glb"
             },
             "name": "HandRightSkin",
-            "joints": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null
-            ]
+            "joints": []
         },
         "1896": {
             "link": {

@@ -45,6 +45,7 @@ export class PlayModeManager extends Component {
 
 
     start() {
+        this.startSplashScreen();
         this.frameCount = 0;
         this.canclosesplash = false;
 
@@ -141,6 +142,13 @@ export class PlayModeManager extends Component {
         let pmph = this.PlayModeCameraPosition.getTranslationWorld();
         pmph[1] = this.prefferedheight[1];
         this.PlayModeCameraPosition.setTranslationWorld(pmph);
+    }
+
+    startSplashScreen()
+    {
+        let ph = this.mainparent.getTranslationWorld();
+        ph[1]=0;
+        this.mainparent.setTranslationWorld(ph);
     }
 
     Close_SPlashScreen() {

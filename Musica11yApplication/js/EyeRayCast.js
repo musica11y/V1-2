@@ -14,11 +14,12 @@ export class EyeRayCast extends Component {
     OverAButtonMaterial: Property.material(),
     settings: Property.object(),
     background: Property.object(),
+    Debugtext: Property.object(),
   };
 
   start() {
 
-    this.set_active(false);
+   // this.set_active(false);
 
     this.ourScale = this.ProgressTimerMarker.getScalingLocal();
 
@@ -39,6 +40,9 @@ export class EyeRayCast extends Component {
 
 
   set_active(on) {
+    
+    this.Debugtext.getComponent('text').text = "seteyeactive  "+ on;
+
     if (on) {
       if (!this.settings.raycaston)
         return;
@@ -90,7 +94,10 @@ export class EyeRayCast extends Component {
   update(dt) {
 
     if (this.weareactive != true)
-      return;
+    {
+   //   this.Debugtext.getComponent('text').text = "NOACTIVE";
+     // return;
+    }
     //raycast to the scene
 
     let _origin = this.object.getPositionWorld();
@@ -106,7 +113,7 @@ export class EyeRayCast extends Component {
 
     // const rayHit = this.rayCastMode == 0 ? this.engine.scene.rayCast(this._origin, this._direction, this._collisionMask) : this.engine.physics.rayCast(this._origin, this._direction, this._collisionMask, this.maxDistance);
 
-
+this.Debugtext.getComponent('text').text = "hit "+ rayHit.hitCount;
 
     if (rayHit.hitCount > 0) {
       this.EyeMarker.setPositionWorld(rayHit.locations[0]);

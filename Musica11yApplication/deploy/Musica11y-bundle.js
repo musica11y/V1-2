@@ -15772,7 +15772,6 @@ __publicField(DrumImageHolder, "Properties", {
 // js/EyeRayCast.js
 var EyeRayCast = class extends Component3 {
   start() {
-    this.set_active(false);
     this.ourScale = this.ProgressTimerMarker.getScalingLocal();
     this.debugtext = this.debugtext.getComponent("text");
     this.settings = this.settings.getComponent("SettingsWindow");
@@ -15784,6 +15783,7 @@ var EyeRayCast = class extends Component3 {
     this.clicked = false;
   }
   set_active(on) {
+    this.Debugtext.getComponent("text").text = "seteyeactive  " + on;
     if (on) {
       if (!this.settings.raycaston)
         return;
@@ -15824,8 +15824,8 @@ var EyeRayCast = class extends Component3 {
     this.ProgressTimerMarker.setScalingLocal(cb);
   }
   update(dt) {
-    if (this.weareactive != true)
-      return;
+    if (this.weareactive != true) {
+    }
     let _origin = this.object.getPositionWorld();
     let forwardWorld = new Float32Array(3);
     this.object.getForwardWorld(forwardWorld);
@@ -15836,6 +15836,7 @@ var EyeRayCast = class extends Component3 {
       // Only check against components in groups 0 and 4
       2500
     );
+    this.Debugtext.getComponent("text").text = "hit " + rayHit.hitCount;
     if (rayHit.hitCount > 0) {
       this.EyeMarker.setPositionWorld(rayHit.locations[0]);
       this.EyeMarker.getComponent("mesh").material = this.OverAButtonMaterial;
@@ -15889,7 +15890,8 @@ __publicField(EyeRayCast, "Properties", {
   ProgressTimerMarker: Property.object(),
   OverAButtonMaterial: Property.material(),
   settings: Property.object(),
-  background: Property.object()
+  background: Property.object(),
+  Debugtext: Property.object()
 });
 
 // js/HelpPanel.js
@@ -17290,6 +17292,7 @@ __publicField(OptionsWindow, "Properties", {
 // js/PlayModeManager.js
 var PlayModeManager = class extends Component3 {
   start() {
+    this.startSplashScreen();
     this.frameCount = 0;
     this.canclosesplash = false;
     this.ActivePanelIndicatorL.getComponent("mesh").material = this.ActivePanelIndicatorL.getComponent("mesh").material.clone();
@@ -17340,6 +17343,11 @@ var PlayModeManager = class extends Component3 {
     let pmph = this.PlayModeCameraPosition.getTranslationWorld();
     pmph[1] = this.prefferedheight[1];
     this.PlayModeCameraPosition.setTranslationWorld(pmph);
+  }
+  startSplashScreen() {
+    let ph = this.mainparent.getTranslationWorld();
+    ph[1] = 0;
+    this.mainparent.setTranslationWorld(ph);
   }
   Close_SPlashScreen() {
     if (this.canclosesplash == false)
