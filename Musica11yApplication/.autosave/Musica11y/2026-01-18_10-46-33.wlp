@@ -2,18 +2,10 @@
     "objects": {
         "14": {
             "name": "Player",
-            "components": [
-                {
-                    "type": "wasd-controls",
-                    "wasd-controls": {
-                        "headObject": "17"
-                    },
-                    "active": false
-                }
-            ],
+            "components": [],
             "translation": [
                 0.0,
-                1.1499999,
+                0.0,
                 0.0
             ],
             "rotation": [
@@ -119,15 +111,17 @@
         },
         "17": {
             "name": "NonVrCamera",
-            "parent": "14",
+            "parent": "2715",
             "components": [
                 {
                     "type": "view",
                     "view": {
                         "far": 20.0,
                         "projectionType": "perspective",
-                        "extent": 0.8
-                    }
+                        "extent": 0.8,
+                        "fov": 90.0
+                    },
+                    "active": false
                 },
                 {
                     "type": "mouse-look",
@@ -139,12 +133,18 @@
                 {
                     "type": "input",
                     "active": false
+                },
+                {
+                    "type": "vr-mode-active-switch",
+                    "vr-mode-active-switch": {
+                        "activateComponents": "in non-VR"
+                    }
                 }
             ],
             "translation": [
                 0.060386,
-                0.0493609,
-                -0.1463493
+                0.0,
+                0.0
             ],
             "rotation": [
                 0.0,
@@ -153,14 +153,14 @@
                 1.0
             ],
             "scaling": [
-                0.9999998,
+                1.0000002,
                 1.0,
-                1.0
+                4.3024768
             ]
         },
         "18": {
             "name": "EyeLeft",
-            "parent": "14",
+            "parent": "2715",
             "components": [
                 {
                     "type": "view",
@@ -175,11 +175,14 @@
                         "type": "eye left"
                     },
                     "active": true
+                },
+                {
+                    "type": "vr-mode-active-switch"
                 }
             ],
             "translation": [
-                0.0,
-                0.0,
+                -0.0,
+                1.1920928955078125e-7,
                 0.0
             ],
             "rotation": [
@@ -189,31 +192,35 @@
                 1.0
             ],
             "scaling": [
+                1.0000002,
                 1.0,
-                1.0,
-                1.0
+                1.0000002
             ]
         },
         "19": {
             "name": "EyeRight",
-            "parent": "14",
+            "parent": "2715",
             "components": [
                 {
                     "type": "view",
                     "view": {
                         "far": 20.0
-                    }
+                    },
+                    "active": true
                 },
                 {
                     "type": "input",
                     "input": {
                         "type": "eye right"
                     }
+                },
+                {
+                    "type": "vr-mode-active-switch"
                 }
             ],
             "translation": [
-                0.0,
-                0.0,
+                -0.0,
+                1.1920928955078125e-7,
                 0.0
             ],
             "rotation": [
@@ -223,9 +230,9 @@
                 1.0
             ],
             "scaling": [
+                1.0000002,
                 1.0,
-                1.0,
-                1.0
+                1.0000002
             ]
         },
         "21": {
@@ -857,14 +864,14 @@
         "635": {
             "name": "UI_Canvas_SpanchorMainPanel",
             "translation": [
-                -0.1334598,
-                1.2299952,
-                0.5649999
+                0.1242198,
+                1.0882155,
+                0.5649998
             ],
             "rotation": [
                 7.551857947873941e-7,
                 -1.4901170075631853e-8,
-                -1.2091220469301334e-8,
+                -1.2091222245658171e-8,
                 1.0
             ],
             "scaling": [
@@ -958,7 +965,7 @@
                             ]
                         },
                         "sphere": {
-                            "radius": 0.0299999
+                            "radius": 0.014
                         }
                     }
                 }
@@ -975,9 +982,9 @@
                 1.0
             ],
             "scaling": [
-                0.1,
-                0.1,
-                0.1
+                0.045,
+                0.045,
+                0.045
             ]
         },
         "638": {
@@ -1006,14 +1013,16 @@
                     "generate-buttons": {
                         "targetObject": "637",
                         "buttonPrefab": "637",
-                        "buttonSize": 0.1,
-                        "rows": 6,
-                        "columns": 32,
+                        "buttonSize": 0.001,
+                        "rows": 8,
+                        "columns": 8,
                         "NoteSelectorObject": "641",
                         "MusicMan": "646",
                         "isSlotSelector": true,
                         "NoteSelector": "641",
-                        "backpanel": "660"
+                        "backpanel": "660",
+                        "spacing": 0.1199999,
+                        "dumpdebugconsole": true
                     },
                     "active": true
                 }
@@ -1047,14 +1056,15 @@
                         "AnyButton": "685",
                         "background": "652",
                         "ScreenFader": "706",
-                        "ScreenBlocker": "705"
+                        "ScreenBlocker": "705",
+                        "noteColliderSize": 0.0099999
                     }
                 }
             ],
             "translation": [
-                -0.5166157,
-                1.1355679,
-                0.5847507
+                -0.0868344,
+                0.9234681,
+                0.5814296
             ],
             "rotation": [
                 3.540185389283579e-7,
@@ -1123,7 +1133,7 @@
                             ]
                         },
                         "sphere": {
-                            "radius": 0.0299999
+                            "radius": 0.013
                         }
                     },
                     "active": true
@@ -1141,9 +1151,9 @@
                 0.9659258
             ],
             "scaling": [
-                0.1204001,
-                0.127,
-                0.1089999
+                0.0399999,
+                0.0421926,
+                0.0362125
             ]
         },
         "643": {
@@ -1202,13 +1212,13 @@
                         "rows": 12,
                         "columns": 1,
                         "buttonPrefab": "642",
-                        "buttonSize": 0.1,
+                        "buttonSize": 0.0099999,
                         "InitalNote": 0,
                         "NoteSelectorObject": "641",
                         "MusicMan": "646",
                         "isNoteSelector": true,
                         "NoteSelector": "641",
-                        "spacing": 0.15
+                        "spacing": 0.092
                     },
                     "active": true
                 }
@@ -1981,7 +1991,7 @@
                             ]
                         },
                         "sphere": {
-                            "radius": 0.0399999
+                            "radius": 0.017
                         }
                     }
                 },
@@ -1995,20 +2005,20 @@
                 }
             ],
             "translation": [
-                -1.0377523,
-                0.500131,
-                0.0115943
+                -0.8526566,
+                1.2122572,
+                0.0387715
             ],
             "rotation": [
-                -4.246832077114959e-7,
+                -5.2160434194092886e-8,
                 0.0000037,
-                0.0,
+                -0.0,
                 1.0
             ],
             "scaling": [
-                7.4249892,
-                7.0540704,
-                0.2756606
+                3.4249999,
+                3.2539026,
+                0.1271567
             ]
         },
         "682": {
@@ -6351,11 +6361,11 @@
         },
         "1029": {
             "name": "StaticPanelsEditor",
-            "parent": null,
+            "parent": "2714",
             "translation": [
-                -0.0253913,
-                0.0733305,
-                0.312726
+                0.3057833,
+                -2.2078588,
+                -0.5904695
             ],
             "rotation": [
                 0.0,
@@ -6364,8 +6374,8 @@
                 1.0
             ],
             "scaling": [
-                1.0,
-                1.0,
+                0.9876543,
+                1.8591136,
                 1.0
             ]
         },
@@ -6473,9 +6483,11 @@
                         "ActivePanelIndicatorL": "2591",
                         "ActivePanelIndicatorM": "2592",
                         "ActivePanelIndicatorR": "2593",
-                        "mainparent": "2658",
+                        "mainparent": "2849",
                         "playerreference": "2709",
-                        "Debugtext": "2712"
+                        "Debugtext": "2863",
+                        "TheNewMainScenePtr": "2714",
+                        "TheProgressBar": "2718"
                     },
                     "active": true
                 }
@@ -10576,10 +10588,10 @@
         },
         "1782": {
             "name": "RightArmature\\new",
-            "parent": "14",
+            "parent": "2715",
             "translation": [
-                0.0,
-                0.0,
+                -0.0,
+                1.1920928955078125e-7,
                 0.0
             ],
             "rotation": [
@@ -10589,9 +10601,9 @@
                 1.0
             ],
             "scaling": [
+                1.0000002,
                 1.0,
-                1.0,
-                1.0
+                1.0000002
             ],
             "components": [
                 {
@@ -11833,10 +11845,10 @@
         },
         "1840": {
             "name": "LeftArmature\\new",
-            "parent": "14",
+            "parent": "2715",
             "translation": [
                 -0.1302988,
-                -0.0,
+                1.1920928955078125e-7,
                 0.000164
             ],
             "rotation": [
@@ -11846,9 +11858,9 @@
                 1.0
             ],
             "scaling": [
+                1.0000002,
                 1.0,
-                1.0,
-                1.0
+                1.0000002
             ],
             "components": [
                 {
@@ -13102,7 +13114,8 @@
                         "OverAButtonMaterial": "26",
                         "ProgressTimerMarker": "2008",
                         "settings": "769",
-                        "background": "2009"
+                        "background": "2009",
+                        "Debugtext": "2866"
                     },
                     "active": true
                 }
@@ -13134,7 +13147,7 @@
                         "mesh": "9",
                         "material": "22"
                     },
-                    "active": true
+                    "active": false
                 }
             ],
             "translation": [
@@ -13163,7 +13176,8 @@
                     "mesh": {
                         "mesh": "12",
                         "material": "22"
-                    }
+                    },
+                    "active": false
                 }
             ],
             "scaling": [
@@ -13192,7 +13206,8 @@
                     "mesh": {
                         "mesh": "12",
                         "material": "25"
-                    }
+                    },
+                    "active": false
                 }
             ],
             "scaling": [
@@ -27186,7 +27201,7 @@
         },
         "2658": {
             "name": "UI_GuideFull",
-            "parent": "14",
+            "parent": "2715",
             "components": [
                 {
                     "type": "mesh",
@@ -27194,18 +27209,18 @@
                         "mesh": "7",
                         "material": "2670"
                     },
-                    "active": true
+                    "active": false
                 }
             ],
             "translation": [
-                -0.1,
-                0.05,
-                -0.5
+                -0.1407271,
+                -0.0010587,
+                -0.3577755
             ],
             "rotation": [
-                -6.926677542651305e-8,
+                -6.926678253194042e-8,
                 0.0,
-                1.2092869816626717e-8,
+                1.2092866263913038e-8,
                 1.0
             ],
             "scaling": [
@@ -28522,9 +28537,9 @@
                 }
             ],
             "translation": [
-                0.0498407,
-                -2.6239163,
-                -0.4981522
+                0.0646163,
+                -2.6096627,
+                -0.4981523
             ],
             "rotation": [
                 0.0,
@@ -28533,8 +28548,8 @@
                 1.0
             ],
             "scaling": [
-                0.4852564,
-                0.2891649,
+                0.4852565,
+                0.289165,
                 0.2749629
             ],
             "parent": "2659"
@@ -28551,8 +28566,8 @@
                 }
             ],
             "translation": [
-                -0.228458,
-                -2.634288,
+                -0.2118706,
+                -2.6103379,
                 -0.4970391
             ],
             "rotation": [
@@ -28563,7 +28578,7 @@
             ],
             "scaling": [
                 0.1282556,
-                0.2868528,
+                0.2868529,
                 0.0555212
             ],
             "parent": "2659"
@@ -28624,7 +28639,7 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "TestText"
+                        "text": "TestText2\n"
                     },
                     "active": true
                 }
@@ -28647,7 +28662,7 @@
             ]
         },
         "2713": {
-            "name": "UI_GuideFull",
+            "name": "UI_GuideFullBK",
             "parent": null,
             "components": [
                 {
@@ -28660,25 +28675,26 @@
                 }
             ],
             "translation": [
-                8.965506026470393e-7,
-                1.1499999,
-                -0.9695345
+                8.940696716308594e-7,
+                1.15,
+                -0.5
             ],
             "rotation": [
-                -0.0,
                 0.0,
-                -0.0,
+                0.0,
+                0.0,
                 1.0
             ],
             "scaling": [
                 0.6399999,
-                0.3318516,
-                0.3160493
-            ]
+                0.3317998,
+                0.316
+            ],
+            "hiddenForLightBaking": true
         },
         "2714": {
             "name": "UI_GuideFull",
-            "parent": "14",
+            "parent": null,
             "components": [
                 {
                     "type": "mesh",
@@ -28690,20 +28706,409 @@
                 }
             ],
             "translation": [
-                8.965506026470393e-7,
-                0.0,
-                -0.5
+                -0.1474138,
+                0.7876247,
+                -0.4084632
             ],
             "rotation": [
-                -6.926677542651305e-8,
-                -0.0,
-                1.2092869816626717e-8,
+                0.0,
+                0.0,
+                0.0,
                 1.0
             ],
             "scaling": [
-                0.6399999,
-                0.3318516,
+                1.0124999,
+                0.5378907,
+                1.0
+            ]
+        },
+        "2715": {
+            "name": "TrackedSpace",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "player-height",
+                    "player-height": {
+                        "height": 0.8
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.0,
+                0.8,
+                0.0
+            ]
+        },
+        "2849": {
+            "name": "StartScreenSplashrea",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "2854": {
+            "link": {
+                "name": "Cube",
+                "file": "Meshes\\invertedcube.fbx"
+            },
+            "parent": "2849",
+            "components": [
+                {
+                    "originalIndex": 0,
+                    "mesh": {
+                        "material": "1045"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.4009999,
+                0.4009999,
+                0.4009999
+            ]
+        },
+        "2853": {
+            "name": "SplashScreen",
+            "parent": "2852",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "26"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.0799999,
+                                0.001
+                            ]
+                        }
+                    }
+                }
+            ],
+            "scaling": [
+                2.9,
+                2.9,
+                2.9
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                -1.0886358
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "2852": {
+            "name": "PlaneOffset",
+            "parent": "2849",
+            "translation": [
+                0.0,
+                0.0,
+                -0.2048181
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0361635,
+                0.0274659,
+                0.1
+            ]
+        },
+        "2851": {
+            "name": "CloseSplashScreen",
+            "parent": "2853",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "8",
+                        "material": "828"
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "sphere",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.0199999
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "PlayModeManager",
+                        "ActionOnObject": "1032",
+                        "Action": "Close_SPlashScreen"
+                    }
+                }
+            ],
+            "translation": [
+                -0.0079497,
+                -0.7599533,
+                0.0456901
+            ],
+            "rotation": [
+                -0.000006,
+                0.0000039,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1066287,
+                0.0965654,
+                0.0071867
+            ]
+        },
+        "2850": {
+            "name": "Text",
+            "parent": "2851",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "CLOSE",
+                        "material": "1952"
+                    }
+                }
+            ],
+            "scaling": [
+                5.0,
+                6.0874176,
+                5.0
+            ],
+            "translation": [
+                -0.0000104,
+                -0.095418,
+                1.0950336
+            ],
+            "rotation": [
+                1.4901161193847656e-7,
+                0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "2864": {
+            "name": "Mesh.026",
+            "parent": "2851",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "992"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.08,
+                1.08,
+                1.08
+            ]
+        },
+        "2863": {
+            "name": "Text",
+            "parent": "2853",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "REPLACE SPLASH SCREEN ANIMATION HERE",
+                        "material": "1952"
+                    }
+                }
+            ],
+            "scaling": [
+                0.5331439,
+                0.5878345,
+                0.0359345
+            ],
+            "translation": [
+                -0.1564179,
+                0.5153441,
+                0.013215
+            ],
+            "rotation": [
+                -0.0000016,
+                0.0000014,
+                -0.0,
+                1.0
+            ]
+        },
+        "2716": {
+            "name": "Mesh.027",
+            "parent": "2853",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "22"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.4,
+                0.0016142
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.5,
+                0.0099999,
+                1.0
+            ]
+        },
+        "2717": {
+            "name": "Mesh.027",
+            "parent": "2718",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "1007"
+                    }
+                }
+            ],
+            "translation": [
+                0.9899991,
+                0.0,
+                0.0000127
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0000001,
+                1.0000001,
+                1.0
+            ]
+        },
+        "2718": {
+            "name": "progressbar",
+            "parent": "2853",
+            "translation": [
+                -0.4949922,
+                0.3999921,
+                0.0024458
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.001,
+                0.0099999,
+                1.0
+            ]
+        },
+        "2865": {
+            "name": "UI_GuideTestImage",
+            "scaling": [
+                0.3160493,
+                0.3160493,
                 0.3160493
+            ],
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2670"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.0,
+                1.4901161193847656e-8,
+                8.940696716308595e-8
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "parent": "2714"
+        },
+        "2866": {
+            "name": "Textdebug3",
+            "parent": "2658",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "TestText3\n\n"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.7429999,
+                1.4299999,
+                14.2187595
+            ],
+            "translation": [
+                0.3607921,
+                0.7048286,
+                -0.1595604
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
             ]
         }
     },
@@ -29627,6 +30032,96 @@
                 "name": "Plane.001",
                 "file": "Meshes\\gITF formats\\CirclePlane64U.glb"
             }
+        },
+        "1984": {
+            "link": {
+                "name": "controller_plyShape.004",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "1985": {
+            "link": {
+                "name": "controller_plyShape.005",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "1986": {
+            "link": {
+                "name": "controller_plyShape",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "1987": {
+            "link": {
+                "name": "controller_plyShape.002",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "1988": {
+            "link": {
+                "name": "controller_plyShape.003",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "1989": {
+            "link": {
+                "name": "controller_plyShape.001",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "1990": {
+            "link": {
+                "name": "controller_plyShape",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "1991": {
+            "link": {
+                "name": "controller_plyShape.003",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "1992": {
+            "link": {
+                "name": "controller_plyShape.005",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "1993": {
+            "link": {
+                "name": "controller_plyShape.006",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "1994": {
+            "link": {
+                "name": "controller_plyShape.004",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "1995": {
+            "link": {
+                "name": "controller_plyShape.002",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "1996": {
+            "link": {
+                "name": "Mesh",
+                "file": "models\\hand-left.glb"
+            }
+        },
+        "1997": {
+            "link": {
+                "name": "Mesh.001",
+                "file": "models\\hand-right.glb"
+            }
+        },
+        "1998": {
+            "link": {
+                "name": "mesh_0",
+                "file": "Meshes\\invertedcube.fbx"
+            }
         }
     },
     "textures": {
@@ -30306,6 +30801,30 @@
                 "name": "UI-Guidev2.jpg",
                 "file": "images\\V1-2\\UI-Guidev2.jpg"
             }
+        },
+        "2679": {
+            "link": {
+                "name": "texture_0",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "2680": {
+            "link": {
+                "name": "texture_1",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "2681": {
+            "link": {
+                "name": "texture_0",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "2682": {
+            "link": {
+                "name": "texture_1",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
         }
     },
     "images": {
@@ -30983,6 +31502,30 @@
             "link": {
                 "name": "UI-Guidev2.jpg",
                 "file": "images\\V1-2\\UI-Guidev2.jpg"
+            }
+        },
+        "2677": {
+            "link": {
+                "name": "Image_0",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "2678": {
+            "link": {
+                "name": "Image_1",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "2679": {
+            "link": {
+                "name": "Image_0",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "2680": {
+            "link": {
+                "name": "Image_1",
+                "file": "models\\oculus-touch-v2-left.glb"
             }
         }
     },
@@ -33371,6 +33914,30 @@
             "Flat": {
                 "flatTexture": "2677"
             }
+        },
+        "2672": {
+            "link": {
+                "name": "skel_controller_materials_controllerMTL",
+                "file": "models\\oculus-touch-v2-right.glb"
+            }
+        },
+        "2673": {
+            "link": {
+                "name": "skel_controller_materials_controllerMTL1",
+                "file": "models\\oculus-touch-v2-left.glb"
+            }
+        },
+        "2674": {
+            "link": {
+                "name": "Default_Material",
+                "file": "models\\hand-left.glb"
+            }
+        },
+        "2675": {
+            "link": {
+                "name": "lambert2",
+                "file": "models\\hand-right.glb"
+            }
         }
     },
     "shaders": {
@@ -34240,7 +34807,7 @@
             "version": [
                 1,
                 4,
-                2
+                7
             ],
             "description": "Accessible XR Music Experience \nDesign lead: Damian Mills.\nProgramming lead: Rodney McConnnell."
         },
@@ -34252,12 +34819,15 @@
             },
             "webxr": {
                 "optionalFeatures": {
-                    "plane-detection": true,
+                    "plane-detection": false,
                     "local-floor": true,
-                    "anchors": true
+                    "anchors": false,
+                    "bounded-floor": false
                 },
                 "requiredFeatures": {
-                    "anchors": false
+                    "anchors": false,
+                    "bounded-floor": false,
+                    "local-floor": false
                 }
             }
         },
@@ -34619,6 +35189,90 @@
                 null
             ],
             "name": "Right"
+        },
+        "1894": {
+            "link": {
+                "name": "Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "name": "HandLeftSkin",
+            "joints": []
+        },
+        "1895": {
+            "link": {
+                "name": "Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "name": "HandRightSkin",
+            "joints": []
+        },
+        "1896": {
+            "link": {
+                "name": "Armature",
+                "file": "models\\hand-left.glb"
+            },
+            "name": "HandLeftSkin",
+            "joints": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+            ]
+        },
+        "1897": {
+            "link": {
+                "name": "Armature",
+                "file": "models\\hand-right.glb"
+            },
+            "name": "HandRightSkin",
+            "joints": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+            ]
         }
     },
     "files": {
@@ -35254,6 +35908,31 @@
         "2678": {
             "fileName": "images/V1-2/UI-Guidev2.jpg",
             "importerName": ""
+        },
+        "2679": {
+            "fileName": "models/oculus-touch-v2-right.glb",
+            "importerName": "",
+            "importPhysicalAsPhongMaterials": true
+        },
+        "2680": {
+            "fileName": "models/oculus-touch-v2-left.glb",
+            "importerName": "",
+            "importPhysicalAsPhongMaterials": true
+        },
+        "2681": {
+            "fileName": "models/hand-left.glb",
+            "importerName": "",
+            "importPhysicalAsPhongMaterials": true
+        },
+        "2682": {
+            "fileName": "models/hand-right.glb",
+            "importerName": "",
+            "importPhysicalAsPhongMaterials": true
+        },
+        "2683": {
+            "fileName": "Meshes/invertedcube.fbx",
+            "importerName": "",
+            "importPhysicalAsPhongMaterials": true
         }
     },
     "pipelines": {

@@ -45,6 +45,44 @@ export class PlayModeManager extends Component {
 
 
     start() {
+
+        WL.onXRSessionStart.push((session) => {
+            console.log("XR session started", session);
+
+            if (session.environmentBlendMode === "opaque") {
+                console.log("Entered VR");
+                // VR logic here
+            }
+
+            if (session.environmentBlendMode === "additive" || session.environmentBlendMode === "alpha-blend") {
+                console.log("Entered AR");
+                // AR logic here
+            }
+
+            this.weare_in_vr = true;
+                this.EyecastMarker.set_active(true);
+                if (this.lefthand)
+                    this.lefthand.getComponent("Althand-tracking").set_active(true);
+                if (this.righthand)
+                    this.righthand.getComponent("Althand-tracking").set_active(true);
+                //			setTimeout(() => {
+                //	this.setsceneheight();
+                //}, 5000); // 2000 milliseconds = 2 seconds
+                this.monitorY = true;
+                this.frameCount = 0;
+
+                //get this out of the way for now
+                let ph = this.TheNewMainScenePtr.getTranslationWorld();
+                ph[1] = -10000;
+                this.TheNewMainScenePtr.setTranslationWorld(ph);
+        });
+
+        WL.onXRSessionEnd.push(() => {
+            console.log("Exited XR");
+            // cleanup logic here
+        });
+
+
         this.startSplashScreen();
         this.frameCount = 0;
         this.canclosesplash = false;
@@ -77,7 +115,7 @@ export class PlayModeManager extends Component {
                 //        let playerpos = this.PlayCameraRef.getTranslationWorld();
                 //       playerpos[1] += this.PlayerInitialOffset[1];
                 //        this.PlayCameraRef.setTranslationWorld(playerpos);
-                this.weare_in_vr = true;
+  /*              this.weare_in_vr = true;
                 this.EyecastMarker.set_active(true);
                 if (this.lefthand)
                     this.lefthand.getComponent("Althand-tracking").set_active(true);
@@ -88,6 +126,11 @@ export class PlayModeManager extends Component {
                 //}, 5000); // 2000 milliseconds = 2 seconds
                 this.monitorY = true;
                 this.frameCount = 0;
+
+                //get this out of the way for now
+                let ph = this.TheNewMainScenePtr.getTranslationWorld();
+                ph[1] = -10000;
+                this.TheNewMainScenePtr.setTranslationWorld(ph);*/
             });
         } else {
             console.log("AR button not found. Check your implementation.");
@@ -101,7 +144,7 @@ export class PlayModeManager extends Component {
                 //        let playerpos = this.PlayCameraRef.getTranslationWorld();
                 //       playerpos[1] += this.PlayerInitialOffset[1];
                 //        this.PlayCameraRef.setTranslationWorld(playerpos);
-                this.weare_in_vr = true;
+         /*       this.weare_in_vr = true;
                 this.EyecastMarker.set_active(true);
                 if (this.lefthand)
                     this.lefthand.getComponent("Althand-tracking").set_active(true);
@@ -113,6 +156,12 @@ export class PlayModeManager extends Component {
                 //	}, 5000); // 2000 milliseconds = 2 seconds
                 this.monitorY = true;
                 this.frameCount = 0;
+
+                //get this out of the way for now
+                let ph = this.TheNewMainScenePtr.getTranslationWorld();
+                ph[1] = -10000;
+                this.TheNewMainScenePtr.setTranslationWorld(ph);*/
+
             });
         } else {
             console.log("VR button not found. Check your implementation.");

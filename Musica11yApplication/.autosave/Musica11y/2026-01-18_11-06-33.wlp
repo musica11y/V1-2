@@ -871,7 +871,7 @@
             "rotation": [
                 7.551857947873941e-7,
                 -1.4901170075631853e-8,
-                -1.2091222245658173e-8,
+                -1.2091222245658171e-8,
                 1.0
             ],
             "scaling": [
@@ -1021,7 +1021,8 @@
                         "isSlotSelector": true,
                         "NoteSelector": "641",
                         "backpanel": "660",
-                        "spacing": 0.1199999
+                        "spacing": 0.1199999,
+                        "dumpdebugconsole": false
                     },
                     "active": true
                 }
@@ -13113,7 +13114,8 @@
                         "OverAButtonMaterial": "26",
                         "ProgressTimerMarker": "2008",
                         "settings": "769",
-                        "background": "2009"
+                        "background": "2009",
+                        "Debugtext": "2866"
                     },
                     "active": true
                 }
@@ -13145,7 +13147,7 @@
                         "mesh": "9",
                         "material": "22"
                     },
-                    "active": true
+                    "active": false
                 }
             ],
             "translation": [
@@ -13174,7 +13176,8 @@
                     "mesh": {
                         "mesh": "12",
                         "material": "22"
-                    }
+                    },
+                    "active": false
                 }
             ],
             "scaling": [
@@ -13203,7 +13206,8 @@
                     "mesh": {
                         "mesh": "12",
                         "material": "25"
-                    }
+                    },
+                    "active": false
                 }
             ],
             "scaling": [
@@ -29068,7 +29072,7 @@
             "translation": [
                 0.0,
                 1.4901161193847656e-8,
-                8.940696716308594e-8
+                8.940696716308595e-8
             ],
             "rotation": [
                 0.0,
@@ -29079,13 +29083,13 @@
             "parent": "2714"
         },
         "2866": {
-            "name": "Textdebug",
+            "name": "Textdebug3",
             "parent": "2658",
             "components": [
                 {
                     "type": "text",
                     "text": {
-                        "text": "TestText2\n"
+                        "text": "TestText3\n\n"
                     },
                     "active": true
                 }
@@ -29097,12 +29101,12 @@
             ],
             "translation": [
                 0.3607921,
-                0.8878602,
-                0.0245441
+                0.7048286,
+                -0.1595604
             ],
             "rotation": [
                 0.0,
-                -0.0,
+                0.0,
                 0.0,
                 1.0
             ]

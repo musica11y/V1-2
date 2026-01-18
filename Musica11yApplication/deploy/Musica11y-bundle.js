@@ -17292,6 +17292,29 @@ __publicField(OptionsWindow, "Properties", {
 // js/PlayModeManager.js
 var PlayModeManager = class extends Component3 {
   start() {
+    WL.onXRSessionStart.push((session) => {
+      console.log("XR session started", session);
+      if (session.environmentBlendMode === "opaque") {
+        console.log("Entered VR");
+      }
+      if (session.environmentBlendMode === "additive" || session.environmentBlendMode === "alpha-blend") {
+        console.log("Entered AR");
+      }
+      this.weare_in_vr = true;
+      this.EyecastMarker.set_active(true);
+      if (this.lefthand)
+        this.lefthand.getComponent("Althand-tracking").set_active(true);
+      if (this.righthand)
+        this.righthand.getComponent("Althand-tracking").set_active(true);
+      this.monitorY = true;
+      this.frameCount = 0;
+      let ph2 = this.TheNewMainScenePtr.getTranslationWorld();
+      ph2[1] = -1e4;
+      this.TheNewMainScenePtr.setTranslationWorld(ph2);
+    });
+    WL.onXRSessionEnd.push(() => {
+      console.log("Exited XR");
+    });
     this.startSplashScreen();
     this.frameCount = 0;
     this.canclosesplash = false;
@@ -17308,14 +17331,6 @@ var PlayModeManager = class extends Component3 {
     if (arButton) {
       console.log("AR button found!");
       document.getElementById("ar-button").addEventListener("click", () => {
-        this.weare_in_vr = true;
-        this.EyecastMarker.set_active(true);
-        if (this.lefthand)
-          this.lefthand.getComponent("Althand-tracking").set_active(true);
-        if (this.righthand)
-          this.righthand.getComponent("Althand-tracking").set_active(true);
-        this.monitorY = true;
-        this.frameCount = 0;
       });
     } else {
       console.log("AR button not found. Check your implementation.");
@@ -17324,14 +17339,6 @@ var PlayModeManager = class extends Component3 {
     if (vrButton) {
       console.log("VR button found!");
       document.getElementById("vr-button").addEventListener("click", () => {
-        this.weare_in_vr = true;
-        this.EyecastMarker.set_active(true);
-        if (this.lefthand)
-          this.lefthand.getComponent("Althand-tracking").set_active(true);
-        if (this.righthand)
-          this.righthand.getComponent("Althand-tracking").set_active(true);
-        this.monitorY = true;
-        this.frameCount = 0;
       });
     } else {
       console.log("VR button not found. Check your implementation.");
@@ -21515,12 +21522,16 @@ var GenerateButtons = class extends Component3 {
     }
     this.noteColliderSize = this.buttonPrefab.getComponent("collision").radius;
     var CurrentNote = this.InitalNote;
+    if (this.dumpdebugconsole)
+      console.log("** generated ", this.rows);
     for (let row = 0; row < this.rows; row++) {
       for (let col = 0; col < this.columns; col++) {
         const button = this.buttonPrefab.clone();
         const x = col * (this.buttonSize + this.spacing);
         const y = -row * (this.buttonSize + this.spacing);
         button.setTranslationLocal([x, y, 0]);
+        if (this.dumpdebugconsole && col == 0)
+          console.log(" POSITION IS  ", x, ",", y);
         if (this.isNoteSelector)
           this.NoteSelector.getComponent("NoteSelector").storeButtonNoteSelector(button);
         if (this.isSlotSelector)
@@ -21544,6 +21555,8 @@ var GenerateButtons = class extends Component3 {
         this.scene.addObject(button);
         button.parent = this.object;
       }
+      if (this.dumpdebugconsole)
+        console.log("Next row ", row, " count ", this.buttons.length);
     }
     if (this.isNoteSelector) {
       this.NoteSelector.getComponent("NoteSelector").UpdateNotesOnNoteSelectorActive(this.noteColliderSize);
@@ -21558,7 +21571,7 @@ var GenerateButtons = class extends Component3 {
     this.currentColCntr = this.columns;
     if (this.isSlotSelector) {
       this.currentColCntr = 8 * 2;
-      this.currentRowCntr = 6;
+      this.currentRowCntr = 8;
       this.do_updateButtons();
     }
     if (this.isLayerSelector) {
@@ -21670,7 +21683,8 @@ __publicField(GenerateButtons, "Properties", {
   isLayerSelector: Property.bool(),
   MusicMan: Property.object(),
   LayerManager: Property.object(),
-  backpanel: Property.object()
+  backpanel: Property.object(),
+  dumpdebugconsole: Property.bool()
 });
 
 // js/loadsave.js
