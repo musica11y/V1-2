@@ -25,8 +25,6 @@ export class GenerateButtons extends Component {
 		MusicMan: Property.object(),
 		LayerManager: Property.object(),
 		backpanel: Property.object(),
-
-		dumpdebugconsole: Property.bool(),
 	};
 
 	start() {
@@ -43,8 +41,6 @@ export class GenerateButtons extends Component {
 		this.noteColliderSize = this.buttonPrefab.getComponent('collision').radius;
 
 		var CurrentNote = this.InitalNote;
-		if(this.dumpdebugconsole)
-			console.log("** generated ",this.rows);
 		// Generate buttons in a grid
 		for (let row = 0; row < this.rows; row++) {
 			for (let col = 0; col < this.columns; col++) {
@@ -56,9 +52,6 @@ export class GenerateButtons extends Component {
 				const x = col * (this.buttonSize + this.spacing);
 				const y = -row * (this.buttonSize + this.spacing); // Negative y to grow downwards
 				button.setTranslationLocal([x, y, 0]);
-
-				if(this.dumpdebugconsole && col==0)
-						console.log(" POSITION IS  ",x,",",y);
 
 
 				if (this.isNoteSelector)
@@ -118,8 +111,6 @@ export class GenerateButtons extends Component {
 				//		console.log('Parent Object Name:', button.parent.name);
 				//	} else { console.log('This object has no parent.'); }
 			}
-			if(this.dumpdebugconsole)
-				console.log("Next row ",row, " count ",this.buttons.length);
 		}
 
 		if (this.isNoteSelector) {
@@ -137,8 +128,8 @@ export class GenerateButtons extends Component {
 
 		if(this.isSlotSelector)
 		{
-			this.currentColCntr = 8*2;// this.columns;//8*2;
-			this.currentRowCntr = 8;// this.rows;//6;//why 6?? is this meant to be the max ever
+			this.currentColCntr = 8*2;
+			this.currentRowCntr = 6;
 	
 			this.do_updateButtons();
 		}
