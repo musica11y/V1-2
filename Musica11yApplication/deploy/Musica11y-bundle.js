@@ -16930,6 +16930,84 @@ __publicField(MusicManagement, "Properties", {
 __publicField(MusicManagement, "InTestMode", false);
 __publicField(MusicManagement, "InKeySelect", false);
 
+// js/NewLPanelCtrl.js
+var NreLPanelCtrl = class extends Component3 {
+  start() {
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(0);
+  }
+  update(dt) {
+  }
+  open_test_window() {
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(1);
+  }
+  restore_default_window() {
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(0);
+  }
+  //move default panel out of the way and add new panel
+  set_new_panel_live(i) {
+    let position = this.leftsidewindows[i].getPositionLocal();
+    if (i == 0)
+      position[1] = 0.923;
+    else
+      position[1] = 0;
+    this.leftsidewindows[i].setPositionLocal(position);
+  }
+  restore_default_leftPanel() {
+    this.leftsidewindows.forEach((obj) => {
+      let position = obj.getPositionLocal();
+      position[1] = 1e3;
+      obj.setPositionLocal(position);
+    });
+  }
+};
+__publicField(NreLPanelCtrl, "TypeName", "NewLPanelCtrl");
+/* Properties that are configurable in the editor */
+__publicField(NreLPanelCtrl, "Properties", {
+  leftsidewindows: Property.array(Property.object())
+});
+
+// js/NewMainPanelCtrl.js
+var NewMainPanelCtrl = class extends Component3 {
+  start() {
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(0);
+  }
+  update(dt) {
+  }
+  open_test_window() {
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(1);
+  }
+  restore_default_window() {
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(0);
+  }
+  //move default panel out of the way and add new panel
+  set_new_panel_live(i) {
+    let position = this.leftsidewindows[i].getPositionLocal();
+    if (i == 0)
+      position[1] = 1.088;
+    else
+      position[1] = 0;
+    this.leftsidewindows[i].setPositionLocal(position);
+  }
+  restore_default_leftPanel() {
+    this.leftsidewindows.forEach((obj) => {
+      let position = obj.getPositionLocal();
+      position[1] = 1e3;
+      obj.setPositionLocal(position);
+    });
+  }
+};
+__publicField(NewMainPanelCtrl, "TypeName", "NewMainPanelCtrl");
+/* Properties that are configurable in the editor */
+__publicField(NewMainPanelCtrl, "Properties", {
+  leftsidewindows: Property.array(Property.object())
+});
+
 // js/NoteSelector.js
 var NoteSelector = class extends Component3 {
   CurrentOctave = 4;
@@ -22308,6 +22386,8 @@ engine.registerComponent(HelpPanel);
 engine.registerComponent(LayerAnchorDataStorage);
 engine.registerComponent(LayerManager);
 engine.registerComponent(MusicManagement);
+engine.registerComponent(NreLPanelCtrl);
+engine.registerComponent(NewMainPanelCtrl);
 engine.registerComponent(NoteSelector);
 engine.registerComponent(OptionsWindow);
 engine.registerComponent(PlayModeManager);

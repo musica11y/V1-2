@@ -871,7 +871,7 @@
             "rotation": [
                 7.551857947873941e-7,
                 -1.4901170075631853e-8,
-                -1.2091222245658173e-8,
+                -1.2091222245658171e-8,
                 1.0
             ],
             "scaling": [
@@ -13113,7 +13113,8 @@
                         "OverAButtonMaterial": "26",
                         "ProgressTimerMarker": "2008",
                         "settings": "769",
-                        "background": "2009"
+                        "background": "2009",
+                        "Debugtext": "2866"
                     },
                     "active": true
                 }
@@ -13145,7 +13146,7 @@
                         "mesh": "9",
                         "material": "22"
                     },
-                    "active": true
+                    "active": false
                 }
             ],
             "translation": [
@@ -13174,7 +13175,8 @@
                     "mesh": {
                         "mesh": "12",
                         "material": "22"
-                    }
+                    },
+                    "active": false
                 }
             ],
             "scaling": [
@@ -13203,7 +13205,8 @@
                     "mesh": {
                         "mesh": "12",
                         "material": "25"
-                    }
+                    },
+                    "active": false
                 }
             ],
             "scaling": [
@@ -29068,7 +29071,7 @@
             "translation": [
                 0.0,
                 1.4901161193847656e-8,
-                8.940696716308594e-8
+                8.940696716308595e-8
             ],
             "rotation": [
                 0.0,
@@ -29079,13 +29082,13 @@
             "parent": "2714"
         },
         "2866": {
-            "name": "Textdebug",
+            "name": "Textdebug3",
             "parent": "2658",
             "components": [
                 {
                     "type": "text",
                     "text": {
-                        "text": "TestText2\n"
+                        "text": "TestText3\n\n"
                     },
                     "active": true
                 }
@@ -29097,14 +29100,188 @@
             ],
             "translation": [
                 0.3607921,
-                0.8878602,
-                0.0245441
+                0.7048286,
+                -0.1595604
             ],
             "rotation": [
                 0.0,
-                -0.0,
+                0.0,
                 0.0,
                 1.0
+            ]
+        },
+        "2867": {
+            "name": "NewTestPanel",
+            "translation": [
+                -0.0734043,
+                -0.0313136,
+                0.0013477
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.9876543,
+                1.8591139,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "NewLPanelCtrl",
+                    "NewLPanelCtrl": {
+                        "leftsidewindows": [
+                            "641",
+                            "2868"
+                        ]
+                    }
+                }
+            ],
+            "parent": "2714"
+        },
+        "2868": {
+            "name": "menuBackpanel",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2669"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0672572,
+                0.1504256,
+                0.0291153
+            ],
+            "parent": "2867"
+        },
+        "2869": {
+            "name": "OpenTestWindowHere",
+            "parent": "641",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "8",
+                        "material": "828"
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "sphere",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.0199999
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "PlayModeManager",
+                        "ActionOnObject": "2867",
+                        "Action": "Close_SPlashScreen"
+                    }
+                }
+            ],
+            "translation": [
+                -0.8529995,
+                1.4123612,
+                0.0330595
+            ],
+            "rotation": [
+                -0.000006,
+                0.0000039,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1066287,
+                0.0965654,
+                0.0071867
+            ]
+        },
+        "2870": {
+            "name": "Text",
+            "parent": "2869",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "OPEN\nTEST",
+                        "material": "1952"
+                    }
+                }
+            ],
+            "scaling": [
+                5.0,
+                6.0874176,
+                5.0
+            ],
+            "translation": [
+                -0.0000104,
+                -0.095418,
+                1.0950336
+            ],
+            "rotation": [
+                1.4901161193847656e-7,
+                0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "2871": {
+            "name": "Mesh.026",
+            "parent": "2869",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "992"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.08,
+                1.08,
+                1.08
             ]
         }
     },
