@@ -96,7 +96,8 @@ export class NoteSelector extends Component {
 	}
 
 	updateCurrentNoteText() {
-		this.TextObject.getComponent('text').text = "Current Octave:" + this.musicmanref.CurrentKey + "+" + String(this.CurrentOctave);
+	//	this.TextObject.getComponent('text').text = "Current Octave:" + this.musicmanref.CurrentKey + "+" + String(this.CurrentOctave);
+		this.TextObject.getComponent('text').text = this.musicmanref.CurrentKey + "+" + String(this.CurrentOctave);
 		//if current note is selected lets display that too
 		if (this.midivalueselected > -1) {
 			this.TextObject.getComponent('text').text += " : Midi Note " + this.midivalueselected;

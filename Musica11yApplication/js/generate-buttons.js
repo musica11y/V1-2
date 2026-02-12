@@ -129,7 +129,7 @@ export class GenerateButtons extends Component {
 		if(this.isSlotSelector)
 		{
 			this.currentColCntr = 8*2;
-			this.currentRowCntr = 6;
+			this.currentRowCntr = 8;//6;
 	
 			this.do_updateButtons();
 		}

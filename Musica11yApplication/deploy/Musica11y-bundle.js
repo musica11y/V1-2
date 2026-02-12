@@ -17066,7 +17066,7 @@ var NoteSelector = class extends Component3 {
       this.background.getComponent("mesh").material.color = MaterialScheme.GetOctaveColour(this.CurrentOctave);
   }
   updateCurrentNoteText() {
-    this.TextObject.getComponent("text").text = "Current Octave:" + this.musicmanref.CurrentKey + "+" + String(this.CurrentOctave);
+    this.TextObject.getComponent("text").text = this.musicmanref.CurrentKey + "+" + String(this.CurrentOctave);
     if (this.midivalueselected > -1) {
       this.TextObject.getComponent("text").text += " : Midi Note " + this.midivalueselected;
     }
@@ -21636,7 +21636,7 @@ var GenerateButtons = class extends Component3 {
     this.currentColCntr = this.columns;
     if (this.isSlotSelector) {
       this.currentColCntr = 8 * 2;
-      this.currentRowCntr = 6;
+      this.currentRowCntr = 8;
       this.do_updateButtons();
     }
     if (this.isLayerSelector) {
