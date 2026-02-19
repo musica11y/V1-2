@@ -49,7 +49,7 @@ export class SettingsWindow extends Component {
 		this._BPM_text = this.BPMText.getComponent('text');
 		
 
-		this._BPM_text.text = "BPM\n" + String(this.Musicman.getComponent('MusicManagement').bpm);
+		this._BPM_text.text = "" + String(this.Musicman.getComponent('MusicManagement').bpm);
 		
 
 		this.HooverShortText = this.HooverShortText.getComponent('text');
@@ -246,24 +246,24 @@ export class SettingsWindow extends Component {
 
 	Spanchor_BPM_add() {
 		this.Musicman.getComponent('MusicManagement').bpm += 1;
-		this._BPM_text.text = "BPM\n" + String(this.Musicman.getComponent('MusicManagement').bpm);
+		this._BPM_text.text = "" + String(this.Musicman.getComponent('MusicManagement').bpm);
 	}
 
 	Spanchor_BPM_minus() {
 		if (this.Musicman.getComponent('MusicManagement').bpm > 2)
 			this.Musicman.getComponent('MusicManagement').bpm -= 1;
-		this._BPM_text.text = "BPM\n" + String(this.Musicman.getComponent('MusicManagement').bpm);
+		this._BPM_text.text = "" + String(this.Musicman.getComponent('MusicManagement').bpm);
 	}
 
 	Spanchor_BPM_add5() {
 		this.Musicman.getComponent('MusicManagement').bpm += 5;
-		this._BPM_text.text = "BPM\n" + String(this.Musicman.getComponent('MusicManagement').bpm);
+		this._BPM_text.text = "" + String(this.Musicman.getComponent('MusicManagement').bpm);
 	}
 
 	Spanchor_BPM_minus5() {
 		if (this.Musicman.getComponent('MusicManagement').bpm > 5)
 			this.Musicman.getComponent('MusicManagement').bpm -= 5;
-		this._BPM_text.text = "BPM\n" + String(this.Musicman.getComponent('MusicManagement').bpm);
+		this._BPM_text.text = "" + String(this.Musicman.getComponent('MusicManagement').bpm);
 	}
 
 

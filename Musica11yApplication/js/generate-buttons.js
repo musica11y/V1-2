@@ -21,6 +21,7 @@ export class GenerateButtons extends Component {
 		isNoteSelector: Property.bool(),
 		isScaleSelector: Property.bool(),
 		isLayerSelector: Property.bool(),
+		isKeySelector: Property.bool(),
 
 		MusicMan: Property.object(),
 		LayerManager: Property.object(),
@@ -66,7 +67,7 @@ export class GenerateButtons extends Component {
 					button.getComponent('UI_Button').notevalue = CurrentNote;
 					button.getComponent('UI_Button').object.children[0].getComponent('text').text = this.musicmanref.GetScaleName(CurrentNote);
 				}
-				else if (this.isNoteSelector) {
+				else if (this.isNoteSelector || this.isKeySelector) {
 					button.getComponent('UI_Button').notevalue = this.musicmanref.GetMidiValueOfNoteInScale(CurrentNote, 0, false);//octave will be added when using
 					button.getComponent('UI_Button').intervalValue = CurrentNote;//this.musicmanref.GetIntervalValueOfPosition(CurrentNote);
 					//console.log("set interval ",button.getComponent('UI_Button').intervalValue," for button ",CurrentNote);
@@ -218,6 +219,7 @@ export class GenerateButtons extends Component {
 
 	//handle the offset of the sharps in the note selector panel
 	alignsinglerowbuttons() {
+	
 		let y = 0
 		let lastwassharp = false;
 		let firstletter = true;

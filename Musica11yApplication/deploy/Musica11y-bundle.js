@@ -16938,9 +16938,13 @@ var NreLPanelCtrl = class extends Component3 {
   }
   update(dt) {
   }
-  open_test_window() {
+  open_key_window() {
     this.restore_default_leftPanel();
     this.set_new_panel_live(1);
+  }
+  open_test_window() {
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(2);
   }
   restore_default_window() {
     this.restore_default_leftPanel();
@@ -16951,9 +16955,12 @@ var NreLPanelCtrl = class extends Component3 {
     let position = this.leftsidewindows[i].getPositionLocal();
     if (i == 0)
       position[1] = 0.923;
-    else
+    else {
+      position[0] = 0;
       position[1] = 0;
+    }
     this.leftsidewindows[i].setPositionLocal(position);
+    console.log(position);
   }
   restore_default_leftPanel() {
     this.leftsidewindows.forEach((obj) => {
@@ -18103,7 +18110,7 @@ var SettingsWindow = class extends Component3 {
     this.loadsave = this.loadsave.getComponent("loadsave");
     this.PlayModeManager = this.Musicman.getComponent("MusicManagement").PlayModeManager.getComponent("PlayModeManager");
     this._BPM_text = this.BPMText.getComponent("text");
-    this._BPM_text.text = "BPM\n" + String(this.Musicman.getComponent("MusicManagement").bpm);
+    this._BPM_text.text = "" + String(this.Musicman.getComponent("MusicManagement").bpm);
     this.HooverShortText = this.HooverShortText.getComponent("text");
     this.shorttext = this.HooverShortText.text;
     this.HooverMediumText = this.HooverMediumText.getComponent("text");
@@ -18252,21 +18259,21 @@ var SettingsWindow = class extends Component3 {
   }
   Spanchor_BPM_add() {
     this.Musicman.getComponent("MusicManagement").bpm += 1;
-    this._BPM_text.text = "BPM\n" + String(this.Musicman.getComponent("MusicManagement").bpm);
+    this._BPM_text.text = "" + String(this.Musicman.getComponent("MusicManagement").bpm);
   }
   Spanchor_BPM_minus() {
     if (this.Musicman.getComponent("MusicManagement").bpm > 2)
       this.Musicman.getComponent("MusicManagement").bpm -= 1;
-    this._BPM_text.text = "BPM\n" + String(this.Musicman.getComponent("MusicManagement").bpm);
+    this._BPM_text.text = "" + String(this.Musicman.getComponent("MusicManagement").bpm);
   }
   Spanchor_BPM_add5() {
     this.Musicman.getComponent("MusicManagement").bpm += 5;
-    this._BPM_text.text = "BPM\n" + String(this.Musicman.getComponent("MusicManagement").bpm);
+    this._BPM_text.text = "" + String(this.Musicman.getComponent("MusicManagement").bpm);
   }
   Spanchor_BPM_minus5() {
     if (this.Musicman.getComponent("MusicManagement").bpm > 5)
       this.Musicman.getComponent("MusicManagement").bpm -= 5;
-    this._BPM_text.text = "BPM\n" + String(this.Musicman.getComponent("MusicManagement").bpm);
+    this._BPM_text.text = "" + String(this.Musicman.getComponent("MusicManagement").bpm);
   }
   getheldtime(whichtime) {
     if (whichtime == null)
@@ -19905,7 +19912,7 @@ var SoundFontSupport = class extends Component3 {
     this.soundfontholder = [];
     this.soundfontholder.push(new MyClass("SplendidGrandPiano", 0, "Pianos"));
     this.soundfontholder[0].SoundFontSampler = new SplendidGrandPiano(this.context);
-    this.SoundFontTextArea.getComponent("text").text = "Soundfont:\n  " + this.soundfontholder[0].filename;
+    this.SoundFontTextArea.getComponent("text").text = "" + this.soundfontholder[0].filename;
     this.soundfontholder[0].nfo = "Default Piano Sound";
     this.SoundFontTextNfoArea.getComponent("text").text = this.soundfontholder[0].nfo;
     this.fetchFiles();
@@ -20110,7 +20117,7 @@ var SoundFontSupport = class extends Component3 {
             this.soundfontholder[this.currentsample].SoundFontSampler = null;
         }
         this.currentsample = i;
-        this.SoundFontTextArea.getComponent("text").text = "Soundfont:\n  " + this.soundfontholder[this.currentsample].filename;
+        this.SoundFontTextArea.getComponent("text").text = "" + this.soundfontholder[this.currentsample].filename;
         if (this.panelowner) {
           console.log("UPDATE VALUES");
           this.panelowner.getComponent("LayerAnchorDataStorage").updatevalues(this.currentsample, this.subcount);
@@ -20162,7 +20169,7 @@ var SoundFontSupport = class extends Component3 {
     this.panelowner = panel;
     this.currentsample = cursample;
     this.subcount = subcount;
-    this.SoundFontTextArea.getComponent("text").text = "Soundfont:\n  " + this.soundfontholder[this.currentsample].filename;
+    this.SoundFontTextArea.getComponent("text").text = "" + this.soundfontholder[this.currentsample].filename;
   }
   get_soundfont_screenprompt(cursample, subcount) {
     return this.soundfontholder[cursample].filename;
@@ -21606,7 +21613,7 @@ var GenerateButtons = class extends Component3 {
         if (this.isScaleSelector) {
           button.getComponent("UI_Button").notevalue = CurrentNote;
           button.getComponent("UI_Button").object.children[0].getComponent("text").text = this.musicmanref.GetScaleName(CurrentNote);
-        } else if (this.isNoteSelector) {
+        } else if (this.isNoteSelector || this.isKeySelector) {
           button.getComponent("UI_Button").notevalue = this.musicmanref.GetMidiValueOfNoteInScale(CurrentNote, 0, false);
           button.getComponent("UI_Button").intervalValue = CurrentNote;
         } else if (this.InitalNote > -1) {
@@ -21746,6 +21753,7 @@ __publicField(GenerateButtons, "Properties", {
   isNoteSelector: Property.bool(),
   isScaleSelector: Property.bool(),
   isLayerSelector: Property.bool(),
+  isKeySelector: Property.bool(),
   MusicMan: Property.object(),
   LayerManager: Property.object(),
   backpanel: Property.object()
@@ -22230,7 +22238,7 @@ var Loadsave = class extends Component3 {
           case "[BPM]":
             console.log("BPM ", words[1]);
             this.Musicman.getComponent("MusicManagement").bpm = parseInt(words[1], 10);
-            this.BPMText.getComponent("text").text = "BPM\n" + this.Musicman.getComponent("MusicManagement").bpm;
+            this.BPMText.getComponent("text").text = "" + this.Musicman.getComponent("MusicManagement").bpm;
             break;
           case "[PANEL]":
             currentpanel = parseInt(words[1], 10);

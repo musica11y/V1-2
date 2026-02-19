@@ -49,7 +49,7 @@ export class SoundFontSupport extends Component {
 		this.soundfontholder[0].SoundFontSampler = new SplendidGrandPiano(this.context);
 
 		//update the screen text to point to this
-		this.SoundFontTextArea.getComponent('text').text = "Soundfont:\n  " + this.soundfontholder[0].filename;
+		this.SoundFontTextArea.getComponent('text').text = "" + this.soundfontholder[0].filename;
 
 		this.soundfontholder[0].nfo = "Default Piano Sound";
 		this.SoundFontTextNfoArea.getComponent('text').text = this.soundfontholder[0].nfo;
@@ -454,7 +454,7 @@ export class SoundFontSupport extends Component {
 						this.soundfontholder[this.currentsample].SoundFontSampler = null;//remove it
 				}
 				this.currentsample = i;
-				this.SoundFontTextArea.getComponent('text').text = "Soundfont:\n  " + this.soundfontholder[this.currentsample].filename;
+				this.SoundFontTextArea.getComponent('text').text = "" + this.soundfontholder[this.currentsample].filename;
 				if (this.panelowner) {
 					console.log("UPDATE VALUES");
 					this.panelowner.getComponent('LayerAnchorDataStorage').updatevalues(this.currentsample, this.subcount);
@@ -573,7 +573,7 @@ export class SoundFontSupport extends Component {
 		this.panelowner = panel;
 		this.currentsample = cursample;
 		this.subcount = subcount;
-		this.SoundFontTextArea.getComponent('text').text = "Soundfont:\n  " + this.soundfontholder[this.currentsample].filename;//this.SoundFontSampler[this.currentsample].instrumentNames[this.subcount];
+		this.SoundFontTextArea.getComponent('text').text = "" + this.soundfontholder[this.currentsample].filename;//this.SoundFontSampler[this.currentsample].instrumentNames[this.subcount];
 	}
 
 	get_soundfont_screenprompt(cursample, subcount) {

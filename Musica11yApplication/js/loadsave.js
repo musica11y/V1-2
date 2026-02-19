@@ -708,7 +708,7 @@ export class Loadsave extends Component {
 							console.log("BPM ", words[1]);
 							this.Musicman.getComponent('MusicManagement').bpm = parseInt(words[1], 10);
 							//console.log("we set it to ",this.Musicman.getComponent('MusicManagement').bpm);
-							this.BPMText.getComponent('text').text = "BPM\n" + this.Musicman.getComponent('MusicManagement').bpm;
+							this.BPMText.getComponent('text').text = "" + this.Musicman.getComponent('MusicManagement').bpm;
 							break;
 						case "[PANEL]":
 							//value is  line.split(':')[1];

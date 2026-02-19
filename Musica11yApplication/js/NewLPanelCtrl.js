@@ -21,11 +21,16 @@ export class NreLPanelCtrl extends Component {
         /* Called every frame. */
     }
 
+    open_key_window()
+    {
+       this.restore_default_leftPanel();    
+        this.set_new_panel_live(1);
+    }
 
     open_test_window()
     {
        this.restore_default_leftPanel();    
-        this.set_new_panel_live(1);
+        this.set_new_panel_live(2);
     }
     
     restore_default_window()
@@ -40,8 +45,12 @@ export class NreLPanelCtrl extends Component {
             let position = this.leftsidewindows[i].getPositionLocal();
             if(i==0)
                 position[1]=0.923;
-            else position[1]=0;
-            this.leftsidewindows[i].setPositionLocal(position);                
+            else {
+                position[0]=0;
+                position[1]=0;
+                }
+            this.leftsidewindows[i].setPositionLocal(position);  
+            console.log(position);              
     }
 
     restore_default_leftPanel(){
