@@ -27,10 +27,26 @@ export class NreLPanelCtrl extends Component {
         this.set_new_panel_live(1);
     }
 
-    open_test_window()
+    open_accessibility_window()
     {
        this.restore_default_leftPanel();    
         this.set_new_panel_live(2);
+    }
+
+    open_settings_window()
+    {
+       this.restore_default_leftPanel();    
+        this.set_new_panel_live(3);
+    }
+    open_help_window()
+    {
+       this.restore_default_leftPanel();    
+        this.set_new_panel_live(4);
+    }
+    open_test_window()
+    {
+       this.restore_default_leftPanel();    
+        this.set_new_panel_live(5);
     }
     
     restore_default_window()
@@ -42,12 +58,14 @@ export class NreLPanelCtrl extends Component {
 
     //move default panel out of the way and add new panel
     set_new_panel_live(i){
+            console.log(i);
             let position = this.leftsidewindows[i].getPositionLocal();
             if(i==0)
                 position[1]=0.923;
             else {
                 position[0]=0;
                 position[1]=0;
+                position[2]=0;
                 }
             this.leftsidewindows[i].setPositionLocal(position);  
             console.log(position);              
