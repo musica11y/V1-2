@@ -16797,86 +16797,62 @@ var _MusicManagement = class extends Component3 {
   setKeyA() {
     this.previousScaleInterval = this.CurrentScaleInterval;
     this.PreviousKey = this.CurrentKey;
-    this.SelectKey("A#");
-    this.CurrentKey = "A";
-    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+    this.SelectKey("A");
   }
   setKeyAs() {
     this.previousScaleInterval = this.CurrentScaleInterval;
     this.PreviousKey = this.CurrentKey;
-    this.SelectKey("B");
-    this.CurrentKey = "A#";
-    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+    this.SelectKey("A#");
   }
   setKeyB() {
     this.previousScaleInterval = this.CurrentScaleInterval;
     this.PreviousKey = this.CurrentKey;
-    this.SelectKey("C");
-    this.CurrentKey = "B";
-    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+    this.SelectKey("B");
   }
   setKeyC() {
     this.previousScaleInterval = this.CurrentScaleInterval;
     this.PreviousKey = this.CurrentKey;
-    this.SelectKey("C#");
-    this.CurrentKey = "C";
-    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+    this.SelectKey("C");
   }
   setKeyCs() {
     this.previousScaleInterval = this.CurrentScaleInterval;
     this.PreviousKey = this.CurrentKey;
-    this.SelectKey("D");
-    this.CurrentKey = "C#";
-    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+    this.SelectKey("C#");
   }
   setKeyD() {
     this.previousScaleInterval = this.CurrentScaleInterval;
     this.PreviousKey = this.CurrentKey;
-    this.SelectKey("D#");
-    this.CurrentKey = "D";
-    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+    this.SelectKey("D");
   }
   setKeyDs() {
     this.previousScaleInterval = this.CurrentScaleInterval;
     this.PreviousKey = this.CurrentKey;
-    this.SelectKey("E");
-    this.CurrentKey = "D#";
-    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+    this.SelectKey("D#");
   }
   setKeyE() {
     this.previousScaleInterval = this.CurrentScaleInterval;
     this.PreviousKey = this.CurrentKey;
-    this.SelectKey("F");
-    this.CurrentKey = "E";
-    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+    this.SelectKey("E");
   }
   setKeyF() {
     this.previousScaleInterval = this.CurrentScaleInterval;
     this.PreviousKey = this.CurrentKey;
-    this.SelectKey("F#");
-    this.CurrentKey = "F";
-    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+    this.SelectKey("F");
   }
   setKeyFs() {
     this.previousScaleInterval = this.CurrentScaleInterval;
     this.PreviousKey = this.CurrentKey;
-    this.SelectKey("G");
-    this.CurrentKey = "F#";
-    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+    this.SelectKey("F#");
   }
   setKeyG() {
     this.previousScaleInterval = this.CurrentScaleInterval;
     this.PreviousKey = this.CurrentKey;
-    this.SelectKey("G#");
-    this.CurrentKey = "G";
-    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+    this.SelectKey("G");
   }
   setKeyGs() {
     this.previousScaleInterval = this.CurrentScaleInterval;
     this.PreviousKey = this.CurrentKey;
-    this.SelectKey("A");
-    this.CurrentKey = "G#";
-    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+    this.SelectKey("G#");
   }
   changeScale(c) {
     let current = "";
