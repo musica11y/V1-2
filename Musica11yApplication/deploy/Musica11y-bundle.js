@@ -16721,6 +16721,163 @@ var _MusicManagement = class extends Component3 {
     this.InKeySelect = false;
     this.setScale(this.previousScaleInterval, true);
   }
+  /*
+  	ScaleName1 = "Major";
+  	ScaleName2 = "Natural Minor";
+  	ScaleName3 = "Harmonic Minor";
+  	ScaleName4 = "Melodic Minor";
+  	ScaleName5 = "Pentatonic";
+  	ScaleName6 = "Chromatic";
+  */
+  addSemitone(currentKey) {
+    const SCALE = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+    let index = SCALE.indexOf(currentKey);
+    if (index == -1) {
+      return currentKey;
+    }
+    let nextIndex = (index + 1) % SCALE.size();
+    return SCALE.get(nextIndex);
+  }
+  fixkey() {
+    switch (this.CurrentKey) {
+      case "A":
+        this.setKeyA();
+        break;
+      case "A#":
+        this.setKeyAs();
+        break;
+      case "B":
+        this.setKeyB();
+        break;
+      case "C":
+        this.setKeyC();
+        break;
+      case "C#":
+        this.setKeyCs();
+        break;
+      case "D":
+        this.setKeyD();
+        break;
+      case "D#":
+        this.setKeyDs();
+        break;
+      case "E":
+        this.setKeyE();
+        break;
+      case "F":
+        this.setKeyF();
+        break;
+      case "F#":
+        this.setKeyFs();
+        break;
+      case "G":
+        this.setKeyG();
+        break;
+      case "G#":
+        this.setKeyGs();
+        break;
+    }
+  }
+  setScaleToMajor() {
+    this.changeScale(1);
+    this.fixkey();
+  }
+  setScaleToMinor() {
+    this.changeScale(2);
+    this.fixkey();
+  }
+  setScaleToChroma() {
+    this.changeScale(6);
+    this.fixkey();
+  }
+  setScaleToPenta() {
+    this.changeScale(5);
+    this.fixkey();
+  }
+  setKeyA() {
+    this.previousScaleInterval = this.CurrentScaleInterval;
+    this.PreviousKey = this.CurrentKey;
+    this.SelectKey("A#");
+    this.CurrentKey = "A";
+    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+  }
+  setKeyAs() {
+    this.previousScaleInterval = this.CurrentScaleInterval;
+    this.PreviousKey = this.CurrentKey;
+    this.SelectKey("B");
+    this.CurrentKey = "A#";
+    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+  }
+  setKeyB() {
+    this.previousScaleInterval = this.CurrentScaleInterval;
+    this.PreviousKey = this.CurrentKey;
+    this.SelectKey("C");
+    this.CurrentKey = "B";
+    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+  }
+  setKeyC() {
+    this.previousScaleInterval = this.CurrentScaleInterval;
+    this.PreviousKey = this.CurrentKey;
+    this.SelectKey("C#");
+    this.CurrentKey = "C";
+    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+  }
+  setKeyCs() {
+    this.previousScaleInterval = this.CurrentScaleInterval;
+    this.PreviousKey = this.CurrentKey;
+    this.SelectKey("D");
+    this.CurrentKey = "C#";
+    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+  }
+  setKeyD() {
+    this.previousScaleInterval = this.CurrentScaleInterval;
+    this.PreviousKey = this.CurrentKey;
+    this.SelectKey("D#");
+    this.CurrentKey = "D";
+    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+  }
+  setKeyDs() {
+    this.previousScaleInterval = this.CurrentScaleInterval;
+    this.PreviousKey = this.CurrentKey;
+    this.SelectKey("E");
+    this.CurrentKey = "D#";
+    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+  }
+  setKeyE() {
+    this.previousScaleInterval = this.CurrentScaleInterval;
+    this.PreviousKey = this.CurrentKey;
+    this.SelectKey("F");
+    this.CurrentKey = "E";
+    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+  }
+  setKeyF() {
+    this.previousScaleInterval = this.CurrentScaleInterval;
+    this.PreviousKey = this.CurrentKey;
+    this.SelectKey("F#");
+    this.CurrentKey = "F";
+    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+  }
+  setKeyFs() {
+    this.previousScaleInterval = this.CurrentScaleInterval;
+    this.PreviousKey = this.CurrentKey;
+    this.SelectKey("G");
+    this.CurrentKey = "F#";
+    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+  }
+  setKeyG() {
+    this.previousScaleInterval = this.CurrentScaleInterval;
+    this.PreviousKey = this.CurrentKey;
+    this.SelectKey("G#");
+    this.CurrentKey = "G";
+    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+  }
+  setKeyGs() {
+    this.previousScaleInterval = this.CurrentScaleInterval;
+    this.PreviousKey = this.CurrentKey;
+    this.SelectKey("A");
+    this.CurrentKey = "G#";
+    this.NoteSelector.getComponent("NoteSelector").updateCurrentNoteText();
+  }
   changeScale(c) {
     let current = "";
     switch (c) {
@@ -16777,7 +16934,6 @@ var _MusicManagement = class extends Component3 {
     if (updateslots && this.InTestMode) {
       this.NoteSelector.getComponent("NoteSelector").UpdateSlots();
     }
-    this.NoteGenerator.getComponent("generate-buttons").alignsinglerowbuttons();
   }
   GetCurrentScalelength() {
     return this.CurrentScale.length;
@@ -17002,6 +17158,10 @@ var NewMainPanelCtrl = class extends Component3 {
     this.restore_default_leftPanel();
     this.set_new_panel_live(1);
   }
+  open_soundfont_window() {
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(2);
+  }
   restore_default_window() {
     this.restore_default_leftPanel();
     this.set_new_panel_live(0);
@@ -17011,8 +17171,10 @@ var NewMainPanelCtrl = class extends Component3 {
     let position = this.leftsidewindows[i].getPositionLocal();
     if (i == 0)
       position[1] = 1.088;
-    else
+    else {
+      position[0] = 0;
       position[1] = 0;
+    }
     this.leftsidewindows[i].setPositionLocal(position);
   }
   restore_default_leftPanel() {

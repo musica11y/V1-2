@@ -24,7 +24,13 @@ export class NewMainPanelCtrl extends Component {
        this.restore_default_leftPanel();    
         this.set_new_panel_live(1);
     }
-    
+
+    open_soundfont_window()
+    {
+         this.restore_default_leftPanel();    
+        this.set_new_panel_live(2);
+    }
+
     restore_default_window()
     {
        this.restore_default_leftPanel();    
@@ -37,7 +43,11 @@ export class NewMainPanelCtrl extends Component {
             let position = this.leftsidewindows[i].getPositionLocal();
             if(i==0)
                 position[1]=1.088;
-            else position[1]=0;
+            else {
+                position[0]=0;
+                position[1]=0;
+                
+            }
             this.leftsidewindows[i].setPositionLocal(position);                
     }
 
