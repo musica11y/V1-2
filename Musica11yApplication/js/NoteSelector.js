@@ -169,8 +169,10 @@ export class NoteSelector extends Component {
 	//was called SetNotesToScale
 	SetNotesOnNoteSelectorToScale() {
 		this.NoteSelector.forEach((element, index) => {
-			element.getComponent('UI_Button').notevalue = this.musicmanref.GetMidiValueOfNoteInScale(index, 0, false);//octave will be added when using
-			element.getComponent('UI_Button').intervalValue = index;//this.musicmanref.GetIntervalValueOfPosition(index);
+	//for (var index = this.NoteSelector.length - 1; index >= 0; index--) {
+    //	var element = this.NoteSelector[index];
+			element.getComponent('UI_Button').notevalue = this.musicmanref.GetMidiValueOfNoteInScale(this.NoteSelector.length -1 - index, 0, false);//octave will be added when using
+			element.getComponent('UI_Button').intervalValue = this.NoteSelector.length -1- index;//this.musicmanref.GetIntervalValueOfPosition(index);
 			//console.log("INTERVALS ",element.getComponent('UI_Button').intervalValue);
 		});
 	}

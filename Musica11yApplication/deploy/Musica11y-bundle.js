@@ -16905,6 +16905,7 @@ var _MusicManagement = class extends Component3 {
         currentNotePtr += 3;
     });
     this.CurrentScale = temp;
+    console.log(this.CurrentScale);
     this.NoteSelector.getComponent("NoteSelector").SetNotesOnNoteSelectorToScale();
     this.NoteSelector.getComponent("NoteSelector").UpdateNotesOnNoteSelectorActive(-1);
     if (updateslots && this.InTestMode) {
@@ -17272,8 +17273,8 @@ var NoteSelector = class extends Component3 {
   //was called SetNotesToScale
   SetNotesOnNoteSelectorToScale() {
     this.NoteSelector.forEach((element, index) => {
-      element.getComponent("UI_Button").notevalue = this.musicmanref.GetMidiValueOfNoteInScale(index, 0, false);
-      element.getComponent("UI_Button").intervalValue = index;
+      element.getComponent("UI_Button").notevalue = this.musicmanref.GetMidiValueOfNoteInScale(this.NoteSelector.length - 1 - index, 0, false);
+      element.getComponent("UI_Button").intervalValue = this.NoteSelector.length - 1 - index;
     });
   }
   //was called UpdateNotes

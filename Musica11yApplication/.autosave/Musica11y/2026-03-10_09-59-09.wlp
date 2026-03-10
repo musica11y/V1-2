@@ -5433,26 +5433,26 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "033",
+                        "text": "123",
                         "lineSpacing": 1.2,
-                        "alignment": "left"
+                        "alignment": "center"
                     }
                 }
             ],
             "translation": [
-                -0.6774157,
-                -0.7045899,
-                0.1072264
+                -0.5382134,
+                -0.7045897,
+                0.1072263
             ],
             "rotation": [
-                0.0000209,
-                8.619464324510773e-7,
+                0.0000281,
+                8.619467166681716e-7,
                 -0.0,
                 1.0
             ],
             "scaling": [
-                1.3519999,
-                0.5340658,
+                1.3519998,
+                0.5340657,
                 9.1930713
             ]
         },
@@ -29326,7 +29326,8 @@
                     "NewMainPanelCtrl": {
                         "leftsidewindows": [
                             "635",
-                            "2876"
+                            "2876",
+                            "3049"
                         ]
                     }
                 }
@@ -31498,7 +31499,7 @@
                 }
             ],
             "scaling": [
-                0.1,
+                0.0599999,
                 0.1788686,
                 0.5472378
             ],
@@ -31612,7 +31613,7 @@
                 }
             ],
             "scaling": [
-                0.14,
+                0.1,
                 0.1788686,
                 0.5472378
             ],
@@ -31726,7 +31727,7 @@
                 }
             ],
             "scaling": [
-                0.14,
+                0.1,
                 0.1788686,
                 0.5472378
             ],
@@ -31840,7 +31841,7 @@
                 }
             ],
             "scaling": [
-                0.14,
+                0.1,
                 0.1788686,
                 0.5472378
             ],
@@ -35455,6 +35456,295 @@
                 1.08,
                 1.08,
                 1.08
+            ]
+        },
+        "3046": {
+            "name": "SoundFOntButton",
+            "parent": "2868",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2678"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0399999,
+                                0.0149999,
+                                0.0099999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.012
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "ActionOnObject": "2875",
+                        "Action": "open_soundfont_window"
+                    }
+                }
+            ],
+            "translation": [
+                -0.290582,
+                -0.2216811,
+                0.031765
+            ],
+            "rotation": [
+                -0.000006,
+                0.0000039,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1992263,
+                0.0817354,
+                0.0030328
+            ]
+        },
+        "3047": {
+            "name": "Text",
+            "parent": "3046",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "OPEN\nTEST",
+                        "material": "1952"
+                    },
+                    "active": false
+                }
+            ],
+            "scaling": [
+                5.0,
+                6.0874176,
+                5.0
+            ],
+            "translation": [
+                -0.0000104,
+                -0.095418,
+                1.0950336
+            ],
+            "rotation": [
+                1.4901161193847656e-7,
+                0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "3048": {
+            "name": "Mesh.026",
+            "parent": "3046",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "992"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.08,
+                1.08,
+                1.08
+            ]
+        },
+        "3049": {
+            "name": "spanchorBackpanelSoundFonts",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2668"
+                    }
+                }
+            ],
+            "translation": [
+                -2.4905419,
+                0.1978309,
+                -0.0011163
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.2441293,
+                0.2774524,
+                0.2749629
+            ],
+            "parent": "2875"
+        },
+        "3050": {
+            "name": "OpenTestWindowHere",
+            "parent": "3049",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "8",
+                        "material": "828"
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "sphere",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.0199999
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "ActionOnObject": "2875",
+                        "Action": "restore_default_window"
+                    }
+                }
+            ],
+            "translation": [
+                0.2770344,
+                -0.2745254,
+                0.1029705
+            ],
+            "rotation": [
+                -0.000006,
+                0.0000039,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1066287,
+                0.0965654,
+                0.0071867
+            ]
+        },
+        "3051": {
+            "name": "Text",
+            "parent": "3050",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "CLOSE\nTEST",
+                        "material": "1952"
+                    }
+                }
+            ],
+            "scaling": [
+                5.0,
+                6.0874176,
+                5.0
+            ],
+            "translation": [
+                -0.0000104,
+                -0.095418,
+                1.0950336
+            ],
+            "rotation": [
+                1.4901161193847656e-7,
+                0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "3058": {
+            "name": "Mesh.026",
+            "parent": "3050",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "992"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.08,
+                1.08,
+                1.08
+            ]
+        },
+        "3059": {
+            "name": "Text",
+            "parent": "3049",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "SoundFONT Window",
+                        "material": "1952"
+                    }
+                }
+            ],
+            "scaling": [
+                0.5331434,
+                0.5878339,
+                0.0359334
+            ],
+            "translation": [
+                0.265192,
+                0.6637383,
+                0.1108337
+            ],
+            "rotation": [
+                -0.000004,
+                0.0000035,
+                -0.0,
+                1.0
             ]
         }
     },

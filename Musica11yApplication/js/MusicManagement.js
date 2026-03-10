@@ -579,15 +579,16 @@ export class MusicManagement extends Component {
 		});
 		this.CurrentScale = temp;
 		//console.log(currentNotePtr);
-
+console.log(this.CurrentScale);
 		//update buttons
-		this.NoteSelector.getComponent('NoteSelector').SetNotesOnNoteSelectorToScale();//sets the notes on the note selector
+		this.NoteSelector.getComponent('NoteSelector').SetNotesOnNoteSelectorToScale();//sets the notes on the note selector	
 		this.NoteSelector.getComponent('NoteSelector').UpdateNotesOnNoteSelectorActive(-1);//enables/disables the notes on the selector
 
 		if (updateslots && this.InTestMode)// this.ToggleMainPanelTranspose.getComponent('UI_Button').toggleValue) //if in playmode this will happen
 		{
 			this.NoteSelector.getComponent('NoteSelector').UpdateSlots();
 		}
+
 //		this.NoteGenerator.getComponent('generate-buttons').alignsinglerowbuttons();
 	}
 
