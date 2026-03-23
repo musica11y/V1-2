@@ -17094,6 +17094,9 @@ var NreLPanelCtrl = class extends Component3 {
   restore_default_window() {
     this.restore_default_leftPanel();
     this.set_new_panel_live(0);
+    if (this.mainPanelCtrller) {
+      this.mainPanelCtrller.getComponent("NewMainPanelCtrl").restore_default_window();
+    }
   }
   //move default panel out of the way and add new panel
   set_new_panel_live(i) {
@@ -17120,6 +17123,7 @@ var NreLPanelCtrl = class extends Component3 {
 __publicField(NreLPanelCtrl, "TypeName", "NewLPanelCtrl");
 /* Properties that are configurable in the editor */
 __publicField(NreLPanelCtrl, "Properties", {
+  mainPanelCtrller: Property.object(),
   leftsidewindows: Property.array(Property.object())
 });
 
@@ -17228,7 +17232,8 @@ var NoteSelector = class extends Component3 {
   updateCurrentNoteText() {
     this.TextObject.getComponent("text").text = this.musicmanref.CurrentKey + "+" + String(this.CurrentOctave);
     if (this.midivalueselected > -1) {
-      this.TextObject.getComponent("text").text += " : Midi Note " + this.midivalueselected;
+      this.TextObject.getComponent("text").text;
+      this.TextObjectMidiNote.getComponent("text").text = "Midi Note " + this.midivalueselected;
     }
   }
   setCurrentNoteValue(v) {
@@ -17339,6 +17344,7 @@ __publicField(NoteSelector, "TypeName", "NoteSelector");
 /* Properties that are configurable in the editor */
 __publicField(NoteSelector, "Properties", {
   // param: Property.float(1.0),
+  TextObjectMidiNote: Property.object(),
   TextObject: Property.object(),
   MusicMan: Property.object(),
   background: Property.object(),

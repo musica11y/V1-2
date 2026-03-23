@@ -7,8 +7,8 @@ export class NreLPanelCtrl extends Component {
     static TypeName = 'NewLPanelCtrl';
     /* Properties that are configurable in the editor */
     static Properties = {
-        leftsidewindows:  Property.array(Property.object()),
-       
+        mainPanelCtrller: Property.object(),
+        leftsidewindows:  Property.array(Property.object()),       
     };
 
     start() {
@@ -53,6 +53,10 @@ export class NreLPanelCtrl extends Component {
     {
        this.restore_default_leftPanel();    
         this.set_new_panel_live(0);
+        if(this.mainPanelCtrller)
+        {
+            this.mainPanelCtrller.getComponent('NewMainPanelCtrl').restore_default_window();
+        }
     }
 
 

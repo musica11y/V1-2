@@ -12,6 +12,7 @@ export class NoteSelector extends Component {
 	/* Properties that are configurable in the editor */
 	static Properties = {
 		// param: Property.float(1.0),
+		TextObjectMidiNote: Property.object(),
 		TextObject: Property.object(),
 		MusicMan: Property.object(),
 		background: Property.object(),
@@ -100,7 +101,8 @@ export class NoteSelector extends Component {
 		this.TextObject.getComponent('text').text = this.musicmanref.CurrentKey + "+" + String(this.CurrentOctave);
 		//if current note is selected lets display that too
 		if (this.midivalueselected > -1) {
-			this.TextObject.getComponent('text').text += " : Midi Note " + this.midivalueselected;
+			this.TextObject.getComponent('text').text;// += " : Midi Note " + this.midivalueselected;
+			this.TextObjectMidiNote.getComponent('text').text = "Midi Note " + this.midivalueselected;			
 		}
 	}
 	setCurrentNoteValue(v) {
