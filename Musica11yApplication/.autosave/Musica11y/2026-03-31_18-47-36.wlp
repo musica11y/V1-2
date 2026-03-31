@@ -1056,7 +1056,8 @@
                         "background": "652",
                         "ScreenFader": "706",
                         "ScreenBlocker": "705",
-                        "noteColliderSize": 0.0099999
+                        "noteColliderSize": 0.0099999,
+                        "TextObjectMidiNote": "3061"
                     }
                 }
             ],
@@ -2456,9 +2457,9 @@
             "name": "ClearConfirmExtension",
             "parent": "641",
             "translation": [
-                0.3984267,
-                0.0500451,
-                0.046919
+                0.3161865,
+                0.0500588,
+                0.0469052
             ],
             "rotation": [
                 -0.0,
@@ -20218,7 +20219,7 @@
                 -0.0030316
             ],
             "rotation": [
-                1.0348538381776963e-7,
+                1.0348538381776964e-7,
                 0.0,
                 0.0,
                 1.0
@@ -35829,6 +35830,40 @@
                 0.0,
                 1.0
             ]
+        },
+        "3061": {
+            "name": "NotesHeaderTextMidiValue",
+            "parent": "688",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "...\n",
+                        "lineSpacing": 1.2,
+                        "alignment": "left"
+                    }
+                }
+            ],
+            "translation": [
+                1.7255079,
+                15.0115528,
+                1393.4936523
+            ],
+            "rotation": [
+                -3.510814963192388e-7,
+                4.608351105162001e-7,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                0.4,
+                16.317152,
+                0.5
+            ]
+        },
+        "3062": {
+            "name": "Empty.000",
+            "parent": "1029"
         }
     },
     "meshes": {

@@ -1340,7 +1340,8 @@
                 {
                     "type": "TestModeSequencePlayer",
                     "TestModeSequencePlayer": {
-                        "layerManager": "713"
+                        "layerManager": "713",
+                        "NewMusicPlayer": "3062"
                     }
                 },
                 {
@@ -20219,7 +20220,7 @@
                 -0.0030316
             ],
             "rotation": [
-                1.0348538381776963e-7,
+                1.0348538381776964e-7,
                 0.0,
                 0.0,
                 1.0
@@ -30360,9 +30361,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnObject": "693",
-                        "ActionOnComponent": "ChildWindowExtension",
-                        "Action": "enableme",
+                        "ActionOnObject": "3062",
+                        "ActionOnComponent": "NewMusicPlayer",
+                        "Action": "toggleLoop",
                         "DisableDuringTestPlay": true
                     }
                 }
@@ -30428,20 +30429,20 @@
                 }
             ],
             "translation": [
-                -0.000007,
-                -0.2242543,
-                0.0000226
+                0.0719917,
+                -0.224253,
+                -0.0001566
             ],
             "rotation": [
                 -0.7071068,
                 0.0,
-                -0.0,
+                0.0,
                 0.7071067
             ],
             "scaling": [
                 1.0968346,
-                17.7107391,
-                1.0424878
+                17.7106494,
+                1.0424821
             ]
         },
         "2905": {
@@ -30477,9 +30478,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnObject": "693",
-                        "ActionOnComponent": "ChildWindowExtension",
-                        "Action": "enableme",
+                        "ActionOnObject": "646",
+                        "ActionOnComponent": "TestModeSequencePlayer",
+                        "Action": "EndTestPlay",
                         "DisableDuringTestPlay": true
                     }
                 }
@@ -30594,9 +30595,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnObject": "693",
-                        "ActionOnComponent": "ChildWindowExtension",
-                        "Action": "enableme",
+                        "ActionOnObject": "646",
+                        "ActionOnComponent": "TestModeSequencePlayer",
+                        "Action": "TestPlay",
                         "DisableDuringTestPlay": true
                     }
                 }
@@ -35860,6 +35861,79 @@
                 16.317152,
                 0.5
             ]
+        },
+        "3062": {
+            "name": "newMusicPlayer",
+            "parent": "1029",
+            "components": [
+                {
+                    "type": "NewMusicPlayer",
+                    "NewMusicPlayer": {
+                        "LoopIcon": "3063",
+                        "NonLoopIcon": "3065"
+                    }
+                }
+            ]
+        },
+        "3063": {
+            "name": "UI_LOOP_loop",
+            "parent": "2902",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2683"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.0374074,
+                0.0726705,
+                0.1312821
+            ],
+            "rotation": [
+                -0.0,
+                8.348204687536054e-7,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "3065": {
+            "name": "UI_LOOP_noloop",
+            "parent": "2902",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2689"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.0504423,
+                0.0678459,
+                0.1208507
+            ],
+            "rotation": [
+                -0.0,
+                8.347890911863942e-7,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
         }
     },
     "meshes": {
@@ -37701,6 +37775,12 @@
                 "name": "LeftSettingsPanel.png",
                 "file": "images\\V1-2\\LeftSettingsPanel.png"
             }
+        },
+        "2704": {
+            "link": {
+                "name": "Menu.png",
+                "file": "images\\Menu.png"
+            }
         }
     },
     "images": {
@@ -38528,6 +38608,12 @@
             "link": {
                 "name": "LeftSettingsPanel.png",
                 "file": "images\\V1-2\\LeftSettingsPanel.png"
+            }
+        },
+        "2702": {
+            "link": {
+                "name": "Menu.png",
+                "file": "images\\Menu.png"
             }
         }
     },
@@ -41141,6 +41227,13 @@
             "Flat": {
                 "flatTexture": "2701"
             }
+        },
+        "2689": {
+            "name": "Main_LOOPNotLoop",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2704"
+            }
         }
     },
     "shaders": {
@@ -43219,6 +43312,10 @@
         },
         "2704": {
             "fileName": "images/V1-2/LeftSettingsPanel.png",
+            "importerName": ""
+        },
+        "2705": {
+            "fileName": "images/Menu.png",
             "importerName": ""
         }
     },

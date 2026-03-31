@@ -1056,7 +1056,8 @@
                         "background": "652",
                         "ScreenFader": "706",
                         "ScreenBlocker": "705",
-                        "noteColliderSize": 0.0099999
+                        "noteColliderSize": 0.0099999,
+                        "TextObjectMidiNote": "3061"
                     }
                 }
             ],
@@ -20218,7 +20219,7 @@
                 -0.0030316
             ],
             "rotation": [
-                1.0348538381776963e-7,
+                1.0348538381776964e-7,
                 0.0,
                 0.0,
                 1.0
@@ -30359,9 +30360,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnObject": "693",
-                        "ActionOnComponent": "ChildWindowExtension",
-                        "Action": "enableme",
+                        "ActionOnObject": "3062",
+                        "ActionOnComponent": "NewMusicPlayer",
+                        "Action": "ChildWindowExtension",
                         "DisableDuringTestPlay": true
                     }
                 }
@@ -30427,20 +30428,20 @@
                 }
             ],
             "translation": [
-                -0.000007,
-                -0.2242543,
-                0.0000226
+                0.0719917,
+                -0.224253,
+                -0.0001566
             ],
             "rotation": [
                 -0.7071068,
                 0.0,
-                -0.0,
+                0.0,
                 0.7071067
             ],
             "scaling": [
                 1.0968346,
-                17.7107391,
-                1.0424878
+                17.7106494,
+                1.0424821
             ]
         },
         "2905": {
@@ -35831,22 +35832,22 @@
             ]
         },
         "3061": {
-            "name": "NotesHeaderText",
+            "name": "NotesHeaderTextMidiValue",
             "parent": "688",
             "components": [
                 {
                     "type": "text",
                     "text": {
-                        "text": "A+9\n",
+                        "text": "...\n",
                         "lineSpacing": 1.2,
                         "alignment": "left"
                     }
                 }
             ],
             "translation": [
-                1.3359248,
-                15.0113945,
-                1393.4835205
+                1.7255079,
+                15.0115528,
+                1393.4936523
             ],
             "rotation": [
                 -3.510814963192388e-7,
@@ -35858,6 +35859,45 @@
                 0.4,
                 16.317152,
                 0.5
+            ]
+        },
+        "3062": {
+            "name": "newMusicPlayer",
+            "parent": "1029",
+            "components": [
+                {
+                    "type": "NewMusicPlayer"
+                }
+            ]
+        },
+        "3063": {
+            "name": "UI_LOOP_Button",
+            "parent": "2902",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2683"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                -2.0581934,
+                -9.044382,
+                1.71499
+            ],
+            "rotation": [
+                -0.0,
+                8.346884783350106e-7,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0647997,
+                0.0647997,
+                0.0647997
             ]
         }
     },

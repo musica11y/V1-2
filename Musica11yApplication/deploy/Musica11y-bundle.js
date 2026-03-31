@@ -17172,6 +17172,89 @@ __publicField(NewMainPanelCtrl, "Properties", {
   leftsidewindows: Property.array(Property.object())
 });
 
+// js/NewMusicPlayer.js
+var NewMusicPlayer = class extends Component3 {
+  start() {
+    this.looping = true;
+    this.playing = false;
+    this.position = 0;
+    this.elapsedTime = 0;
+    this.NonLoopIcon.active = false;
+    this.musicmanref = this.Musicman.getComponent("MusicManagement");
+  }
+  //Needs reference to spanker
+  /* done in testmodeplayer now
+      update(dt) {
+          if (this.playing) {
+              this.elapsedTime += deltaTime * this.playmul;
+              this.beatInterval = 60 / this.musicmanref.bpm;
+              if (this.elapsedTime >= this.beatInterval) {
+                   this.elapsedTime -= this.beatInterval;
+                    this.position++;
+  
+                    this.stoplastenotes()
+                  ///playnote(s) (pass it current note)
+                  
+                  //if at end
+                  if (this.lopping) {
+                      this.position = 0;
+                      this.elapsedTime = 0;
+                  }
+                  else {
+                      stopplayer();
+                  }
+              }
+          }
+      }
+  
+      startplayer() {
+          this.position = 0;
+          this.elapsedTime = 0;
+          this.playnote();//pass it first note(s)
+  
+  console.log(this.musicmanref.NoteSelector[0].getComponent('UI_Button').notevalue);// = CurrentNote;
+  onsole.log("OK");
+          //this.NoteSelector.push(b);
+  
+          //    let noteval = Number(n.children[0].name);
+          //    if (noteval >= 0) {
+                       //   console.log("We have a note on panel", cpanel, " sfont:", this.soundfont, " note:", this.notevalue, " ", this.PanelContainer.children[cpanel].name)
+           //               this.notevalue = noteval;
+            //              this.musicmanref.SoundFontPlayer.playsoundfontnote(this.soundfont, this.notevalue, 80);
+          //      }
+      }
+  
+      stopplayer() {
+          this.playing = false;
+          this.stoplastnotes();
+      }
+  
+      stoplastnotes()
+      {
+         // this.musicmanref.SoundFontPlayer.stopsoundfontnote(this.soundfont);
+          this.musicmanref.SoundFontPlayer.stopallsounds();
+          //this.musicmanref.SoundFontPlayer.stopnote();
+      }*/
+  toggleLoop() {
+    this.looping = !this.looping;
+    this.NonLoopIcon.active = !this.looping;
+    this.LoopIcon.active = this.looping;
+  }
+  /* playnote() {
+            //todo
+        this.musicmanref.SoundFontPlayer.playnote(55+this.notevalue,80);
+        //	this.musicmanref.SoundFontPlayer.playnote(this.notevalue + (this.NoteSelectorObject.getComponent('NoteSelector').CurrentOctave * 12), 80);
+  
+    }*/
+};
+__publicField(NewMusicPlayer, "TypeName", "NewMusicPlayer");
+/* Properties that are configurable in the editor */
+__publicField(NewMusicPlayer, "Properties", {
+  LoopIcon: Property.object(),
+  NonLoopIcon: Property.object(),
+  Musicman: Property.object()
+});
+
 // js/NoteSelector.js
 var NoteSelector = class extends Component3 {
   CurrentOctave = 4;
@@ -20407,7 +20490,7 @@ var TestModeSequencePlayer = class extends Component3 {
     this.layerManager = this.layerManager.getComponent("LayerManager");
   }
   update(deltaTime) {
-    if (this.isplaying && this.weseq == 1) {
+    if (this.isplaying) {
       this.elapsedTime += deltaTime;
       if (this.elapsedTime >= this.beatInterval) {
         this.elapsedTime -= this.beatInterval;
@@ -20467,7 +20550,7 @@ var TestModeSequencePlayer = class extends Component3 {
     this.soundfont = 0;
     this.loop = 0;
     this.elapsedTime = 0;
-    this.loop = this.layerManager.layerbuttons[this.layerManager.CurrentLayer].getComponent("LayerAnchorDataStorage").WeLoop[this.layerManager.ActivePanel];
+    this.loop = this.NewMusicPlayer.getComponent("NewMusicPlayer").looping;
     if (this.layerManager.ActivePanel == 0)
       this.soundfont = this.layerManager.layerbuttons[this.layerManager.CurrentLayer].getComponent("LayerAnchorDataStorage").left_soundfont;
     if (this.layerManager.ActivePanel == 1)
@@ -20499,8 +20582,9 @@ var TestModeSequencePlayer = class extends Component3 {
 __publicField(TestModeSequencePlayer, "TypeName", "TestModeSequencePlayer");
 /* Properties that are configurable in the editor */
 __publicField(TestModeSequencePlayer, "Properties", {
-  layerManager: Property.object()
+  layerManager: Property.object(),
   //dont need this as we are just playing the live panel
+  NewMusicPlayer: Property.object()
 });
 
 // js/ThreeDControl.js
@@ -22555,6 +22639,7 @@ engine.registerComponent(LayerManager);
 engine.registerComponent(MusicManagement);
 engine.registerComponent(NreLPanelCtrl);
 engine.registerComponent(NewMainPanelCtrl);
+engine.registerComponent(NewMusicPlayer);
 engine.registerComponent(NoteSelector);
 engine.registerComponent(OptionsWindow);
 engine.registerComponent(PlayModeManager);

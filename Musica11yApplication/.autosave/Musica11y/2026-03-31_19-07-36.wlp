@@ -1056,7 +1056,8 @@
                         "background": "652",
                         "ScreenFader": "706",
                         "ScreenBlocker": "705",
-                        "noteColliderSize": 0.0099999
+                        "noteColliderSize": 0.0099999,
+                        "TextObjectMidiNote": "3061"
                     }
                 }
             ],
@@ -2456,9 +2457,9 @@
             "name": "ClearConfirmExtension",
             "parent": "641",
             "translation": [
-                0.3984267,
-                0.0500451,
-                0.046919
+                0.3161865,
+                0.0500588,
+                0.0469052
             ],
             "rotation": [
                 -0.0,
@@ -5691,7 +5692,7 @@
                             ]
                         },
                         "sphere": {
-                            "radius": 0.0299999
+                            "radius": 0.0199999
                         }
                     }
                 },
@@ -5748,7 +5749,7 @@
                             ]
                         },
                         "sphere": {
-                            "radius": 0.0299999
+                            "radius": 0.0199999
                         }
                     }
                 },
@@ -5953,7 +5954,7 @@
                             ]
                         }
                     },
-                    "active": true
+                    "active": false
                 }
             ],
             "translation": [
@@ -15813,8 +15814,8 @@
                         },
                         "aabb": {
                             "extents": [
-                                0.1,
-                                0.0149999,
+                                0.07,
+                                0.012,
                                 0.0199999
                             ]
                         }
@@ -15873,7 +15874,7 @@
                 0.0205076
             ],
             "rotation": [
-                8.198994549957206e-8,
+                8.198994549957207e-8,
                 0.0,
                 -0.0,
                 1.0
@@ -15939,8 +15940,8 @@
                         },
                         "aabb": {
                             "extents": [
-                                0.1,
-                                0.0149999,
+                                0.07,
+                                0.012,
                                 0.0199999
                             ]
                         }
@@ -16063,8 +16064,8 @@
                         },
                         "aabb": {
                             "extents": [
-                                0.1,
-                                0.0149999,
+                                0.07,
+                                0.012,
                                 0.0199999
                             ]
                         }
@@ -16187,8 +16188,8 @@
                         },
                         "aabb": {
                             "extents": [
-                                0.1,
-                                0.0149999,
+                                0.07,
+                                0.012,
                                 0.0199999
                             ]
                         }
@@ -16245,7 +16246,7 @@
                 0.034395
             ],
             "rotation": [
-                -2.234041573956347e-8,
+                -2.2340415739563472e-8,
                 0.0,
                 -0.0,
                 1.0
@@ -16311,8 +16312,8 @@
                         },
                         "aabb": {
                             "extents": [
-                                0.1,
-                                0.0149999,
+                                0.07,
+                                0.012,
                                 0.0199999
                             ]
                         }
@@ -16436,8 +16437,8 @@
                         },
                         "aabb": {
                             "extents": [
-                                0.1,
-                                0.0149999,
+                                0.07,
+                                0.012,
                                 0.0199999
                             ]
                         }
@@ -20218,7 +20219,7 @@
                 -0.0030316
             ],
             "rotation": [
-                1.0348538381776962e-7,
+                1.0348538381776964e-7,
                 0.0,
                 0.0,
                 1.0
@@ -25617,7 +25618,7 @@
                 0.0087892
             ],
             "rotation": [
-                -6.741910851815193e-8,
+                -6.741910851815194e-8,
                 3.288408549906308e-7,
                 0.0,
                 1.0
@@ -29181,7 +29182,8 @@
                             "2912",
                             "2995",
                             "2999"
-                        ]
+                        ],
+                        "mainPanelCtrller": "2875"
                     }
                 }
             ],
@@ -29257,9 +29259,9 @@
                 }
             ],
             "translation": [
-                -0.8529994,
-                1.6447573,
-                0.0330451
+                -0.8529993,
+                1.7442064,
+                0.0329573
             ],
             "rotation": [
                 -0.000006,
@@ -29516,7 +29518,8 @@
                     "mesh": {
                         "mesh": "8",
                         "material": "828"
-                    }
+                    },
+                    "active": true
                 },
                 {
                     "type": "cursor-target"
@@ -30357,9 +30360,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnObject": "693",
-                        "ActionOnComponent": "ChildWindowExtension",
-                        "Action": "enableme",
+                        "ActionOnObject": "3062",
+                        "ActionOnComponent": "NewMusicPlayer",
+                        "Action": "toggleLoop",
                         "DisableDuringTestPlay": true
                     }
                 }
@@ -30425,20 +30428,20 @@
                 }
             ],
             "translation": [
-                -0.000007,
-                -0.2242543,
-                0.0000226
+                0.0719917,
+                -0.224253,
+                -0.0001566
             ],
             "rotation": [
                 -0.7071068,
                 0.0,
-                -0.0,
+                0.0,
                 0.7071067
             ],
             "scaling": [
                 1.0968346,
-                17.7107391,
-                1.0424878
+                17.7106494,
+                1.0424821
             ]
         },
         "2905": {
@@ -30474,9 +30477,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnObject": "693",
-                        "ActionOnComponent": "ChildWindowExtension",
-                        "Action": "enableme",
+                        "ActionOnObject": "3062",
+                        "ActionOnComponent": "NewMusicPlayer",
+                        "Action": "stopplayer",
                         "DisableDuringTestPlay": true
                     }
                 }
@@ -30591,9 +30594,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnObject": "693",
-                        "ActionOnComponent": "ChildWindowExtension",
-                        "Action": "enableme",
+                        "ActionOnObject": "3062",
+                        "ActionOnComponent": "NewMusicPlayer",
+                        "Action": "startplayer",
                         "DisableDuringTestPlay": true
                     }
                 }
@@ -31157,18 +31160,18 @@
                 }
             ],
             "translation": [
-                0.62938,
-                1.0088499,
+                0.5847709,
+                0.9840228,
                 0.032
             ],
             "rotation": [
                 -0.000006,
                 0.0000039,
-                0.0,
+                -0.0,
                 1.0
             ],
             "scaling": [
-                0.2958667,
+                0.2958666,
                 0.1625344,
                 0.0046886
             ]
@@ -35614,7 +35617,8 @@
                     "mesh": {
                         "mesh": "7",
                         "material": "2668"
-                    }
+                    },
+                    "active": true
                 }
             ],
             "translation": [
@@ -35824,6 +35828,109 @@
                 6.969300869741346e-8,
                 0.0,
                 0.0,
+                1.0
+            ]
+        },
+        "3061": {
+            "name": "NotesHeaderTextMidiValue",
+            "parent": "688",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "...\n",
+                        "lineSpacing": 1.2,
+                        "alignment": "left"
+                    }
+                }
+            ],
+            "translation": [
+                1.7255079,
+                15.0115528,
+                1393.4936523
+            ],
+            "rotation": [
+                -3.510814963192388e-7,
+                4.608351105162001e-7,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                0.4,
+                16.317152,
+                0.5
+            ]
+        },
+        "3062": {
+            "name": "newMusicPlayer",
+            "parent": "1029",
+            "components": [
+                {
+                    "type": "NewMusicPlayer",
+                    "NewMusicPlayer": {
+                        "LoopIcon": "3063",
+                        "NonLoopIcon": "3065"
+                    }
+                }
+            ]
+        },
+        "3063": {
+            "name": "UI_LOOP_loop",
+            "parent": "2902",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2683"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.3161879,
+                -0.1578006,
+                0.8162103
+            ],
+            "rotation": [
+                -0.0,
+                8.347976176992233e-7,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "3065": {
+            "name": "UI_LOOP_noloop",
+            "parent": "2902",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2689"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.0504423,
+                0.0678459,
+                0.1208507
+            ],
+            "rotation": [
+                -0.0,
+                8.347890911863942e-7,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
                 1.0
             ]
         }
@@ -37667,6 +37774,12 @@
                 "name": "LeftSettingsPanel.png",
                 "file": "images\\V1-2\\LeftSettingsPanel.png"
             }
+        },
+        "2704": {
+            "link": {
+                "name": "Menu.png",
+                "file": "images\\Menu.png"
+            }
         }
     },
     "images": {
@@ -38494,6 +38607,12 @@
             "link": {
                 "name": "LeftSettingsPanel.png",
                 "file": "images\\V1-2\\LeftSettingsPanel.png"
+            }
+        },
+        "2702": {
+            "link": {
+                "name": "Menu.png",
+                "file": "images\\Menu.png"
             }
         }
     },
@@ -41107,6 +41226,13 @@
             "Flat": {
                 "flatTexture": "2701"
             }
+        },
+        "2689": {
+            "name": "Main_LOOPNotLoop",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2704"
+            }
         }
     },
     "shaders": {
@@ -43185,6 +43311,10 @@
         },
         "2704": {
             "fileName": "images/V1-2/LeftSettingsPanel.png",
+            "importerName": ""
+        },
+        "2705": {
+            "fileName": "images/Menu.png",
             "importerName": ""
         }
     },

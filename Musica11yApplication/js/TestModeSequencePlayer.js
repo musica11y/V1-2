@@ -10,6 +10,7 @@ export class TestModeSequencePlayer extends Component {
     /* Properties that are configurable in the editor */
     static Properties = {
         layerManager: Property.object(), //dont need this as we are just playing the live panel
+        NewMusicPlayer: Property.object(),
     };
 
     start() {
@@ -17,7 +18,7 @@ export class TestModeSequencePlayer extends Component {
     }
 
     update(deltaTime) {
-        if (this.isplaying && this.weseq == 1) {
+        if (this.isplaying){// && this.weseq == 1) {
             this.elapsedTime += deltaTime;
             if (this.elapsedTime >= this.beatInterval) {
                 this.elapsedTime -= this.beatInterval;
@@ -95,7 +96,9 @@ export class TestModeSequencePlayer extends Component {
         this.elapsedTime = 0;
 
 
-        this.loop = this.layerManager.layerbuttons[this.layerManager.CurrentLayer].getComponent('LayerAnchorDataStorage').WeLoop[this.layerManager.ActivePanel];
+     //   this.loop = this.layerManager.layerbuttons[this.layerManager.CurrentLayer].getComponent('LayerAnchorDataStorage').WeLoop[this.layerManager.ActivePanel];
+
+        this.loop=this.NewMusicPlayer.getComponent('NewMusicPlayer').looping;
 
         if (this.layerManager.ActivePanel == 0)
             this.soundfont = this.layerManager.layerbuttons[this.layerManager.CurrentLayer].getComponent('LayerAnchorDataStorage').left_soundfont;
