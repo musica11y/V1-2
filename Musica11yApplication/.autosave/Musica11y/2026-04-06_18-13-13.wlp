@@ -1340,7 +1340,8 @@
                 {
                     "type": "TestModeSequencePlayer",
                     "TestModeSequencePlayer": {
-                        "layerManager": "713"
+                        "layerManager": "713",
+                        "NewMusicPlayer": "3062"
                     }
                 },
                 {
@@ -30243,7 +30244,7 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnObject": "693",
+                        "ActionOnObject": "646",
                         "ActionOnComponent": "ChildWindowExtension",
                         "Action": "enableme",
                         "DisableDuringTestPlay": true
@@ -30477,9 +30478,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnObject": "3062",
-                        "ActionOnComponent": "NewMusicPlayer",
-                        "Action": "stopplayer",
+                        "ActionOnObject": "646",
+                        "ActionOnComponent": "TestModeSequencePlayer",
+                        "Action": "EndTestPlay",
                         "DisableDuringTestPlay": true
                     }
                 }
@@ -30594,7 +30595,7 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnObject": "3062",
+                        "ActionOnObject": "646",
                         "ActionOnComponent": "TestModeSequencePlayer",
                         "Action": "TestPlay",
                         "DisableDuringTestPlay": true
@@ -35888,13 +35889,13 @@
                 }
             ],
             "translation": [
-                0.3161879,
-                -0.1578006,
-                0.8162103
+                0.0374074,
+                0.0726705,
+                0.1312821
             ],
             "rotation": [
                 -0.0,
-                8.347976176992233e-7,
+                8.348204687536054e-7,
                 -0.0,
                 1.0
             ],

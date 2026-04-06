@@ -1340,7 +1340,8 @@
                 {
                     "type": "TestModeSequencePlayer",
                     "TestModeSequencePlayer": {
-                        "layerManager": "713"
+                        "layerManager": "713",
+                        "NewMusicPlayer": "3062"
                     }
                 },
                 {
@@ -30219,7 +30220,8 @@
                     "mesh": {
                         "mesh": "7",
                         "material": "2682"
-                    }
+                    },
+                    "active": false
                 },
                 {
                     "type": "cursor-target"
@@ -30243,7 +30245,7 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnObject": "693",
+                        "ActionOnObject": "646",
                         "ActionOnComponent": "ChildWindowExtension",
                         "Action": "enableme",
                         "DisableDuringTestPlay": true
@@ -30311,9 +30313,9 @@
                 }
             ],
             "translation": [
-                -0.000007,
-                -0.2242543,
-                0.0000226
+                -0.0498278,
+                -0.2242524,
+                0.0000225
             ],
             "rotation": [
                 -0.7071068,
@@ -30323,8 +30325,8 @@
             ],
             "scaling": [
                 1.0968346,
-                17.7107391,
-                1.0424878
+                17.7105979,
+                1.0424789
             ]
         },
         "2902": {
@@ -30362,7 +30364,7 @@
                     "UI_SimpleButton": {
                         "ActionOnObject": "3062",
                         "ActionOnComponent": "NewMusicPlayer",
-                        "Action": "ChildWindowExtension",
+                        "Action": "toggleLoop",
                         "DisableDuringTestPlay": true
                     }
                 }
@@ -30477,9 +30479,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnObject": "693",
-                        "ActionOnComponent": "ChildWindowExtension",
-                        "Action": "enableme",
+                        "ActionOnObject": "646",
+                        "ActionOnComponent": "TestModeSequencePlayer",
+                        "Action": "EndTestPlay",
                         "DisableDuringTestPlay": true
                     }
                 }
@@ -30594,9 +30596,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnObject": "693",
-                        "ActionOnComponent": "ChildWindowExtension",
-                        "Action": "enableme",
+                        "ActionOnObject": "646",
+                        "ActionOnComponent": "TestModeSequencePlayer",
+                        "Action": "TestPlay",
                         "DisableDuringTestPlay": true
                     }
                 }
@@ -35866,12 +35868,16 @@
             "parent": "1029",
             "components": [
                 {
-                    "type": "NewMusicPlayer"
+                    "type": "NewMusicPlayer",
+                    "NewMusicPlayer": {
+                        "LoopIcon": "3063",
+                        "NonLoopIcon": "3065"
+                    }
                 }
             ]
         },
         "3063": {
-            "name": "UI_LOOP_Button",
+            "name": "UI_LOOP_loop",
             "parent": "2902",
             "components": [
                 {
@@ -35884,20 +35890,110 @@
                 }
             ],
             "translation": [
-                -2.0581934,
-                -9.044382,
-                1.71499
+                0.0374074,
+                0.0726705,
+                0.1312821
             ],
             "rotation": [
                 -0.0,
-                8.346884783350106e-7,
+                8.348204687536054e-7,
                 -0.0,
                 1.0
             ],
             "scaling": [
-                0.0647997,
-                0.0647997,
-                0.0647997
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "3065": {
+            "name": "UI_LOOP_noloop",
+            "parent": "2902",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2689"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.0504423,
+                0.0678459,
+                0.1208507
+            ],
+            "rotation": [
+                -0.0,
+                8.347890911863942e-7,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "3066": {
+            "name": "UI_MUTEL_Button",
+            "parent": "2898",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2682"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                -0.0008907,
+                -0.0123673,
+                0.0047654
+            ],
+            "rotation": [
+                -0.0,
+                8.346121376234805e-7,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "3067": {
+            "name": "UI_MUTELNotMute",
+            "parent": "2898",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2690"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                -0.0008907,
+                -0.0123673,
+                0.0047654
+            ],
+            "rotation": [
+                -0.0,
+                8.346121376234805e-7,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
             ]
         }
     },
@@ -37740,6 +37836,18 @@
                 "name": "LeftSettingsPanel.png",
                 "file": "images\\V1-2\\LeftSettingsPanel.png"
             }
+        },
+        "2704": {
+            "link": {
+                "name": "Menu.png",
+                "file": "images\\Menu.png"
+            }
+        },
+        "2705": {
+            "link": {
+                "name": "Quiet.png",
+                "file": "images\\Quiet.png"
+            }
         }
     },
     "images": {
@@ -38567,6 +38675,18 @@
             "link": {
                 "name": "LeftSettingsPanel.png",
                 "file": "images\\V1-2\\LeftSettingsPanel.png"
+            }
+        },
+        "2702": {
+            "link": {
+                "name": "Menu.png",
+                "file": "images\\Menu.png"
+            }
+        },
+        "2703": {
+            "link": {
+                "name": "Quiet.png",
+                "file": "images\\Quiet.png"
             }
         }
     },
@@ -41180,6 +41300,20 @@
             "Flat": {
                 "flatTexture": "2701"
             }
+        },
+        "2689": {
+            "name": "Main_LOOPNotLoop",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2704"
+            }
+        },
+        "2690": {
+            "name": "Main_NOTMute",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2705"
+            }
         }
     },
     "shaders": {
@@ -43258,6 +43392,14 @@
         },
         "2704": {
             "fileName": "images/V1-2/LeftSettingsPanel.png",
+            "importerName": ""
+        },
+        "2705": {
+            "fileName": "images/Menu.png",
+            "importerName": ""
+        },
+        "2706": {
+            "fileName": "images/Quiet.png",
             "importerName": ""
         }
     },

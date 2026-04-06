@@ -16473,6 +16473,7 @@ var _MusicManagement = class extends Component3 {
     this.SoundFontPlayer = this.object.getComponent("SoundFontSupport");
     this.TestModeButton.getComponent("mesh").material.color = MaterialScheme.neonGreen;
     this.PlayModeButton.getComponent("mesh").material.color = MaterialScheme.neonGreen;
+    this.newNoteHoverMute = false;
   }
   // returns a string with the name for the scale number which
   GetScaleName(which) {
@@ -16495,6 +16496,16 @@ var _MusicManagement = class extends Component3 {
       case 6:
         return this.ScaleName6;
         break;
+    }
+  }
+  Toggle_newNoteHoverMute() {
+    this.newNoteHoverMute = !this.newNoteHoverMute;
+    if (this.newNoteHoverMute) {
+      this.icon_mute.getComponent("mesh").active = true;
+      this.icon_notMute.getComponent("mesh").active = false;
+    } else {
+      this.icon_mute.getComponent("mesh").active = false;
+      this.icon_notMute.getComponent("mesh").active = true;
     }
   }
   CTRL_TogglePlayMode() {
@@ -17057,7 +17068,9 @@ __publicField(MusicManagement, "Properties", {
   TestModeButtonPlayDisableImage: Property.object(),
   TestModeButtonStopDisableImage: Property.object(),
   virtualkeyboard: Property.object(),
-  filelistwindow: Property.object()
+  filelistwindow: Property.object(),
+  icon_mute: Property.object(),
+  icon_notMute: Property.object()
 });
 //all notes
 __publicField(MusicManagement, "InTestMode", false);
@@ -21145,15 +21158,19 @@ var _UIButton = class extends Component3 {
     cb[2] = this.ourScale[2] * 1.1;
     this.object.setScalingLocal(cb);
     if (this.playnoteonHooverTextMode && this.settingsWindow != null) {
-      if (this.wasmouse && this.settingsWindow.auto_mouse_on || !this.wasmouse && this.settingsWindow.auto_ray_on) {
-        if (this.musicmanref.InTestMode && this.notevalue >= 0) {
-          this.musicmanref.SoundFontPlayer.playnote(this.notevalue, 80);
+      if (!this.musicmanref.newNoteHoverMute) {
+        if (this.wasmouse && this.settingsWindow.auto_mouse_on || !this.wasmouse && this.settingsWindow.auto_ray_on) {
+          if (this.musicmanref.InTestMode && this.notevalue >= 0) {
+            this.musicmanref.SoundFontPlayer.playnote(this.notevalue, 80);
+          }
         }
       }
     }
     if (this.playnoteonHoover && this.settingsWindow != null) {
-      if (this.wasmouse && this.settingsWindow.auto_mouse_on || !this.wasmouse && this.settingsWindow.auto_ray_on) {
-        this.musicmanref.SoundFontPlayer.playnote(this.notevalue + this.NoteSelectorObject.getComponent("NoteSelector").CurrentOctave * 12, 80);
+      if (!this.musicmanref.newNoteHoverMute) {
+        if (this.wasmouse && this.settingsWindow.auto_mouse_on || !this.wasmouse && this.settingsWindow.auto_ray_on) {
+          this.musicmanref.SoundFontPlayer.playnote(this.notevalue + this.NoteSelectorObject.getComponent("NoteSelector").CurrentOctave * 12, 80);
+        }
       }
     }
   }

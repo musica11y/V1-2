@@ -763,6 +763,7 @@ export class UIButton extends Component {
 		this.object.setScalingLocal(cb);
 
 		if (this.playnoteonHooverTextMode && this.settingsWindow != null) {
+			if(!this.musicmanref.newNoteHoverMute)
 			if ((this.wasmouse && this.settingsWindow.auto_mouse_on) || (!this.wasmouse && this.settingsWindow.auto_ray_on))
 				if (this.musicmanref.InTestMode && this.notevalue >= 0) {//} || this.octave > 0)) {					
 					this.musicmanref.SoundFontPlayer.playnote(this.notevalue, 80);
@@ -777,6 +778,7 @@ export class UIButton extends Component {
 			//console.log("Hooover");
 			//this.object.children[0].getComponent('text').text = 'X';
 			//auto_ray_on
+			if(!this.musicmanref.newNoteHoverMute)
 			if ((this.wasmouse && this.settingsWindow.auto_mouse_on) || (!this.wasmouse && this.settingsWindow.auto_ray_on))
 			//todo also check for enabled status on this
 			{

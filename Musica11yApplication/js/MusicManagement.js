@@ -23,6 +23,8 @@ export class MusicManagement extends Component {
 		TestModeButtonStopDisableImage: Property.object(),
 		virtualkeyboard: Property.object(),
 		filelistwindow: Property.object(),
+		icon_mute: Property.object(),
+		icon_notMute: Property.object(),
 	};
 
 	//middle C is 60
@@ -58,6 +60,8 @@ export class MusicManagement extends Component {
 		this.SoundFontPlayer = this.object.getComponent("SoundFontSupport");
 		this.TestModeButton.getComponent('mesh').material.color = MaterialScheme.neonGreen;
 		this.PlayModeButton.getComponent('mesh').material.color = MaterialScheme.neonGreen;
+
+		this.newNoteHoverMute=false;//new mute key
 	}
 
 	// returns a string with the name for the scale number which
@@ -72,6 +76,20 @@ export class MusicManagement extends Component {
 		}
 	}
 
+	Toggle_newNoteHoverMute()
+	{
+		this.newNoteHoverMute=!this.newNoteHoverMute;
+		if(this.newNoteHoverMute)
+		{
+			this.icon_mute.getComponent('mesh').active=true;
+			this.icon_notMute.getComponent('mesh').active=false;
+		}
+		else
+		{
+			this.icon_mute.getComponent('mesh').active=false;
+			this.icon_notMute.getComponent('mesh').active=true;
+		}
+	}
 
 	CTRL_TogglePlayMode() {
 		this.InPlayMode = !this.InPlayMode;
