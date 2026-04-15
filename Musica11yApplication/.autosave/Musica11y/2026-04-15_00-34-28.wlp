@@ -28687,7 +28687,7 @@
                     "text": {
                         "text": "TestText2\n"
                     },
-                    "active": true
+                    "active": false
                 }
             ],
             "scaling": [
@@ -28696,9 +28696,9 @@
                 14.2187595
             ],
             "translation": [
-                -9.6648941,
+                -6.0584769,
                 0.8878601,
-                0.0245352
+                0.0245014
             ],
             "rotation": [
                 0.0,
@@ -29137,7 +29137,7 @@
                     "text": {
                         "text": "TestText3\n\n"
                     },
-                    "active": true
+                    "active": false
                 }
             ],
             "scaling": [
@@ -29146,9 +29146,9 @@
                 14.2187595
             ],
             "translation": [
-                -9.6648941,
+                -5.7429471,
                 0.7048286,
-                -0.1595707
+                -0.1596089
             ],
             "rotation": [
                 0.0,
@@ -29362,7 +29362,8 @@
                         "leftsidewindows": [
                             "635",
                             "2876",
-                            "3049"
+                            "3049",
+                            "3083"
                         ]
                     },
                     "active": true
@@ -36032,9 +36033,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnComponent": "HelpPanel",
-                        "Action": "PressHeading",
-                        "ActionOnObject": "2203",
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
                         "HeldDurationType": 1,
                         "TheHeldDurationType": "medium",
                         "passSelfReference": true
@@ -36047,7 +36048,7 @@
                 -0.0200913
             ],
             "rotation": [
-                4.563486655229099e-8,
+                4.5634866552290993e-8,
                 0.0000032,
                 0.0000015,
                 1.0
@@ -36081,7 +36082,7 @@
                 0.0150406
             ],
             "rotation": [
-                1.7881410485642846e-7,
+                1.7881410485642848e-7,
                 -0.0,
                 -0.0,
                 1.0
@@ -36121,9 +36122,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnComponent": "HelpPanel",
-                        "Action": "PressHeading",
-                        "ActionOnObject": "2203",
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_2",
+                        "ActionOnObject": "2875",
                         "HeldDurationType": 1,
                         "TheHeldDurationType": "medium",
                         "passSelfReference": true
@@ -36136,7 +36137,7 @@
                 -0.020282
             ],
             "rotation": [
-                4.563486655229099e-8,
+                4.5634866552290993e-8,
                 0.0000032,
                 0.0000015,
                 1.0
@@ -36210,9 +36211,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnComponent": "HelpPanel",
-                        "Action": "PressHeading",
-                        "ActionOnObject": "2203",
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_3",
+                        "ActionOnObject": "2875",
                         "HeldDurationType": 1,
                         "TheHeldDurationType": "medium",
                         "passSelfReference": true
@@ -36225,7 +36226,7 @@
                 -0.020654
             ],
             "rotation": [
-                4.563486655229099e-8,
+                4.5634866552290993e-8,
                 0.0000032,
                 0.0000015,
                 1.0
@@ -36299,9 +36300,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnComponent": "HelpPanel",
-                        "Action": "PressHeading",
-                        "ActionOnObject": "2203",
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_4",
+                        "ActionOnObject": "2875",
                         "HeldDurationType": 1,
                         "TheHeldDurationType": "medium",
                         "passSelfReference": true
@@ -36314,7 +36315,7 @@
                 -0.0206864
             ],
             "rotation": [
-                4.563486655229099e-8,
+                4.5634866552290993e-8,
                 0.0000032,
                 0.0000015,
                 1.0
@@ -36348,7 +36349,7 @@
                 0.0149805
             ],
             "rotation": [
-                1.7881410485642846e-7,
+                1.7881410485642848e-7,
                 -0.0,
                 -0.0,
                 1.0
@@ -36388,9 +36389,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnComponent": "HelpPanel",
-                        "Action": "PressHeading",
-                        "ActionOnObject": "2203",
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_5",
+                        "ActionOnObject": "2875",
                         "HeldDurationType": 1,
                         "TheHeldDurationType": "medium",
                         "passSelfReference": true
@@ -36403,7 +36404,7 @@
                 -0.0208027
             ],
             "rotation": [
-                4.563486655229099e-8,
+                4.5634866552290993e-8,
                 0.0000032,
                 0.0000015,
                 1.0
@@ -36477,9 +36478,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnComponent": "HelpPanel",
-                        "Action": "PressHeading",
-                        "ActionOnObject": "2203",
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_6",
+                        "ActionOnObject": "2875",
                         "HeldDurationType": 1,
                         "TheHeldDurationType": "medium",
                         "passSelfReference": true
@@ -36487,12 +36488,12 @@
                 }
             ],
             "translation": [
-                0.2829644,
-                -0.6646785,
-                -0.0209096
+                0.2830522,
+                -0.6483633,
+                -0.0209534
             ],
             "rotation": [
-                4.563486655229099e-8,
+                4.5634866552290993e-8,
                 0.0000032,
                 0.0000015,
                 1.0
@@ -36521,8 +36522,8 @@
                 0.1000002
             ],
             "translation": [
-                0.0000785,
-                0.0000075,
+                -0.002252,
+                0.0000045,
                 0.0149805
             ],
             "rotation": [
@@ -36566,9 +36567,9 @@
                 {
                     "type": "UI_SimpleButton",
                     "UI_SimpleButton": {
-                        "ActionOnComponent": "HelpPanel",
-                        "Action": "PressHeading",
-                        "ActionOnObject": "2203",
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_7",
+                        "ActionOnObject": "2875",
                         "HeldDurationType": 1,
                         "TheHeldDurationType": "medium",
                         "passSelfReference": true
@@ -36576,12 +36577,12 @@
                 }
             ],
             "translation": [
-                0.2833535,
-                -0.9061877,
-                -0.0211041
+                0.2835023,
+                -0.8912892,
+                -0.0211785
             ],
             "rotation": [
-                4.563486655229099e-8,
+                4.5634866552290993e-8,
                 0.0000032,
                 0.0000015,
                 1.0
@@ -36610,7 +36611,7 @@
                 0.1000002
             ],
             "translation": [
-                0.0000785,
+                -0.0077699,
                 0.0000075,
                 0.0149805
             ],
@@ -36620,6 +36621,216 @@
                 -0.0,
                 1.0
             ]
+        },
+        "3083": {
+            "name": "spanchorBackpanelHelp",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2668"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                -3.1388049,
+                0.1978309,
+                -0.0011139
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.2441293,
+                0.2774524,
+                0.2749629
+            ],
+            "parent": "2875"
+        },
+        "3131": {
+            "name": "OpenTestWindowHere",
+            "parent": "3083",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "8",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target",
+                    "active": false
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "sphere",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.0199999
+                        }
+                    },
+                    "active": false
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "ActionOnObject": "2875",
+                        "Action": "restore_default_window"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                1.2251757,
+                -0.8817232,
+                0.1029705
+            ],
+            "rotation": [
+                -0.000006,
+                0.0000039,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1066287,
+                0.0965654,
+                0.0071867
+            ]
+        },
+        "3132": {
+            "name": "Text",
+            "parent": "3131",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "CLOSE\nTEST",
+                        "material": "1952"
+                    },
+                    "active": false
+                }
+            ],
+            "scaling": [
+                5.0,
+                6.0874176,
+                5.0
+            ],
+            "translation": [
+                -0.0000104,
+                -0.095418,
+                1.0950336
+            ],
+            "rotation": [
+                1.4901161193847656e-7,
+                0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "3133": {
+            "name": "Mesh.026",
+            "parent": "3131",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "992"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.08,
+                1.08,
+                1.08
+            ]
+        },
+        "3134": {
+            "name": "Text",
+            "parent": "3083",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Help Window",
+                        "material": "1952"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.5331434,
+                0.5878339,
+                0.0359334
+            ],
+            "translation": [
+                0.265192,
+                0.6637383,
+                0.1108337
+            ],
+            "rotation": [
+                -0.000004,
+                0.0000035,
+                -0.0,
+                1.0
+            ]
+        },
+        "3084": {
+            "name": "spanchorBackpanelHelp",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2668"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                -3.1388049,
+                0.1978309,
+                -0.0011139
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.2441293,
+                0.2774524,
+                0.2749629
+            ],
+            "parent": "3083"
         }
     },
     "meshes": {

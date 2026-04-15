@@ -17143,6 +17143,8 @@ __publicField(NreLPanelCtrl, "Properties", {
 // js/NewMainPanelCtrl.js
 var NewMainPanelCtrl = class extends Component3 {
   start() {
+    const mesh = this.helpsidewindows.getComponent("mesh");
+    mesh.material = mesh.material.clone();
     this.restore_default_leftPanel();
     this.set_new_panel_live(0);
   }
@@ -17155,6 +17157,48 @@ var NewMainPanelCtrl = class extends Component3 {
   open_soundfont_window() {
     this.restore_default_leftPanel();
     this.set_new_panel_live(2);
+  }
+  open_help_window_1() {
+    const mesh = this.helpsidewindows.getComponent("mesh");
+    mesh.material.setFlatTexture(this.newImageHelp[0]);
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(3);
+  }
+  open_help_window_2() {
+    const mesh = this.helpsidewindows.getComponent("mesh");
+    mesh.material.setFlatTexture(this.newImageHelp[1]);
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(3);
+  }
+  open_help_window_3() {
+    const mesh = this.helpsidewindows.getComponent("mesh");
+    mesh.material.setFlatTexture(this.newImageHelp[2]);
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(3);
+  }
+  open_help_window_4() {
+    const mesh = this.helpsidewindows.getComponent("mesh");
+    mesh.material.setFlatTexture(this.newImageHelp[3]);
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(3);
+  }
+  open_help_window_5() {
+    const mesh = this.helpsidewindows.getComponent("mesh");
+    mesh.material.setFlatTexture(this.newImageHelp[4]);
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(3);
+  }
+  open_help_window_6() {
+    const mesh = this.helpsidewindows.getComponent("mesh");
+    mesh.material.setFlatTexture(this.newImageHelp[5]);
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(3);
+  }
+  open_help_window_7() {
+    const mesh = this.helpsidewindows.getComponent("mesh");
+    mesh.material.setFlatTexture(this.newImageHelp[6]);
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(3);
   }
   restore_default_window() {
     this.restore_default_leftPanel();
@@ -17182,7 +17226,9 @@ var NewMainPanelCtrl = class extends Component3 {
 __publicField(NewMainPanelCtrl, "TypeName", "NewMainPanelCtrl");
 /* Properties that are configurable in the editor */
 __publicField(NewMainPanelCtrl, "Properties", {
-  leftsidewindows: Property.array(Property.object())
+  leftsidewindows: Property.array(Property.object()),
+  helpsidewindows: Property.object(),
+  newImageHelp: Property.array(Property.texture())
 });
 
 // js/NewMusicPlayer.js
@@ -17193,7 +17239,8 @@ var NewMusicPlayer = class extends Component3 {
     this.position = 0;
     this.elapsedTime = 0;
     this.NonLoopIcon.active = false;
-    this.musicmanref = this.Musicman.getComponent("MusicManagement");
+    if (this.Musicman)
+      this.musicmanref = this.Musicman.getComponent("MusicManagement");
   }
   //Needs reference to spanker
   /* done in testmodeplayer now

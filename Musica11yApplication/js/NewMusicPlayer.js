@@ -19,7 +19,8 @@ export class NewMusicPlayer extends Component {
         this.position = 0;
         this.elapsedTime = 0;
         this.NonLoopIcon.active = false;
-        this.musicmanref = this.Musicman.getComponent('MusicManagement');
+        if(this.Musicman)
+            this.musicmanref = this.Musicman.getComponent('MusicManagement');
     }
 
     //Needs reference to spanker

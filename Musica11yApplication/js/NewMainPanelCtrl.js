@@ -8,9 +8,14 @@ export class NewMainPanelCtrl extends Component {
     /* Properties that are configurable in the editor */
     static Properties = {
           leftsidewindows:  Property.array(Property.object()),
+          helpsidewindows: Property.object(),
+          newImageHelp: Property.array(Property.texture()),
     };
 
     start() {
+        const mesh = this.helpsidewindows.getComponent('mesh');
+        mesh.material = mesh.material.clone(); // Clone to avoid affecting other objects
+
          this.restore_default_leftPanel();
     
         this.set_new_panel_live(0);
@@ -29,6 +34,60 @@ export class NewMainPanelCtrl extends Component {
     {
          this.restore_default_leftPanel();    
         this.set_new_panel_live(2);
+    }
+
+    open_help_window_1()
+    {
+         const mesh = this.helpsidewindows.getComponent('mesh');
+
+    //    console.log(Object.keys(mesh.material));
+   // console.log("Methods on Prototype:", Object.getPrototypeOf(mesh.material));
+      
+         mesh.material.setFlatTexture(this.newImageHelp[0]);
+          this.restore_default_leftPanel();    
+        this.set_new_panel_live(3);
+    }
+    open_help_window_2()
+    {
+           const mesh = this.helpsidewindows.getComponent('mesh');
+             mesh.material.setFlatTexture(this.newImageHelp[1]);
+          this.restore_default_leftPanel();    
+        this.set_new_panel_live(3);
+    }
+     open_help_window_3()
+    {
+           const mesh = this.helpsidewindows.getComponent('mesh');
+             mesh.material.setFlatTexture(this.newImageHelp[2]);
+          this.restore_default_leftPanel();    
+        this.set_new_panel_live(3);
+    }
+     open_help_window_4()
+    {
+           const mesh = this.helpsidewindows.getComponent('mesh');
+             mesh.material.setFlatTexture(this.newImageHelp[3]);
+          this.restore_default_leftPanel();    
+        this.set_new_panel_live(3);
+    }
+     open_help_window_5()
+    {
+           const mesh = this.helpsidewindows.getComponent('mesh');
+             mesh.material.setFlatTexture(this.newImageHelp[4]);
+          this.restore_default_leftPanel();    
+        this.set_new_panel_live(3);
+    }
+     open_help_window_6()
+    {
+           const mesh = this.helpsidewindows.getComponent('mesh');
+             mesh.material.setFlatTexture(this.newImageHelp[5]);
+          this.restore_default_leftPanel();    
+        this.set_new_panel_live(3);
+    }
+     open_help_window_7()
+    {
+           const mesh = this.helpsidewindows.getComponent('mesh');
+             mesh.material.setFlatTexture(this.newImageHelp[6]);
+          this.restore_default_leftPanel();    
+        this.set_new_panel_live(3);
     }
 
     restore_default_window()
