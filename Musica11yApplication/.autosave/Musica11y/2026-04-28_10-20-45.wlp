@@ -3719,20 +3719,20 @@
                 }
             ],
             "translation": [
-                3.3688547,
-                0.5662116,
-                0.2413298
+                3.3960494,
+                0.5819266,
+                0.2413304
             ],
             "rotation": [
-                0.6830146,
-                0.1830112,
-                0.1830144,
-                0.6830106
+                0.6830156,
+                0.1830125,
+                0.1830142,
+                0.6830093
             ],
             "scaling": [
-                3.8282225,
-                0.5129896,
-                3.9276118
+                3.8282244,
+                0.5129899,
+                3.9276199
             ]
         },
         "732": {
@@ -4074,20 +4074,20 @@
             "name": "OPTIONS",
             "parent": "1029",
             "translation": [
-                -0.4095594,
-                1.3189249,
-                0.5390158
+                -0.390926,
+                1.318925,
+                0.5390129
             ],
             "rotation": [
                 0.0026175,
-                -1.4932755476593232e-8,
-                -1.2052189468647612e-8,
-                0.9999965
+                -1.493275370023639e-8,
+                -1.2052628228786944e-8,
+                0.9999966
             ],
             "scaling": [
                 0.3599998,
-                0.3599995,
-                0.3599997
+                0.3599994,
+                0.3599996
             ],
             "components": [
                 {
@@ -29365,8 +29365,17 @@
                             "3049",
                             "3083"
                         ],
-                        "newImageHelp1": "2706",
-                        "helpsidewindows": "3084"
+                        "newImageHelp1": 141,
+                        "helpsidewindows": "3084",
+                        "newImageHelp": [
+                            "2706",
+                            "2707",
+                            "2708",
+                            "2709",
+                            "2710",
+                            "2711",
+                            "2712"
+                        ]
                     },
                     "active": true
                 }
@@ -33874,7 +33883,7 @@
                 }
             ],
             "translation": [
-                -3.2791099,
+                -3.6124598,
                 -0.3083055,
                 0.0
             ],
@@ -36811,9 +36820,276 @@
                     "type": "mesh",
                     "mesh": {
                         "mesh": "7",
-                        "material": "2668"
+                        "material": "2691"
                     },
                     "active": true
+                }
+            ],
+            "translation": [
+                0.7149667,
+                0.0,
+                0.0114631
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.9189265,
+                0.9006164,
+                1.0
+            ],
+            "parent": "3083"
+        },
+        "3135": {
+            "name": "UI_Button_Account",
+            "parent": "2995",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0149999,
+                                0.0099999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                -0.7734892,
+                0.4720556,
+                0.019242
+            ],
+            "rotation": [
+                4.656613938891496e-8,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                43.2999992,
+                3.9,
+                1.6
+            ]
+        },
+        "3136": {
+            "name": "Text",
+            "parent": "3135",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Account",
+                        "material": "1955"
+                    }
+                }
+            ],
+            "scaling": [
+                0.024,
+                0.1398929,
+                0.1000002
+            ],
+            "translation": [
+                -0.0004926,
+                0.0000122,
+                0.0150405
+            ],
+            "rotation": [
+                5.383044481277466e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3137": {
+            "name": "AccountBackpanel",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2669"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                -3.3828439,
+                -0.3083055,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0672572,
+                0.1504254,
+                0.0291153
+            ],
+            "parent": "2867"
+        },
+        "3138": {
+            "name": "background",
+            "parent": "3137",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2692"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                1.0564906,
+                1.1015698,
+                0.8036918
+            ],
+            "translation": [
+                -0.1081392,
+                0.1055484,
+                0.0307281
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3139": {
+            "name": "QuestionmarkButton",
+            "parent": "3137",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2678"
+                    },
+                    "active": true
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "sphere",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.012
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewLPanelCtrl",
+                        "ActionOnObject": "2867",
+                        "Action": "open_help_window"
+                    }
+                }
+            ],
+            "translation": [
+                -0.8189176,
+                0.939836,
+                0.0317651
+            ],
+            "rotation": [
+                -0.000006,
+                0.0000039,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1992264,
+                0.0817355,
+                0.0030328
+            ]
+        },
+        "3140": {
+            "name": "Text",
+            "parent": "3139",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "OPEN\nTEST",
+                        "material": "1952"
+                    },
+                    "active": false
+                }
+            ],
+            "scaling": [
+                5.0,
+                6.0874176,
+                5.0
+            ],
+            "translation": [
+                -0.0000104,
+                -0.095418,
+                1.0950336
+            ],
+            "rotation": [
+                1.4901161193847656e-7,
+                0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "3141": {
+            "name": "Mesh.026",
+            "parent": "3139",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "992"
+                    },
+                    "active": false
                 }
             ],
             "translation": [
@@ -36828,11 +37104,1194 @@
                 1.0
             ],
             "scaling": [
-                0.8878626,
-                1.0090538,
+                1.08,
+                1.08,
+                1.08
+            ]
+        },
+        "3142": {
+            "name": "SettingsdkButton",
+            "parent": "3137",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2679"
+                    },
+                    "active": true
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "sphere",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.012
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewLPanelCtrl",
+                        "ActionOnObject": "2867",
+                        "Action": "open_settings_window"
+                    }
+                }
+            ],
+            "translation": [
+                -0.3776507,
+                0.9403186,
+                0.0317734
+            ],
+            "rotation": [
+                -0.000006,
+                0.0000039,
+                -0.0,
                 1.0
             ],
-            "parent": "3083"
+            "scaling": [
+                0.1991307,
+                0.0807003,
+                0.0030328
+            ]
+        },
+        "3143": {
+            "name": "Text",
+            "parent": "3142",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "OPEN\nTEST",
+                        "material": "1952"
+                    },
+                    "active": false
+                }
+            ],
+            "scaling": [
+                5.0,
+                6.0874176,
+                5.0
+            ],
+            "translation": [
+                -0.0000104,
+                -0.095418,
+                1.0950336
+            ],
+            "rotation": [
+                1.4901161193847656e-7,
+                0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "3144": {
+            "name": "Mesh.026",
+            "parent": "3142",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "992"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.08,
+                1.08,
+                1.08
+            ]
+        },
+        "3145": {
+            "name": "AccessibilityButton",
+            "parent": "3137",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2680"
+                    },
+                    "active": true
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "sphere",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.012
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewLPanelCtrl",
+                        "ActionOnObject": "2867",
+                        "Action": "open_accessibility_window"
+                    }
+                }
+            ],
+            "translation": [
+                0.0645506,
+                0.9401851,
+                0.0318988
+            ],
+            "rotation": [
+                -0.000006,
+                0.0000039,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                0.2044646,
+                0.0807519,
+                0.0030328
+            ]
+        },
+        "3146": {
+            "name": "Text",
+            "parent": "3145",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "OPEN\nTEST",
+                        "material": "1952"
+                    },
+                    "active": false
+                }
+            ],
+            "scaling": [
+                5.0,
+                6.0874176,
+                5.0
+            ],
+            "translation": [
+                -0.0000104,
+                -0.095418,
+                1.0950336
+            ],
+            "rotation": [
+                1.4901161193847656e-7,
+                0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "3147": {
+            "name": "Mesh.026",
+            "parent": "3145",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "992"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.08,
+                1.08,
+                1.08
+            ]
+        },
+        "3148": {
+            "name": "PlayerActionyButton",
+            "parent": "3137",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2681"
+                    },
+                    "active": true
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "sphere",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.0199999
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewLPanelCtrl",
+                        "ActionOnObject": "2867",
+                        "Action": "restore_default_window"
+                    }
+                }
+            ],
+            "translation": [
+                0.62938,
+                1.0088499,
+                0.032
+            ],
+            "rotation": [
+                -0.000006,
+                0.0000039,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.2958667,
+                0.1625344,
+                0.0046886
+            ]
+        },
+        "3149": {
+            "name": "Text",
+            "parent": "3148",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "OPEN\nTEST",
+                        "material": "1952"
+                    },
+                    "active": false
+                }
+            ],
+            "scaling": [
+                5.0,
+                6.0874176,
+                5.0
+            ],
+            "translation": [
+                -0.0000104,
+                -0.095418,
+                1.0950336
+            ],
+            "rotation": [
+                1.4901161193847656e-7,
+                0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "3150": {
+            "name": "Mesh.026",
+            "parent": "3148",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "992"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.08,
+                1.08,
+                1.08
+            ]
+        },
+        "3151": {
+            "name": "UI_Button_LOGIN",
+            "parent": "3137",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0399999,
+                                0.0099999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                0.2813279,
+                0.5029693,
+                0.0234782
+            ],
+            "rotation": [
+                4.656613938891496e-8,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                43.2999992,
+                3.9,
+                1.6
+            ]
+        },
+        "3152": {
+            "name": "Text",
+            "parent": "3151",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "LOGIN",
+                        "material": "1955"
+                    }
+                }
+            ],
+            "scaling": [
+                0.024,
+                0.1398929,
+                0.1000002
+            ],
+            "translation": [
+                0.0000137,
+                0.0000219,
+                0.0148096
+            ],
+            "rotation": [
+                2.626329376198555e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3155": {
+            "name": "background",
+            "parent": "3151",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2693"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.0109999,
+                0.0195069,
+                0.2594207
+            ],
+            "translation": [
+                -0.0,
+                0.0000375,
+                0.0113152
+            ],
+            "rotation": [
+                1.355656422674656e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3156": {
+            "name": "UI_Button_LOGOUT",
+            "parent": "3137",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0399999,
+                                0.0099999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                0.2813279,
+                0.2992606,
+                0.0234782
+            ],
+            "rotation": [
+                4.656613938891496e-8,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                43.2999992,
+                3.9,
+                1.6
+            ]
+        },
+        "3157": {
+            "name": "Text",
+            "parent": "3156",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "LOGOUT",
+                        "material": "1955"
+                    }
+                }
+            ],
+            "scaling": [
+                0.024,
+                0.1398929,
+                0.1000002
+            ],
+            "translation": [
+                0.0000137,
+                0.0000219,
+                0.0148096
+            ],
+            "rotation": [
+                2.626329376198555e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3158": {
+            "name": "background",
+            "parent": "3156",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2693"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.0109999,
+                0.0195069,
+                0.2594207
+            ],
+            "translation": [
+                -0.0,
+                0.0000375,
+                0.0113152
+            ],
+            "rotation": [
+                1.355656422674656e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3159": {
+            "name": "UI_Button_EXIT",
+            "parent": "3137",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0399999,
+                                0.0099999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                0.2813279,
+                0.1146979,
+                0.0234782
+            ],
+            "rotation": [
+                4.656613938891496e-8,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                43.2999992,
+                3.9,
+                1.6
+            ]
+        },
+        "3160": {
+            "name": "Text",
+            "parent": "3159",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "EXIT",
+                        "material": "1955"
+                    }
+                }
+            ],
+            "scaling": [
+                0.024,
+                0.1398929,
+                0.1000002
+            ],
+            "translation": [
+                0.0000137,
+                0.0000219,
+                0.0148096
+            ],
+            "rotation": [
+                2.626329376198555e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3161": {
+            "name": "background",
+            "parent": "3159",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2693"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.0109999,
+                0.0195069,
+                0.2594207
+            ],
+            "translation": [
+                -0.0,
+                0.0000375,
+                0.0113152
+            ],
+            "rotation": [
+                1.355656422674656e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3162": {
+            "name": "UI_Button_NEWSCENE",
+            "parent": "3137",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0399999,
+                                0.0099999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                0.2813279,
+                -0.2674913,
+                0.0234782
+            ],
+            "rotation": [
+                4.656613938891496e-8,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                43.2999992,
+                3.9,
+                1.6
+            ]
+        },
+        "3163": {
+            "name": "Text",
+            "parent": "3162",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "NEW SCENE",
+                        "material": "1955"
+                    }
+                }
+            ],
+            "scaling": [
+                0.024,
+                0.1398929,
+                0.1000002
+            ],
+            "translation": [
+                0.0000137,
+                0.0000219,
+                0.0148096
+            ],
+            "rotation": [
+                2.626329376198555e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3164": {
+            "name": "background",
+            "parent": "3162",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2693"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.0109999,
+                0.0195069,
+                0.2594207
+            ],
+            "translation": [
+                -0.0,
+                0.0000375,
+                0.0113152
+            ],
+            "rotation": [
+                1.355656422674656e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3165": {
+            "name": "UI_Button_SAVESCENE",
+            "parent": "3137",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0399999,
+                                0.0099999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                0.2813279,
+                -0.4736766,
+                0.0234782
+            ],
+            "rotation": [
+                4.656613938891496e-8,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                43.2999992,
+                3.9,
+                1.6
+            ]
+        },
+        "3166": {
+            "name": "Text",
+            "parent": "3165",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "SAVE SCENE",
+                        "material": "1955"
+                    }
+                }
+            ],
+            "scaling": [
+                0.024,
+                0.1398929,
+                0.1000002
+            ],
+            "translation": [
+                0.0000137,
+                0.0000219,
+                0.0148096
+            ],
+            "rotation": [
+                2.626329376198555e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3167": {
+            "name": "background",
+            "parent": "3165",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2693"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.0109999,
+                0.0195069,
+                0.2594207
+            ],
+            "translation": [
+                -0.0,
+                0.0000375,
+                0.0113152
+            ],
+            "rotation": [
+                1.355656422674656e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3168": {
+            "name": "UI_Button_LOADSCENE",
+            "parent": "3137",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0399999,
+                                0.0099999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                0.2813279,
+                -0.6629459,
+                0.0234782
+            ],
+            "rotation": [
+                4.656613938891496e-8,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                43.2999992,
+                3.9,
+                1.6
+            ]
+        },
+        "3169": {
+            "name": "Text",
+            "parent": "3168",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "LOAD SCENE",
+                        "material": "1955"
+                    }
+                }
+            ],
+            "scaling": [
+                0.024,
+                0.1398929,
+                0.1000002
+            ],
+            "translation": [
+                0.0000137,
+                0.0000219,
+                0.0148096
+            ],
+            "rotation": [
+                2.626329376198555e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3170": {
+            "name": "background",
+            "parent": "3168",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2693"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.0109999,
+                0.0195069,
+                0.2594207
+            ],
+            "translation": [
+                -0.0,
+                0.0000375,
+                0.0113152
+            ],
+            "rotation": [
+                1.355656422674656e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3171": {
+            "name": "UI_Button_SHARESCENE",
+            "parent": "3137",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0399999,
+                                0.0099999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                0.2813279,
+                -0.8530544,
+                0.0234782
+            ],
+            "rotation": [
+                4.656613938891496e-8,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                43.2999992,
+                3.9,
+                1.6
+            ]
+        },
+        "3172": {
+            "name": "Text",
+            "parent": "3171",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "SHARE SCENE",
+                        "material": "1955"
+                    }
+                }
+            ],
+            "scaling": [
+                0.024,
+                0.1398929,
+                0.1000002
+            ],
+            "translation": [
+                0.0000137,
+                0.0000219,
+                0.0148096
+            ],
+            "rotation": [
+                2.626329376198555e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3173": {
+            "name": "background",
+            "parent": "3171",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2693"
+                    },
+                    "active": true
+                }
+            ],
+            "scaling": [
+                0.0109999,
+                0.0195069,
+                0.2594207
+            ],
+            "translation": [
+                -0.0,
+                0.0000375,
+                0.0113152
+            ],
+            "rotation": [
+                1.355656422674656e-7,
+                -0.0,
+                0.0,
+                1.0
+            ]
         }
     },
     "meshes": {
@@ -38692,6 +40151,54 @@
                 "name": "help_1.png",
                 "file": "images\\Help\\help_1.png"
             }
+        },
+        "2707": {
+            "link": {
+                "name": "help_2.png",
+                "file": "images\\Help\\help_2.png"
+            }
+        },
+        "2708": {
+            "link": {
+                "name": "help_3.png",
+                "file": "images\\Help\\help_3.png"
+            }
+        },
+        "2709": {
+            "link": {
+                "name": "help_4.png",
+                "file": "images\\Help\\help_4.png"
+            }
+        },
+        "2710": {
+            "link": {
+                "name": "help_5.png",
+                "file": "images\\Help\\help_5.png"
+            }
+        },
+        "2711": {
+            "link": {
+                "name": "help_6.png",
+                "file": "images\\Help\\help_6.png"
+            }
+        },
+        "2712": {
+            "link": {
+                "name": "help_7.png",
+                "file": "images\\Help\\help_7.png"
+            }
+        },
+        "2713": {
+            "link": {
+                "name": "LeftAccountPanel.png",
+                "file": "images\\V1-2\\LeftAccountPanel.png"
+            }
+        },
+        "2714": {
+            "link": {
+                "name": "blank512x128.png",
+                "file": "images\\V1-2\\blank512x128.png"
+            }
         }
     },
     "images": {
@@ -39537,6 +41044,54 @@
             "link": {
                 "name": "help_1.png",
                 "file": "images\\Help\\help_1.png"
+            }
+        },
+        "2705": {
+            "link": {
+                "name": "help_2.png",
+                "file": "images\\Help\\help_2.png"
+            }
+        },
+        "2706": {
+            "link": {
+                "name": "help_3.png",
+                "file": "images\\Help\\help_3.png"
+            }
+        },
+        "2707": {
+            "link": {
+                "name": "help_4.png",
+                "file": "images\\Help\\help_4.png"
+            }
+        },
+        "2708": {
+            "link": {
+                "name": "help_5.png",
+                "file": "images\\Help\\help_5.png"
+            }
+        },
+        "2709": {
+            "link": {
+                "name": "help_6.png",
+                "file": "images\\Help\\help_6.png"
+            }
+        },
+        "2710": {
+            "link": {
+                "name": "help_7.png",
+                "file": "images\\Help\\help_7.png"
+            }
+        },
+        "2711": {
+            "link": {
+                "name": "LeftAccountPanel.png",
+                "file": "images\\V1-2\\LeftAccountPanel.png"
+            }
+        },
+        "2712": {
+            "link": {
+                "name": "blank512x128.png",
+                "file": "images\\V1-2\\blank512x128.png"
             }
         }
     },
@@ -42164,6 +43719,43 @@
             "Flat": {
                 "flatTexture": "2705"
             }
+        },
+        "2691": {
+            "name": "helpimg",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2706",
+                "alphaMaskThreshold": 0.5,
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "Phong": {
+                "diffuseTexture": "2706",
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                ]
+            }
+        },
+        "2692": {
+            "name": "LeftPanelAcc",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2713"
+            }
+        },
+        "2693": {
+            "name": "accbuttonbk",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2714"
+            }
         }
     },
     "shaders": {
@@ -43087,7 +44679,11 @@
             "environment": {
                 "bakingMode": "sky",
                 "material": null
-            }
+            },
+            "compressedTextureAtlasSize": [
+                16384,
+                16384
+            ]
         },
         "runtime": {
             "visualizeColliders": false
@@ -44254,6 +45850,38 @@
         },
         "2707": {
             "fileName": "images/Help/help_1.png",
+            "importerName": ""
+        },
+        "2708": {
+            "fileName": "images/Help/help_2.png",
+            "importerName": ""
+        },
+        "2709": {
+            "fileName": "images/Help/help_3.png",
+            "importerName": ""
+        },
+        "2710": {
+            "fileName": "images/Help/help_4.png",
+            "importerName": ""
+        },
+        "2711": {
+            "fileName": "images/Help/help_5.png",
+            "importerName": ""
+        },
+        "2712": {
+            "fileName": "images/Help/help_6.png",
+            "importerName": ""
+        },
+        "2713": {
+            "fileName": "images/Help/help_7.png",
+            "importerName": ""
+        },
+        "2714": {
+            "fileName": "images/V1-2/LeftAccountPanel.png",
+            "importerName": ""
+        },
+        "2715": {
+            "fileName": "images/V1-2/blank512x128.png",
             "importerName": ""
         }
     },

@@ -49,6 +49,12 @@ export class NreLPanelCtrl extends Component {
         this.set_new_panel_live(5);
     }
     
+    open_account_window()
+    {
+        this.restore_default_leftPanel();    
+        this.set_new_panel_live(5);
+    }
+
     restore_default_window()
     {
        this.restore_default_leftPanel();    
