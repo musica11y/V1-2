@@ -17107,6 +17107,7 @@ var NreLPanelCtrl = class extends Component3 {
   open_account_window() {
     this.restore_default_leftPanel();
     this.set_new_panel_live(5);
+    this.mainPanelCtrller.getComponent("NewMainPanelCtrl").open_account_window();
   }
   restore_default_window() {
     this.restore_default_leftPanel();
@@ -17203,6 +17204,10 @@ var NewMainPanelCtrl = class extends Component3 {
     mesh.material.setFlatTexture(this.newImageHelp[6]);
     this.restore_default_leftPanel();
     this.set_new_panel_live(3);
+  }
+  open_account_window() {
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(4);
   }
   restore_default_window() {
     this.restore_default_leftPanel();
@@ -21599,13 +21604,11 @@ var VirtualKeyboard = class extends Component3 {
     this.isupper = false;
   }
   hide() {
-    this.object.setPositionWorld(this.KeyboardHidePosition.getPositionWorld());
     this.active = false;
   }
   show(t, p, func) {
     this.ispassword = p;
     this.messagearea.text = t;
-    this.object.setPositionWorld(this.KeyboardLivePosition.getPositionWorld());
     this.active = true;
     this.callnext = func;
     this.cursorpos = 0;

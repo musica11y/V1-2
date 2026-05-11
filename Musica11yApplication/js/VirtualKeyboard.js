@@ -84,14 +84,14 @@ export class VirtualKeyboard extends Component {
     }
 
     hide() {
-        this.object.setPositionWorld(this.KeyboardHidePosition.getPositionWorld());
+       // this.object.setPositionWorld(this.KeyboardHidePosition.getPositionWorld());
         this.active = false;
     }
 
     show(t, p, func) {
         this.ispassword = p;
         this.messagearea.text = t;
-        this.object.setPositionWorld(this.KeyboardLivePosition.getPositionWorld());
+       // this.object.setPositionWorld(this.KeyboardLivePosition.getPositionWorld());
         this.active = true;
         this.callnext = func;
         this.cursorpos = 0;
