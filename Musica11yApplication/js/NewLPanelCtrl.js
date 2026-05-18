@@ -31,6 +31,8 @@ export class NreLPanelCtrl extends Component {
     {
        this.restore_default_leftPanel();    
         this.set_new_panel_live(2);
+
+        this.mainPanelCtrller.getComponent('NewMainPanelCtrl').open_access_window();
     }
 
     open_settings_window()

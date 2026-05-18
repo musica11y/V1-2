@@ -17091,6 +17091,7 @@ var NreLPanelCtrl = class extends Component3 {
   open_accessibility_window() {
     this.restore_default_leftPanel();
     this.set_new_panel_live(2);
+    this.mainPanelCtrller.getComponent("NewMainPanelCtrl").open_access_window();
   }
   open_settings_window() {
     this.restore_default_leftPanel();
@@ -17208,6 +17209,10 @@ var NewMainPanelCtrl = class extends Component3 {
   open_account_window() {
     this.restore_default_leftPanel();
     this.set_new_panel_live(4);
+  }
+  open_access_window() {
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(5);
   }
   restore_default_window() {
     this.restore_default_leftPanel();

@@ -21832,11 +21832,11 @@
         },
         "2417": {
             "name": "VirtualKeyboard",
-            "parent": "1029",
+            "parent": "3177",
             "translation": [
-                0.0,
-                0.2050285,
-                0.6765683
+                0.3631933,
+                -0.2979235,
+                0.0044139
             ],
             "rotation": [
                 0.0,
@@ -21846,8 +21846,8 @@
             ],
             "scaling": [
                 1.0,
-                1.0,
-                1.0
+                1.6562747,
+                0.8989609
             ],
             "components": [
                 {
@@ -21876,7 +21876,8 @@
                     "mesh": {
                         "mesh": "7",
                         "material": "993"
-                    }
+                    },
+                    "active": false
                 },
                 {
                     "type": "collision",
@@ -21889,7 +21890,8 @@
                                 0.0099999
                             ]
                         }
-                    }
+                    },
+                    "active": false
                 }
             ],
             "scaling": [
@@ -21955,8 +21957,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.0199999,
-                                0.0199999,
+                                0.0049999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -22004,7 +22006,8 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "0"
+                        "text": "0",
+                        "material": "2694"
                     }
                 }
             ],
@@ -22035,10 +22038,11 @@
                         "mesh": "7",
                         "material": "1960"
                     },
-                    "active": true
+                    "active": false
                 },
                 {
-                    "type": "cursor-target"
+                    "type": "cursor-target",
+                    "active": false
                 },
                 {
                     "type": "collision",
@@ -22052,9 +22056,10 @@
                             ]
                         },
                         "sphere": {
-                            "radius": 0.014
+                            "radius": 0.0049999
                         }
-                    }
+                    },
+                    "active": false
                 },
                 {
                     "type": "UI_SimpleButton",
@@ -22065,7 +22070,8 @@
                     },
                     "UI_SimpleButtonDual": {
                         "ActionOnComponent2": "SettingsWindow"
-                    }
+                    },
+                    "active": false
                 }
             ],
             "translation": [
@@ -22111,8 +22117,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.0199999,
-                                0.0199999,
+                                0.0099999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -22171,7 +22177,8 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "<--"
+                        "text": "<--",
+                        "material": "2694"
                     }
                 }
             ],
@@ -22218,8 +22225,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.0199999,
-                                0.0199999,
+                                0.0049999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -22278,7 +22285,8 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "tab\n"
+                        "text": "tab\n",
+                        "material": "2694"
                     }
                 }
             ],
@@ -22325,8 +22333,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.0199999,
-                                0.0199999,
+                                0.0049999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -22385,7 +22393,8 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "capslock\n"
+                        "text": "capslock\n",
+                        "material": "2694"
                     }
                 }
             ],
@@ -22432,8 +22441,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.0199999,
-                                0.0199999,
+                                0.0049999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -22492,7 +22501,8 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "shift"
+                        "text": "shift",
+                        "material": "2694"
                     }
                 }
             ],
@@ -22539,8 +22549,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.2199999,
-                                0.0199999,
+                                0.0599999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -22599,8 +22609,10 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "space"
-                    }
+                        "text": "space",
+                        "material": "2694"
+                    },
+                    "active": true
                 }
             ],
             "translation": [
@@ -22646,8 +22658,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.0199999,
-                                0.0199999,
+                                0.0049999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -22706,7 +22718,8 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "Enter\n"
+                        "text": "Enter\n",
+                        "material": "2694"
                     }
                 }
             ],
@@ -22753,8 +22766,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.0199999,
-                                0.0199999,
+                                0.0049999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -22813,7 +22826,8 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "\\"
+                        "text": "\\",
+                        "material": "2694"
                     }
                 }
             ],
@@ -22860,8 +22874,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.0199999,
-                                0.0199999,
+                                0.0049999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -22909,7 +22923,8 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "+"
+                        "text": "+",
+                        "material": "2694"
                     }
                 }
             ],
@@ -22956,8 +22971,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.0199999,
-                                0.0199999,
+                                0.0049999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -23016,7 +23031,8 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "enter"
+                        "text": "enter",
+                        "material": "2694"
                     }
                 }
             ],
@@ -23063,8 +23079,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.0199999,
-                                0.0199999,
+                                0.0049999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -23112,7 +23128,8 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "<-\n"
+                        "text": "<-\n",
+                        "material": "2694"
                     }
                 }
             ],
@@ -23159,8 +23176,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.0199999,
-                                0.0199999,
+                                0.0049999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -23208,7 +23225,8 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "<-"
+                        "text": "<-",
+                        "material": "2694"
                     }
                 }
             ],
@@ -23255,8 +23273,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.0199999,
-                                0.0199999,
+                                0.0049999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -23304,7 +23322,8 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "<-"
+                        "text": "<-",
+                        "material": "2694"
                     }
                 }
             ],
@@ -23351,8 +23370,8 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.0199999,
-                                0.0199999,
+                                0.0049999,
+                                0.0049999,
                                 0.004
                             ]
                         }
@@ -23400,7 +23419,8 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "->"
+                        "text": "->",
+                        "material": "2694"
                     }
                 }
             ],
@@ -23425,9 +23445,9 @@
             "name": "KeyboardTextArea",
             "parent": "2417",
             "translation": [
-                -0.2801289,
-                0.183164,
-                0.0201619
+                -0.1742842,
+                0.183132,
+                0.0201468
             ],
             "rotation": [
                 0.0,
@@ -23447,13 +23467,13 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.2199999,
-                                0.0199999,
+                                0.1,
+                                0.0099999,
                                 0.004
                             ]
                         }
                     },
-                    "active": false
+                    "active": true
                 },
                 {
                     "type": "cursor-target",
@@ -23489,7 +23509,7 @@
                 0.0199999
             ],
             "translation": [
-                0.2730122,
+                0.1738998,
                 0.0,
                 0.0
             ],
@@ -23510,12 +23530,13 @@
                         "text": "spaceweqweqweqwe q adsdfdsdfasfsdf asd asdas dasa dasd asd asd asdasdasd  asd asd asd asda das dasd asda dad asd asdas ad asd asd asd asd aas dasd asd asd a",
                         "wrapMode": "clip",
                         "wrapWidth": 4.4,
-                        "alignment": "left"
+                        "alignment": "left",
+                        "material": "2694"
                     }
                 }
             ],
             "translation": [
-                -0.245949,
+                -0.3450583,
                 0.0,
                 0.0016585
             ],
@@ -23526,7 +23547,7 @@
                 1.0
             ],
             "scaling": [
-                0.2340304,
+                0.2340303,
                 0.25,
                 0.25
             ]
@@ -24825,12 +24846,13 @@
                         "collider": "aabb",
                         "aabb": {
                             "extents": [
-                                0.55,
-                                0.2,
+                                0.15,
+                                0.05,
                                 0.0099999
                             ]
                         }
-                    }
+                    },
+                    "active": true
                 }
             ],
             "scaling": [
@@ -29341,7 +29363,8 @@
                             "635",
                             "2876",
                             "3049",
-                            "3083"
+                            "3083",
+                            "3177"
                         ],
                         "newImageHelp1": 141,
                         "helpsidewindows": "3084",
@@ -37916,7 +37939,7 @@
             ]
         },
         "3177": {
-            "name": "spanchorBackpanelHelp",
+            "name": "AccountBackpanelHelp",
             "components": [
                 {
                     "type": "mesh",
@@ -37928,9 +37951,9 @@
                 }
             ],
             "translation": [
-                -3.1388049,
+                -3.6673698,
                 0.1978309,
-                -0.0011139
+                -0.0011117
             ],
             "rotation": [
                 0.0,
@@ -38104,7 +38127,7 @@
                         "mesh": "7",
                         "material": "2691"
                     },
-                    "active": true
+                    "active": false
                 }
             ],
             "translation": [
@@ -38124,6 +38147,216 @@
                 1.0
             ],
             "parent": "3177"
+        },
+        "3183": {
+            "name": "spanchorBackpanelHelp",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2668"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                -3.1388049,
+                0.1978309,
+                -0.0011139
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.2441293,
+                0.2774524,
+                0.2749629
+            ],
+            "parent": "2875"
+        },
+        "3184": {
+            "name": "OpenTestWindowHere",
+            "parent": "3183",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "8",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target",
+                    "active": false
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "sphere",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.0199999
+                        }
+                    },
+                    "active": false
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "ActionOnObject": "2875",
+                        "Action": "restore_default_window"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                1.2251757,
+                -0.8817232,
+                0.1029705
+            ],
+            "rotation": [
+                -0.000006,
+                0.0000039,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1066287,
+                0.0965654,
+                0.0071867
+            ]
+        },
+        "3185": {
+            "name": "Text",
+            "parent": "3184",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "CLOSE\nTEST",
+                        "material": "1952"
+                    },
+                    "active": false
+                }
+            ],
+            "scaling": [
+                5.0,
+                6.0874176,
+                5.0
+            ],
+            "translation": [
+                -0.0000104,
+                -0.095418,
+                1.0950336
+            ],
+            "rotation": [
+                1.4901161193847656e-7,
+                0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "3186": {
+            "name": "Mesh.026",
+            "parent": "3184",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "992"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.08,
+                1.08,
+                1.08
+            ]
+        },
+        "3187": {
+            "name": "Text",
+            "parent": "3183",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Help Window",
+                        "material": "1952"
+                    },
+                    "active": false
+                }
+            ],
+            "scaling": [
+                0.5331434,
+                0.5878339,
+                0.0359334
+            ],
+            "translation": [
+                0.265192,
+                0.6637383,
+                0.1108337
+            ],
+            "rotation": [
+                -0.000004,
+                0.0000035,
+                -0.0,
+                1.0
+            ]
+        },
+        "3188": {
+            "name": "HELPimage",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2691"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.7149667,
+                0.0,
+                0.0114631
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.9189265,
+                0.9006164,
+                1.0
+            ],
+            "parent": "3183"
         }
     },
     "meshes": {
@@ -43588,6 +43821,28 @@
             "Flat": {
                 "flatTexture": "2714"
             }
+        },
+        "2694": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "Text": {
+                "font": "285",
+                "color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "effectColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            },
+            "name": "BlackKeysFont"
         }
     },
     "shaders": {

@@ -97,6 +97,12 @@ export class NewMainPanelCtrl extends Component {
         this.set_new_panel_live(4);
     }
 
+    open_access_window()
+    {
+        this.restore_default_leftPanel();    
+        this.set_new_panel_live(5);
+    }
+
     restore_default_window()
     {
        this.restore_default_leftPanel();    

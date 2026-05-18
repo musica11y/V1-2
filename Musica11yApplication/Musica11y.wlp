@@ -29364,7 +29364,8 @@
                             "2876",
                             "3049",
                             "3083",
-                            "3177"
+                            "3177",
+                            "3183"
                         ],
                         "newImageHelp1": 141,
                         "helpsidewindows": "3084",
@@ -38147,6 +38148,216 @@
                 1.0
             ],
             "parent": "3177"
+        },
+        "3183": {
+            "name": "AccessibilityBackpanel",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2668"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                -4.552278,
+                0.1978309,
+                -0.0011083
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.2441293,
+                0.2774524,
+                0.2749629
+            ],
+            "parent": "2875"
+        },
+        "3184": {
+            "name": "OpenTestWindowHere",
+            "parent": "3183",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "8",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target",
+                    "active": false
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "sphere",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.0199999
+                        }
+                    },
+                    "active": false
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "ActionOnObject": "2875",
+                        "Action": "restore_default_window"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                1.2251757,
+                -0.8817232,
+                0.1029705
+            ],
+            "rotation": [
+                -0.000006,
+                0.0000039,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1066287,
+                0.0965654,
+                0.0071867
+            ]
+        },
+        "3185": {
+            "name": "Text",
+            "parent": "3184",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "CLOSE\nTEST",
+                        "material": "1952"
+                    },
+                    "active": false
+                }
+            ],
+            "scaling": [
+                5.0,
+                6.0874176,
+                5.0
+            ],
+            "translation": [
+                -0.0000104,
+                -0.095418,
+                1.0950336
+            ],
+            "rotation": [
+                1.4901161193847656e-7,
+                0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "3186": {
+            "name": "Mesh.026",
+            "parent": "3184",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "992"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.08,
+                1.08,
+                1.08
+            ]
+        },
+        "3187": {
+            "name": "Text",
+            "parent": "3183",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Help Window",
+                        "material": "1952"
+                    },
+                    "active": false
+                }
+            ],
+            "scaling": [
+                0.5331434,
+                0.5878339,
+                0.0359334
+            ],
+            "translation": [
+                0.265192,
+                0.6637383,
+                0.1108337
+            ],
+            "rotation": [
+                -0.000004,
+                0.0000035,
+                -0.0,
+                1.0
+            ]
+        },
+        "3188": {
+            "name": "HELPimage",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2695"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.3541303,
+                0.0,
+                0.0114508
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.60882,
+                0.9006164,
+                1.0
+            ],
+            "parent": "3183"
         }
     },
     "meshes": {
@@ -40054,6 +40265,12 @@
                 "name": "blank512x128.png",
                 "file": "images\\V1-2\\blank512x128.png"
             }
+        },
+        "2715": {
+            "link": {
+                "name": "AccessibilityWindow.png",
+                "file": "images\\V1-2\\AccessibilityWindow.png"
+            }
         }
     },
     "images": {
@@ -40947,6 +41164,12 @@
             "link": {
                 "name": "blank512x128.png",
                 "file": "images\\V1-2\\blank512x128.png"
+            }
+        },
+        "2713": {
+            "link": {
+                "name": "AccessibilityWindow.png",
+                "file": "images\\V1-2\\AccessibilityWindow.png"
             }
         }
     },
@@ -43633,6 +43856,13 @@
                 ]
             },
             "name": "BlackKeysFont"
+        },
+        "2695": {
+            "name": "RightPanelAccessibility",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2715"
+            }
         }
     },
     "shaders": {
@@ -45759,6 +45989,10 @@
         },
         "2715": {
             "fileName": "images/V1-2/blank512x128.png",
+            "importerName": ""
+        },
+        "2716": {
+            "fileName": "images/V1-2/AccessibilityWindow.png",
             "importerName": ""
         }
     },
