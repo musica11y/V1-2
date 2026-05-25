@@ -103,22 +103,64 @@ export class SettingsWindow extends Component {
 
 	MoveCameraDown() {
 		let oldplayerpos = this.PlayModeManager.PlayCameraRef.getTranslationWorld();
-		oldplayerpos[1]+=0.4;
+		oldplayerpos[1]+=0.04;
 		this.PlayModeManager.PlayCameraRef.setTranslationWorld(oldplayerpos);
 
 		let olddes=this.PlayModeManager.PlayModeCameraPosition.getTranslationWorld();
-		olddes[1]+=0.4;
+		olddes[1]+=0.04;
 		this.PlayModeManager.PlayModeCameraPosition.setTranslationWorld(olddes);
 	}
 	MoveCameraUp() {
 		let oldplayerpos = this.PlayModeManager.PlayCameraRef.getTranslationWorld();
-		oldplayerpos[1]-=0.4;
+		oldplayerpos[1]-=0.04;
 		this.PlayModeManager.PlayCameraRef.setTranslationWorld(oldplayerpos);
 
 		let olddes=this.PlayModeManager.PlayModeCameraPosition.getTranslationWorld();
-		olddes[1]-=0.4;
+		olddes[1]-=0.04;
 		this.PlayModeManager.PlayModeCameraPosition.setTranslationWorld(olddes);
 	}
+
+
+
+	MoveCameraLeft() {
+		let oldplayerpos = this.PlayModeManager.PlayCameraRef.getTranslationWorld();
+		oldplayerpos[0]+=0.04;
+		this.PlayModeManager.PlayCameraRef.setTranslationWorld(oldplayerpos);
+
+		let olddes=this.PlayModeManager.PlayModeCameraPosition.getTranslationWorld();
+		olddes[0]+=0.04;
+		this.PlayModeManager.PlayModeCameraPosition.setTranslationWorld(olddes);
+	}
+	MoveCameraRight() {
+		let oldplayerpos = this.PlayModeManager.PlayCameraRef.getTranslationWorld();
+		oldplayerpos[0]-=0.04;
+		this.PlayModeManager.PlayCameraRef.setTranslationWorld(oldplayerpos);
+
+		let olddes=this.PlayModeManager.PlayModeCameraPosition.getTranslationWorld();
+		olddes[0]-=0.04;
+		this.PlayModeManager.PlayModeCameraPosition.setTranslationWorld(olddes);
+	}
+
+
+	MoveCameraAway() {
+		let oldplayerpos = this.PlayModeManager.PlayCameraRef.getTranslationWorld();
+		oldplayerpos[2]+=0.04;
+		this.PlayModeManager.PlayCameraRef.setTranslationWorld(oldplayerpos);
+
+		let olddes=this.PlayModeManager.PlayModeCameraPosition.getTranslationWorld();
+		olddes[2]+=0.04;
+		this.PlayModeManager.PlayModeCameraPosition.setTranslationWorld(olddes);
+	}
+	MoveCameraTowards() {
+		let oldplayerpos = this.PlayModeManager.PlayCameraRef.getTranslationWorld();
+		oldplayerpos[2]-=0.04;
+		this.PlayModeManager.PlayCameraRef.setTranslationWorld(oldplayerpos);
+
+		let olddes=this.PlayModeManager.PlayModeCameraPosition.getTranslationWorld();
+		olddes[2]-=0.04;
+		this.PlayModeManager.PlayModeCameraPosition.setTranslationWorld(olddes);
+	}
+
 
 	press_RayCastToggle() {
 		this.raycaston = !this.raycaston;

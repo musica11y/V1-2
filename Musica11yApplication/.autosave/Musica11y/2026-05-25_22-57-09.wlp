@@ -2009,12 +2009,12 @@
                 }
             ],
             "translation": [
-                -1.654806,
-                1.2122677,
-                0.0387601
+                -2.4011671,
+                1.2122812,
+                0.0387458
             ],
             "rotation": [
-                3.837049291632866e-7,
+                0.0000013,
                 0.0000037,
                 -0.0,
                 1.0
@@ -18671,14 +18671,15 @@
         },
         "2278": {
             "name": "UI_Button_VRCAMUP",
-            "parent": "745",
+            "parent": "3189",
             "components": [
                 {
                     "type": "mesh",
                     "mesh": {
                         "mesh": "1136",
                         "material": "25"
-                    }
+                    },
+                    "active": false
                 },
                 {
                     "type": "cursor-target"
@@ -18689,9 +18690,9 @@
                         "collider": "box",
                         "box": {
                             "extents": [
-                                0.0599999,
                                 0.0199999,
-                                0.0799999
+                                0.0049999,
+                                0.0199999
                             ]
                         },
                         "sphere": {
@@ -18709,20 +18710,20 @@
                 }
             ],
             "translation": [
-                0.9773834,
-                1.6343815,
-                0.1297259
+                0.1244317,
+                0.4883212,
+                -0.0007344
             ],
             "rotation": [
-                0.5,
-                0.5,
-                0.5,
-                0.4999999
+                0.5013049,
+                0.4986929,
+                0.5013049,
+                0.4986903
             ],
             "scaling": [
-                0.1093785,
-                0.0132191,
-                0.0825749
+                0.0092781,
+                0.0011213,
+                0.0070044
             ]
         },
         "2279": {
@@ -18755,7 +18756,7 @@
         },
         "2281": {
             "name": "UI_Button_VRCAMDOWN",
-            "parent": "745",
+            "parent": "3189",
             "components": [
                 {
                     "type": "mesh",
@@ -18773,9 +18774,9 @@
                         "collider": "box",
                         "box": {
                             "extents": [
-                                0.0599999,
                                 0.0199999,
-                                0.0799999
+                                0.0049999,
+                                0.0199999
                             ]
                         },
                         "sphere": {
@@ -18793,20 +18794,20 @@
                 }
             ],
             "translation": [
-                1.5644237,
-                1.523245,
-                0.1303197
+                0.1277516,
+                0.3612589,
+                0.0016505
             ],
             "rotation": [
-                -0.5000015,
-                0.500005,
-                0.4999967,
-                -0.4999966
+                -0.5013021,
+                0.4986993,
+                0.5013031,
+                -0.4986884
             ],
             "scaling": [
-                0.109169,
-                0.013389,
-                0.0815811
+                0.009278,
+                0.0011213,
+                0.0070044
             ]
         },
         "2282": {
@@ -18989,7 +18990,8 @@
                     "mesh": {
                         "mesh": "818",
                         "material": "22"
-                    }
+                    },
+                    "active": false
                 }
             ],
             "translation": [
@@ -29364,7 +29366,8 @@
                             "2876",
                             "3049",
                             "3083",
-                            "3177"
+                            "3177",
+                            "3183"
                         ],
                         "newImageHelp1": 141,
                         "helpsidewindows": "3084",
@@ -38149,7 +38152,7 @@
             "parent": "3177"
         },
         "3183": {
-            "name": "spanchorBackpanelHelp",
+            "name": "AccessibilityBackpanel",
             "components": [
                 {
                     "type": "mesh",
@@ -38161,9 +38164,9 @@
                 }
             ],
             "translation": [
-                -3.1388049,
+                -4.552278,
                 0.1978309,
-                -0.0011139
+                -0.0011083
             ],
             "rotation": [
                 0.0,
@@ -38335,15 +38338,15 @@
                     "type": "mesh",
                     "mesh": {
                         "mesh": "7",
-                        "material": "2691"
+                        "material": "2695"
                     },
                     "active": true
                 }
             ],
             "translation": [
-                0.7149667,
+                0.3541303,
                 0.0,
-                0.0114631
+                0.0114508
             ],
             "rotation": [
                 0.0,
@@ -38352,11 +38355,771 @@
                 1.0
             ],
             "scaling": [
-                0.9189265,
+                0.60882,
                 0.9006164,
                 1.0
             ],
             "parent": "3183"
+        },
+        "3189": {
+            "name": "ViewPositionalControls",
+            "parent": "1029",
+            "translation": [
+                -0.6546862,
+                0.7156706,
+                0.6063867
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "3191": {
+            "name": "UI_Button_VRCAMLeft",
+            "parent": "3189",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1058",
+                        "material": "25"
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0199999,
+                                0.0049999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.05
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnObject": "769",
+                        "ActionOnComponent": "SettingsWindow",
+                        "Action": "MoveCameraLeft"
+                    }
+                }
+            ],
+            "translation": [
+                0.0808331,
+                0.4318181,
+                -4.917383193969727e-7
+            ],
+            "rotation": [
+                -5.338795006082364e-8,
+                0.7071118,
+                0.7071016,
+                -5.3385218024004644e-8
+            ],
+            "scaling": [
+                0.0092779,
+                0.0011212,
+                0.0070043
+            ]
+        },
+        "3192": {
+            "name": "Text",
+            "parent": "3191",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "CAM\nDOWN"
+                    }
+                }
+            ],
+            "scaling": [
+                3.8175752,
+                37.9136314,
+                2.8472282
+            ],
+            "translation": [
+                -0.2835724,
+                0.13711,
+                0.0115958
+            ],
+            "rotation": [
+                -0.5000053,
+                0.4999949,
+                0.5000056,
+                0.499994
+            ]
+        },
+        "3193": {
+            "name": "Mesh.009",
+            "parent": "3191",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "818",
+                        "material": "22"
+                    }
+                }
+            ],
+            "translation": [
+                -0.5115785,
+                0.0230249,
+                0.0857333
+            ],
+            "rotation": [
+                -0.0,
+                -0.0,
+                5.718259217246668e-7,
+                1.0
+            ],
+            "scaling": [
+                4.602293,
+                1.0,
+                7.354794
+            ]
+        },
+        "3194": {
+            "name": "UI_Button_VRCAMRight",
+            "parent": "3189",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1136",
+                        "material": "25"
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0199999,
+                                0.0049999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.05
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnObject": "769",
+                        "ActionOnComponent": "SettingsWindow",
+                        "Action": "MoveCameraRight"
+                    }
+                }
+            ],
+            "translation": [
+                0.1757852,
+                0.4274188,
+                -0.0006785
+            ],
+            "rotation": [
+                0.7071058,
+                -0.0018508,
+                0.0018508,
+                0.7071028
+            ],
+            "scaling": [
+                0.0092781,
+                0.0011213,
+                0.0070044
+            ]
+        },
+        "3195": {
+            "name": "Text",
+            "parent": "3194",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "CAM\nUP"
+                    }
+                }
+            ],
+            "scaling": [
+                4.8249053,
+                47.9179687,
+                7.1169872
+            ],
+            "translation": [
+                -0.2988374,
+                0.2821222,
+                0.0004583
+            ],
+            "rotation": [
+                -0.5063968,
+                -0.5000646,
+                -0.485056,
+                0.5081517
+            ]
+        },
+        "3196": {
+            "name": "Mesh.009",
+            "parent": "3194",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "818",
+                        "material": "22"
+                    }
+                }
+            ],
+            "translation": [
+                -0.5115785,
+                0.0230249,
+                0.0857333
+            ],
+            "rotation": [
+                -0.0,
+                -0.0,
+                5.718259217246668e-7,
+                1.0
+            ],
+            "scaling": [
+                4.602293,
+                1.0,
+                7.354794
+            ]
+        },
+        "3197": {
+            "name": "UI_Button_VRCAMAway",
+            "parent": "3189",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1058",
+                        "material": "25"
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0199999,
+                                0.0049999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.05
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnObject": "769",
+                        "ActionOnComponent": "SettingsWindow",
+                        "Action": "MoveCameraAway"
+                    }
+                }
+            ],
+            "translation": [
+                0.1291536,
+                0.4536606,
+                0.009133
+            ],
+            "rotation": [
+                0.2740263,
+                0.6518568,
+                0.2819581,
+                0.6484534
+            ],
+            "scaling": [
+                0.0092781,
+                0.0011213,
+                0.0070044
+            ]
+        },
+        "3198": {
+            "name": "Text",
+            "parent": "3197",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "CAM\nDOWN"
+                    }
+                }
+            ],
+            "scaling": [
+                3.8175752,
+                37.9136314,
+                2.8472282
+            ],
+            "translation": [
+                -0.2835724,
+                0.13711,
+                0.0115958
+            ],
+            "rotation": [
+                -0.5000053,
+                0.4999949,
+                0.5000056,
+                0.499994
+            ]
+        },
+        "3199": {
+            "name": "Mesh.009",
+            "parent": "3197",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "818",
+                        "material": "22"
+                    }
+                }
+            ],
+            "translation": [
+                -0.5115785,
+                0.0230249,
+                0.0857333
+            ],
+            "rotation": [
+                -0.0,
+                -0.0,
+                5.718259217246668e-7,
+                1.0
+            ],
+            "scaling": [
+                4.602293,
+                1.0,
+                7.354794
+            ]
+        },
+        "3200": {
+            "name": "UI_Button_VRCAMtowards",
+            "parent": "3189",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1136",
+                        "material": "25"
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0199999,
+                                0.0049999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.05
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnObject": "769",
+                        "ActionOnComponent": "SettingsWindow",
+                        "Action": "MoveCameraTowards"
+                    }
+                }
+            ],
+            "translation": [
+                0.1338482,
+                0.4056777,
+                0.0124034
+            ],
+            "rotation": [
+                0.2429977,
+                -0.6640511,
+                -0.2453152,
+                0.6631806
+            ],
+            "scaling": [
+                0.0092781,
+                0.0011213,
+                0.0070045
+            ]
+        },
+        "3201": {
+            "name": "Text",
+            "parent": "3200",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "CAM\nUP"
+                    }
+                }
+            ],
+            "scaling": [
+                4.8249053,
+                47.9179687,
+                7.1169872
+            ],
+            "translation": [
+                -0.2988374,
+                0.2821222,
+                0.0004583
+            ],
+            "rotation": [
+                -0.5063968,
+                -0.5000646,
+                -0.485056,
+                0.5081517
+            ]
+        },
+        "3202": {
+            "name": "Mesh.009",
+            "parent": "3200",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "818",
+                        "material": "22"
+                    }
+                }
+            ],
+            "translation": [
+                -0.5115785,
+                0.0230249,
+                0.0857333
+            ],
+            "rotation": [
+                -0.0,
+                -0.0,
+                5.718259217246668e-7,
+                1.0
+            ],
+            "scaling": [
+                4.602293,
+                1.0,
+                7.354794
+            ]
+        },
+        "3203": {
+            "name": "Backpanel",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2668"
+                    }
+                }
+            ],
+            "translation": [
+                0.083575,
+                0.4451373,
+                -0.0011218
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1122955,
+                0.1301702,
+                0.266714
+            ],
+            "parent": "3189"
+        },
+        "3190": {
+            "name": "Text.017",
+            "parent": "3189",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "View Setting"
+                    }
+                }
+            ],
+            "translation": [
+                0.1252262,
+                0.5581736,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.101,
+                0.101,
+                0.101
+            ]
+        },
+        "3206": {
+            "name": "Text.017",
+            "parent": "3189",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Use the below buttons to\nadjust Grid positions in VR"
+                    }
+                }
+            ],
+            "translation": [
+                0.1252262,
+                0.5363438,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.07,
+                0.07,
+                0.07
+            ]
+        },
+        "3207": {
+            "name": "cameraupicon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2649"
+                    }
+                }
+            ],
+            "translation": [
+                -0.3048186,
+                0.6249834,
+                0.0151958
+            ],
+            "rotation": [
+                0.5,
+                0.5,
+                0.5,
+                -0.5
+            ],
+            "scaling": [
+                2.0,
+                20.0000743,
+                2.0000002
+            ],
+            "parent": "2278"
+        },
+        "3208": {
+            "name": "cameradownicon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2650"
+                    }
+                }
+            ],
+            "translation": [
+                -0.3048186,
+                0.6249834,
+                0.0151958
+            ],
+            "rotation": [
+                0.5,
+                0.5,
+                0.5,
+                -0.5
+            ],
+            "scaling": [
+                2.0,
+                20.0000743,
+                2.0000002
+            ],
+            "parent": "2281"
+        },
+        "3209": {
+            "name": "cameralefticon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2651"
+                    }
+                }
+            ],
+            "translation": [
+                69.8853683,
+                -0.0206604,
+                -230.7074432
+            ],
+            "rotation": [
+                -7.072677732367083e-8,
+                0.7071391,
+                0.7070744,
+                7.070408258869065e-8
+            ],
+            "scaling": [
+                8.6225872,
+                11.4214096,
+                71.3457489
+            ],
+            "parent": "3191"
+        },
+        "3210": {
+            "name": "camerarighticon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2652"
+                    }
+                }
+            ],
+            "translation": [
+                -58.6202011,
+                3.1504821,
+                230.0768432
+            ],
+            "rotation": [
+                -0.7069506,
+                0.0153037,
+                -0.0153033,
+                0.7069317
+            ],
+            "scaling": [
+                8.6304082,
+                11.4212827,
+                71.3434982
+            ],
+            "parent": "3194"
+        },
+        "3211": {
+            "name": "cameramoveicon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2653"
+                    }
+                }
+            ],
+            "translation": [
+                -1.1582731,
+                -1.1841447,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "3189"
+        },
+        "3212": {
+            "name": "cameratowardsicon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2654"
+                    }
+                }
+            ],
+            "translation": [
+                110.1088867,
+                -1087.6032714,
+                41.7575454
+            ],
+            "rotation": [
+                -0.0303424,
+                0.7064637,
+                0.0420967,
+                0.7058442
+            ],
+            "scaling": [
+                11.4227123,
+                54.6186599,
+                46.7027473
+            ],
+            "parent": "3200"
+        },
+        "3213": {
+            "name": "cameratowardsicon",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "2655"
+                    }
+                }
+            ],
+            "translation": [
+                0.0516479,
+                -1.1841447,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0799999,
+                0.0799999,
+                0.0799999
+            ],
+            "parent": "3189"
         }
     },
     "meshes": {
@@ -40264,6 +41027,12 @@
                 "name": "blank512x128.png",
                 "file": "images\\V1-2\\blank512x128.png"
             }
+        },
+        "2715": {
+            "link": {
+                "name": "AccessibilityWindow.png",
+                "file": "images\\V1-2\\AccessibilityWindow.png"
+            }
         }
     },
     "images": {
@@ -41157,6 +41926,12 @@
             "link": {
                 "name": "blank512x128.png",
                 "file": "images\\V1-2\\blank512x128.png"
+            }
+        },
+        "2713": {
+            "link": {
+                "name": "AccessibilityWindow.png",
+                "file": "images\\V1-2\\AccessibilityWindow.png"
             }
         }
     },
@@ -43843,6 +44618,13 @@
                 ]
             },
             "name": "BlackKeysFont"
+        },
+        "2695": {
+            "name": "RightPanelAccessibility",
+            "pipeline": "258",
+            "Flat": {
+                "flatTexture": "2715"
+            }
         }
     },
     "shaders": {
@@ -45969,6 +46751,10 @@
         },
         "2715": {
             "fileName": "images/V1-2/blank512x128.png",
+            "importerName": ""
+        },
+        "2716": {
+            "fileName": "images/V1-2/AccessibilityWindow.png",
             "importerName": ""
         }
     },
