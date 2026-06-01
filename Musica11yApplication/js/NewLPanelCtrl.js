@@ -29,8 +29,8 @@ export class NreLPanelCtrl extends Component {
 
     open_accessibility_window()
     {
-       this.restore_default_leftPanel();    
-        this.set_new_panel_live(2);
+     //  this.restore_default_leftPanel();    
+    //    this.set_new_panel_live(2);
 
         this.mainPanelCtrller.getComponent('NewMainPanelCtrl').open_access_window();
     }

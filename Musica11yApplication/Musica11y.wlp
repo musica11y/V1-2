@@ -39130,6 +39130,565 @@
                 1.9999991
             ],
             "parent": "3197"
+        },
+        "3214": {
+            "name": "UI_Button_1second",
+            "parent": "3183",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0199999,
+                                0.0049999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                0.0210513,
+                -0.3975827,
+                -0.0116684
+            ],
+            "rotation": [
+                8.94109462024062e-8,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                43.2999992,
+                3.9,
+                1.6
+            ]
+        },
+        "3215": {
+            "name": "Text",
+            "parent": "3214",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "1 Second",
+                        "material": "1955"
+                    }
+                }
+            ],
+            "scaling": [
+                0.0049999,
+                0.1,
+                0.0416667
+            ],
+            "translation": [
+                -0.0001828,
+                0.0018002,
+                0.0150406
+            ],
+            "rotation": [
+                2.380693331360817e-7,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3216": {
+            "name": "UI_Button_2second",
+            "parent": "3183",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0199999,
+                                0.0049999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                0.0210511,
+                -0.5493729,
+                -0.0116684
+            ],
+            "rotation": [
+                8.941246676386072e-8,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                43.2999992,
+                3.9,
+                1.6
+            ]
+        },
+        "3217": {
+            "name": "Text",
+            "parent": "3216",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "2 Seconds",
+                        "material": "1955"
+                    }
+                }
+            ],
+            "scaling": [
+                0.0049999,
+                0.1,
+                0.0416667
+            ],
+            "translation": [
+                -0.0001828,
+                0.0018002,
+                0.0150406
+            ],
+            "rotation": [
+                2.380693331360817e-7,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3218": {
+            "name": "UI_Button_3second",
+            "parent": "3183",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0199999,
+                                0.0049999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                0.0121646,
+                -0.7052175,
+                -0.0116684
+            ],
+            "rotation": [
+                8.941391627104167e-8,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                43.2999992,
+                3.9,
+                1.6
+            ]
+        },
+        "3219": {
+            "name": "Text",
+            "parent": "3218",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "3 Seconds",
+                        "material": "1955"
+                    }
+                }
+            ],
+            "scaling": [
+                0.0049999,
+                0.1,
+                0.0416667
+            ],
+            "translation": [
+                -0.0001828,
+                0.0018002,
+                0.0150406
+            ],
+            "rotation": [
+                2.380693331360817e-7,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "3220": {
+            "name": "UI_Button_raysmall",
+            "parent": "3183",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0099999,
+                                0.0049999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                -0.1172554,
+                0.0197536,
+                0.0122615
+            ],
+            "rotation": [
+                2.60770320892334e-7,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                0.0299999,
+                0.0599999,
+                0.1205999
+            ]
+        },
+        "3222": {
+            "name": "Mesh.028",
+            "parent": "3220",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "12",
+                        "material": "22"
+                    }
+                }
+            ]
+        },
+        "3221": {
+            "name": "UI_Button_raymed",
+            "parent": "3183",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0099999,
+                                0.008,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                0.0322102,
+                0.0197536,
+                0.0122615
+            ],
+            "rotation": [
+                2.384185791015625e-7,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                0.0399999,
+                0.0799999,
+                0.1607999
+            ]
+        },
+        "3224": {
+            "name": "Mesh.028",
+            "parent": "3221",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "12",
+                        "material": "22"
+                    }
+                }
+            ]
+        },
+        "3225": {
+            "name": "UI_Button_raylarge",
+            "parent": "3183",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0099999,
+                                0.0099999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                0.1741639,
+                0.0197536,
+                0.0122615
+            ],
+            "rotation": [
+                2.384185791015625e-7,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                0.05,
+                0.1,
+                0.2009999
+            ]
+        },
+        "3226": {
+            "name": "Mesh.028",
+            "parent": "3225",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "12",
+                        "material": "22"
+                    }
+                }
+            ]
+        },
+        "3227": {
+            "name": "UI_Button_toggleray",
+            "parent": "3183",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "1964",
+                        "material": "828"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0099999,
+                                0.0099999,
+                                0.0199999
+                            ]
+                        },
+                        "sphere": {
+                            "radius": 0.07
+                        }
+                    }
+                },
+                {
+                    "type": "UI_SimpleButton",
+                    "UI_SimpleButton": {
+                        "ActionOnComponent": "NewMainPanelCtrl",
+                        "Action": "open_help_window_1",
+                        "ActionOnObject": "2875",
+                        "HeldDurationType": 1,
+                        "TheHeldDurationType": "medium",
+                        "passSelfReference": true
+                    }
+                }
+            ],
+            "translation": [
+                -0.1235657,
+                0.3734576,
+                0.0122615
+            ],
+            "rotation": [
+                2.5331974029541016e-7,
+                0.0000032,
+                0.0000015,
+                1.0
+            ],
+            "scaling": [
+                0.05,
+                0.1,
+                0.2009999
+            ]
+        },
+        "3228": {
+            "name": "Mesh.028",
+            "parent": "3227",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "12",
+                        "material": "22"
+                    }
+                }
+            ]
         }
     },
     "meshes": {

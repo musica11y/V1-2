@@ -17089,8 +17089,6 @@ var NreLPanelCtrl = class extends Component3 {
     this.set_new_panel_live(1);
   }
   open_accessibility_window() {
-    this.restore_default_leftPanel();
-    this.set_new_panel_live(2);
     this.mainPanelCtrller.getComponent("NewMainPanelCtrl").open_access_window();
   }
   open_settings_window() {
@@ -20980,8 +20978,18 @@ var _UIButton = class extends Component3 {
     const worldX = intersectionPoint[0];
     const worldY = intersectionPoint[1];
     const worldZ = intersectionPoint[2];
-    const interpolatedPosition = [worldX, worldY + 1.25, worldZ + 1.8];
-    this.object.setPositionWorld(interpolatedPosition);
+    const interpolatedPosition = [worldX, worldY + 0.8, worldZ];
+    const camPos = vec3_exports.fromValues(nearPointWorld[0], nearPointWorld[1], nearPointWorld[2]);
+    const forward = vec3_exports.create();
+    vec3_exports.sub(forward, vec3_exports.fromValues(farPointWorld[0], farPointWorld[1], farPointWorld[2]), camPos);
+    vec3_exports.normalize(forward, forward);
+    const offset2 = 0.8;
+    const offsetVec = vec3_exports.create();
+    vec3_exports.scale(offsetVec, forward, offset2);
+    let newPos = vec3_exports.create();
+    vec3_exports.sub(newPos, intersectionPoint, offsetVec);
+    newPos[1] += 0.8;
+    this.object.setPositionWorld(newPos);
   }
   /*
   	 rayPlaneIntersection(rayOrigin, rayDirection, planePoint, planeNormal) {

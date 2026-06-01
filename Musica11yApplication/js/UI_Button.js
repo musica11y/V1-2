@@ -242,12 +242,35 @@ export class UIButton extends Component {
 		//	this.object.setPositionWorld(intersectionPoint);
 
 		const worldX = intersectionPoint[0];
-		const worldY = intersectionPoint[1];//+1.8;//this.object.getPositionWorld()[1];
+		//const worldX = this.object.getPositionWorld()[0];
+	const worldY = intersectionPoint[1];//+1.8;//this.object.getPositionWorld()[1];
+	 //  const worldY = this.object.getPositionWorld()[1];
 		const worldZ = intersectionPoint[2];//this.object.getPositionWorld()[2];
+//	const worldZ = this.object.getPositionWorld()[2];
 
 		//		const interpolatedPosition = [worldX, worldY + 1.8, worldZ + 1.8];
-		const interpolatedPosition = [worldX, worldY + 1.25, worldZ + 1.8];
-		this.object.setPositionWorld(interpolatedPosition);
+		//const interpolatedPosition = [worldX, worldY + 1.25, worldZ + 1.8];
+		const interpolatedPosition = [worldX, worldY+0.8 , worldZ];
+	//	this.object.setPositionWorld(interpolatedPosition);
+	
+	// camera position in world:
+	const camPos = vec3.fromValues(nearPointWorld[0], nearPointWorld[1], nearPointWorld[2]); // rayOrigin
+	// view forward direction (from camera toward scene):
+	const forward = vec3.create();
+	vec3.sub(forward, vec3.fromValues(farPointWorld[0], farPointWorld[1], farPointWorld[2]), camPos);
+	vec3.normalize(forward, forward);
+
+	// offset distance (tweak positive value, e.g., 0.5)
+	const offset = 0.8;
+
+	// Move the object toward the camera: newPos = intersection - forward * offset
+	const offsetVec = vec3.create();
+	vec3.scale(offsetVec, forward, offset);
+	let newPos = vec3.create();
+	vec3.sub(newPos, intersectionPoint, offsetVec);
+	newPos[1]+=0.8;
+	this.object.setPositionWorld(newPos);
+
 	}
 	/*
 	 rayPlaneIntersection(rayOrigin, rayDirection, planePoint, planeNormal) {
