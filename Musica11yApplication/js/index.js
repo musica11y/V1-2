@@ -50,6 +50,7 @@ import {UISimpleButton} from './UI_SimpleButton.js';
 import {UISimpleButtonDual} from './UI_SimpleButtonDual.js';
 import {VirtualKeyboard} from './VirtualKeyboard.js';
 import {VrFingerCollisionDetection} from './VrFingerCollisionDetection.js';
+import {AccessibilyWindowCtrl} from './accessibilyWindowCtrl.js';
 import {GenerateButtons} from './generate-buttons.js';
 import {Loadsave} from './loadsave.js';
 /* wle:auto-imports:end */
@@ -157,6 +158,7 @@ engine.registerComponent(UISimpleButton);
 engine.registerComponent(UISimpleButtonDual);
 engine.registerComponent(VirtualKeyboard);
 engine.registerComponent(VrFingerCollisionDetection);
+engine.registerComponent(AccessibilyWindowCtrl);
 engine.registerComponent(GenerateButtons);
 engine.registerComponent(Loadsave);
 /* wle:auto-register:end */

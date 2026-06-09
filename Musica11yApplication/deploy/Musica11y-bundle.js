@@ -21947,6 +21947,85 @@ __publicField(VrFingerCollisionDetection, "Properties", {
   debugtext: Property.object()
 });
 
+// js/accessibilyWindowCtrl.js
+var AccessibilyWindowCtrl = class extends Component3 {
+  start() {
+    let ison = this.EyeRayCastlnk.getComponent("EyeRayCast").settings.weareactive;
+    this.ToggleRayImageOn.getComponent("mesh").active = ison;
+    this.ToggleRayImageOff.getComponent("mesh").active = !ison;
+  }
+  ToggleRay() {
+    console.log("tog");
+    let sison = !this.EyeRayCastlnk.getComponent("EyeRayCast").settings.weareactive;
+    this.EyeRayCastlnk.getComponent("EyeRayCast").set_active(sison);
+    let ison = this.EyeRayCastlnk.getComponent("EyeRayCast").settings.weareactive;
+    this.ToggleRayImageOn.getComponent("mesh").active = ison;
+    this.ToggleRayImageOff.getComponent("mesh").active = !ison;
+  }
+  SetRaySmall() {
+    console.log("ssmall");
+    const objref = this.SettingsWindowlnk.getComponent("SettingsWindow").eyeraycastmachine.children[0];
+    if (objref) {
+      let ourScale = objref.getScalingLocal();
+      let cb = [0, 0, 0];
+      cb[0] = 1;
+      cb[1] = 1;
+      cb[2] = 1;
+      objref.setScalingLocal(cb);
+    }
+  }
+  SetRayMedium() {
+    console.log("smedium");
+    const objref = this.SettingsWindowlnk.getComponent("SettingsWindow").eyeraycastmachine.children[0];
+    if (objref) {
+      let ourScale = objref.getScalingLocal();
+      let cb = [0, 0, 0];
+      cb[0] = 1.5;
+      cb[1] = 1.5;
+      cb[2] = 1.5;
+      objref.setScalingLocal(cb);
+    }
+  }
+  SetRayLarge() {
+    console.log("slarge");
+    const objref = this.SettingsWindowlnk.getComponent("SettingsWindow").eyeraycastmachine.children[0];
+    if (objref) {
+      let ourScale = objref.getScalingLocal();
+      let cb = [0, 0, 0];
+      cb[0] = 3;
+      cb[1] = 3;
+      cb[2] = 3;
+      objref.setScalingLocal(cb);
+    }
+  }
+  SetRayHover1() {
+    console.log("1delay");
+    this.SettingsWindowlnk.getComponent("SettingsWindow").HeldTimeShort = 1;
+    this.SettingsWindowlnk.getComponent("SettingsWindow").HeldTimeMedium = 2;
+    this.SettingsWindowlnk.getComponent("SettingsWindow").HeldTimeLong = 3;
+  }
+  SetRayHover2() {
+    console.log("2delay");
+    this.SettingsWindowlnk.getComponent("SettingsWindow").HeldTimeShort = 1 + 1;
+    this.SettingsWindowlnk.getComponent("SettingsWindow").HeldTimeMedium = 2 + 1;
+    this.SettingsWindowlnk.getComponent("SettingsWindow").HeldTimeLong = 3 + 1;
+  }
+  SetRayHover3() {
+    console.log("3delay");
+    this.SettingsWindowlnk.getComponent("SettingsWindow").HeldTimeShort = 1 + 2;
+    this.SettingsWindowlnk.getComponent("SettingsWindow").HeldTimeMedium = 2 + 2;
+    this.SettingsWindowlnk.getComponent("SettingsWindow").HeldTimeLong = 3 + 2;
+  }
+};
+__publicField(AccessibilyWindowCtrl, "TypeName", "accessibilyWindowCtrl");
+/* Properties that are configurable in the editor */
+__publicField(AccessibilyWindowCtrl, "Properties", {
+  EyeRayCastlnk: Property.object(),
+  ToggleRayImageOn: Property.object(),
+  ToggleRayImageOff: Property.object(),
+  SettingsWindowlnk: Property.object()
+});
+
 // js/generate-buttons.js
 var GenerateButtons = class extends Component3 {
   start() {
@@ -22773,6 +22852,7 @@ engine.registerComponent(UISimpleButton);
 engine.registerComponent(UISimpleButtonDual);
 engine.registerComponent(VirtualKeyboard);
 engine.registerComponent(VrFingerCollisionDetection);
+engine.registerComponent(AccessibilyWindowCtrl);
 engine.registerComponent(GenerateButtons);
 engine.registerComponent(Loadsave);
 engine.scene.load(`${Constants.ProjectName}.bin`);
