@@ -10,7 +10,11 @@ export class AccessibilyWindowCtrl extends Component {
 			EyeRayCastlnk: Property.object(),
             ToggleRayImageOn: Property.object(),
 			ToggleRayImageOff: Property.object(),
-			SettingsWindowlnk: Property.object()
+			SettingsWindowlnk: Property.object(),
+
+			backpanel1: Property.object(),
+			backpanel2: Property.object(),
+			
     };
 
     start() {
@@ -29,6 +33,19 @@ export class AccessibilyWindowCtrl extends Component {
 		this.ToggleRayImageOn.getComponent('mesh').active=ison;
 		this.ToggleRayImageOff.getComponent('mesh').active=!ison;
 	}
+	
+	
+ toggle_backpanel()
+ {
+	 this.backpanel1.getComponent('mesh').active=!this.backpanel1.getComponent('mesh').active;
+	 this.backpanel2.getComponent('mesh').active=!this.backpanel2.getComponent('mesh').active;
+ }
+ 
+ toggle_grid()
+ {
+	 
+ }
+
 	
 	SetRaySmall(){
 			console.log('ssmall');

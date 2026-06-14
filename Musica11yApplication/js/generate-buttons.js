@@ -26,6 +26,8 @@ export class GenerateButtons extends Component {
 		MusicMan: Property.object(),
 		LayerManager: Property.object(),
 		backpanel: Property.object(),
+		
+		setdefaultvalue:Property.bool()
 	};
 
 	start() {
@@ -139,6 +141,9 @@ export class GenerateButtons extends Component {
 		{
 			this.LayerManager.getComponent('LayerManager').setInitialPanel();
 		}
+		
+		if(this.setdefaultvalue)
+			this.setButtonCount(8,8);
 	}
 
 
@@ -157,6 +162,7 @@ export class GenerateButtons extends Component {
 
 		this.do_updateButtons();
 	}
+	
 
 	do_updateButtons() {
 

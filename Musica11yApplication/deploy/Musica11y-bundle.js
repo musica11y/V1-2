@@ -17091,6 +17091,9 @@ var NreLPanelCtrl = class extends Component3 {
   open_accessibility_window() {
     this.mainPanelCtrller.getComponent("NewMainPanelCtrl").open_access_window();
   }
+  open_grid_window() {
+    this.mainPanelCtrller.getComponent("NewMainPanelCtrl").open_grid_window();
+  }
   open_settings_window() {
     this.restore_default_leftPanel();
     this.set_new_panel_live(3);
@@ -17211,6 +17214,10 @@ var NewMainPanelCtrl = class extends Component3 {
   open_access_window() {
     this.restore_default_leftPanel();
     this.set_new_panel_live(5);
+  }
+  open_grid_window() {
+    this.restore_default_leftPanel();
+    this.set_new_panel_live(6);
   }
   restore_default_window() {
     this.restore_default_leftPanel();
@@ -18602,6 +18609,18 @@ var SettingsWindow = class extends Component3 {
   Spanchor_Y_add() {
     console.log("Y +");
     this.SPanchorWindow.getComponent("generate-buttons").updateButtonCount(0, 1);
+  }
+  Spanchor_setsize_1() {
+    this.SPanchorWindow.getComponent("generate-buttons").setButtonCount(4, 4);
+  }
+  Spanchor_setsize_2() {
+    this.SPanchorWindow.getComponent("generate-buttons").setButtonCount(8, 4);
+  }
+  Spanchor_setsize_3() {
+    this.SPanchorWindow.getComponent("generate-buttons").setButtonCount(8, 8);
+  }
+  Spanchor_setsize_4() {
+    this.SPanchorWindow.getComponent("generate-buttons").setButtonCount(16, 8);
   }
   Spanchor_BPM_add() {
     this.Musicman.getComponent("MusicManagement").bpm += 1;
@@ -21962,6 +21981,12 @@ var AccessibilyWindowCtrl = class extends Component3 {
     this.ToggleRayImageOn.getComponent("mesh").active = ison;
     this.ToggleRayImageOff.getComponent("mesh").active = !ison;
   }
+  toggle_backpanel() {
+    this.backpanel1.getComponent("mesh").active = !this.backpanel1.getComponent("mesh").active;
+    this.backpanel2.getComponent("mesh").active = !this.backpanel2.getComponent("mesh").active;
+  }
+  toggle_grid() {
+  }
   SetRaySmall() {
     console.log("ssmall");
     const objref = this.SettingsWindowlnk.getComponent("SettingsWindow").eyeraycastmachine.children[0];
@@ -22023,7 +22048,9 @@ __publicField(AccessibilyWindowCtrl, "Properties", {
   EyeRayCastlnk: Property.object(),
   ToggleRayImageOn: Property.object(),
   ToggleRayImageOff: Property.object(),
-  SettingsWindowlnk: Property.object()
+  SettingsWindowlnk: Property.object(),
+  backpanel1: Property.object(),
+  backpanel2: Property.object()
 });
 
 // js/generate-buttons.js
@@ -22087,6 +22114,8 @@ var GenerateButtons = class extends Component3 {
     if (this.isLayerSelector) {
       this.LayerManager.getComponent("LayerManager").setInitialPanel();
     }
+    if (this.setdefaultvalue)
+      this.setButtonCount(8, 8);
   }
   setButtonCount(x, y) {
     console.log("LOADED XY at ", x, " ", y);
@@ -22194,7 +22223,8 @@ __publicField(GenerateButtons, "Properties", {
   isKeySelector: Property.bool(),
   MusicMan: Property.object(),
   LayerManager: Property.object(),
-  backpanel: Property.object()
+  backpanel: Property.object(),
+  setdefaultvalue: Property.bool()
 });
 
 // js/loadsave.js

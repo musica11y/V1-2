@@ -285,6 +285,23 @@ export class SettingsWindow extends Component {
 		console.log("Y +");
 		this.SPanchorWindow.getComponent('generate-buttons').updateButtonCount(0, 1);
 	}
+	
+	Spanchor_setsize_1()
+	{
+		this.SPanchorWindow.getComponent('generate-buttons').setButtonCount(4,4);
+	}
+	Spanchor_setsize_2()
+	{
+		this.SPanchorWindow.getComponent('generate-buttons').setButtonCount(8,4);
+	}
+	Spanchor_setsize_3()
+	{
+		this.SPanchorWindow.getComponent('generate-buttons').setButtonCount(8,8);
+	}
+	Spanchor_setsize_4()
+	{
+		this.SPanchorWindow.getComponent('generate-buttons').setButtonCount(16,8);
+	}
 
 	Spanchor_BPM_add() {
 		this.Musicman.getComponent('MusicManagement').bpm += 1;
