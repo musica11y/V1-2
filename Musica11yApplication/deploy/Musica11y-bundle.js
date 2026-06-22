@@ -21707,6 +21707,7 @@ var VirtualKeyboard = class extends Component3 {
     this.Press_key(caller.name);
   }
   Press_key(key) {
+    console.log(key.name);
     switch (key) {
       case "KeyShift":
         this.tempshift = true;

@@ -169,7 +169,7 @@ export class VirtualKeyboard extends Component {
     }
 
     Press_key(key){
-        //    console.log(caller.name);
+            console.log(key.name);
         switch (key) {
             case "KeyShift":
                 this.tempshift = true;
