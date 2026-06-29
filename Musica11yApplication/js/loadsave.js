@@ -139,6 +139,11 @@ export class Loadsave extends Component {
 		this.LogoutButtonText.getComponent('text').text = "LOG\nIN";
 	}	
 
+ doexit()
+ {
+	 window.location.href = 'https://musica11y.net';
+ }
+
 	dologin(pusername) {
 		//const userpath = 'players/' + document.getElementById('currentUser').innerText.split(": ")[1] + '/sessions/' + session;
 		this.userpath = "players/" + pusername + "/sessions/";

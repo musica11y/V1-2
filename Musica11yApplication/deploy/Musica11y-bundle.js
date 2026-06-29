@@ -17214,6 +17214,12 @@ var NewMainPanelCtrl = class extends Component3 {
   open_access_window() {
     this.restore_default_leftPanel();
     this.set_new_panel_live(5);
+    if (!this.MusicMan.getComponent("loadsave").checkloggedin()) {
+      console.log("log in needed");
+      this.OptionsWindowlink.getComponent("OptionsWindow").CTRL_LOGOUT();
+    } else {
+      console.log("already logged in");
+    }
   }
   open_grid_window() {
     this.restore_default_leftPanel();
@@ -17247,7 +17253,9 @@ __publicField(NewMainPanelCtrl, "TypeName", "NewMainPanelCtrl");
 __publicField(NewMainPanelCtrl, "Properties", {
   leftsidewindows: Property.array(Property.object()),
   helpsidewindows: Property.object(),
-  newImageHelp: Property.array(Property.texture())
+  newImageHelp: Property.array(Property.texture()),
+  MusicMan: Property.object(),
+  OptionsWindowlink: Property.object()
 });
 
 // js/NewMusicPlayer.js
@@ -22303,6 +22311,9 @@ var Loadsave = class extends Component3 {
     console.log("LOGGED OUT");
     window.location.href = "https://musica11y.net";
     this.LogoutButtonText.getComponent("text").text = "LOG\nIN";
+  }
+  doexit() {
+    window.location.href = "https://musica11y.net";
   }
   dologin(pusername) {
     this.userpath = "players/" + pusername + "/sessions/";

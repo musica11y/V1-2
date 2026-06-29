@@ -10,6 +10,8 @@ export class NewMainPanelCtrl extends Component {
           leftsidewindows:  Property.array(Property.object()),
           helpsidewindows: Property.object(),
           newImageHelp: Property.array(Property.texture()),
+		  MusicMan: Property.object(),
+		  OptionsWindowlink: Property.object(),
     };
 
     start() {
@@ -101,6 +103,14 @@ export class NewMainPanelCtrl extends Component {
     {
         this.restore_default_leftPanel();    
         this.set_new_panel_live(5);
+		if (!this.MusicMan.getComponent("loadsave").checkloggedin() )
+		{
+			console.log("log in needed");
+			this.OptionsWindowlink.getComponent('OptionsWindow').CTRL_LOGOUT();
+		}
+		else{
+			console.log("already logged in");
+		}
     }
 
     open_grid_window()
