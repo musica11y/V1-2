@@ -269,6 +269,24 @@ export class UIButton extends Component {
 	let newPos = vec3.create();
 	vec3.sub(newPos, intersectionPoint, offsetVec);
 	newPos[1]+=0.8;
+	//add the offset player position
+	
+	//if(this.musicmanref.PlayModeManager.PlayCameraRef==null)
+		// console.log("PlayModeManager is none!");
+	 
+	 const playerObject = this.engine.scene.findByName('Player')[0];
+	 if(playerObject==null)
+		 console.log("playerObject is none!");
+	else
+	{
+		let oldplayerpos = playerObject.getTranslationLocal();
+		newPos[0]+=oldplayerpos[0];
+		newPos[1]+=oldplayerpos[1];
+	}	 
+	//let oldplayerpos = this.musicmanref.PlayModeManager.PlayCameraRef.getTranslationLocal();
+	//newPos[0]+=oldplayerpos[0];
+	
+	
 	this.object.setPositionWorld(newPos);
 
 	}

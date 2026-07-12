@@ -17342,6 +17342,25 @@ __publicField(NewMusicPlayer, "Properties", {
   Musicman: Property.object()
 });
 
+// js/NonVrSetCameraPosiiton.js
+var NonVrSetCameraPosiiton = class extends Component3 {
+  start() {
+    setTimeout(() => {
+      this.executeDeferredLogic();
+    }, 0);
+  }
+  executeDeferredLogic() {
+    console.log("set position at least executed ", this.object.getPositionLocal());
+  }
+  update(dt) {
+  }
+};
+__publicField(NonVrSetCameraPosiiton, "TypeName", "NonVrSetCameraPosiiton");
+/* Properties that are configurable in the editor */
+__publicField(NonVrSetCameraPosiiton, "Properties", {
+  Targpos: Property.object()
+});
+
 // js/NoteSelector.js
 var NoteSelector = class extends Component3 {
   CurrentOctave = 4;
@@ -21016,6 +21035,14 @@ var _UIButton = class extends Component3 {
     let newPos = vec3_exports.create();
     vec3_exports.sub(newPos, intersectionPoint, offsetVec);
     newPos[1] += 0.8;
+    const playerObject = this.engine.scene.findByName("Player")[0];
+    if (playerObject == null)
+      console.log("playerObject is none!");
+    else {
+      let oldplayerpos = playerObject.getTranslationLocal();
+      newPos[0] += oldplayerpos[0];
+      newPos[1] += oldplayerpos[1];
+    }
     this.object.setPositionWorld(newPos);
   }
   /*
@@ -22877,6 +22904,7 @@ engine.registerComponent(MusicManagement);
 engine.registerComponent(NreLPanelCtrl);
 engine.registerComponent(NewMainPanelCtrl);
 engine.registerComponent(NewMusicPlayer);
+engine.registerComponent(NonVrSetCameraPosiiton);
 engine.registerComponent(NoteSelector);
 engine.registerComponent(OptionsWindow);
 engine.registerComponent(PlayModeManager);
